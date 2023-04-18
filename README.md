@@ -28,4 +28,4 @@
 Запуск проекта в режиме разработки:
 ### `npm start`
 Запуск Storybook:
-### `npm start`
+### `npm run storybook`
