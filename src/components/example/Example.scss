@@ -1,0 +1,21 @@
+@import '../../constants/scss-variables.scss';
+
+.wrap{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.div1{
+  background: $colorMain;
+  width: 100px;
+  height: 100px;
+  margin-right: 200px;
+}
+
+.div2{
+  background: $colorBgcGradient;
+  width: 600px;
+  height: 5px;
+}
+
