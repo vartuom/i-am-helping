@@ -1,0 +1,28 @@
+@import '../../../constants/scss-variables.scss';
+
+.button {
+  min-width: 82px;
+  min-height: 82px;
+  border: none;
+  border-radius: 50%;
+  background-image: url('../../../images/cross.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: $colorMain;
+  cursor: pointer;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.button:disabled{
+  background-color: $colorDisable;
+  cursor: auto;
+}
+
+.button:hover {
+  background-color: $colorBtnFirst;
+}
+
+.button:active {
+  background-color: $colorBtnFirst;
+}
