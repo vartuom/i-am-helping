@@ -1,0 +1,34 @@
+@import '../../constants/scss-variables.scss';
+
+.main {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 20px;
+  padding: 0 92px;
+}
+
+.personalInfo {
+  width: 395px;
+  height: 100%;
+  outline: 1px solid red;
+}
+
+.applicationsInfo {
+  outline: 1px solid red;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: 20px;
+  padding-bottom: 20px;
+}
+
+.personalNav {
+  height: 89px;
+  outline: 1px solid red;
+}
+
+.newApplication {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 25px;
+}
