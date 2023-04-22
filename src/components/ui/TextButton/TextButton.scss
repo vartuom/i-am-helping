@@ -1,0 +1,43 @@
+@import '../../../constants/scss-variables.scss';
+
+.ActionButton {
+  height: 30px;
+  padding: 0px 16px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $colorMain;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.ActionButtonLight{
+  background-color: transparent;
+  color: $colorMain;
+}
+
+.ActionButtonDark{
+  background-color: $colorMain;
+  color: $colorBgcPopup;
+}
+
+.ActionButton:hover {
+  background-color: $colorBtnFirst;
+  color: $colorBgc;
+}
+
+.ActionButtonLight:disabled {
+  background-color: $colorBgcPopup;
+  border: 1px solid $colorSupport;
+  color: $colorSupport;
+}
+
+.ActionButtonDark:disabled {
+  background-color: $colorDisable; //grey
+  color: $colorBgcPopup;
+}
