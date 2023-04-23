@@ -1,17 +1,22 @@
+@import '../fonts/fonts.scss';
 //Colors
 
-$colorMain: #2E3192 ;
+$colorMain: #2E3192;
 $colorSupport: #9798C9;
 
 $colorBtnFirst: #0071BC;
 $colorBtnSecond: #0091C7;
-$colorBtnThird: #0091C7 ;
+$colorBtnThird: #0091C7;
 
-$colorBgc:#FBFDFF;
+$colorBgc: #FBFDFF;
 $colorBgcPopup: #FFFFFF;
 $colorBgcGradient: linear-gradient(90deg, #FFFFFF 0%, #2E3192 50%, #FFFFFF 100%);
 
 $colorDisable: #818C99;
+$colorRegularFont: #000000;
+$colorApprove: #00A99D;
 
 
-
+//fonts
+$fontFamily: 'Golos Text', sans-serif;
+$fontWeight: 400;
