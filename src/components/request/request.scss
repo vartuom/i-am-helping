@@ -12,6 +12,9 @@
     "wrapperTimeAddress contentBalls person button";
 
 
+  $fontSizeLarge: 24px;
+  $fontSizeMedium: 16px;
+  $fontSizeSmall: 12px;
 
   .category {
     grid-area: category;
@@ -20,7 +23,8 @@
     clip-path: polygon(0% 0%, 100% 28%, 92% 100%, 0% 100%);
     font-family: $fontFamily;
     font-weight: $fontWeight;
-    font-size: 12px;
+    font-size: $fontSizeSmall;
+    font-style: $fontFamilyNormal;
     line-height: 15px;
     color: $colorBgcPopup;
     padding-left: 15px;
@@ -48,7 +52,8 @@
     .dateText {
       font-family: $fontFamily;
       font-weight: $fontWeight;
-      font-size: 24px;
+      font-size: $fontSizeLarge;
+      font-style: $fontFamilyNormal;
       line-height: 29px;
       color: $colorMain;
     }
@@ -80,7 +85,8 @@
       .timeText {
         font-family: $fontFamily;
         font-weight: $fontWeight;
-        font-size: 29px;
+        font-size: $fontSizeSuperLarge;
+        font-style: $fontFamilyNormal;
         line-height: 29px;
         color: $colorMain;
       }
@@ -104,7 +110,8 @@
       .addressText {
         font-family: $fontFamily;
         font-weight: $fontWeight;
-        font-size: 16px;
+        font-size: $fontSizeMedium;
+        font-style: $fontFamilyNormal;
         line-height: 19px;
         color: $colorMain;
       }
@@ -115,7 +122,8 @@
     grid-area: contentHeader;
     font-family: $fontFamily;
     font-weight: $fontWeight;
-    font-size: 24px;
+    font-size: $fontSizeLarge;
+    font-style: $fontFamilyNormal;
     line-height: 29px;
     color: $colorSupport;
     margin-top: 10px;
@@ -130,7 +138,8 @@
 
       font-family: $fontFamily;
       font-weight: $fontWeight;
-      font-size: 16px;
+      font-size: $fontSizeMedium;
+      font-style: $fontFamilyNormal;
       line-height: 19px;
       color: $colorRegularFont;
       display: -webkit-box;
@@ -151,7 +160,8 @@
         text-decoration: none;
         font-family: $fontFamily;
         font-weight: $fontWeight;
-        font-size: 16px;
+        font-size: $fontSizeMedium;
+        font-style: $fontFamilyNormal;
         line-height: 19px;
         color: $colorMain;
       }
@@ -177,7 +187,8 @@
     .contentBallsCount {
       font-family: $fontFamily;
       font-weight: $fontWeight;
-      font-size: 12px;
+      font-size: $fontSizeSmall;
+      font-style: $fontFamilyNormal;
       line-height: 14px;
       color: $colorMain;
       align-self: center;
@@ -205,7 +216,8 @@
     .personName {
       font-family: $fontFamily;
       font-weight: $fontWeight;
-      font-size: 16px;
+      font-size: $fontSizeMedium;
+      font-style: $fontFamilyNormal;
       line-height: 19px;
       color: $colorRegularFont;
       align-self: center;
@@ -215,7 +227,8 @@
     .personPhone {
       font-family: $fontFamily;
       font-weight: $fontWeight;
-      font-size: 16px;
+      font-size: $fontSizeMedium;
+      font-style: $fontFamilyNormal;
       line-height: 19px;
       color: $colorMain;
       align-self: center;
