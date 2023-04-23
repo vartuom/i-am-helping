@@ -1,9 +1,6 @@
 @import './constants/scss-mixins.scss';
 @import './constants/scss-variables.scss';
 
-
-
-
 body {
   @include from('xl') {
   max-width: $dekstopWidth;

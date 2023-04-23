@@ -1,26 +1,26 @@
-import React from 'react';
-import Example from '../example/Example';
-import logo from './logo.svg';
 import './App.scss';
+import {Link, Route, Routes} from "react-router-dom";
+import TestPage from "../../pages/testPage";
+import AnotherTestPage from "../../pages/anotherTestPage";
+import PersonalPage from '../../pages/PersonalPage/PersonalPage';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">        
-      <Example/>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav className='header'>
+        <Link to='/'>Главная</Link>
+        <Link to='/anotherTestPage'>Тестовая страница</Link>
+        <Link to='/personal'>Личный кабинет</Link>
+        <Link to='/blog'>Блог</Link>
+        <Link to='/privacy'>Политика конфиденциальности</Link>
+        <Link to='/privacy'>Контакты</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<TestPage />} />
+        <Route path="/anotherTestPage" element={<AnotherTestPage />} />
+        <Route path="/personal" element={<PersonalPage />} />
+      </Routes>
     </div>
   );
 }

@@ -9,7 +9,6 @@
 
 .div1{
   background: $colorMain;
-  width: 100px;
   height: 100px;
   margin-right: 200px;
   @include from('sm') {
@@ -25,5 +24,9 @@
   width: 600px;
   background: $colorBgcGradient;
   height: 5px;
+}
+
+.svgColor , path{
+  fill: $colorBtnThird;
 }
 
