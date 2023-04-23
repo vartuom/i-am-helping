@@ -4,12 +4,13 @@ import TestPage from "../../pages/testPage";
 import AnotherTestPage from "../../pages/anotherTestPage";
 import PersonalPage from '../../pages/PersonalPage/PersonalPage';
 import { ActionButton } from '../ui/buttons/ActionButton';
+import { MessageIcon, PhoneIcon } from '../ui/icons/icons';
 
 
 function App() {
   return (
     <div className="App">
-      <ActionButton variant="icon" size="small" />
+      <ActionButton variant="icon" size="small" color="light" icon={<MessageIcon/>}/>
       <nav className='header'>
         <Link to='/'>Главная</Link>
         <Link to='/anotherTestPage'>Тестовая страница</Link>

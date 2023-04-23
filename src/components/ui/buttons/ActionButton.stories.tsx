@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ActionButton } from './ActionButton';
+import { EditIcon, PhoneIcon } from '../icons/icons';
 
 const meta = {
   title: 'Buttons/ActionButton',
@@ -35,6 +36,6 @@ export const IconButton: Story = {
     size: "small",
     color: "dark",
     type: "button",
-    icon: true,
+    icon: <EditIcon />,
   },
 };
