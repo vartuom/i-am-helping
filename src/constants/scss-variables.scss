@@ -14,4 +14,17 @@ $colorBgcGradient: linear-gradient(90deg, #FFFFFF 0%, #2E3192 50%, #FFFFFF 100%)
 $colorDisable: #818C99;
 
 
+//Breakpoints
+$dekstopWidth: 1440px;
+$mobileWidth: 414px;
+
+//Под комментарием  значения для будущего, возможного адаптива
+//https://www.spargo.ru/development-blog/scss-breakpoints/ - откуда был взят пример реализации
+$breakpoints: (
+    sm: $mobileWidth,
+    // md: 768px,
+    // lg: 1024px,
+    xl: $dekstopWidth,
+);
+
 
