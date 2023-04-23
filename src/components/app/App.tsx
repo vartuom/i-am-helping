@@ -3,11 +3,13 @@ import {Link, Route, Routes} from "react-router-dom";
 import TestPage from "../../pages/testPage";
 import AnotherTestPage from "../../pages/anotherTestPage";
 import PersonalPage from '../../pages/PersonalPage/PersonalPage';
+import { ActionButton } from '../ui/buttons/ActionButton';
 
 
 function App() {
   return (
     <div className="App">
+      <ActionButton variant="icon" size="small" />
       <nav className='header'>
         <Link to='/'>Главная</Link>
         <Link to='/anotherTestPage'>Тестовая страница</Link>
