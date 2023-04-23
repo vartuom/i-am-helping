@@ -37,6 +37,7 @@
 .button-dark {
   background-color: $colorMain;
   color: $colorBgcPopup;
+  z-index: -1;
 }
 
 .button-light {

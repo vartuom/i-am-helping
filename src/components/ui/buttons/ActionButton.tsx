@@ -11,15 +11,15 @@ interface ActionButtonProps {
   disabled?: boolean;
   type?: "submit" | "reset" | "button";
   children?: React.ReactNode;
-  icon?: boolean;
+  icon?: React.ReactNode;
 }
 
 export const ActionButton = ({
   variant,
   size,
   color = "dark",
-  label = "",
   icon,
+  label,
   ...props
 }: ActionButtonProps) => {
   const variantType = variant === "icon" ? "button-icon" : "button-text";
@@ -32,10 +32,8 @@ export const ActionButton = ({
       className={['button', variantType, sizeType, colorType].join(' ')}
       {...props}
     >
-      {<AcceptBlockIcon />}
+      {icon}
       {label}
     </button>
   );
 };
-
-//{icon && <PhoneIcon />}
