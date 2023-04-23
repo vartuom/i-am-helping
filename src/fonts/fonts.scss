@@ -1,1 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Golos+Text&display=swap');
+@font-face {
+  font-family: 'GolosNormal';
+  font-style: normal;
+  font-weight: 400;
+  src: url("./golos/GolosText-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'GolosBold';
+  font-style: normal;
+  font-weight: 700;
+  src: url("./golos/GolosText-Bold.ttf") format("truetype");
+}

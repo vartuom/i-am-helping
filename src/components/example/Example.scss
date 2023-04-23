@@ -8,7 +8,6 @@
 
 .div1{
   background: $colorMain;
-  width: 100px;
   height: 100px;
   margin-right: 200px;
 }
@@ -17,5 +16,9 @@
   background: $colorBgcGradient;
   width: 600px;
   height: 5px;
+}
+
+.svgColor , path{
+  fill: $colorBtnThird;
 }
 

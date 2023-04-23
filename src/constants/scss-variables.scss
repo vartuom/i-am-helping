@@ -6,7 +6,9 @@ $colorSupport: #9798C9;
 
 $colorBtnFirst: #0071BC;
 $colorBtnSecond: #0091C7;
-$colorBtnThird: #0091C7;
+
+$colorBtnThird: #00A99D   ;
+
 
 $colorBgc: #FBFDFF;
 $colorBgcPopup: #FFFFFF;
@@ -16,7 +18,19 @@ $colorDisable: #818C99;
 $colorRegularFont: #000000;
 $colorApprove: #00A99D;
 
+//Fonts
 
-//fonts
+
 $fontFamily: 'Golos Text', sans-serif;
 $fontWeight: 400;
+
+$fontFamilyNormal:GolosNormal;
+$fontFamilyBold:GolosBold;
+
+$fontSizeLarge: 24px;
+$fontSizeMedium: 16px;
+$fontSizeSmall: 12px;
+
+
+$colorCheckboxDisabled: #B8C1CC;
+
