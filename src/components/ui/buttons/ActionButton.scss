@@ -1,0 +1,83 @@
+@import '../../../constants/scss-variables.scss';
+
+.button {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+//round
+.button--icon {
+  border: 1px solid $colorMain;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.button--small {
+  width: 32px;
+  height: 32px;
+  border: 1px solid $colorDisable;
+}
+
+.button--medium {
+  width: 53px;
+  height: 53px;
+}
+
+.button--large {
+  width: 82px;
+  height: 82px;
+  border: 0.5px solid $colorBgc;
+}
+ 
+.button--dark {
+  background-color: $colorMain;
+  color: $colorBgcPopup;
+}
+
+.button--light {
+  background-color: $colorBgcPopup;
+  color: $colorMain;
+}
+
+//square
+.button--text {
+  height: 30px;
+  padding: 8px 16px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $colorMain;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.button--dark:hover {
+  background-color: $colorBtnFirst;
+  color: $colorBgc;
+}
+
+.button--light:hover {
+  background-color: $colorBtnFirst;
+  color: $colorBgc;
+}
+
+.button--dark:disabled {
+  background-color: $colorDisable; //grey
+  color: $colorBgcPopup;
+}
+
+.button--light:disabled {
+  background-color: $colorBgcPopup;
+  border: 1px solid $colorSupport;
+  color: $colorSupport;
+}
