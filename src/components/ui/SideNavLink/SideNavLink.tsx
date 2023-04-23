@@ -37,11 +37,11 @@ export default function SideNavLink({path, type, visible}: ISideNavLink) {
   return (
     <>
       {visible && 
-      <div>
-        <Link to={path} className='nav_link'>
+      <div className='nav_link'>
+        {/* <Link to={path} className='nav_link'> */}
           <div className={`nav_link_image nav_link_image_${type}`}/>
           <p className='nav_link_text'>{text}</p>
-        </Link>
+        {/* </Link> */}
       </div>
       }
     </>
