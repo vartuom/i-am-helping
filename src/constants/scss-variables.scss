@@ -22,5 +22,18 @@ $fontSizeLarge: 24px;
 $fontSizeMedium: 16px;
 $fontSizeSmall: 12px;
 
+//Breakpoints
+$dekstopWidth: 1440px;
+$mobileWidth: 414px;
+
+//Под комментарием  значения для будущего, возможного адаптива
+//https://www.spargo.ru/development-blog/scss-breakpoints/ - откуда был взят пример реализации
+$breakpoints: (
+    sm: $mobileWidth,
+    // md: 768px,
+    // lg: 1024px,
+    xl: $dekstopWidth,
+);
+
 
 $colorCheckboxDisabled: #B8C1CC;
