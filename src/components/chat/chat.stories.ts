@@ -12,9 +12,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
+            person_img: "fotoVolonter",
             person_name: "Иванов Иван Иванович",
             phone: "+7(000) 000-00-00",
-            photo: "fotoVolonter",
             messages: "Привет"
     },
 };

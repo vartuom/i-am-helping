@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import chat from "./chat.module.scss";
-import {Button} from "../../stories/Button";
+//import {Button} from "../../stories/Button";
 
 interface IChatProps {
     person_name: string | null;
@@ -22,12 +22,12 @@ const Chat = ({person_name, phone, person_img}: IChatProps) => {
                     <p className={chat.number}>{phone}</p>
                 </div>
 
-                <Button
-                    backgroundColor="#FBFDFF"
-                    label="Button"
-                    onClick={() => {}}
-                    size="small"
-                />
+                {/*<Button*/}
+                {/*    backgroundColor="#FBFDFF"*/}
+                {/*    label="Button"*/}
+                {/*    onClick={() => {}}*/}
+                {/*    size="small"*/}
+                {/*/>*/}
             </div>
         </div>
     )
