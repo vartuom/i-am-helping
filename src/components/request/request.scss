@@ -1,4 +1,5 @@
 @import '../../constants/scss-variables.scss';
+@import '../../constants/scss-mixins.scss';
 
 .main {
   display: grid;
@@ -6,15 +7,25 @@
   grid-template-columns: 169px 450px 249px 41px;
   grid-template-areas:
     "category ....... person button"
-    "date contentHeader person button"
+    "wrapperTimeAddress contentHeader person button"
     "wrapperTimeAddress contentText  person button"
     "wrapperTimeAddress contentText person button"
     "wrapperTimeAddress contentBalls person button";
 
-
-  $fontSizeLarge: 24px;
-  $fontSizeMedium: 16px;
-  $fontSizeSmall: 12px;
+  @include from('sm') {
+    column-gap: 0px;
+    grid-template-columns: 320px 60px;
+    grid-template-areas:
+      "category button"
+      "person button"
+      "contentHeader button"
+      "contentText button"
+      "....... contentBalls"
+      "itemBreaker itemBreaker"
+      "wrapperTimeAddress wrapperTimeAddress";
+    border: 1px solid $colorBorder;
+    min-width: 380px;
+  }
 
   .category {
     grid-area: category;
@@ -24,39 +35,11 @@
     font-family: $fontFamily;
     font-weight: $fontWeight;
     font-size: $fontSizeSmall;
-    font-style: $fontFamilyNormal;
     line-height: 15px;
     color: $colorBgcPopup;
     padding-left: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
-  }
-
-  .date {
-    grid-area: date;
-    display: flex;
-    gap: 5px;
-    flex-direction: row;
-    margin-top: 10px;
-
-    .dateImg {
-      background-image: url(../../images/calendar.svg);
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 17px;
-      width: 17px;
-      align-self: center;
-
-    }
-
-    .dateText {
-      font-family: $fontFamily;
-      font-weight: $fontWeight;
-      font-size: $fontSizeLarge;
-      font-style: $fontFamilyNormal;
-      line-height: 29px;
-      color: $colorMain;
-    }
   }
 
   .wrapperTimeAddress {
@@ -65,6 +48,51 @@
     gap: 10px;
     flex-direction: column;
     margin-top: 10px;
+
+    @include from('sm') {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0px;
+    }
+
+    .date {
+      grid-area: date;
+      display: flex;
+      gap: 5px;
+      flex-direction: row;
+      margin-right: 0px;
+      margin-left: 2px;
+
+      @include from('sm') {
+        margin-right: 40px;
+        margin-left: 8px;
+      }
+
+      .dateImg {
+        background-image: url(../../images/calendar.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 17px;
+        width: 17px;
+        align-self: center;
+
+      }
+
+      .dateText {
+        font-family: $fontFamily;
+        font-weight: $fontWeight;
+        font-size: $fontSizeLarge;
+        line-height: 29px;
+        color: $colorMain;
+
+        @include from('sm') {
+          font-family: $fontFamilyBold;
+          font-size: $fontSizeMedium;
+        }
+      }
+    }
+
+
 
     .time {
       display: flex;
@@ -86,9 +114,13 @@
         font-family: $fontFamily;
         font-weight: $fontWeight;
         font-size: $fontSizeSuperLarge;
-        font-style: $fontFamilyNormal;
         line-height: 29px;
         color: $colorMain;
+
+        @include from('sm') {
+          font-family: $fontFamilyBold;
+          font-size: $fontSizeMedium;
+        }
       }
     }
 
@@ -97,6 +129,15 @@
       gap: 5px;
       flex-direction: row;
       align-self: start;
+      margin-top: 0px;
+      margin-bottom: 0px;
+
+      @include from('sm') {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 8px;
+
+      }
 
       .addressImg {
         background-image: url(../../images/location.svg);
@@ -111,9 +152,13 @@
         font-family: $fontFamily;
         font-weight: $fontWeight;
         font-size: $fontSizeMedium;
-        font-style: $fontFamilyNormal;
         line-height: 19px;
         color: $colorMain;
+
+        @include from('sm') {
+          font-family: $fontFamilyBold;
+          font-size: $fontSizeMedium;
+        }
       }
     }
   }
@@ -123,10 +168,14 @@
     font-family: $fontFamily;
     font-weight: $fontWeight;
     font-size: $fontSizeLarge;
-    font-style: $fontFamilyNormal;
     line-height: 29px;
     color: $colorSupport;
     margin-top: 10px;
+
+    @include from('sm') {
+      margin-top: 20px;
+      margin-left: 8px;
+    }
   }
 
   .contentTextWrapper {
@@ -139,8 +188,13 @@
       font-family: $fontFamily;
       font-weight: $fontWeight;
       font-size: $fontSizeMedium;
-      font-style: $fontFamilyNormal;
       line-height: 19px;
+
+      @include from('sm') {
+        line-height: 29px;
+        margin-left: 8px;
+      }
+
       color: $colorRegularFont;
       display: -webkit-box;
       -webkit-line-clamp: 3;
@@ -161,7 +215,6 @@
         font-family: $fontFamily;
         font-weight: $fontWeight;
         font-size: $fontSizeMedium;
-        font-style: $fontFamilyNormal;
         line-height: 19px;
         color: $colorMain;
       }
@@ -174,6 +227,12 @@
     gap: 5px;
     flex-direction: row;
     margin-top: 28px;
+    margin-bottom: 0px;
+
+    @include from('sm') {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
 
     .contentBallsImg {
       background-image: url(../../images/balls.svg);
@@ -188,47 +247,83 @@
       font-family: $fontFamily;
       font-weight: $fontWeight;
       font-size: $fontSizeSmall;
-      font-style: $fontFamilyNormal;
       line-height: 14px;
       color: $colorMain;
       align-self: center;
     }
   }
 
+  .itemBreaker {
+    grid-area: itemBreaker;
+    display: none;
+
+    @include from('sm') {
+      display: block;
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #2E3192 49.28%, rgba(255, 255, 255, 0) 100%);
+      margin-top: 1px;
+      margin-bottom: 5px;
+    }
+  }
 
   .person {
     grid-area: person;
     display: flex;
     flex-direction: column;
+    margin-top: 5px;
 
+    @include from('sm') {
+      display: grid;
+      grid-template-areas:
+        "personImg personName"
+        "personImg personPhone"
+        "personContact personContact";
+      margin-left: 8px;
+      margin-top: 15px;
+      ;
+    }
 
     .personImg {
+      grid-area: personImg;
       background-image: url(../../images/recipient.png);
       border-radius: 50%;
       background-repeat: no-repeat;
       background-position: center;
       height: 100px;
       width: 100px;
+      background-size: 100px 100px;
       align-self: center;
-      margin-top: 5px;
+
+
+      @include from('sm') {
+        height: 60px;
+        width: 60px;
+        background-size: 60px 60px;
+      }
     }
 
     .personName {
+      grid-area: personName;
       font-family: $fontFamily;
       font-weight: $fontWeight;
       font-size: $fontSizeMedium;
-      font-style: $fontFamilyNormal;
       line-height: 19px;
+
+      @include from('sm') {
+        line-height: 24px;
+      }
+
       color: $colorRegularFont;
       align-self: center;
       margin-top: 2px;
     }
 
     .personPhone {
+      grid-area: personPhone;
       font-family: $fontFamily;
       font-weight: $fontWeight;
       font-size: $fontSizeMedium;
-      font-style: $fontFamilyNormal;
       line-height: 19px;
       color: $colorMain;
       align-self: center;
@@ -236,11 +331,16 @@
     }
 
     .personContact {
+      grid-area: personContact;
       display: flex;
       flex-direction: row;
       align-self: center;
       margin-top: 8px;
       gap: 8px;
+
+      @include from('sm') {
+        justify-self: center;
+      }
 
       .personCall {
         background-image: url(../../images/phone.svg);
@@ -289,7 +389,7 @@
       background-position: center;
       clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 6.25% 100%);
       background-image: url(../../images/close.svg);
-      align-self: center;
+      align-self: self-end;
 
       &:hover {
         background-color: $colorMain;
@@ -298,6 +398,7 @@
 
 
     .buttonApprove {
+      display: block;
       width: 32px;
       height: 32.5px;
       background: $colorApprove;
@@ -307,6 +408,10 @@
       background-image: url(../../images/approve.svg);
       align-self: center;
       margin-top: 55px;
+
+      @include from('sm') {
+        display: none;
+      }
     }
   }
 }
