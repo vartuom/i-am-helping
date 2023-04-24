@@ -9,6 +9,10 @@ const TestPage = () => {
             Привет, я тут из Роута :) Ссылки делаются <NavLink to="/anotherTestPage"> так</NavLink>.
         </div>
         <Example />
+        <button>Волонтёр</button>
+        <button>Реципиент</button>
+        <button>Администратор</button>
+        <button>Главный администратор</button>
         </>
     );
 };

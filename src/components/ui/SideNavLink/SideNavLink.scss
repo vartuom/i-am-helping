@@ -1,0 +1,52 @@
+@import '../../../constants/scss-variables.scss';
+
+.nav_link {
+  display: flex;
+  box-sizing: border-box;
+  padding: 30px;
+  align-items: center;
+  height: 113px;
+  background-color: $colorMain;
+  text-decoration: none;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  &_image {
+    width: 43px;
+    height: 50px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    &_map {
+      background-image: url('../../../images/applications_map_white.svg');
+    }
+    &_active {
+      background-image: url('../../../images/active_applications_white.svg');
+    }
+    &_completed {
+      background-image: url('../../../images/completed_applications_white.svg');
+    }
+    &_approve {
+      background-image: url('../../../images/approve_block_white.svg');
+    }
+    &_statistics {
+      background-image: url('../../../images/statistics_white.svg');
+    }
+    &_create {
+      background-image: url('../../../images/create_edit_white.svg');
+    }
+  }
+  &_text {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #fff;
+    text-align: left;
+  }
+}
+
+.nav_link:hover {
+  background-color: $colorBtnFirst;
+}
