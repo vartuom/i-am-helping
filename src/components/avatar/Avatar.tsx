@@ -1,4 +1,4 @@
-import s from './avatar.component.module.scss';
+import s from './Avatar.module.scss';
 
 interface IAvatarProps {
   size: number,

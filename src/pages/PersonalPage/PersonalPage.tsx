@@ -1,4 +1,4 @@
-import { Avatar } from '../../components/avatar/avatar.component'
+import { Avatar } from '../../components/avatar/Avatar'
 import NewApplication from '../../components/new-application/NewApplication'
 import './PersonalPage.scss'
 
