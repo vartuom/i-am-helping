@@ -5,4 +5,4 @@ export default {
     title: 'Icons/Statistics Icon',
 };
 
-export const Default = () => <StatisticsIcon/>
+export const Default = () => <StatisticsIcon type="blue"/>

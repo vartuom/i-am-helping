@@ -5,4 +5,4 @@ export default {
     title: 'Icons/Arrow Icon',
 };
 
-export const Default = () => <ArrowIcon type="icon"/>
+export const Default = () => <ArrowIcon type="blue"/>

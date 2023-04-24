@@ -18,7 +18,7 @@ export const PhoneButton: Story = {
     color: "dark",
     type: "button",
     hasBorder: true,
-    icon: <PhoneIcon type="button" />
+    icon: <PhoneIcon type="white" />
   }
 }
 
@@ -29,7 +29,7 @@ export const MessageButton: Story = {
     color: "dark",
     type: "button",
     hasBorder: true,
-    icon: <EmptyMessageIcon type="button" />
+    icon: <EmptyMessageIcon type="white" />
   }
 }
 
@@ -101,7 +101,7 @@ export const SearchButton: Story = {
   args: {
     figure: "search",
     type: "button",
-    icon: <ArrowIconBig type="button"/>,
+    icon: <ArrowIconBig type="white"/>,
     label: "Пoиск"
   },
 };
