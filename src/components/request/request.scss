@@ -1,0 +1,312 @@
+@import '../../constants/scss-variables.scss';
+
+.main {
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: 169px 450px 249px 41px;
+  grid-template-areas:
+    "category ....... person button"
+    "date contentHeader person button"
+    "wrapperTimeAddress contentText  person button"
+    "wrapperTimeAddress contentText person button"
+    "wrapperTimeAddress contentBalls person button";
+
+
+  $fontSizeLarge: 24px;
+  $fontSizeMedium: 16px;
+  $fontSizeSmall: 12px;
+
+  .category {
+    grid-area: category;
+    width: 169px;
+    background: $colorSupport;
+    clip-path: polygon(0% 0%, 100% 28%, 92% 100%, 0% 100%);
+    font-family: $fontFamily;
+    font-weight: $fontWeight;
+    font-size: $fontSizeSmall;
+    font-style: $fontFamilyNormal;
+    line-height: 15px;
+    color: $colorBgcPopup;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .date {
+    grid-area: date;
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    margin-top: 10px;
+
+    .dateImg {
+      background-image: url(../../images/calendar.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 17px;
+      width: 17px;
+      align-self: center;
+
+    }
+
+    .dateText {
+      font-family: $fontFamily;
+      font-weight: $fontWeight;
+      font-size: $fontSizeLarge;
+      font-style: $fontFamilyNormal;
+      line-height: 29px;
+      color: $colorMain;
+    }
+  }
+
+  .wrapperTimeAddress {
+    grid-area: wrapperTimeAddress;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    margin-top: 10px;
+
+    .time {
+      display: flex;
+      gap: 5px;
+      flex-direction: row;
+      align-self: start;
+
+      .timeImg {
+        background-image: url(../../images/clock.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 17px;
+        width: 17px;
+        align-self: center;
+
+      }
+
+      .timeText {
+        font-family: $fontFamily;
+        font-weight: $fontWeight;
+        font-size: $fontSizeSuperLarge;
+        font-style: $fontFamilyNormal;
+        line-height: 29px;
+        color: $colorMain;
+      }
+    }
+
+    .address {
+      display: flex;
+      gap: 5px;
+      flex-direction: row;
+      align-self: start;
+
+      .addressImg {
+        background-image: url(../../images/location.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 19px;
+        width: 14px;
+        align-self: center;
+      }
+
+      .addressText {
+        font-family: $fontFamily;
+        font-weight: $fontWeight;
+        font-size: $fontSizeMedium;
+        font-style: $fontFamilyNormal;
+        line-height: 19px;
+        color: $colorMain;
+      }
+    }
+  }
+
+  .contentHeader {
+    grid-area: contentHeader;
+    font-family: $fontFamily;
+    font-weight: $fontWeight;
+    font-size: $fontSizeLarge;
+    font-style: $fontFamilyNormal;
+    line-height: 29px;
+    color: $colorSupport;
+    margin-top: 10px;
+  }
+
+  .contentTextWrapper {
+    grid-area: contentText;
+    display: flex;
+    flex-direction: row;
+
+    .contentText {
+
+      font-family: $fontFamily;
+      font-weight: $fontWeight;
+      font-size: $fontSizeMedium;
+      font-style: $fontFamilyNormal;
+      line-height: 19px;
+      color: $colorRegularFont;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .contentRead {
+
+      align-self: self-end;
+      padding-bottom: 3px;
+
+      .link {
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        font-family: $fontFamily;
+        font-weight: $fontWeight;
+        font-size: $fontSizeMedium;
+        font-style: $fontFamilyNormal;
+        line-height: 19px;
+        color: $colorMain;
+      }
+    }
+  }
+
+  .contentBalls {
+    grid-area: contentBalls;
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    margin-top: 28px;
+
+    .contentBallsImg {
+      background-image: url(../../images/balls.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 35px;
+      width: 46px;
+      align-self: center;
+    }
+
+    .contentBallsCount {
+      font-family: $fontFamily;
+      font-weight: $fontWeight;
+      font-size: $fontSizeSmall;
+      font-style: $fontFamilyNormal;
+      line-height: 14px;
+      color: $colorMain;
+      align-self: center;
+    }
+  }
+
+
+  .person {
+    grid-area: person;
+    display: flex;
+    flex-direction: column;
+
+
+    .personImg {
+      background-image: url(../../images/recipient.png);
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100px;
+      width: 100px;
+      align-self: center;
+      margin-top: 5px;
+    }
+
+    .personName {
+      font-family: $fontFamily;
+      font-weight: $fontWeight;
+      font-size: $fontSizeMedium;
+      font-style: $fontFamilyNormal;
+      line-height: 19px;
+      color: $colorRegularFont;
+      align-self: center;
+      margin-top: 2px;
+    }
+
+    .personPhone {
+      font-family: $fontFamily;
+      font-weight: $fontWeight;
+      font-size: $fontSizeMedium;
+      font-style: $fontFamilyNormal;
+      line-height: 19px;
+      color: $colorMain;
+      align-self: center;
+      margin-top: 4px;
+    }
+
+    .personContact {
+      display: flex;
+      flex-direction: row;
+      align-self: center;
+      margin-top: 8px;
+      gap: 8px;
+
+      .personCall {
+        background-image: url(../../images/phone.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: $colorMain;
+        border-radius: 50%;
+        border: 1px solid $colorDisable;
+        height: 32px;
+        width: 32px;
+        align-self: center;
+
+        &:hover {
+          background-color: $colorBtnSecond;
+        }
+      }
+
+      .personChat {
+        background-image: url(../../images/chat.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: $colorMain;
+        border-radius: 50%;
+        border: 1px solid $colorDisable;
+        height: 32px;
+        width: 32px;
+        align-self: center;
+
+        &:hover {
+          background-color: $colorBtnSecond;
+        }
+      }
+    }
+  }
+
+  .button {
+    grid-area: button;
+    display: flex;
+    flex-direction: column;
+
+    .buttonClose {
+      width: 32px;
+      height: 32.5px;
+      background-color: $colorSupport;
+      background-repeat: no-repeat;
+      background-position: center;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 6.25% 100%);
+      background-image: url(../../images/close.svg);
+      align-self: center;
+
+      &:hover {
+        background-color: $colorMain;
+      }
+    }
+
+
+    .buttonApprove {
+      width: 32px;
+      height: 32.5px;
+      background: $colorApprove;
+      background-repeat: no-repeat;
+      background-position: center;
+      clip-path: polygon(6.25% 0%, 100% 15%, 100% 100%, 0% 100%);
+      background-image: url(../../images/approve.svg);
+      align-self: center;
+      margin-top: 55px;
+    }
+  }
+}
