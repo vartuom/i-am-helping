@@ -82,3 +82,11 @@
   border: 1px solid $colorSupport;
   color: $colorSupport;
 }
+
+.button-close {
+  width: 32px;
+  height: 32px;
+  background-image: url('../../../images/icons/close_figure-icon35.svg');
+  background-color: $colorSupport;
+  overflow: hidden;
+}

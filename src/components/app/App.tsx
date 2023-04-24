@@ -3,14 +3,15 @@ import {Link, Route, Routes} from "react-router-dom";
 import TestPage from "../../pages/testPage";
 import AnotherTestPage from "../../pages/anotherTestPage";
 import PersonalPage from '../../pages/PersonalPage/PersonalPage';
-import { ActionButton } from '../ui/buttons/ActionButton';
+import { Button } from '../ui/buttons/Button';
 import { MessageIcon, PhoneIcon } from '../ui/icons/icons';
 
 
 function App() {
   return (
     <div className="App">
-      <ActionButton variant="icon" size="small" color="light" icon={<MessageIcon/>}/>
+      <Button variant="icon" size="small" color="light" icon={<MessageIcon/>}/>
+      <Button figure="close" />
       <nav className='header'>
         <Link to='/'>Главная</Link>
         <Link to='/anotherTestPage'>Тестовая страница</Link>

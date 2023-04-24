@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button } from './Button';
+//import { Button } from './Button';
 import './header.css';
 
 type User = {
@@ -36,7 +36,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
         </svg>
         <h1>Acme</h1>
       </div>
-      <div>
+      {/* <div>
         {user ? (
           <>
             <span className="welcome">
@@ -50,7 +50,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
             <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
           </>
         )}
-      </div>
+      </div> */}
     </div>
   </header>
 );
