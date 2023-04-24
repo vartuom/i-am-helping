@@ -11,8 +11,8 @@
     overflow: hidden; /* без этого свойства тоже сработает, но так наверняка. */
     clip-path: inset(0 0 0 0);
     &:checked + .checkbox__customBox {
-      border: 3px solid scss-variables.$colorMain;
-      background: scss-variables.$colorMain url("../../images/icons/check-mark-white.svg") center/contain no-repeat;
+    border: 3px solid scss-variables.$colorMain;
+    background: scss-variables.$colorMain url("../../images/icons/check-mark-white.svg") center/contain no-repeat;
     }
     &:disabled ~ .checkbox__customBox {
       opacity: 0.5;

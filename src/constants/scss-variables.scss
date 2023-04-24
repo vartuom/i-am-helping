@@ -1,19 +1,48 @@
+@import '../fonts/fonts.scss';
 //Colors
 
-$colorMain: #2E3192 ;
+$colorMain: #2E3192;
 $colorSupport: #9798C9;
 
 $colorBtnFirst: #0071BC;
 $colorBtnSecond: #0091C7;
-$colorBtnThird: #0091C7 ;
 
-$colorBgc:#FBFDFF;
+$colorBtnThird: #00A99D;
+
+
+$colorBgc: #FBFDFF;
 $colorBgcPopup: #FFFFFF;
 $colorBgcGradient: linear-gradient(90deg, #FFFFFF 0%, #2E3192 50%, #FFFFFF 100%);
+$colorBgcActiveSelect: #0d6efd;
+$colorBgcHover:#9fc3f870;
 
 $colorDisable: #818C99;
+$colorRegularFont: #000000;
+$colorApprove: #00A99D;
+
+//fonts
+$fontFamily: 'Golos Text', sans-serif;
+$fontWeight: 400;
+$fontFamilyNormal: GolosNormal;
+$fontFamilyBold: GolosBold;
+
+$fontSizeSuperLarge: 29px;
+$fontSizeLarge: 24px;
+$fontSizeMedium: 16px;
+$fontSizeSmall: 12px;
+
+//Breakpoints
+$dekstopWidth: 1440px;
+$mobileWidth: 414px;
+
+//Под комментарием  значения для будущего, возможного адаптива
+//https://www.spargo.ru/development-blog/scss-breakpoints/ - откуда был взят пример реализации
+$breakpoints: (
+    sm: $mobileWidth,
+    // md: 768px,
+    // lg: 1024px,
+    xl: $dekstopWidth,
+);
+
 
 $colorCheckboxDisabled: #B8C1CC;
-
-
-
