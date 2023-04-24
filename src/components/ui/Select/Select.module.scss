@@ -32,11 +32,11 @@
 }
 
 .dropdown_item:hover {
-	background-color: #9fc3f870;
+	background-color: $colorBgcHover;
 }
 
 .dropdown_item.selected {
-	background-color: #0d6efd;
+	background-color: $colorBgcActiveSelect;
 	color: $colorBgcPopup;
 }
 
