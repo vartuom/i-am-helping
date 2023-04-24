@@ -9,9 +9,19 @@ import PersonalPage from '../../pages/PersonalPage/PersonalPage';
 function App() {
   return (
     <div className="App">
+<<<<<<< HEAD
       {/* <AppHeader/> */}
       
       {/* Временнный хэдер. Удалить после создания целевого компонента */}
+=======
+      <Button variant="icon" size="small" color="light" icon={<MessageIcon/>}/>
+      <Button figure="close" icon={<CrossIcon/>} />
+      <Button figure="edit" icon={<EditIcon/>} />
+      <Button figure="search" icon={<ArrowIconBig type="button"/>} label="Пoиск" />
+      <Button animated="excel" />
+     
+
+>>>>>>> bfdb1e0 (added excel button)
       <nav className='header'>
         <Link to='/'>Главная</Link>
         <Link to='/anotherTestPage'>Тестовая страница</Link>

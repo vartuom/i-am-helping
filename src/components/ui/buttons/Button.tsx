@@ -13,6 +13,7 @@ interface ButtonProps {
   icon?: React.ReactNode;
   figure?: "close" | "edit" | "search";
   hasBorder?: boolean;
+  animated?: "excel" | "wheel";
 }
 
 export const Button = ({
@@ -23,6 +24,7 @@ export const Button = ({
   label,
   figure,
   hasBorder,
+  animated,
   type = "button",
   ...props
 }: ButtonProps) => {
@@ -31,10 +33,11 @@ export const Button = ({
   const colorType = color === "dark" ? "button-dark" : color === "light" ?  "button-light" : color === "light-dark" ? "button-lightdark" : color === "grey" ? "button-grey" : "";
   const figureType = figure === "close" ? "button-close" : figure === "edit" ? "button-edit" : figure === "search" ? "button-search" : "";
   const borderType = hasBorder ? "button-bordered" : "";
+  const animatedType = animated === "excel" ? "button-excel" : "button-wheel";
 
   return (
     <button
-      className={['button', variantType, figureType, sizeType, colorType, borderType].join(' ')}
+      className={['button', variantType, figureType, sizeType, colorType, borderType, animatedType].join(' ')}
       {...props}
     >
       {icon}
