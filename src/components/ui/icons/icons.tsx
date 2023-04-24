@@ -10,6 +10,7 @@ import { AcceptBlockIcon } from "./accept-block-icon/accept-block-icon";
 import { EmptyMessageIcon } from "./empty-message/empty-message-icon";
 import { SettingIcon } from "./setting-icon/setting-icon";
 import { ArrowIcon } from "./arrow-icon/arrow-icon";
+import { ArrowIconBig } from "./arrow-icon-big/arrow-icon-big";
 import { ActiveApplicationIcon } from "./active-application-icon/active-application-icon";
 import { CompletedApplicationIcon } from "./completed-application-icon/completed-application-icon";
 import { FilterIcon } from "./filter-icon/filter-icon";
@@ -44,6 +45,7 @@ export {
     EmptyMessageIcon,
     SettingIcon,
     ArrowIcon,
+    ArrowIconBig,
     ActiveApplicationIcon,
     CompletedApplicationIcon,
     FilterIcon,

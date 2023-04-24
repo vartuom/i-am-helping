@@ -105,5 +105,38 @@
 }
 
 .button-close:hover {
-  background-color: $colorMain;
+  background-image: url('../../../images/cross-button-background-hover.svg');
+}
+
+.button-edit {
+  border: none;
+  width: 32px;
+  height: 32.5px;
+  background-image: url('../../../images/edit_figure-icon.svg');
+  background-color: $colorBgc;
+  overflow: hidden;
+}
+
+.button-edit:hover {
+  background-image: url('../../../images/edit_figure-icon-hover.svg');
+}
+
+.button-search {
+  border: none;
+  width: 169px;
+  height: 32.5px;
+  background-image: url('../../../images/rectangle-figure-big.svg');
+  background-color: $colorBgc;
+  overflow: hidden;
+  color: $colorBgc;
+  padding: 9px;
+  justify-content: left;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 31px 42px;
+  column-gap: 10px;
+}
+
+.button-search:hover {
+  background-image: url('../../../images/rectangle-figure-big-hover.svg');
 }

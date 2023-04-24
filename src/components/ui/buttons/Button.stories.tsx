@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
-import { EmptyMessageIcon, LocationOnMapIcon, PhoneIcon, AddIcon } from '../icons/icons';
+import { EmptyMessageIcon, LocationOnMapIcon, PhoneIcon, AddIcon, CrossIcon, EditIcon, ArrowIconBig } from '../icons/icons';
 
 const meta = {
   title: 'Button',
@@ -80,4 +80,30 @@ export const AddButtonSmaller: Story = {
     icon: <AddIcon />,
   },
 };
+
+export const CloseButton: Story = {
+  args: {
+    figure: "close",
+    type: "button",
+    icon: <CrossIcon />,
+  },
+};
+
+export const EditButton: Story = {
+  args: {
+    figure: "edit",
+    type: "button",
+    icon: <EditIcon />,
+  },
+};
+
+export const SearchButton: Story = {
+  args: {
+    figure: "search",
+    type: "button",
+    icon: <ArrowIconBig type="button"/>,
+    label: "Пoиск"
+  },
+};
+
 
