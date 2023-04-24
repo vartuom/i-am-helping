@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ActionButton } from './ActionButton';
-import { EditIcon, PhoneIcon } from '../icons/icons';
+import { Button } from './Button';
+import { EditIcon, LocationOnMapIcon, PhoneIcon } from '../icons/icons';
 
 const meta = {
-  title: 'Buttons/ActionButton',
-  component: ActionButton,
+  title: 'Button',
+  component: Button,
   tags: ['autodocs'],
-} satisfies Meta<typeof ActionButton>;
+} satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -37,5 +37,25 @@ export const IconButton: Story = {
     color: "dark",
     type: "button",
     icon: <EditIcon />,
+  },
+};
+
+export const LocationButtonBig: Story = {
+  args: {
+    variant: "icon",
+    size: "medium",
+    color: "dark",
+    type: "button",
+    icon: <LocationOnMapIcon />,
+  },
+};
+
+export const AddButton: Story = {
+  args: {
+    variant: "icon",
+    size: "medium",
+    color: "dark",
+    type: "button",
+    icon: <LocationOnMapIcon />,
   },
 };
