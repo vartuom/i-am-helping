@@ -17,7 +17,7 @@ function App() {
       <Button variant="icon" size="small" color="light" icon={<MessageIcon/>}/>
       <Button figure="close" icon={<CrossIcon/>} />
       <Button figure="edit" icon={<EditIcon/>} />
-      <Button figure="search" icon={<ArrowIconBig type="button"/>} label="Пoиск" />
+      <Button figure="search" icon={<ArrowIconBig type="white"/>} label="Пoиск" />
       <Button animated="excel" />
      
 

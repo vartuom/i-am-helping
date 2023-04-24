@@ -1,7 +1,7 @@
 import React from 'react';
 import './Button.scss';
 
-interface ButtonProps {
+interface IButtonProps {
   variant?: "icon" | "text";
   size?: "small" | "medium" | "extra-medium" | "large";
   color?: "light" | "dark" | "grey" | "light-dark";
@@ -28,7 +28,7 @@ export const Button = ({
   type = "button",
   children,
   ...props
-}: ButtonProps) => {
+}: IButtonProps) => {
   const variantType = variant === "icon" ? "button-icon" : variant === "text" ? "button-text" : "";
   const sizeType = size === "small" ? "button-small" : size === "medium" ?  "button-medium" : size === "large" ? "button-large" : size === "extra-medium" ? "button-extra-medium" : "";
   const colorType = color === "dark" ? "button-dark" : color === "light" ?  "button-light" : color === "light-dark" ? "button-lightdark" : color === "grey" ? "button-grey" : "";

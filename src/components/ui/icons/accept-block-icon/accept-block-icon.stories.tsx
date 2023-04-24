@@ -5,4 +5,4 @@ export default {
     title: 'Icons/Accept&Block Icon',
 };
 
-export const Default = () => <AcceptBlockIcon/>
+export const Default = () => <AcceptBlockIcon type="blue"/>

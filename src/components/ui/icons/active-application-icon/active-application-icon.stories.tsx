@@ -5,4 +5,4 @@ export default {
     title: 'Icons/Active Application Icon',
 };
 
-export const Default = () => <ActiveApplicationIcon/>
+export const Default = () => <ActiveApplicationIcon type="blue"/>

@@ -5,4 +5,4 @@ export default {
     title: 'Icons/Application Map Icon',
 };
 
-export const Default = () => <ApplicationMapIcon/>
+export const Default = () => <ApplicationMapIcon type="blue"/>
