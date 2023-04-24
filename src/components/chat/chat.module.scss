@@ -10,8 +10,32 @@
   display: grid;
 }
 
-.wrapper {
-  display: flex;
+.profile {
 
+}
+
+.img {
+  min-width: 52px;
+  min-height: 52px;
+}
+
+.initials {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+}
+
+.number {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
 }
 
