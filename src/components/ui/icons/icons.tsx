@@ -29,6 +29,7 @@ import { LocationOnMapIcon } from "./location-on-map-icon/location-on-map-icon";
 import { BallsIcon } from "./balls-icon/balls-icon";
 import { KeyIcon } from "./key-icon/key-icon";
 import { FinishedApplicationIcon } from "./finished-application-icon/finished-application-icon";
+import { AddIcon } from "./add-icon/add-icon";
 
 export {
     PersonIcon,
@@ -61,5 +62,6 @@ export {
     LocationOnMapIcon,
     BallsIcon,
     KeyIcon,
-    FinishedApplicationIcon
+    FinishedApplicationIcon,
+    AddIcon
 }

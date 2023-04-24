@@ -5,4 +5,4 @@ export default {
     title: 'Icons/Phone Icon',
 };
 
-export const Default = () => <PhoneIcon/>
+export const Default = () => <PhoneIcon type="icon"/>

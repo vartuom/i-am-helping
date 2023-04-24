@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
-import { EditIcon, LocationOnMapIcon, PhoneIcon } from '../icons/icons';
+import { EmptyMessageIcon, LocationOnMapIcon, PhoneIcon, AddIcon } from '../icons/icons';
 
 const meta = {
   title: 'Button',
@@ -11,6 +11,37 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+export const PhoneButton: Story = {
+  args: {
+    variant: "icon",
+    size: "small",
+    color: "dark",
+    type: "button",
+    hasBorder: true,
+    icon: <PhoneIcon type="button" />
+  }
+}
+
+export const MessageButton: Story = {
+  args: {
+    variant: "icon",
+    size: "small",
+    color: "dark",
+    type: "button",
+    hasBorder: true,
+    icon: <EmptyMessageIcon type="button" />
+  }
+}
+
+export const LocationButtonBig: Story = {
+  args: {
+    variant: "icon",
+    size: "medium",
+    color: "dark",
+    type: "button",
+    icon: <LocationOnMapIcon />,
+  },
+};
 
 export const TextButtonDark: Story = {
   args: {
@@ -30,32 +61,23 @@ export const TextButtonLight: Story = {
   },
 };
 
-export const IconButton: Story = {
-  args: {
-    variant: "icon",
-    size: "small",
-    color: "dark",
-    type: "button",
-    icon: <EditIcon />,
-  },
-};
-
-export const LocationButtonBig: Story = {
-  args: {
-    variant: "icon",
-    size: "medium",
-    color: "dark",
-    type: "button",
-    icon: <LocationOnMapIcon />,
-  },
-};
-
 export const AddButton: Story = {
   args: {
     variant: "icon",
-    size: "medium",
+    size: "large",
     color: "dark",
     type: "button",
-    icon: <LocationOnMapIcon />,
+    icon: <AddIcon />,
   },
 };
+
+export const AddButtonSmaller: Story = {
+  args: {
+    variant: "icon",
+    size: "extra-medium",
+    color: "dark",
+    type: "button",
+    icon: <AddIcon />,
+  },
+};
+

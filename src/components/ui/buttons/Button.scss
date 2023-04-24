@@ -10,9 +10,12 @@
   cursor: pointer;
 }
 
+.button-bordered {
+  border: 1px solid $colorDisable;
+}
+
 //round
 .button-icon {
-  border: 1px solid $colorMain;
   box-sizing: border-box;
   border-radius: 50%;
 }
@@ -20,20 +23,27 @@
 .button-small {
   width: 32px;
   height: 32px;
-  border: 1px solid $colorDisable;
+  box-sizing: border-box;
 }
 
 .button-medium {
   width: 53px;
   height: 53px;
+  border: none;
+}
+
+.button-extra-medium {
+  width: 60px;
+  height: 60px;
+  border: none;
 }
 
 .button-large {
   width: 82px;
   height: 82px;
-  border: 0.5px solid $colorBgc;
+  border: none;
 }
- 
+
 .button-dark {
   background-color: $colorMain;
   color: $colorBgcPopup;
@@ -65,6 +75,7 @@
 .button-dark:hover {
   background-color: $colorBtnFirst;
   color: $colorBgc;
+  border: none;
 }
 
 .button-light:hover {
@@ -75,6 +86,7 @@
 .button-dark:disabled {
   background-color: $colorDisable; //grey
   color: $colorBgcPopup;
+  border: none;
 }
 
 .button-light:disabled {
@@ -84,9 +96,14 @@
 }
 
 .button-close {
+  border: none;
   width: 32px;
-  height: 32px;
-  background-image: url('../../../images/icons/close_figure-icon35.svg');
-  background-color: $colorSupport;
+  height: 32.5px;
+  background-image: url('../../../images/cross-button-background.svg');
+  background-color: $colorBgc;
   overflow: hidden;
+}
+
+.button-close:hover {
+  background-color: $colorMain;
 }
