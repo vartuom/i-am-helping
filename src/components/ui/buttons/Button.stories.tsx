@@ -113,3 +113,9 @@ export const ExcelButton: Story = {
   },
 };
 
+export const SettingButton: Story = {
+  args: {
+    animated: "wheel",
+    type: "button"
+  }
+}

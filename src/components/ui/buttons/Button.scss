@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  border: none;
   cursor: pointer;
 }
 
@@ -29,30 +30,30 @@
 .button-medium {
   width: 53px;
   height: 53px;
-  border: none;
 }
 
 .button-extra-medium {
   width: 60px;
   height: 60px;
-  border: none;
 }
 
 .button-large {
   width: 82px;
   height: 82px;
-  border: none;
 }
 
 .button-dark {
   background-color: $colorMain;
   color: $colorBgcPopup;
   z-index: -1;
+  transition: .3s;
 }
 
 .button-light {
   background-color: $colorBgcPopup;
   color: $colorMain;
+  transition: .3s;
+  border: 1px solid $colorMain;
 }
 
 //square
@@ -63,7 +64,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid $colorMain;
   box-sizing: border-box;
   text-align: center;
   cursor: pointer;
@@ -75,7 +75,7 @@
 .button-dark:hover {
   background-color: $colorBtnFirst;
   color: $colorBgc;
-  border: none;
+
 }
 
 .button-light:hover {
@@ -86,7 +86,6 @@
 .button-dark:disabled {
   background-color: $colorDisable; //grey
   color: $colorBgcPopup;
-  border: none;
 }
 
 .button-light:disabled {
@@ -99,33 +98,35 @@
   border: none;
   width: 32px;
   height: 32.5px;
-  background-image: url('../../../images/cross-button-background.svg');
+  background-image: url('../../../images/icons/cross-button-background.svg');
   background-color: $colorBgc;
   overflow: hidden;
+  transition: .3s;
 }
 
 .button-close:hover {
-  background-image: url('../../../images/cross-button-background-hover.svg');
+  background-image: url('../../../images/icons/cross-button-background-hover.svg');
 }
 
 .button-edit {
   border: none;
   width: 32px;
   height: 32.5px;
-  background-image: url('../../../images/edit_figure-icon.svg');
+  background-image: url('../../../images/icons/edit_figure-icon.svg');
   background-color: $colorBgc;
   overflow: hidden;
+  transition: .3s;
 }
 
 .button-edit:hover {
-  background-image: url('../../../images/edit_figure-icon-hover.svg');
+  background-image: url('../../../images/icons/edit_figure-icon-hover.svg');
 }
 
 .button-search {
   border: none;
   width: 169px;
   height: 32.5px;
-  background-image: url('../../../images/rectangle-figure-big.svg');
+  background-image: url('../../../images/icons/rectangle-figure-big.svg');
   background-color: $colorBgc;
   overflow: hidden;
   color: $colorBgc;
@@ -135,29 +136,39 @@
   display: grid;
   grid-template-columns: 31px 42px;
   column-gap: 10px;
+  transition: .3s;
 }
 
 .button-search:hover {
-  background-image: url('../../../images/rectangle-figure-big-hover.svg');
+  background-image: url('../../../images/icons/rectangle-figure-big-hover.svg');
 }
 
 .button-excel {
   border: none;
   width: 32px;
   height: 32.5px;
-  background-image: url('../../../images/excel-icon.svg');
+  background-image: url('../../../images/icons/excel-icon.svg');
   background-color: $colorBgc;
   overflow: hidden;
+  transition: .3s;
 }
 
 .button-excel:hover {
-  background-image: url('../../../images/excel-icon-hover.svg');
+  background-image: url('../../../images/icons/excel-icon-hover.svg');
 }
 
 .button-wheel {
-
+  border: none;
+  width: 32px;
+  height: 32.5px;
+  background-image: url('../../../images/icons/wheel-icon.svg');
+  background-color: $colorBgc;
+  background-position: top right;
+  overflow: hidden;
+  transition: .3s;
 }
 
 .button-wheel:hover {
-
+  background-image: url('../../../images/icons/wheel-icon-hover.svg');
+  background-position: bottom left;
 }

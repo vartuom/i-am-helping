@@ -2,7 +2,7 @@ import React from 'react';
 import './Button.scss';
 
 interface ButtonProps {
-  variant?: "icon" | "text" | "mixed";
+  variant?: "icon" | "text";
   size?: "small" | "medium" | "extra-medium" | "large";
   color?: "light" | "dark" | "grey" | "light-dark";
   label?: string;
@@ -26,14 +26,15 @@ export const Button = ({
   hasBorder,
   animated,
   type = "button",
+  children,
   ...props
 }: ButtonProps) => {
-  const variantType = variant === "icon" ? "button-icon" : variant === "text" ? "button-text" : variant === "mixed" ? "button-mixed" : "";
+  const variantType = variant === "icon" ? "button-icon" : variant === "text" ? "button-text" : "";
   const sizeType = size === "small" ? "button-small" : size === "medium" ?  "button-medium" : size === "large" ? "button-large" : size === "extra-medium" ? "button-extra-medium" : "";
   const colorType = color === "dark" ? "button-dark" : color === "light" ?  "button-light" : color === "light-dark" ? "button-lightdark" : color === "grey" ? "button-grey" : "";
   const figureType = figure === "close" ? "button-close" : figure === "edit" ? "button-edit" : figure === "search" ? "button-search" : "";
   const borderType = hasBorder ? "button-bordered" : "";
-  const animatedType = animated === "excel" ? "button-excel" : "button-wheel";
+  const animatedType = animated === "excel" ? "button-excel" : animated === "wheel" ? "button-wheel" : "";
 
   return (
     <button
@@ -41,6 +42,7 @@ export const Button = ({
       {...props}
     >
       {icon}
+      {children}
       {label}
     </button>
   );
