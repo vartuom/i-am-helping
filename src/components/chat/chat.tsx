@@ -1,33 +1,29 @@
-import React, {useState} from 'react';
+import React, {FC, useState} from 'react';
 import chat from "./chat.module.scss";
-//import {Button} from "../../stories/Button";
+import {TChatProps} from "./types";
 
-interface IChatProps {
-    person_name: string | null;
-    phone: string | null,
-    person_img: string,
-    messages: string
-}
-
-const Chat = ({person_name, phone, person_img}: IChatProps) => {
+export const Chat: FC<TChatProps> = (item: TChatProps) => {
 
     // Сделать состояния:
 
     return (
         <div className={chat.container}>
             <div className={chat.info}>
-                <img className={chat.img} src={person_img} alt="foto" />
+                <img className={chat.img}/>
                 <div className={chat.profile}>
-                    <h3 className={chat.initials}>{`${person_name}`}</h3>
-                    <p className={chat.number}>{phone}</p>
+                    <h3 className={chat.initials}>{`${item.person_name}`}</h3>
+                    <div className={chat.data}>
+                        <p className={chat.number}>Тел:</p>
+                        <p className={chat.phone}>{item.phone}</p>
+                    </div>
+
                 </div>
 
-                {/*<Button*/}
-                {/*    backgroundColor="#FBFDFF"*/}
-                {/*    label="Button"*/}
-                {/*    onClick={() => {}}*/}
-                {/*    size="small"*/}
-                {/*/>*/}
+                <div className={chat.button}>
+
+                    <div className={chat.buttonClose} />
+                    {item.is_approvable && <div className={chat.buttonApprove} />}
+                </div>
             </div>
         </div>
     )
