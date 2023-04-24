@@ -4,7 +4,7 @@ import { Request } from './Request';
 
 const meta: Meta<typeof Request> = {
 
-    title: 'Запросов',
+    title: 'Запрос',
     component: Request,
 };
 
