@@ -1,0 +1,38 @@
+@import '../../../constants/scss-variables.scss';
+
+.wrap{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  
+}
+
+.label{
+  color:$colorDisable;
+  font-family:GolosNormal;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.154px;
+  padding-bottom: 8px;
+}
+
+.input{
+  box-sizing: border-box;
+  width: 351px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 13px;
+  &:focus{
+    outline: 1px solid $colorBtnSecond;
+  }
+  &:invalid{
+    outline: 1px solid #E64646;
+  }
+  
+  &::placeholder{
+    color:$colorDisable;
+  }
+}
+
+.inputComment{
+  padding-bottom: 26px;
+}
+
