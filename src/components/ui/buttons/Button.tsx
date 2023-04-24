@@ -11,7 +11,7 @@ interface ButtonProps {
   type?: "submit" | "reset" | "button";
   children?: React.ReactNode;
   icon?: React.ReactNode;
-  figure?: "close" | "edit" | "romb-big";
+  figure?: "close" | "edit" | "search";
   hasBorder?: boolean;
 }
 
@@ -29,7 +29,7 @@ export const Button = ({
   const variantType = variant === "icon" ? "button-icon" : variant === "text" ? "button-text" : variant === "mixed" ? "button-mixed" : "";
   const sizeType = size === "small" ? "button-small" : size === "medium" ?  "button-medium" : size === "large" ? "button-large" : size === "extra-medium" ? "button-extra-medium" : "";
   const colorType = color === "dark" ? "button-dark" : color === "light" ?  "button-light" : color === "light-dark" ? "button-lightdark" : color === "grey" ? "button-grey" : "";
-  const figureType = figure === "close" ? "button-close" : figure === "edit" ? "button-edit" : "";
+  const figureType = figure === "close" ? "button-close" : figure === "edit" ? "button-edit" : figure === "search" ? "button-search" : "";
   const borderType = hasBorder ? "button-bordered" : "";
 
   return (

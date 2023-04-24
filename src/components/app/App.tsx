@@ -4,14 +4,18 @@ import TestPage from "../../pages/testPage";
 import AnotherTestPage from "../../pages/anotherTestPage";
 import PersonalPage from '../../pages/PersonalPage/PersonalPage';
 import { Button } from '../ui/buttons/Button';
-import { MessageIcon, PhoneIcon } from '../ui/icons/icons';
+import { ArrowIconBig, CrossIcon, EditIcon, MessageIcon, PhoneIcon } from '../ui/icons/icons';
 
 
 function App() {
   return (
     <div className="App">
       <Button variant="icon" size="small" color="light" icon={<MessageIcon/>}/>
-      <Button figure="close" />
+      <Button figure="close" icon={<CrossIcon/>} />
+      <Button figure="edit" icon={<EditIcon/>} />
+      <Button figure="search" icon={<ArrowIconBig type="button"/>} label="Пoиск" />
+     
+
       <nav className='header'>
         <Link to='/'>Главная</Link>
         <Link to='/anotherTestPage'>Тестовая страница</Link>
