@@ -140,3 +140,24 @@
 .button-search:hover {
   background-image: url('../../../images/rectangle-figure-big-hover.svg');
 }
+
+.button-excel {
+  border: none;
+  width: 32px;
+  height: 32.5px;
+  background-image: url('../../../images/excel-icon.svg');
+  background-color: $colorBgc;
+  overflow: hidden;
+}
+
+.button-excel:hover {
+  background-image: url('../../../images/excel-icon-hover.svg');
+}
+
+.button-wheel {
+
+}
+
+.button-wheel:hover {
+
+}

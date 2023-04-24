@@ -106,4 +106,10 @@ export const SearchButton: Story = {
   },
 };
 
+export const ExcelButton: Story = {
+  args: {
+    animated: "excel",
+    type: "button"
+  },
+};
 

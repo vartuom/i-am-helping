@@ -14,6 +14,7 @@ function App() {
       <Button figure="close" icon={<CrossIcon/>} />
       <Button figure="edit" icon={<EditIcon/>} />
       <Button figure="search" icon={<ArrowIconBig type="button"/>} label="Пoиск" />
+      <Button animated="excel" />
      
 
       <nav className='header'>
