@@ -7,5 +7,6 @@ export const enum EPageTitleFilterKind {
     Statistics = 'Статистика',
     CreateEdit = 'Создание / Редактирование заявки',
 }
-export type TPageTitleFilterKind = keyof typeof EPageTitleFilterKind;
-
+export type TPageTitleFilter = {
+    item: EPageTitleFilterKind
+}

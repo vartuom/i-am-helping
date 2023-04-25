@@ -13,6 +13,6 @@ export default meta;
 type Story = StoryObj<typeof PageTitleFilter>;
 
 export const Primary: Story = {
-    args: EPageTitleFilterKind.Active
+    args: { item: EPageTitleFilterKind.Active }
 
 };

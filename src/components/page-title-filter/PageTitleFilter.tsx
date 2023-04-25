@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import './page-title-filter.scss';
-import { EPageTitleFilterKind } from './types'
+import { EPageTitleFilterKind, TPageTitleFilter } from './types'
 import { ActiveApplicationIcon } from '../ui/icons/active-application-icon/active-application-icon'
 import { CompletedApplicationIcon } from '../ui/icons/completed-application-icon/completed-application-icon'
 import { AcceptBlockIcon } from '../ui/icons/accept-block-icon/accept-block-icon'
@@ -36,23 +36,24 @@ const getTitleImg = (kind: EPageTitleFilterKind) => {
     }
   }
 }
-export const PageTitleFilter: FC<EPageTitleFilterKind> = (item: EPageTitleFilterKind) => {
+
+export const PageTitleFilter: FC<TPageTitleFilter> = (item: TPageTitleFilter) => {
   return (
-    <div className='main'>
+    <div className='box'>
 
-      <div className='title'>
+      <div className='reqType'>
 
-        {(getTitleImg(item))}
+        {(getTitleImg(item.item))}
 
-        <div className='titleText'>
-          {item.valueOf()}
+        <div className='reqTypeText'>
+          {item.item.valueOf()}
         </div>
       </div>
-      <div className='filter'>
-        <div className='filterText'>
+      <div className='reqFilter'>
+        <div className='reqFilterText'>
           Фильтр
         </div>
-        <div className='filterImg'>
+        <div className='reqFilterImg'>
           {<FilterIcon />}
         </div>
 

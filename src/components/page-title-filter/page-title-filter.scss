@@ -1,18 +1,29 @@
 @import '../../constants/scss-variables.scss';
+@import '../../constants/scss-mixins.scss';
 
-.main {
+.box {
   display: flex;
   justify-content: space-between;
   border: 2px solid $colorBtnFirst;
-  min-width: 940px;
+  min-width: 385px;
   height: 89px;
 
-  .title {
+  @include from('sm') {
+    min-width: 200px;
+    height: 55px;
+  }
+
+  .reqType {
     display: flex;
     flex-direction: row;
     gap: 15px;
+    align-items: center;
 
-    .titleText {
+    @include from('sm') {
+      gap: 10px;
+    }
+
+    .reqTypeText {
       font-family: $fontFamily;
       font-weight: $fontWeight;
       font-size: $fontSizeLarge;
@@ -20,26 +31,37 @@
       line-height: 29px;
       color: $colorMain;
       margin: auto 0px auto 25px;
+
+      @include from('sm') {
+        font-size: $fontSizeMedium;
+      }
     }
   }
 
-  .filter {
+  .reqFilter {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    align-items: center;
 
-    .filterText {
+    .reqFilterText {
       font-family: $fontFamily;
       font-weight: $fontWeight;
       font-size: $fontSizeMedium;
       font-style: $fontFamilyNormal;
       line-height: 19px;
-      color: $colorRegularFont;
+      color: $colorMain;
 
     }
 
-    .filterImg {
+    .reqFilterImg {
       margin: auto 25px auto 0px;
+
+      @include from('sm') {
+        width: 30px;
+      }
+
+
     }
   }
 }
