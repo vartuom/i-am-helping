@@ -1,0 +1,49 @@
+import React from 'react';
+import './Button.scss';
+
+interface IButtonProps {
+  variant?: "icon" | "text";
+  size?: "small" | "medium" | "extra-medium" | "large";
+  color?: "light" | "dark" | "grey" | "light-dark";
+  label?: string;
+  onClick?: () => void;
+  disabled?: boolean;
+  type?: "submit" | "reset" | "button";
+  children?: React.ReactNode;
+  icon?: React.ReactNode;
+  figure?: "close" | "edit" | "search";
+  hasBorder?: boolean;
+  animated?: "excel" | "wheel";
+}
+
+export const Button = ({
+  variant,
+  size,
+  color,
+  icon,
+  label,
+  figure,
+  hasBorder,
+  animated,
+  type = "button",
+  children,
+  ...props
+}: IButtonProps) => {
+  const variantType = variant === "icon" ? "button-icon" : variant === "text" ? "button-text" : "";
+  const sizeType = size === "small" ? "button-small" : size === "medium" ?  "button-medium" : size === "large" ? "button-large" : size === "extra-medium" ? "button-extra-medium" : "";
+  const colorType = color === "dark" ? "button-dark" : color === "light" ?  "button-light" : color === "light-dark" ? "button-lightdark" : color === "grey" ? "button-grey" : "";
+  const figureType = figure === "close" ? "button-close" : figure === "edit" ? "button-edit" : figure === "search" ? "button-search" : "";
+  const borderType = hasBorder ? "button-bordered" : "";
+  const animatedType = animated === "excel" ? "button-excel" : animated === "wheel" ? "button-wheel" : "";
+
+  return (
+    <button
+      className={['button', variantType, figureType, sizeType, colorType, borderType, animatedType].join(' ')}
+      {...props}
+    >
+      {icon}
+      {children}
+      {label}
+    </button>
+  );
+};
