@@ -11,28 +11,27 @@ import { CreateEditIcon } from '../ui/icons/create-edit-icon/create-edit-icon'
 import { FilterIcon } from '../ui/icons/filter-icon/filter-icon'
 
 const getTitleImg = (kind: EPageTitleFilterKind) => {
-  console.log(kind);
   switch (kind) {
     case EPageTitleFilterKind.Active: {
-      return (<ActiveApplicationIcon />);
+      return (<ActiveApplicationIcon type='blue' className='reqTypeIcon' />)
     }
     case EPageTitleFilterKind.Map: {
-      return (<ActiveApplicationIcon />);
+      return (<ActiveApplicationIcon type='blue' className='reqTypeIcon' />);
     }
     case EPageTitleFilterKind.Completed: {
-      return (<CompletedApplicationIcon />);
+      return (<CompletedApplicationIcon type='blue' className='reqTypeIcon' />);
     }
     case EPageTitleFilterKind.Acceptation: {
-      return (<AcceptBlockIcon />);
+      return (<AcceptBlockIcon type='blue' className='reqTypeIcon' />);
     }
     case EPageTitleFilterKind.Statistics: {
-      return (<StatisticsIcon />);
+      return (<StatisticsIcon type='blue' className='reqTypeIcon' />);
     }
     case EPageTitleFilterKind.CreateEdit: {
-      return (<CreateEditIcon />);
+      return (<CreateEditIcon type='blue' className='reqTypeIcon' />);
     }
     default: {
-      return (<ActiveApplicationIcon />);
+      return (<ActiveApplicationIcon type='blue' className='reqTypeIcon' />);
     }
   }
 }
@@ -49,13 +48,13 @@ export const PageTitleFilter: FC<TPageTitleFilter> = (item: TPageTitleFilter) =>
           {item.item.valueOf()}
         </div>
       </div>
-      <div className='reqFilter'>
+      <div className='reqFilter' onClick={item.onFilterClicked}>
         <div className='reqFilterText'>
           Фильтр
         </div>
-        <div className='reqFilterImg'>
-          {<FilterIcon />}
-        </div>
+
+        {<FilterIcon type='blue' className='reqFilterIcon' />}
+
 
       </div>
     </div>

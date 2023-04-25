@@ -13,14 +13,28 @@
     height: 55px;
   }
 
+
+
   .reqType {
     display: flex;
     flex-direction: row;
     gap: 15px;
     align-items: center;
+    margin-left: 37px;
 
     @include from('sm') {
-      gap: 10px;
+      margin-left: 10px;
+      gap: 5px;
+    }
+
+    .reqTypeIcon {
+      width: 43px;
+      height: 50px;
+
+      @include from('sm') {
+        width: 35px;
+        height: 35px;
+      }
     }
 
     .reqTypeText {
@@ -30,10 +44,12 @@
       font-style: $fontFamilyNormal;
       line-height: 29px;
       color: $colorMain;
-      margin: auto 0px auto 25px;
+      margin: auto 0px auto;
 
       @include from('sm') {
         font-size: $fontSizeMedium;
+        line-height: 19px;
+        margin: auto 0px;
       }
     }
   }
@@ -43,6 +59,13 @@
     flex-direction: row;
     gap: 10px;
     align-items: center;
+    margin-right: 30px;
+    cursor: pointer;
+
+    @include from('sm') {
+      margin-right: 10px;
+      gap: 5px;
+    }
 
     .reqFilterText {
       font-family: $fontFamily;
@@ -54,11 +77,13 @@
 
     }
 
-    .reqFilterImg {
-      margin: auto 25px auto 0px;
+    .reqFilterIcon {
+      width: 43px;
+      height: 44px;
 
       @include from('sm') {
         width: 30px;
+        height: 30px;
       }
 
 

@@ -5,8 +5,9 @@ export const enum EPageTitleFilterKind {
     Completed = 'Завершенные заявки',
     Acceptation = 'Подтверждение / Блокировка',
     Statistics = 'Статистика',
-    CreateEdit = 'Создание / Редактирование заявки',
+    CreateEdit = 'Создание / Редактирование',
 }
 export type TPageTitleFilter = {
     item: EPageTitleFilterKind
+    onFilterClicked?: (() => void)
 }
