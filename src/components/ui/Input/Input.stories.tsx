@@ -37,3 +37,17 @@ export const Admin_Name: Story = {
     typeInput:'adminName'
   }
 };
+
+export const User_Info: Story = {
+  args:
+  {
+    typeInput:'userInfoName'
+  }
+};
+
+export const User_Phone: Story = {
+  args:
+  {
+    typeInput:'userInfoPhone'
+  }
+};
