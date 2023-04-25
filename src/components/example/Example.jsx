@@ -11,7 +11,6 @@ function Example() {
       </div>
       <div>
       <Input typeInput="name"/>
-      <Input typeInput="adminName"/>
       </div>
     </div>
 
