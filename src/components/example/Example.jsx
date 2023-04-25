@@ -9,7 +9,10 @@ function Example() {
       <div className="div2">div2</div>
       <div>
       </div>
+      <div>
       <Input typeInput="name"/>
+      <Input typeInput="adminName"/>
+      </div>
     </div>
 
   )

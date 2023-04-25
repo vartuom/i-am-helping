@@ -23,3 +23,17 @@ export const Phone: Story = {
     typeInput:'number'
   }
 };
+
+export const Adress: Story = {
+  args:
+  {
+    typeInput:'adress'
+  }
+};
+
+export const Admin_Name: Story = {
+  args:
+  {
+    typeInput:'adminName'
+  }
+};
