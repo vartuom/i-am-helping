@@ -1,0 +1,175 @@
+@import '../../../constants/scss-variables.scss';
+
+.button {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  font-family: $fontFamily;
+}
+
+.button-bordered {
+  border: 1px solid $colorDisable;
+}
+
+//round
+.button-icon {
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.button-small {
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+}
+
+.button-medium {
+  width: 53px;
+  height: 53px;
+}
+
+.button-extra-medium {
+  width: 60px;
+  height: 60px;
+}
+
+.button-large {
+  width: 82px;
+  height: 82px;
+}
+
+.button-dark {
+  background-color: $colorMain;
+  color: $colorBgcPopup;
+  z-index: -1;
+  transition: .3s;
+}
+
+.button-light {
+  background-color: $colorBgcPopup;
+  color: $colorMain;
+  transition: .3s;
+  border: 1px solid $colorMain;
+}
+
+//square
+.button-text {
+  height: 30px;
+  padding: 8px 16px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.button-dark:hover {
+  background-color: $colorBtnFirst;
+  color: $colorBgc;
+
+}
+
+.button-light:hover {
+  background-color: $colorBtnFirst;
+  color: $colorBgc;
+}
+
+.button-dark:disabled {
+  background-color: $colorDisable; //grey
+  color: $colorBgcPopup;
+}
+
+.button-light:disabled {
+  background-color: $colorBgcPopup;
+  border: 1px solid $colorSupport;
+  color: $colorSupport;
+}
+
+.button-close {
+  border: none;
+  width: 32px;
+  height: 32.5px;
+  background-image: url('../../../images/icons/cross-button-background.svg');
+  background-color: $colorBgc;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.button-close:hover {
+  background-image: url('../../../images/icons/cross-button-background-hover.svg');
+}
+
+.button-edit {
+  border: none;
+  width: 32px;
+  height: 32.5px;
+  background-image: url('../../../images/icons/edit_figure-icon.svg');
+  background-color: $colorBgc;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.button-edit:hover {
+  background-image: url('../../../images/icons/edit_figure-icon-hover.svg');
+}
+
+.button-search {
+  border: none;
+  width: 169px;
+  height: 32.5px;
+  background-image: url('../../../images/icons/rectangle-figure-big.svg');
+  background-color: $colorBgc;
+  overflow: hidden;
+  color: $colorBgc;
+  padding: 9px;
+  justify-content: left;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 31px 42px;
+  column-gap: 10px;
+  transition: .3s;
+}
+
+.button-search:hover {
+  background-image: url('../../../images/icons/rectangle-figure-big-hover.svg');
+}
+
+.button-excel {
+  border: none;
+  width: 32px;
+  height: 32.5px;
+  background-image: url('../../../images/icons/excel-icon.svg');
+  background-color: $colorBgc;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.button-excel:hover {
+  background-image: url('../../../images/icons/excel-icon-hover.svg');
+}
+
+.button-wheel {
+  border: none;
+  width: 32px;
+  height: 32.5px;
+  background-image: url('../../../images/icons/wheel-icon.svg');
+  background-color: $colorBgc;
+  background-position: top right;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.button-wheel:hover {
+  background-image: url('../../../images/icons/wheel-icon-hover.svg');
+  background-position: bottom left;
+}

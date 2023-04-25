@@ -10,6 +10,7 @@ import { AcceptBlockIcon } from "./accept-block-icon/accept-block-icon";
 import { EmptyMessageIcon } from "./empty-message/empty-message-icon";
 import { SettingIcon } from "./setting-icon/setting-icon";
 import { ArrowIcon } from "./arrow-icon/arrow-icon";
+import { ArrowIconBig } from "./arrow-icon-big/arrow-icon-big";
 import { ActiveApplicationIcon } from "./active-application-icon/active-application-icon";
 import { CompletedApplicationIcon } from "./completed-application-icon/completed-application-icon";
 import { FilterIcon } from "./filter-icon/filter-icon";
@@ -29,6 +30,7 @@ import { LocationOnMapIcon } from "./location-on-map-icon/location-on-map-icon";
 import { BallsIcon } from "./balls-icon/balls-icon";
 import { KeyIcon } from "./key-icon/key-icon";
 import { FinishedApplicationIcon } from "./finished-application-icon/finished-application-icon";
+import { AddIcon } from "./add-icon/add-icon";
 
 export {
     PersonIcon,
@@ -43,6 +45,7 @@ export {
     EmptyMessageIcon,
     SettingIcon,
     ArrowIcon,
+    ArrowIconBig,
     ActiveApplicationIcon,
     CompletedApplicationIcon,
     FilterIcon,
@@ -61,5 +64,6 @@ export {
     LocationOnMapIcon,
     BallsIcon,
     KeyIcon,
-    FinishedApplicationIcon
+    FinishedApplicationIcon,
+    AddIcon
 }
