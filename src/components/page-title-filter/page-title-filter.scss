@@ -1,0 +1,45 @@
+@import '../../constants/scss-variables.scss';
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid $colorBtnFirst;
+  min-width: 940px;
+  height: 89px;
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    .titleText {
+      font-family: $fontFamily;
+      font-weight: $fontWeight;
+      font-size: $fontSizeLarge;
+      font-style: $fontFamilyNormal;
+      line-height: 29px;
+      color: $colorMain;
+      margin: auto 0px auto 25px;
+    }
+  }
+
+  .filter {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    .filterText {
+      font-family: $fontFamily;
+      font-weight: $fontWeight;
+      font-size: $fontSizeMedium;
+      font-style: $fontFamilyNormal;
+      line-height: 19px;
+      color: $colorRegularFont;
+
+    }
+
+    .filterImg {
+      margin: auto 25px auto 0px;
+    }
+  }
+}
