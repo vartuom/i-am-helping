@@ -5,19 +5,20 @@ import { TRequest } from './types'
 export const Request: FC<TRequest> = (item: TRequest) => {
   return (
     <div className='main'>
-
+      <div className='itemBreaker' />
       <div className='category'>
         {item.category}
       </div>
-      <div className='date'>
-        <div className='dateImg'>
-
-        </div>
-        <div className='dateText'>
-          {item.date}
-        </div>
-      </div>
       <div className='wrapperTimeAddress'>
+        <div className='date'>
+          <div className='dateImg'>
+
+          </div>
+          <div className='dateText'>
+            {item.date}
+          </div>
+        </div>
+
         <div className='time'>
           <div className='timeImg'>
 
