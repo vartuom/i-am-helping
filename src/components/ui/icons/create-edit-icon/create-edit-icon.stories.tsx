@@ -5,4 +5,4 @@ export default {
     title: 'Icons/Create&Edit Icon',
 };
 
-export const Default = () => <CreateEditIcon/>
+export const Default = () => <CreateEditIcon type="blue"/>
