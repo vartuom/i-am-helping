@@ -15,7 +15,7 @@ export const PhoneButton: Story = {
   args: {
     variant: "icon",
     size: "small",
-    color: "dark",
+    theme: "dark",
     type: "button",
     hasBorder: true,
     icon: <PhoneIcon type="white" />
@@ -26,7 +26,7 @@ export const MessageButton: Story = {
   args: {
     variant: "icon",
     size: "small",
-    color: "dark",
+    theme: "dark",
     type: "button",
     hasBorder: true,
     icon: <EmptyMessageIcon type="white" />
@@ -37,7 +37,7 @@ export const LocationButtonBig: Story = {
   args: {
     variant: "icon",
     size: "medium",
-    color: "dark",
+    theme: "dark",
     type: "button",
     icon: <LocationOnMapIcon />,
   },
@@ -46,7 +46,7 @@ export const LocationButtonBig: Story = {
 export const TextButtonDark: Story = {
   args: {
     variant: "text",
-    color: "dark",
+    theme: "dark",
     label: "Применить",
     type: "submit"
   },
@@ -55,7 +55,7 @@ export const TextButtonDark: Story = {
 export const TextButtonLight: Story = {
   args: {
     variant: "text",
-    color: "light",
+    theme: "light",
     label: "Заблокировать",
     type: "button"
   },
@@ -65,7 +65,7 @@ export const AddButton: Story = {
   args: {
     variant: "icon",
     size: "large",
-    color: "dark",
+    theme: "dark",
     type: "button",
     icon: <AddIcon />,
   },
@@ -75,7 +75,7 @@ export const AddButtonSmaller: Story = {
   args: {
     variant: "icon",
     size: "extra-medium",
-    color: "dark",
+    theme: "dark",
     type: "button",
     icon: <AddIcon />,
   },

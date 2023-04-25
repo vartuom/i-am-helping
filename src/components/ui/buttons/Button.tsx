@@ -4,7 +4,7 @@ import './Button.scss';
 interface IButtonProps {
   variant?: "icon" | "text";
   size?: "small" | "medium" | "extra-medium" | "large";
-  color?: "light" | "dark" | "grey" | "light-dark";
+  theme?: "light" | "dark" | "grey" | "light-dark";
   label?: string;
   onClick?: () => void;
   disabled?: boolean;
@@ -19,8 +19,8 @@ interface IButtonProps {
 export const Button = ({
   variant,
   size,
-  color,
   icon,
+  theme,
   label,
   figure,
   hasBorder,
@@ -31,14 +31,14 @@ export const Button = ({
 }: IButtonProps) => {
   const variantType = variant === "icon" ? "button-icon" : variant === "text" ? "button-text" : "";
   const sizeType = size === "small" ? "button-small" : size === "medium" ?  "button-medium" : size === "large" ? "button-large" : size === "extra-medium" ? "button-extra-medium" : "";
-  const colorType = color === "dark" ? "button-dark" : color === "light" ?  "button-light" : color === "light-dark" ? "button-lightdark" : color === "grey" ? "button-grey" : "";
+  const themeType = theme === "dark" ? "button-dark" : theme === "light" ?  "button-light" : theme === "light-dark" ? "button-lightdark" : theme === "grey" ? "button-grey" : "";
   const figureType = figure === "close" ? "button-close" : figure === "edit" ? "button-edit" : figure === "search" ? "button-search" : "";
   const borderType = hasBorder ? "button-bordered" : "";
   const animatedType = animated === "excel" ? "button-excel" : animated === "wheel" ? "button-wheel" : "";
 
   return (
     <button
-      className={['button', variantType, figureType, sizeType, colorType, borderType, animatedType].join(' ')}
+      className={['button', variantType, figureType, sizeType, themeType, borderType, animatedType].join(' ')}
       {...props}
     >
       {icon}
