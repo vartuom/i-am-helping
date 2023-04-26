@@ -10,6 +10,12 @@
 
 .buttonBox {
     box-sizing: border-box;
+    display: grid;
+    grid-template-rows: repeat(3, 113px);
+    gap: 10px;
+    padding-top: 30px;
+    justify-self: center;
+    justify-content: center;
     width: 295px;
     height: 426px;
     border: 3px solid #2E3192;

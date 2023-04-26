@@ -4,7 +4,7 @@
 .main {
   display: grid;
   column-gap: 20px;
-  grid-template-columns: 169px 450px 249px 41px;
+  grid-template-columns: 169px minmax(100px, 450px) 249px 41px;
   grid-template-areas:
     "category ....... person button"
     "wrapperTimeAddress contentHeader person button"

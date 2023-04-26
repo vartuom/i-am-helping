@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 import Example from '../components/example/Example';
+import UserCard from '../components/userCard/userCard';
 
 const TestPage = () => {
     return (
@@ -13,6 +14,7 @@ const TestPage = () => {
         <button>Реципиент</button>
         <button>Администратор</button>
         <button>Главный администратор</button>
+        <UserCard />
         </>
     );
 };

@@ -1,8 +1,8 @@
 import { TIconProps, getIconColor } from "../utils"
 
-export const CreateEditIcon = ({type}:TIconProps) => {
+export const CreateEditIcon = ({ type, className }: TIconProps) => {
     return (
-        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className={className} width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="13" cy="13" r="11.5" stroke={getIconColor(type)} />
             <rect x="3.85365" y="12.6341" width="18.5854" height="0.439024" rx="0.219512" fill={getIconColor(type)} stroke={getIconColor(type)} stroke-width="0.439024" />
             <rect x="12.9268" y="22.1465" width="18.5854" height="0.439024" rx="0.219512" transform="rotate(-90 12.9268 22.1465)" fill={getIconColor(type)} stroke={getIconColor(type)} stroke-width="0.439024" />

@@ -16,4 +16,4 @@ export const Primary: Story = {
         isDisabled: false,
         isChecked: false,
     },
-};yy
+};
