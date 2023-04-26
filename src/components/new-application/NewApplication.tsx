@@ -1,7 +1,7 @@
 import './NewApplication.scss'
 import { applications } from "../../data/applications"
 import ShakingHands from '../ui/ShakingHands/ShakingHands'
-import AddButton from '../ui/AddButton/AddButton'
+import { Button } from '../ui/buttons/Button'
 
 export default function NewApplication() {
 
@@ -10,7 +10,7 @@ export default function NewApplication() {
       {
         applications.length > 0 ?
         <div className='makeApplication'>
-          <AddButton />
+          <Button variant="icon" size="large" theme="dark" type="button" />
           <p className='text text_unActive'>Cоздать заявку?</p>
           <div className='bottom' />
         </div> :
@@ -21,7 +21,7 @@ export default function NewApplication() {
           </div>
           <div className='bottomWrapper'>
             <p className='text text_active'>Хотите создать заявку?</p>
-            <AddButton />
+            <Button variant="icon" size="large" theme="dark" type="button" />
             <div className='arrow' />
           </div>
         </div>
