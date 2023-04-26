@@ -29,7 +29,8 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "prettier"
     ],
     "overrides": [
       {
@@ -64,6 +65,8 @@
     "@storybook/react-webpack5": "^7.0.5",
     "@storybook/testing-library": "^0.0.14-next.2",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "2.8.8",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.5",
     "webpack": "^5.79.0"
