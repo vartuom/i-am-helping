@@ -18,7 +18,7 @@ function App() {
         <Link to='/personal'>Личный кабинет</Link>
         <Link to='/blog'>Блог</Link>
         <Link to='/privacy'>Политика конфиденциальности</Link>
-        <Link to='/privacy'>Контакты</Link>
+        <Link to='/contacts'>Контакты</Link>
       </nav>
       
       <Routes>
