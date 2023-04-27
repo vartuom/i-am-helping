@@ -1,5 +1,13 @@
 import React, { FC } from 'react';
 import './request.scss';
+import { CalendarIcon } from '../ui/icons/calendar-icon/calendar-icon'
+import { ClockIcon } from '../ui/icons/clock-icon/clock-icon'
+import { LocationIcon } from '../ui/icons/location-icon/location-icon'
+import { BallsIcon } from '../ui/icons/balls-icon/balls-icon'
+import { PhoneIcon } from '../ui/icons/phone-icon/phone-icon'
+import { MessageIcon } from '../ui/icons/message-icon/message-icon'
+import { CrossIcon } from '../ui/icons/cross-icon/cross-icon';
+import { ApproveIcon } from '../ui/icons/approve-icon/approve-icon';
 import { TRequest } from './types'
 
 export const Request: FC<TRequest> = (item: TRequest) => {
@@ -12,7 +20,7 @@ export const Request: FC<TRequest> = (item: TRequest) => {
       <div className='wrapperTimeAddress'>
         <div className='date'>
           <div className='dateImg'>
-
+            <CalendarIcon />
           </div>
           <div className='dateText'>
             {item.date}
@@ -21,7 +29,7 @@ export const Request: FC<TRequest> = (item: TRequest) => {
 
         <div className='time'>
           <div className='timeImg'>
-
+            <ClockIcon />
           </div>
           <div className='timeText'>
             {item.time}
@@ -29,7 +37,7 @@ export const Request: FC<TRequest> = (item: TRequest) => {
         </div >
         <div className='address'>
           <div className='addressImg'>
-
+            <LocationIcon />
           </div>
           <div className='addressText'>
             {item.address}
@@ -52,8 +60,8 @@ export const Request: FC<TRequest> = (item: TRequest) => {
         </div>
       </div>
       <div className='contentBalls'>
-        <div className='contentBallsImg'>
-
+        <div className='contentBallsImg' onClick={(event: React.MouseEvent<HTMLDivElement>) => { item.onBallClicked!(item.id) }}>
+          <BallsIcon type='blue' className='ICO' />
         </div>
         <div className='contentBallsCount'>
           {item.bulls}
@@ -61,9 +69,7 @@ export const Request: FC<TRequest> = (item: TRequest) => {
       </div >
 
       <div className='person'>
-        <div className='personImg'>
-        </div>
-
+        <img className='personImg' src={item.person_img!} />
         <div className='personName'>
           {item.person_name}
         </div>
@@ -71,21 +77,30 @@ export const Request: FC<TRequest> = (item: TRequest) => {
           {item.phone}
         </div>
         <div className='personContact'>
-          <div className='personCall'>
-
+          <div className='personCall'
+            onClick={(event: React.MouseEvent<HTMLDivElement>) => { item.onCallClicked!(item.id) }}>
+            <PhoneIcon className='ICO' type='white' />
           </div>
-          <div className='personChat'>
+          <div className='personChat' onClick={(event: React.MouseEvent<HTMLDivElement>) => { item.onChatClicked!(item.id) }}>
 
+            <MessageIcon className='ICO' type='white' />
           </div>
         </div>
       </div>
 
       <div className='button'>
 
-        <div className='buttonClose' />
-        {item.is_approvable && <div className='buttonApprove' />}
+        <div className='buttonClose'
+          onClick={(event: React.MouseEvent<HTMLDivElement>) => { item.onDeleteClicked!(item.id) }}>
+          <CrossIcon className='ICO' type='white' />
+        </div>
+        {item.is_approvable &&
+          <div className='buttonApprove'
+            onClick={(event: React.MouseEvent<HTMLDivElement>) => { item.onApproveClicked!(item.id) }}>
+            <ApproveIcon className='ICO' type='white' />
+          </div>}
       </div>
-    </div>
+    </div >
 
 
   )

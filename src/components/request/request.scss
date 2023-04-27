@@ -69,13 +69,9 @@
       }
 
       .dateImg {
-        background-image: url(../../images/calendar.svg);
-        background-repeat: no-repeat;
-        background-position: center;
         height: 17px;
         width: 17px;
         align-self: center;
-
       }
 
       .dateText {
@@ -101,9 +97,7 @@
       align-self: start;
 
       .timeImg {
-        background-image: url(../../images/clock.svg);
-        background-repeat: no-repeat;
-        background-position: center;
+
         height: 17px;
         width: 17px;
         align-self: center;
@@ -140,9 +134,6 @@
       }
 
       .addressImg {
-        background-image: url(../../images/location.svg);
-        background-repeat: no-repeat;
-        background-position: center;
         height: 19px;
         width: 14px;
         align-self: center;
@@ -235,9 +226,8 @@
     }
 
     .contentBallsImg {
-      background-image: url(../../images/balls.svg);
-      background-repeat: no-repeat;
-      background-position: center;
+      cursor: pointer;
+      display: flex;
       height: 35px;
       width: 46px;
       align-self: center;
@@ -286,19 +276,21 @@
 
     .personImg {
       grid-area: personImg;
-      background-image: url(../../images/recipient.png);
       border-radius: 50%;
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 100px;
-      width: 100px;
-      background-size: 100px 100px;
+
+      height: auto;
+      width: auto;
+      max-width: 100px;
+      max-height: 100px;
       align-self: center;
 
 
       @include from('sm') {
-        height: 60px;
-        width: 60px;
+        height: auto;
+        width: auto;
+        max-width: 60px;
+        max-height: 60px;
+
         background-size: 60px 60px;
       }
     }
@@ -343,9 +335,8 @@
       }
 
       .personCall {
-        background-image: url(../../images/phone.svg);
-        background-repeat: no-repeat;
-        background-position: center;
+        cursor: pointer;
+        display: flex;
         background-color: $colorMain;
         border-radius: 50%;
         border: 1px solid $colorDisable;
@@ -359,9 +350,8 @@
       }
 
       .personChat {
-        background-image: url(../../images/chat.svg);
-        background-repeat: no-repeat;
-        background-position: center;
+        cursor: pointer;
+        display: flex;
         background-color: $colorMain;
         border-radius: 50%;
         border: 1px solid $colorDisable;
@@ -381,15 +371,17 @@
     display: flex;
     flex-direction: column;
 
+
+
     .buttonClose {
+      cursor: pointer;
+      display: flex;
       width: 32px;
       height: 32.5px;
       background-color: $colorSupport;
-      background-repeat: no-repeat;
-      background-position: center;
       clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 6.25% 100%);
-      background-image: url(../../images/close.svg);
       align-self: self-end;
+
 
       &:hover {
         background-color: $colorMain;
@@ -398,14 +390,12 @@
 
 
     .buttonApprove {
-      display: block;
+      cursor: pointer;
+      display: flex;
       width: 32px;
       height: 32.5px;
       background: $colorApprove;
-      background-repeat: no-repeat;
-      background-position: center;
       clip-path: polygon(6.25% 0%, 100% 15%, 100% 100%, 0% 100%);
-      background-image: url(../../images/approve.svg);
       align-self: center;
       margin-top: 55px;
 
@@ -413,5 +403,9 @@
         display: none;
       }
     }
+  }
+
+  .ICO {
+    margin: auto;
   }
 }
