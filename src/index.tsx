@@ -4,14 +4,17 @@ import './index.scss';
 import App from './components/app/App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
+import { YMaps } from '@pbe/react-yandex-maps';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-      <BrowserRouter>
+      <BrowserRouter>  
+        <YMaps query={{ lang: 'en_RU' }}>
           <App />
+        </YMaps>
       </BrowserRouter>
   </React.StrictMode>
 );
