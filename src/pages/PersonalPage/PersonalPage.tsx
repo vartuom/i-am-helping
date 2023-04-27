@@ -7,7 +7,7 @@ const PersonalPage = () => {
   
   return (
     <main className="main">
-      <section className='personalInfo'>Личные данные</section>
+      <section className='personalInfo'>Личные данные
         <Avatar url='https://fraguru.com/mdimg/avatariru/m.298472.jpg' size={160}/>
         <div className='card'>
           Карточка
