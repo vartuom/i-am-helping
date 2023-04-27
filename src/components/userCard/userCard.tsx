@@ -1,5 +1,6 @@
 import styles from "./userCard.module.scss";
 import CurrencyIcon from "../../images/CurrencyIcon.svg";
+import Diagramm from "./defaultComponents/Ellipse33.png"
 import { useMemo } from "react";
 import { FunctionComponent } from "react";
 import Avatar from './defaultComponents/image.png';
@@ -17,11 +18,23 @@ const UserCard = () => {
     <div className={styles.background}>
       <div className={styles.border}>
         <img className={styles.avatar} src={Avatar}/>
-        <p>Иванов Иван Иванович</p>
-        <p>ID 112233</p>
-        <p>Тел.: +7(000)000-00-00</p>
-        <p>О себе: Я люблю музыку, книги и кошек</p>
-        <Button animated='wheel' type='button' />
+        <div className={styles.about}>
+          <p className={styles.aboutName}>Иванов Иван Иванович</p>
+          <p className={styles.aboutId}>ID 112233</p>
+          <div className={styles.aboutDescription}>
+            <p className={styles.aboutMe}>Тел.:</p>
+            <p className={styles.aboutContact}>+7(000)000-00-00</p>
+            <p className={styles.aboutMe}>О себе:</p>
+            <p className={styles.aboutContact}>Я люблю музыку, книги и кошек Я люблю музыку, книги и кошек Я люблю музыку, книги и кошек</p>
+          </div>
+        </div>
+        <div className={styles.progress}>
+
+        </div>
+        <div className={styles.button}>
+          <Button animated='wheel' type='button' />
+          <img src={Diagramm} />
+        </div>
       </div>
       <div className={styles.buttonBox}>
       <CardButton icon={<ApplicationMapIcon type={"white"} />} display={"web"} children='Карта заявок'></CardButton>
