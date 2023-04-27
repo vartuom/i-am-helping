@@ -1,4 +1,4 @@
-@use '../../constants/scss-variables';
+@use '../../../constants/scss-variables';
 
 .checkbox {
   display: flex;
@@ -12,7 +12,7 @@
     clip-path: inset(0 0 0 0);
     &:checked + .checkbox__customBox {
     border: 3px solid scss-variables.$colorMain;
-    background: scss-variables.$colorMain url("../../images/icons/check-mark-white.svg") center/contain no-repeat;
+    background: scss-variables.$colorMain url("../../../images/icons/check-mark-white.svg") center/contain no-repeat;
     }
     &:disabled ~ .checkbox__customBox {
       opacity: 0.5;
@@ -29,7 +29,8 @@
     background: scss-variables.$colorBgc;
   }
   &__label {
-    font-size: 16px;
-    color: #000000; /* Потом заменим на перменную */
+    font-family: scss-variables.$fontFamily;
+    font-size: scss-variables.$fontSizeMedium;
+    color: scss-variables.$colorRegularFont;
   }
 }

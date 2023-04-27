@@ -5,4 +5,4 @@ export default {
     title: 'Icons/Filter Icon',
 };
 
-export const Default = () => <FilterIcon/>
+export const Default = () => <FilterIcon type='blue'/>

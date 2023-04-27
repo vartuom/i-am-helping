@@ -8,9 +8,15 @@
 }
 
 .personalInfo {
-  width: 395px;
+  width: 295px;
   height: 100%;
+  grid-template-rows: auto 1fr;
+}
+
+.card {
+  height: 362px;
   outline: 1px solid red;
+  margin-bottom: 30px;
 }
 
 .applicationsInfo {
