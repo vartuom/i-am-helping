@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 import { Logo } from "../ui/Logo/Logo"
 import { BlogIcon, BurgerMenuIcon, EmptyMessageIcon, LocationIcon, PersonIcon, PrivacyIcon } from "../ui/icons/icons"
 import { Button } from "../ui/buttons/Button"
-import avatar from "../../images/avatar-temp.png";
+import { Avatar } from "../avatar/Avatar"
 
 export const AppHeader: FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +17,7 @@ export const AppHeader: FC = () => {
         <header className={header.header}>
             {/* Заменить на компонент аватара */}
             <NavLink end to="/profile" className={header.avatar}>
-                <img src={avatar} alt="avatar" />
+                <Avatar size={43} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"}/>
             </NavLink>
             <NavLink end to="/" className={header.logo}>
                 <Logo />
