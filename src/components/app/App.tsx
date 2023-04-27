@@ -3,7 +3,7 @@ import {Link, Route, Routes} from "react-router-dom";
 import TestPage from "../../pages/testPage";
 import AnotherTestPage from "../../pages/anotherTestPage";
 import PersonalPage from '../../pages/PersonalPage/PersonalPage';
-// import AppHeader from '../app-header/app-header';
+//import AppHeader from '../app-header/app-header';
 
 
 function App() {

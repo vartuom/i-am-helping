@@ -1,8 +1,8 @@
 import { TIconProps, getIconColor } from "../utils"
 
-export const StatisticsIcon = ({type}:TIconProps) => {
+export const StatisticsIcon = ({type,className}:TIconProps) => {
     return (
-        <svg width="43" height="46" viewBox="0 0 43 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className={className}  width="43" height="46" viewBox="0 0 43 46" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M2.79347 46H42.4116C42.6077 46 42.8038 45.8011 43 45.4031V5.59719C43 5.19913 42.8039 5 42.4116 5H18.6591V6.19413H41.8232V44.8059H3.18576V9.39286H2.20511V45.4031C2.20511 45.8011 2.40121 46 2.79347 46Z" fill={getIconColor(type)} />
             <path d="M26.8592 25.7842H19.4195C19.1029 25.7842 18.9446 25.93 18.9446 26.2217V40.2234C18.9446 40.5151 19.1029 40.661 19.4195 40.661H26.8592C27.1758 40.661 27.3341 40.5151 27.3341 40.2234V26.2217C27.3341 25.93 27.0175 25.7842 26.8592 25.7842ZM26.3843 39.7858H19.8943V26.5134H26.3843V39.7858Z" fill={getIconColor(type)} />
             <path d="M39.0472 18.3447H31.6076C31.291 18.3447 31.1326 18.4906 31.1326 18.7824V40.2224C31.1326 40.5141 31.291 40.66 31.6076 40.66H39.0472C39.3638 40.66 39.5222 40.5141 39.5222 40.2224V18.7824C39.5222 18.4906 39.2055 18.3447 39.0472 18.3447ZM38.5725 39.7848H32.0824V19.2199H38.5725V39.7848Z" fill={getIconColor(type)} />
