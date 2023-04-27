@@ -5,4 +5,4 @@ export default {
     title: 'Icons/Message Icon',
 };
 
-export const Default = () => <MessageIcon/>
+export const Default = () => <MessageIcon type="blue" />

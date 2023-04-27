@@ -85,7 +85,7 @@ export const CloseButton: Story = {
   args: {
     figure: "close",
     type: "button",
-    icon: <CrossIcon />,
+    icon: <CrossIcon type='white' />,
   },
 };
 
@@ -101,7 +101,7 @@ export const SearchButton: Story = {
   args: {
     figure: "search",
     type: "button",
-    icon: <ArrowIconBig type="white"/>,
+    icon: <ArrowIconBig type="white" />,
     label: "Пoиск"
   },
 };
