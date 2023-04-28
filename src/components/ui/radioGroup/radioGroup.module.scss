@@ -1,5 +1,11 @@
 @use '../../../constants/scss-variables';
 
+
+.radioGroup {
+  display: flex;
+  gap: 12px;
+}
+
 .radio {
   display: flex;
   align-items: center;
