@@ -11,4 +11,9 @@ export type TRequest = {
     person_name: string | null;
     phone: string | null;
     is_approvable: boolean;
+    onChatClicked?: ((id: number) => void);
+    onCallClicked?: ((id: number) => void);
+    onBallClicked?: ((id: number) => void);
+    onDeleteClicked?: ((id: number) => void);
+    onApproveClicked?: ((id: number) => void);
 }

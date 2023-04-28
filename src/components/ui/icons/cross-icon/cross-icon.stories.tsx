@@ -5,4 +5,4 @@ export default {
     title: 'Icons/Cross Icon',
 };
 
-export const Default = () => <CrossIcon/>
+export const Default = () => <CrossIcon type="blue" />
