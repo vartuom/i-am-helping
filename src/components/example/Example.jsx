@@ -1,6 +1,7 @@
 import React from 'react';
 import './Example.scss';
 import Input from '../ui/Input/Input';
+import TextArea from '../ui/textArea/textArea';
 
 function Example() {
   return (
@@ -12,6 +13,7 @@ function Example() {
       <div>
       <Input typeInput="name"/>
       </div>
+      <TextArea />
     </div>
 
   )
