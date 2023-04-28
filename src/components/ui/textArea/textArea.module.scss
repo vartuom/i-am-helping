@@ -4,7 +4,7 @@
 .wrap {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: fl;
   font-family: $fontFamilyNormal;
   position: relative;
   max-width: 464px;
@@ -39,27 +39,6 @@
   }
 }
 
-.textAdminColor {
-  box-sizing: border-box;
-  min-height: 169px;
-  width: 100%;
-  font-family: $fontFamilyNormal;
-  border: 1px solid $colorDisable;
-  padding: 15px;
-  resize: none;
-  color: $colorSupport;
-  border: 1px solid $colorDisable;
-  &:focus {
-    outline: 1px solid $colorBtnSecond;
-    border: 0px;
-  }
-  &::placeholder {
-    font-size: $fontSizeSmall;
-    line-height: 15px;
-    color: $colorSupport;
-  }
-}
-
 .count {
   position: absolute;
   bottom: 12px;
@@ -67,13 +46,4 @@
   font-size: 10px;
   line-height: 12px;
   color: $colorDisable;
-}
-
-.countAdminColor {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  font-size: 10px;
-  line-height: 12px;
-  color: $colorSupport;
 }

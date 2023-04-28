@@ -10,20 +10,6 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Recepient: Story = {
-  args: {
-    typeArea: "recipientCreateForm",
-  },
-};
-
-export const Admin: Story = {
-  args: {
-    typeArea: "adminCreateForm",
-  },
-};
-
-export const MobileCreateForm: Story = {
-  args: {
-    typeArea: "mobileCreateForm",
-  },
+export const Textarea: Story = {
+  args: {},
 };
