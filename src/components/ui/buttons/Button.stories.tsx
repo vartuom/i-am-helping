@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
-import { EmptyMessageIcon, LocationOnMapIcon, PhoneIcon, AddIcon, CrossIcon, EditIcon, ArrowIconBig } from '../icons/icons';
+import { EmptyMessageIcon, LocationOnMapIcon, PhoneIcon, AddIcon, CrossIcon, EditIcon, ArrowIconBig, BurgerMenuIcon } from '../icons/icons';
 
 const meta = {
   title: 'Button',
@@ -117,5 +117,12 @@ export const SettingButton: Story = {
   args: {
     animated: "wheel",
     type: "button"
+  }
+}
+
+export const MenuButton: Story = {
+  args: {
+    type: "button",
+    icon: <BurgerMenuIcon />,
   }
 }
