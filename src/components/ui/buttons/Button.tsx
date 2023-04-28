@@ -1,5 +1,6 @@
 import React from 'react';
 import './Button.scss';
+import clsx from 'clsx';
 
 interface IButtonProps {
   variant?: "icon" | "text";
@@ -14,6 +15,7 @@ interface IButtonProps {
   figure?: "close" | "edit" | "search";
   hasBorder?: boolean;
   animated?: "excel" | "wheel";
+  extraClass?: string;
 }
 
 export const Button = ({
@@ -27,18 +29,35 @@ export const Button = ({
   animated,
   type = "button",
   children,
+  extraClass = '',
   ...props
 }: IButtonProps) => {
-  const variantType = variant === "icon" ? "button-icon" : variant === "text" ? "button-text" : "";
-  const sizeType = size === "small" ? "button-small" : size === "medium" ?  "button-medium" : size === "large" ? "button-large" : size === "extra-medium" ? "button-extra-medium" : "";
-  const themeType = theme === "dark" ? "button-dark" : theme === "light" ?  "button-light" : theme === "light-dark" ? "button-lightdark" : theme === "grey" ? "button-grey" : "";
-  const figureType = figure === "close" ? "button-close" : figure === "edit" ? "button-edit" : figure === "search" ? "button-search" : "";
-  const borderType = hasBorder ? "button-bordered" : "";
-  const animatedType = animated === "excel" ? "button-excel" : animated === "wheel" ? "button-wheel" : "";
+  const className = clsx(
+    'button',
+    {
+      [`button-${variant}`]: variant,
+    },
+    {
+      [`button-${size}`]: size,
+    },
+    {
+      [`button-${theme}`]: theme,
+    },
+    {
+      [`button-${figure}`]: figure,
+    },
+    {
+      [`button-bordered`]: hasBorder,
+    },
+    {
+      [`button-${animated}`]: animated,
+    },
+    extraClass
+  )
 
   return (
     <button
-      className={['button', variantType, figureType, sizeType, themeType, borderType, animatedType].join(' ')}
+      className={className}
       {...props}
     >
       {icon}

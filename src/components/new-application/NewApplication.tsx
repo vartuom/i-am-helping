@@ -11,7 +11,7 @@ export default function NewApplication() {
       {
         applications.length > 0 ?
         <div className='makeApplication'>
-          <Button variant="icon" size="large" theme="dark" type="button" icon={<AddIcon />} />
+          <Button variant="icon" size="large" theme="dark" type="button" icon={<AddIcon />}/>
           <p className='text text_unActive'>Cоздать заявку?</p>
           <div className='bottom' />
         </div> :

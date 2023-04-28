@@ -5,4 +5,4 @@ export default {
     title: 'Icons/Location Icon',
 };
 
-export const Default = () => <LocationIcon/>
+export const Default = () => <LocationIcon type="blue"/>
