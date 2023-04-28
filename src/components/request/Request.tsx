@@ -37,7 +37,7 @@ export const Request: FC<TRequest> = (item: TRequest) => {
         </div >
         <div className='address'>
           <div className='addressImg'>
-            <LocationIcon />
+            <LocationIcon type={"blue"} />
           </div>
           <div className='addressText'>
             {item.address}
