@@ -1,13 +1,12 @@
+
 import './SideNavLink.scss'
-import { Link } from "react-router-dom"
 
 interface ISideNavLink {
-  path: string
-  type: 'map' | 'active' | 'completed' | 'approve' | 'statistics' | 'create'
+  type: 'map' | 'active' | 'completed' | 'approve' | 'statistics' | 'create' | 'contacts' | 'message'
   visible: boolean
 }
 
-export default function SideNavLink({path, type, visible}: ISideNavLink) {
+export default function SideNavLink({type, visible}: ISideNavLink) {
 
   let text = ''
 
@@ -30,6 +29,12 @@ export default function SideNavLink({path, type, visible}: ISideNavLink) {
     case 'create':
       text = 'Создание / Редактирование заявки'
       break;
+    case 'contacts':
+      text = 'Контакты'
+      break;
+    case 'message':
+      text = 'Напишите нам'
+      break;
     default:
       break;
   }
@@ -38,10 +43,8 @@ export default function SideNavLink({path, type, visible}: ISideNavLink) {
     <>
       {visible && 
       <div className='nav_link'>
-        {/* <Link to={path} className='nav_link'> */}
-          <div className={`nav_link_image nav_link_image_${type}`}/>
-          <p className='nav_link_text'>{text}</p>
-        {/* </Link> */}
+        <div className={`nav_link_image nav_link_image_${type}`}/>
+        <p className='nav_link_text'>{text}</p>
       </div>
       }
     </>

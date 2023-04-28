@@ -1,9 +1,12 @@
 @import '../../constants/scss-variables.scss';
 
-.nav {
+.side_nav {
   border: 2px solid $colorBtnFirst;
   display: flex;
   flex-direction: column;
   padding: 30px 10px;
   gap: 10px;
+  &_text {
+    text-decoration: none;
+  }
 }

@@ -22,7 +22,7 @@ export default function NewApplication() {
           </div>
           <div className='bottomWrapper'>
             <p className='text text_active'>Хотите создать заявку?</p>
-            <Button variant="icon" size="large" theme="dark" type="button" />
+            <Button variant="icon" size="large" theme="dark" type="button" icon={<AddIcon />} />
             <div className='arrow' />
           </div>
         </div>
