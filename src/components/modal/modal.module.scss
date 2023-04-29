@@ -1,0 +1,44 @@
+.root {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
+
+.container {
+  position: relative;
+  width: 960px;
+  border-radius: 40px;
+  background-color: white;
+  z-index: 10;
+  padding: 20px 20px;
+  box-sizing: border-box;
+}
+
+.modalHeader {
+}
+
+.closeButton {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: -48px;
+  top: -48px;
+  cursor: pointer;
+  transition: opacity 0.2s linear;
+  background-image: url("../../images/icons/close-cross.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  background-color: transparent;
+}
+
+.closeIcon:hover {
+  opacity: 0.7;
+}
