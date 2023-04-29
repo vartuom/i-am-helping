@@ -1,0 +1,37 @@
+@import '../../constants/scss-variables.scss';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  gap: 30px;
+  margin: 0 auto;
+
+  .mainPanel {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+
+    .leftPanel {
+      display: flex;
+      flex-direction: column;
+      width: 295px;
+      gap: 30px;
+
+      .stub {
+        background-color: aqua;
+        width: 295px;
+        height: 362px;
+      }
+    }
+
+    .rightPanel {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+  }
+
+
+}

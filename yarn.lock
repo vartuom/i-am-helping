@@ -1242,9 +1242,9 @@
   "resolved" "https://registry.npmjs.org/@emotion/use-insertion-effect-with-fallbacks/-/use-insertion-effect-with-fallbacks-1.0.0.tgz"
   "version" "1.0.0"
 
-"@esbuild/win32-x64@0.17.17":
-  "integrity" "sha512-FNZw7H3aqhF9OyRQbDDnzUApDXfC1N6fgBhkqEO2jvYCJ+DxMTfZVqg3AX0R1khg1wHTBRD5SdcibSJ+XF6bFg=="
-  "resolved" "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.17.17.tgz"
+"@esbuild/darwin-x64@0.17.17":
+  "integrity" "sha512-4utIrsX9IykrqYaXR8ob9Ha2hAY2qLc6ohJ8c0CN1DR8yWeMrTgYFjgdeQ9LIoTOfLetXjuCu5TRPHT9yKYJVg=="
+  "resolved" "https://registry.npmjs.org/@esbuild/darwin-x64/-/darwin-x64-0.17.17.tgz"
   "version" "0.17.17"
 
 "@eslint-community/eslint-utils@^4.2.0":
@@ -6234,6 +6234,11 @@
   "integrity" "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw=="
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
+
+"fsevents@^2.3.2", "fsevents@~2.3.2":
+  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
+  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
+  "version" "2.3.2"
 
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
