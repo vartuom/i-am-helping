@@ -1,45 +1,51 @@
-import styles from "./userCard.module.scss";
-import CurrencyIcon from "../../images/CurrencyIcon.svg";
-import Diagramm from "./defaultComponents/Ellipse33.png"
-import { useMemo } from "react";
-import { FunctionComponent } from "react";
+import styles from './userCard.module.scss';
+import { FC } from 'react';
 import Avatar from './defaultComponents/image.png';
-import { CardButton } from "../ui/buttons/card-button/card-button";
-import { ActiveApplicationIcon } from "../ui/icons/icons";
-import { CompletedApplicationIcon } from "../ui/icons/icons";
-import { ApplicationMapIcon } from "../ui/icons/icons";
-import { Button } from "../ui/buttons/Button";
-import { SettingIcon } from "../ui/icons/icons";
+import { Button } from '../ui/buttons/Button';
+import { BallsIcon } from '../ui/icons/icons';
+import { FinishedApplicationIcon } from '../ui/icons/icons';
+import { KeyIcon } from '../ui/icons/icons';
+import { TUser } from './types';
 
-const UserCard = () => {
-  const onDelete = (id: string | undefined) => {
-  };
+export const user: TUser = {
+    id: 112233,
+    name: 'Иванов Иван Иванович',
+    phone: '+7(000)000-00-00',
+    about: 'Я люблю музыку, книги и кошек Я люблю музыку, книги и кошек Я люблю музыку, книги и кошек',
+    image: `${Avatar}`,
+    balls: 2500,
+    keys: 1,
+    finishedApplications: 150,
+    status: 'admin',
+}
+
+
+const UserCard: FC<TUser> = (user: TUser) => {
   return (
     <div className={styles.background}>
       <div className={styles.border}>
-        <img className={styles.avatar} src={Avatar}/>
+        <img className={styles.avatar} src={user.image}/>
         <div className={styles.about}>
-          <p className={styles.aboutName}>Иванов Иван Иванович</p>
-          <p className={styles.aboutId}>ID 112233</p>
+          <p className={styles.aboutName}>{user.name}</p>
+          <p className={styles.aboutId}>ID {user.id}</p>
           <div className={styles.aboutDescription}>
             <p className={styles.aboutMe}>Тел.:</p>
-            <p className={styles.aboutContact}>+7(000)000-00-00</p>
+            <p className={styles.aboutContact}>{user.phone}</p>
             <p className={styles.aboutMe}>О себе:</p>
-            <p className={styles.aboutContact}>Я люблю музыку, книги и кошек Я люблю музыку, книги и кошек Я люблю музыку, книги и кошек</p>
+            <p className={styles.aboutContact}>{user.about}</p>
           </div>
         </div>
         <div className={styles.progress}>
-
+            <BallsIcon type={'white'} />
+            <p className={styles.progressNumber}>{user.balls}</p>
+            <KeyIcon />
+            <p className={styles.progressNumber}>{user.keys}</p>
+            <FinishedApplicationIcon />
+            <p className={styles.progressNumber}>{user.finishedApplications}</p>
         </div>
         <div className={styles.button}>
           <Button animated='wheel' type='button' />
-          <img src={Diagramm} />
         </div>
-      </div>
-      <div className={styles.buttonBox}>
-      <CardButton icon={<ApplicationMapIcon type={"white"} />} display={"web"} children='Карта заявок'></CardButton>
-      <CardButton icon={<ActiveApplicationIcon type={"white"} />} display={"web"} children='Активные заявки'></CardButton>
-      <CardButton icon={<CompletedApplicationIcon type={"white"} />} display={"web"} children='Завершенные заявки'></CardButton>
       </div>
     </div>
   );

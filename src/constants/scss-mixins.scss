@@ -12,7 +12,7 @@
       @content;
   } @else {
       @media screen and (max-width: ($size + 1px)) {
-      @content;
+        @content;
       }
   }
 }

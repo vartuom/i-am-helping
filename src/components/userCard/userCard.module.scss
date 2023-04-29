@@ -107,10 +107,25 @@
 }
 
 .progress {
+    display: flex;
+    flex-direction: row;
     position: relative;
     height: 22px;
     margin-top: 20px;
+    margin-left: 83px;
     top: -90px;
+}
+
+.progressNumber {
+    font-family: 'GolosNormal';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    margin: auto 0;
+    margin-left: 5px;
+    margin-right: 10px;
+    color: #2E3192;
 }
 
 .avatar {

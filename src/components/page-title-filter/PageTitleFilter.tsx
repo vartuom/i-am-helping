@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import './page-title-filter.scss';
 import { EPageTitleFilterKind, TPageTitleFilter } from './types'
 import { ActiveApplicationIcon } from '../ui/icons/active-application-icon/active-application-icon'
+import { ApplicationMapIcon } from '../ui/icons/application-map-icon/application-map-icon'
 import { CompletedApplicationIcon } from '../ui/icons/completed-application-icon/completed-application-icon'
 import { AcceptBlockIcon } from '../ui/icons/accept-block-icon/accept-block-icon'
 import { StatisticsIcon } from '../ui/icons/statistics-icon/statistics-icon'
@@ -16,7 +17,7 @@ const getTitleImg = (kind: EPageTitleFilterKind) => {
       return (<ActiveApplicationIcon type='blue' className='reqTypeIcon' />)
     }
     case EPageTitleFilterKind.Map: {
-      return (<ActiveApplicationIcon type='blue' className='reqTypeIcon' />);
+      return (<ApplicationMapIcon type='blue' className='reqTypeIcon' />);
     }
     case EPageTitleFilterKind.Completed: {
       return (<CompletedApplicationIcon type='blue' className='reqTypeIcon' />);
