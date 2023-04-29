@@ -136,3 +136,12 @@
     //background-image: url('./defaultComponents/image.png');
     border: none;
 }
+
+.ellipse {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 10px;
+    left: 120px;
+}

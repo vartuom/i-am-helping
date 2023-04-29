@@ -7,5 +7,5 @@ export type TUser = {
     balls: number;
     keys: number;
     finishedApplications: number;
-    status: string;
+    status: 'admin' | 'volunteer' | 'recipient';
 }
