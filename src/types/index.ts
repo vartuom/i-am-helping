@@ -49,4 +49,5 @@ export interface IUser {
   about: string;
   keys: number;
   role: string;
+  avatar: string;
 }

@@ -18,6 +18,7 @@ const initialState: IInitialState = {
         about: "Я люблю музыку, книги и кошек",
         keys: 1,
         role: "Администратор",
+        avatar: "https://www.nicepng.com/png/detail/0-9727_such-doge-large-wow-such-doge-wow-such.png",
     },
 };
 
