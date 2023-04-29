@@ -23,3 +23,30 @@ export interface IVolunteer {
   keys: number;
   completedApplications: number
 }
+
+export interface IFirstStep {
+  taskTime: string;
+  taskDate: string;
+  isNoTimeLimit: boolean;
+  isProcessed: boolean;
+}
+
+export interface ISecondStep {
+  taskType: string;
+  taskDetails: string;
+  isProcessed: boolean;
+}
+
+export interface IThirdStep {
+  taskMeetingPoint: string;
+  isProcessed: boolean;
+}
+
+export interface IUser {
+  id: string;
+  name: string;
+  phone: string;
+  about: string;
+  keys: number;
+  role: string;
+}
