@@ -159,16 +159,16 @@
 
 .button-wheel {
   border: none;
-  width: 32px;
-  height: 32.5px;
+  width: 40px;
+  height: 40px;
+  background: none;
   background-image: url('../../../images/icons/wheel-icon.svg');
-  background-color: $colorBgc;
-  background-position: top right;
+  background-position: bottom -10px left -7px;
   overflow: hidden;
   transition: .3s;
 }
 
 .button-wheel:hover {
   background-image: url('../../../images/icons/wheel-icon-hover.svg');
-  background-position: bottom left;
+  background-position: top left 3px;
 }
