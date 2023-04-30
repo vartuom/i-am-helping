@@ -19,7 +19,7 @@ export const RecipientPage = () => {
         person_img: "https://bigpicture.ru/wp-content/uploads/2019/04/grandbeauty00.jpg",
         person_name: "Петров Петр Петрович",
         phone: "+7(000) 000-00-00",
-        is_approvable: true
+        is_approvable: false
 
     },
     {
@@ -34,7 +34,7 @@ export const RecipientPage = () => {
         person_img: "https://bigpicture.ru/wp-content/uploads/2019/04/grandbeauty00.jpg",
         person_name: "Петров Петр Петрович",
         phone: "+7(000) 000-00-00",
-        is_approvable: true
+        is_approvable: false
 
     },
     {
@@ -49,7 +49,7 @@ export const RecipientPage = () => {
         person_img: "https://bigpicture.ru/wp-content/uploads/2019/04/grandbeauty00.jpg",
         person_name: "Петров Петр Петрович",
         phone: "+7(000) 000-00-00",
-        is_approvable: true
+        is_approvable: false
 
     },
     {
@@ -64,7 +64,7 @@ export const RecipientPage = () => {
         person_img: "https://bigpicture.ru/wp-content/uploads/2019/04/grandbeauty00.jpg",
         person_name: "Петров Петр Петрович",
         phone: "+7(000) 000-00-00",
-        is_approvable: true
+        is_approvable: false
 
     },
     ]);

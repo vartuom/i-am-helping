@@ -28,6 +28,7 @@
     height: 362px;
     width: 295px;
     border: 1px solid red;
+    box-sizing: border-box;
 }
 
 .nav {
@@ -36,5 +37,6 @@
     border: 2px solid $colorMain; 
     padding: 30px 10px 0;
     height: 100%;
+    max-height: 426px;
     box-sizing: border-box;
 }
