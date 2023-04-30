@@ -5,6 +5,9 @@ import RequestList from "../../components/request-list/RequestList"
 import SideNavLink from "../../components/ui/SideNavLink/SideNavLink"
 import recipient from './recipient.module.scss'
 import { TRequest } from "../../components/request/types"
+import UserCard from "../../components/userCard/userCard"
+import { TUser } from "../../components/userCard/types"
+import { IAvatarProps } from "../../components/avatar/Avatar"
 
 export const RecipientPage = () => {
     const [requests, setRequests] = useState<TRequest[]>([{
@@ -69,10 +72,26 @@ export const RecipientPage = () => {
     },
     ]);
 
+    const user: TUser = {
+        id: 112233,
+        name: 'Иванов Иван Иванович',
+        phone: '+7(000)000-00-00',
+        about: 'Я люблю музыку, книги и кошек Я люблю музыку, книги и кошек Я люблю музыку, книги и кошек',
+        balls: 2500,
+        keys: 1,
+        finishedApplications: 150,
+        status: 'admin',
+    }
+
+    const avatarParams: IAvatarProps = {
+        size: 175,
+        url: 'https://fraguru.com/mdimg/avatariru/m.298472.jpg',
+      }      
+
     return (
         <main className={recipient.main}>
             <aside className={recipient.aside}>
-                <div className={recipient.profile}>заглушка карточки</div>
+                {UserCard (user, avatarParams)}
                 <nav className={recipient.nav}>
                     <SideNavLink path="/recipient/active" type="active" visible={true} />
                     <SideNavLink path="recipient/completed" type="completed" visible={true} />

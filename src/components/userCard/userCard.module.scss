@@ -4,8 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 100vw;
+    margin-top: 85px;
 }
 
 .buttonBox {
@@ -101,7 +100,6 @@
 	width:  290px;
     height: 270px;
 	margin: 0 auto;
-    margin-bottom: 30px;
 	border:5px solid transparent;
 	border-image:url('./defaultComponents/background.svg') 20 5 stretch;
 }
@@ -126,15 +124,6 @@
     margin-left: 5px;
     margin-right: 10px;
     color: #2E3192;
-}
-
-.avatar {
-    position: relative;
-    top: -90px;
-    width: 175px;
-    height: 175px;
-    //background-image: url('./defaultComponents/image.png');
-    border: none;
 }
 
 .ellipse {
