@@ -1,106 +1,261 @@
 @import '../../constants/scss-variables.scss';
 
-.container {
+.main {
   display: flex;
-  background: #F5F5F5;
-  width: 586px;
-  height: 374px;
-  position: fixed;
+  flex-direction: column;
+  margin-bottom: 30px;
 
+  .container {
+    background-color: #F5F5F5;
+    width: 586px;
+    height: 374px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    .info {
+      display: grid;
+      grid-template-columns: 102px 468px 17px;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      grid-template-areas:
+      "profile ....... button"
+    }
+
+    .profile {
+      margin: 0;
+      padding: 0;
+    }
+
+    .data {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .img {
+      background-image: url(../../images/Волонтер.svg);
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-left: 30px;
+      margin-top: 20px;
+      height: 52px;
+      width: 52px;
+    }
+
+    .initials {
+      margin-top: 20px;
+      margin-bottom: 5px;
+      padding: 0;
+      font-family: $fontFamilyInterRegular;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 29px;
+      display: flex;
+      align-items: center;
+      color: #000000;
+    }
+
+    .number {
+      margin: 0 42px 0 0;
+      padding: 0;
+      font-family: $fontFamilyInterRegular;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      display: flex;
+      align-items: center;
+      color: #000000;
+    }
+
+    .phone {
+      margin: 0;
+      padding: 0;
+      font-family: $fontFamilyInterRegular;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      display: flex;
+      align-items: center;
+      color: #000000;
+    }
+
+    .button {
+      display: flex;
+      flex-direction: column;
+
+      .buttonClose {
+        cursor: pointer;
+        display: flex;
+        width: 32px;
+        height: 32.5px;
+        background-color: $colorSupport;
+        background-repeat: no-repeat;
+        background-position: center;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 6.25% 100%);
+        background-image: url(../../images/close.svg);
+        align-self: self-end;
+
+        &:hover {
+          background-color: $colorMain;
+        }
+      }
+      .ico {
+        margin: auto;
+      }
+    }
+
+
+.chat {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  width: 450px;
+  height: 100px;
+  padding-left: 102px;
+  overflow: overlay;
+  scrollbar-gutter: stable;
+
+  .imgI {
+    background-image: url(../../images/Волонтер.svg);
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 20px;
+    margin-top: 20px;
+    height: 30px;
+    width: 30px;
+  }
 }
 
-.info {
-  display: grid;
-  grid-template-columns: 102px 434px 17px;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  grid-template-areas:
-    "category ....... person button"
-}
-
-.profile {
-  margin: 0;
-  padding: 0;
-}
-
-.data {
-  margin: 0;
-  padding: 0;
+.message {
   display: flex;
   flex-direction: row;
 }
 
-.img {
-  background-image: url(../../images/Волонтер.svg);
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-left: 30px;
-  margin-top: 20px;
-  height: 52px;
-  width: 52px;
-}
-
-.initials {
-  margin-top: 20px;
-  margin-bottom: 5px;
-  padding: 0;
-  font-family: $fontFamilyInterRegular;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 29px;
-  display: flex;
-  align-items: center;
-  color: #000000;
-}
-
-.number {
-  margin: 0 42px 0 0 ;
-  padding: 0;
-  font-family: $fontFamilyInterRegular;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
-  display: flex;
-  align-items: center;
-  color: #000000;
-}
-
-.phone {
-  margin: 0;
-  padding: 0;
-  font-family: $fontFamilyInterRegular;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  display: flex;
-  align-items: center;
-  color: #000000;
-}
-
-.button {
-  grid-area: button;
-  display: flex;
-  flex-direction: column;
-
-  .buttonClose {
-    width: 32px;
-    height: 32.5px;
-    background-color: $colorSupport;
-    background-repeat: no-repeat;
-    background-position: center;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 6.25% 100%);
-    background-image: url(../../images/close.svg);
-    align-self: center;
-
-    &:hover {
-      background-color: $colorMain;
+.containerTexts {
+      display: flex;
+      flex-direction: row;
+      //background: #2E3192;
+      position: absolute;
+      width: 223px;
+      height: 42px;
+      margin-left: 60px;
+      margin-top: 35px;
+      background-image: url(../../images/icons/Rectangle.png);
+      background-repeat: no-repeat;
+      background-position: center;
     }
+    .texts {
+      color: #FBFDFF;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      margin-top: 5px;
+      margin-left: 20px;
+    }
+
+    .form{
+      display: flex;
+      flex-direction: row;
+
+
+      .textarea {
+        display: flex;
+        flex-direction: row;
+        //align-items: fl;
+        font-family: $fontFamilyNormal;
+        position: relative;
+        max-width: 464px;
+        min-height: auto;
+        padding-left: 102px;
+        padding-bottom: 30px;
+
+      }
+
+      .text {
+        background-color: #F5F5F5;
+        //box-sizing: border-box;
+        height: 37px;
+        width: 417px;
+        font-family: $fontFamilyNormal;
+        border: 1px solid $colorDisable;
+        //padding: 20px 11px 59px 10px;
+        //resize: none;
+
+        &:focus {
+          outline: 1px solid $colorBtnSecond;
+          border: 0px;
+        }
+        &::placeholder {
+          font-size: $fontSizeSmall;
+          line-height: 15px;
+          color: $colorDisable;
+        }
+      }
+      .send {
+        cursor: pointer;
+        position: absolute;
+        width: 37px;
+        height: 37px;
+        left: 548px;
+        background: #2E3192;
+      }
+
+      .buttonSend {
+        display: flex;
+        flex-direction: column;
+
+        .send {
+          cursor: pointer;
+          position: absolute;
+          width: 37px;
+          height: 37px;
+          left: 548px;
+          background: #2E3192;
+
+        }
+        .sendIcon {
+          margin-left: 10px;
+          margin-top: 10px;
+        }
+
+      }
+
+    }
+    .containerClipIcon{
+      background: #2E3192;
+      margin-top: 11px;
+      margin-right: 20px;
+      margin-bottom: 11px;
+
+
+    }
+    .clipIcon {
+      width: 15px;
+      height: 15px;
+    }
+
+
+
+
   }
+
+
 }
+
+
+
+
 
 
