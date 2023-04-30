@@ -1,13 +1,10 @@
 import { useState } from 'react'
-import { AppHeader } from '../../components/app-header/app-header'
-import { Avatar } from '../../components/avatar/Avatar'
-import NewApplication from '../../components/new-application/NewApplication'
 import { PageTitleFilter } from '../../components/page-title-filter/PageTitleFilter'
 import { EPageTitleFilterKind } from '../../components/page-title-filter/types'
 import RequestList from '../../components/request-list/RequestList'
 import { TRequest } from '../../components/request/types'
 import SideNavigation from '../../components/side-navigation/SideNavigation'
-import './PersonalPage.scss'
+import './VolunteerPage.scss'
 
 const VolunteerPage = () => {
   const [requests, setRequests] = useState<TRequest[]>([{
@@ -58,19 +55,18 @@ const VolunteerPage = () => {
   ]);
 
   return (
-    <main className="main">
-      <section className='mainPanel'>
-        <div className='leftPanel'>
-          <div className='stub'></div>
-          <SideNavigation></SideNavigation>
+    <section className='mainPanel'>
+      <div className='leftPanel'>
+        <div className='stub'></div>
+        <SideNavigation></SideNavigation>
 
-        </div>
-      </section>
+      </div>
+
       <section className='rightPanel'>
         <PageTitleFilter item={EPageTitleFilterKind.Active}></PageTitleFilter>
         {RequestList(requests)}
       </section>
-    </main>
+    </section>
   )
 }
 

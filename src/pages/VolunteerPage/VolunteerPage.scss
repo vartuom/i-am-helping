@@ -1,37 +1,29 @@
 @import '../../constants/scss-variables.scss';
 
-.main {
+
+
+.mainPanel {
   display: flex;
-  flex-direction: column;
-  max-width: 1440px;
-  gap: 30px;
-  margin: 0 auto;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
 
-  .mainPanel {
+  .leftPanel {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap: 20px;
+    flex-direction: column;
+    width: 295px;
+    gap: 30px;
 
-    .leftPanel {
-      display: flex;
-      flex-direction: column;
+    .stub {
+      background-color: aqua;
       width: 295px;
-      gap: 30px;
-
-      .stub {
-        background-color: aqua;
-        width: 295px;
-        height: 362px;
-      }
-    }
-
-    .rightPanel {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
+      height: 362px;
     }
   }
 
-
+  .rightPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
 }

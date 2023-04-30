@@ -9,6 +9,7 @@ import ModalOne from "../modalExamples/modalOne";
 import ModalTwo from "../modalExamples/modalTwo";
 import ModalThree from "../modalExamples/modalThree";
 import { AppFooter } from "../app-footer/app-footer";
+import VolunteerPage from "../../pages/VolunteerPage/VolunteerPage";
 
 function App() {
   const location = useLocation();
