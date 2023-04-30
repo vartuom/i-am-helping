@@ -1,0 +1,40 @@
+@import "../../constants/scss-variables.scss";
+@import "../../constants/scss-mixins.scss";
+
+.main {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    margin: 30px auto 0;
+    max-width: 1440px;
+    padding: 0 92px;
+    box-sizing: border-box;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.requests {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.profile {
+    height: 362px;
+    width: 295px;
+    border: 1px solid red;
+}
+
+.nav {
+    max-width: 295px;
+    width: 100%;
+    border: 2px solid $colorMain; 
+    padding: 30px 10px 0;
+    height: 100%;
+    box-sizing: border-box;
+}
