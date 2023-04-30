@@ -3,7 +3,6 @@ export type TUser = {
     name: string;
     phone: string | null;
     about: string;
-    image: string;
     balls: number;
     keys: number;
     finishedApplications: number;

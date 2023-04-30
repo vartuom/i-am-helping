@@ -10,6 +10,8 @@ import ModalTwo from "../modalExamples/modalTwo";
 import ModalThree from "../modalExamples/modalThree";
 import { AppFooter } from "../app-footer/app-footer";
 import VolunteerPage from "../../pages/VolunteerPage/VolunteerPage";
+import { RecipientPage } from "../../pages/recipient/recipient";
+
 
 function App() {
   const location = useLocation();
@@ -23,6 +25,7 @@ function App() {
         <Route path="/anotherTestPage" element={<AnotherTestPage />} />
         <Route path="/personal" element={<PersonalPage />} />
         <Route path="/volunteer" element={<VolunteerPage />} />
+        <Route path="/recipient" element={<RecipientPage />} />
         {/*добавить нужные роуты*/}
       </Routes>
       {background && (
