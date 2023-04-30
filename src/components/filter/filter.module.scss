@@ -1,0 +1,38 @@
+@use '../../constants/scss-variables';
+
+.d_flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex-direction: column;
+  padding-left: 0;
+  list-style: none;
+}
+
+.wrapper {
+  padding: 20px 30px;
+  text-align: start;
+}
+
+.check_padding {
+  padding-top: 12px;
+  padding-right: 20px;
+}
+
+.filter_radius {
+  padding-right: 10px;
+  padding-bottom: 12px;
+}
+
+.radius_button {
+  padding: 0 20px;
+  height: 24px;
+}
+
+.subtitle {
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-bottom: 1px scss-variables.$headerBorder solid;
+}

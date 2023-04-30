@@ -1,11 +1,14 @@
 import React from 'react';
-import Calendar from '../components/calendar/Calendar';
+import Filter from '../components/filter/filter';
+import './anotherTestPage.scss';
 
 const AnotherTestPage = () => {
     return (
         <div>
             Ок, все работает!
-            <Calendar />
+            <div className='wrapper'>
+                <Filter />
+            </div>
         </div>
     );
 };
