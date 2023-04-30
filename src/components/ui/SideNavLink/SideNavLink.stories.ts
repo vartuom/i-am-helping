@@ -1,5 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import SideNavLink from './SideNavLink';
+import { EPageTitleFilterKind } from '../../page-title-filter/types';
 
 const meta = {
     title: "SideNavLink",
@@ -12,47 +13,53 @@ type Story = StoryObj<typeof meta>;
 export const Map: Story = {
     args: {
       path: '/map',
-      type: 'map',
-      visible: true
+      type: EPageTitleFilterKind.Map,
+      visible: true,
+      active: false
     },
 };
 
 export const Active: Story = {
   args: {
     path: '/active',
-    type: 'active',
-    visible: true
+    type: EPageTitleFilterKind.Active,
+    visible: true,
+    active: false
   },
 };
 
 export const Completed: Story = {
   args: {
     path: '/completed',
-    type: 'completed',
-    visible: true
+    type: EPageTitleFilterKind.Completed,
+    visible: true,
+    active: false
   },
 };
 
 export const Approve: Story = {
   args: {
     path: '/approve',
-    type: 'approve',
-    visible: true
+    type:EPageTitleFilterKind.Acceptation,
+    visible: true,
+    active: false
   },
 };
 
 export const Statistics: Story = {
   args: {
     path: '/statistics',
-    type: 'statistics',
-    visible: true
+    type: EPageTitleFilterKind.Statistics,
+    visible: true,
+    active: false
   },
 };
 
 export const Create: Story = {
   args: {
     path: '/create',
-    type: 'create',
-    visible: true
+    type: EPageTitleFilterKind.CreateEdit,
+    visible: true,
+    active: false
   },
 };

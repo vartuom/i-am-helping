@@ -5,8 +5,12 @@ import RequestList from '../../components/request-list/RequestList'
 import { TRequest } from '../../components/request/types'
 import SideNavigation from '../../components/side-navigation/SideNavigation'
 import './VolunteerPage.scss'
+import UserCard, { user } from '../../components/userCard/userCard'
 
 const VolunteerPage = () => {
+
+  const [navArray, setNavArray] = useState<EPageTitleFilterKind[]>(
+    [EPageTitleFilterKind.Map, EPageTitleFilterKind.Active, EPageTitleFilterKind.Completed]);
   const [requests, setRequests] = useState<TRequest[]>([{
     id: 1,
     category: "категория",
@@ -57,8 +61,8 @@ const VolunteerPage = () => {
   return (
     <section className='mainPanel'>
       <div className='leftPanel'>
-        <div className='stub'></div>
-        <SideNavigation></SideNavigation>
+        {UserCard(user)}
+        {SideNavigation({items: navArray})}
 
       </div>
 
