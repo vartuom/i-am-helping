@@ -1,8 +1,7 @@
 import styles from './userCard.module.scss';
 import { FC } from 'react';
-import Ellipse from './defaultComponents/Ellipse33.svg'
 import { Button } from '../ui/buttons/Button';
-import { BallsIcon } from '../ui/icons/icons';
+import { BallsIcon, DiagramIcon } from '../ui/icons/icons';
 import { FinishedApplicationIcon } from '../ui/icons/icons';
 import { KeyIcon } from '../ui/icons/icons';
 import { Avatar, IAvatarProps } from '../avatar/Avatar';
@@ -54,7 +53,7 @@ const UserCard: FC<TUser> = (user: TUser, avatarParams: IAvatarProps) => {
             <div className={styles.progress}>
               <div className={styles.ellipse}>
                 <p className={styles.progressNumber}>1 из 5</p>
-                <img src={Ellipse} />
+                <DiagramIcon />
               </div>
             </div>
           </>) : (<></>)}

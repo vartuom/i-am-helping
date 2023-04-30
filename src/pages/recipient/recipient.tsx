@@ -80,7 +80,7 @@ export const RecipientPage = () => {
         balls: 2500,
         keys: 1,
         finishedApplications: 150,
-        status: 'admin',
+        status: 'recipient',
     }
 
     const avatarParams: IAvatarProps = {
