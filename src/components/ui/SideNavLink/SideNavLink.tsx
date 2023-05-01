@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { EPageTitleFilterKind } from '../../page-title-filter/types';
+import { getTitleImg } from '../../page-title-filter/PageTitleFilter';
 import './SideNavLink.scss'
 import { Link } from "react-router-dom"
 
@@ -15,12 +16,14 @@ interface ISideNavLink {
 export default function SideNavLink({ path, type, visible, onClick, active }: ISideNavLink) {
   const [text,] = useState<string>(type.valueOf())
 
+
+
   return (
     <>
       {visible &&
-        <div className={`${active && 'active'} nav_link`}  onClick={(event: React.MouseEvent<HTMLDivElement>) => { onClick!(type) }}>
+        <div className={`${active && 'nav_link_active'} nav_link`} onClick={(event: React.MouseEvent<HTMLDivElement>) => { onClick!(type) }}>
           {/* <Link to={path} className='nav_link'> */}
-          <div className={`nav_link_image nav_link_image_${type}`} />
+          {getTitleImg(type, { type: 'white' })}
           <p className='nav_link_text'>{text}</p>
           {/* </Link> */}
         </div>

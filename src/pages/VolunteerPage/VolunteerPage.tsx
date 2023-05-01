@@ -64,16 +64,21 @@ const VolunteerPage = () => {
   },
   ]);
 
+  const [active, setActive] = useState<EPageTitleFilterKind>(EPageTitleFilterKind.Active);
+  const onClick = (viewType: EPageTitleFilterKind) => {
+    setActive(viewType);
+
+  }
   return (
-    <section className='mainPanel'>
-      <div className='leftPanel'>
+    <section className='volonteerMainPanel'>
+      <div className='volonteerLeftPanel'>
         {UserCard(user, avatarParams)}
-        {SideNavigation({ items: navArray })}
+        {SideNavigation({ items: navArray, onClick: onClick })}
 
       </div>
 
-      <section className='rightPanel'>
-        <PageTitleFilter item={EPageTitleFilterKind.Active}></PageTitleFilter>
+      <section className='volonteerRightPanel'>
+        <PageTitleFilter item={active}></PageTitleFilter>
         {RequestList(requests)}
       </section>
     </section>

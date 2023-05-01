@@ -11,6 +11,7 @@ import ModalThree from "../modalExamples/modalThree";
 import { AppFooter } from "../app-footer/app-footer";
 import VolunteerPage from "../../pages/VolunteerPage/VolunteerPage";
 import { RecipientPage } from "../../pages/recipient/recipient";
+import ProfilePage from "../../pages/ProfilePage/ProfilePage";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/personal" element={<PersonalPage />} />
         <Route path="/volunteer" element={<VolunteerPage />} />
         <Route path="/recipient" element={<RecipientPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
         {/*добавить нужные роуты*/}
       </Routes>
       {background && (

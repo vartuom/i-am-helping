@@ -13,7 +13,7 @@ import { Avatar } from '../avatar/Avatar';
 
 export const Request: FC<TRequest> = (item: TRequest) => {
   return (
-    <div className='main'>
+    <div className='reqMain'>
       <div className='itemBreaker' />
       <div className='category'>
         {item.category}

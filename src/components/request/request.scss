@@ -1,7 +1,7 @@
 @import '../../constants/scss-variables.scss';
 @import '../../constants/scss-mixins.scss';
 
-.main {
+.reqMain {
   display: grid;
   column-gap: 20px;
   grid-template-columns: 169px minmax(100px, 450px) 249px 41px;
@@ -55,6 +55,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       gap: 0px;
+      justify-content: flex-start;
     }
 
     .date {

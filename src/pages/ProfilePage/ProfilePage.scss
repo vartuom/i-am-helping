@@ -3,33 +3,24 @@
 
 
 
-.volonteerMainPanel {
+.mainPanel {
   display: flex;
   flex-direction: row;
   width: 100%;
   gap: 20px;
+  margin: 10px auto;
 
-  @include from('sm') {
-    justify-content: center;
-  }
+  justify-content: center;
 
-  .volonteerLeftPanel {
+
+  .leftPanel {
     display: flex;
     flex-direction: column;
     width: 295px;
     gap: 30px;
 
-    @include from('sm') {
-      display: none;
-    }
 
   }
 
-  .volonteerRightPanel {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
 
-
-  }
 }
