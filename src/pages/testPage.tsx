@@ -1,7 +1,5 @@
 import React from 'react';
 import {NavLink, useLocation, useNavigate} from "react-router-dom";
-import UserCard from '../components/userCard/userCard';
-import UserSettings from '../components/userSettings/userSettings';
 
 const TestPage = () => {
     const navigate = useNavigate();
@@ -25,7 +23,6 @@ const TestPage = () => {
             >
                 Модальное окно 1
             </button>
-            <UserSettings />
         </>
     );
 };
