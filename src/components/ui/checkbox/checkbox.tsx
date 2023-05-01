@@ -3,6 +3,7 @@ import s from "./checkbox.module.scss"
 
 interface Props extends React.PropsWithRef<JSX.IntrinsicElements["input"]> {
     label: string | ReactNode;
+    [key: string]: any;
 }
 const Checkbox = React.forwardRef<HTMLInputElement, Props>(({label, ...props}, ref) => {
     return (
