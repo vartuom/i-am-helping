@@ -3,6 +3,8 @@ import Filter from '../components/filter/filter';
 import './anotherTestPage.scss';
 import { Button } from '../components/ui/buttons/Button';
 import DropdownMenu from '../components/dropdown/Dropdown';
+import { PageTitleFilter } from '../components/page-title-filter/PageTitleFilter';
+import { EPageTitleFilterKind } from '../components/page-title-filter/types';
 
 const AnotherTestPage = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,13 +14,9 @@ const AnotherTestPage = () => {
         <>
             Ок, все работает!
             <div className='position_relative'>
-                <button onClick={() => setIsOpen(!isOpen)} ref={menuRef}>Click me!</button>
+                <PageTitleFilter item={EPageTitleFilterKind.Map} onFilterClicked={() => setIsOpen(!isOpen)} />
                 <DropdownMenu onClose={() => setIsOpen(false)} isOpen={isOpen}>
-                    {isOpen &&
-                        <div className='wrapper'>
-                            <Filter />
-                        </div>
-                    }
+                    {isOpen && <Filter />}
                 </DropdownMenu>
             </div>
 

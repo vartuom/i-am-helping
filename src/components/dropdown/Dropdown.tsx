@@ -23,10 +23,25 @@ const DropdownMenu = ({ isOpen, children, onClose }: DropdownMenuProps) => {
     };
   }, [ref, onClose, isOpen]);
 
+  // const getMenuPosition = () => {
+  //   const buttonRect = ref?.current?.getBoundingClientRect();
+  //   if (!buttonRect) return 0;
+  //   return {
+  //     right: buttonRect.width + 20,
+  //   };
+  // };
+
+  // const menuStyle = {
+  //   ...getMenuPosition()
+  // };
+
   return (
-    <div ref={ref} className={s.position_absolute}>
-      {children}
+    <div className={s.filter_wrapper} ref={ref}>
+      <div className={s.position_absolute}>
+        {children}
+      </div>
     </div>
+
   );
 };
 
