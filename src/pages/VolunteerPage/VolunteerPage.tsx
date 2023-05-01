@@ -6,9 +6,15 @@ import { TRequest } from '../../components/request/types'
 import SideNavigation from '../../components/side-navigation/SideNavigation'
 import './VolunteerPage.scss'
 import UserCard, { user } from '../../components/userCard/userCard'
+import { IAvatarProps } from '../../components/avatar/Avatar'
 
 const VolunteerPage = () => {
 
+
+  const avatarParams: IAvatarProps = {
+    size: 175,
+    url: 'https://fraguru.com/mdimg/avatariru/m.298472.jpg',
+  }
   const [navArray, setNavArray] = useState<EPageTitleFilterKind[]>(
     [EPageTitleFilterKind.Map, EPageTitleFilterKind.Active, EPageTitleFilterKind.Completed]);
   const [requests, setRequests] = useState<TRequest[]>([{
@@ -61,8 +67,8 @@ const VolunteerPage = () => {
   return (
     <section className='mainPanel'>
       <div className='leftPanel'>
-        {UserCard(user)}
-        {SideNavigation({items: navArray})}
+        {UserCard(user, avatarParams)}
+        {SideNavigation({ items: navArray })}
 
       </div>
 
