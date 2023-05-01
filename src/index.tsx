@@ -9,10 +9,11 @@ import { YMaps } from '@pbe/react-yandex-maps';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
       <BrowserRouter>  
-        <YMaps query={{ lang: 'en_RU' }}>
+        <YMaps query={{ lang: 'ru_RU'}}>
           <App />
         </YMaps>
       </BrowserRouter>
