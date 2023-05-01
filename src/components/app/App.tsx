@@ -10,7 +10,7 @@ import ModalTwo from "../modalExamples/modalTwo";
 import ModalThree from "../modalExamples/modalThree";
 import { AppFooter } from "../app-footer/app-footer";
 import VolunteerPage from "../../pages/VolunteerPage/VolunteerPage";
-import { RecipientPage } from "../../pages/recipient/recipient";
+import { RecipientPage } from "../../pages/RecipientPage/RecipientPage";
 import ProfilePage from "../../pages/ProfilePage/ProfilePage";
 
 

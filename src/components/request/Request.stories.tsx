@@ -25,7 +25,6 @@ export const Primary: Story = {
         person_img: "https://i0.wp.com/studio.everypixel.com/ru/blog/wp-content/uploads/2013/10/How-to-make-a-portrait-photography-15.jpg?w=600&ssl=1",
         person_name: "Петров Петр Петрович",
         phone: "+7(000) 000-00-00",
-        is_approvable: true
 
     },
 };
