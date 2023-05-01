@@ -1,5 +1,7 @@
 import React from 'react';
 import {useLocation, useNavigate} from "react-router-dom";
+import {Button} from "../ui/buttons/Button";
+import {da, te} from "date-fns/locale";
 
 const ModalOne = () => {
     const navigate = useNavigate();
@@ -7,16 +9,16 @@ const ModalOne = () => {
     return (
         <div>
             Модальное окно № 1 <br/>
-            <button
-                type="button"
+            <Button
+                variant={"text"}
+                theme={"dark"}
+                label={"Продолжить"}
+                type={"submit"}
                 onClick={() =>
                     navigate("/modalTwo", {
                         state: { background: location.state.background },
                     })
-                }
-            >
-                Модальное окно 2
-            </button>
+                } />
         </div>
     );
 };

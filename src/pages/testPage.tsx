@@ -16,12 +16,12 @@ const TestPage = () => {
             <button
                 type="button"
                 onClick={() =>
-                    navigate("modalOne", {
+                    navigate("firstStep", {
                         state: { background: location },
                     })
                 }
             >
-                Модальное окно 1
+                Форма
             </button>
         </>
     );
