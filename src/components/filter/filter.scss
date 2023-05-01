@@ -9,3 +9,9 @@
 .react-datepicker {
   width: 100%;
 }
+
+.fullscreen {
+  .react-datepicker {
+    border: none;
+  }
+}

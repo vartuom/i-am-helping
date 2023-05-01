@@ -79,3 +79,18 @@
   padding: 10px 10px;
   cursor: pointer;
 }
+
+.h1 {
+  font-size: $fontSizeLarge;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.border {
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-top: 0;
+  border-image-source: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(46,49,146,1) 49.28%, rgba(255,255,255,0) 100%);
+
+}

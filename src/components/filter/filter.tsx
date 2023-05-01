@@ -4,7 +4,6 @@ import { Button } from "../ui/buttons/Button";
 import Checkbox from "../ui/checkbox/checkbox";
 import s from "./filter.module.scss";
 import "./filter.scss";
-import Input from "../ui/Input/Input";
 
 const categories = [{ id: 1, value: 'Категория 1' }, { id: 2, value: 'Категория 2' }, { id: 3, value: 'Категория 3' }, { id: 4, value: 'Категория 4' }, { id: 5, value: 'Категория 5', }, { id: 6, value: 'Категория 6' }];
 const radiuses = [{ id: '1km', value: '1 км' }, { id: '3km', value: '3 км' }, { id: '5km', value: '5 км' }];
@@ -22,10 +21,6 @@ const Filter = () => {
 
   }
 
-  const submitDate = () => {
-    setFullScreenCalendar(false);
-  }
-
   const handleCheckboxClick = (el: string) => {
     const array = filterState.category;
     if (array.indexOf(el) < 0) {
@@ -38,12 +33,11 @@ const Filter = () => {
   }
 
   const FullScreenCalendar = () => {
-    return <>
-      <div>
-        <Calendar />
-        <Button label="Применить" variant="text" theme="dark" type="submit" extraClass={s.margin_auto + ' '+ s.margin_top_10} onClick={submitDate} />
-      </div>
-    </>
+    return <div className="fullscreen">
+      <div className={s.h1+ ' '+s.border}>Дата</div>
+      <Calendar selectedDate={filterState.date} onChange={(e) => setFilter({ ...filterState, date: e })} />
+      <Button label="Применить" variant="text" theme="dark" type="submit" extraClass={s.margin_auto + ' ' + s.margin_top_10} onClick={() => setFullScreenCalendar(false)} />
+    </div>
   }
 
   return <div className={s.wrapper}>
@@ -76,11 +70,10 @@ const Filter = () => {
         <div className={s.label}>Дата</div>
         {isMobile
           ? <div className={s.style_date} onClick={() => setFullScreenCalendar(true)}>{filterState.date.toLocaleDateString('ru-RU', dateOptions)}</div>
-          : <Calendar />}
+          : <Calendar selectedDate={filterState.date} onChange={(e) => setFilter({ ...filterState, date: e })} />}
         <Button label="Применить" variant="text" theme="dark" type="submit" extraClass={s.ml_auto + " " + s.margin_top_10} onClick={submit} />
       </>
     }
-
   </div>
 }
 
