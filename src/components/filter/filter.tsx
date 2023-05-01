@@ -30,13 +30,13 @@ const Filter = () => {
       <ul className={s.d_flex + ' ' + s.column}>
         {!!categories.length && categories.map((el, i) => {
           if (i < middle)
-            return <li className={s.check_padding} key={el.id}><Checkbox label={el.value} onClick={(e) => handleCheckboxClick(el.value)} checked={filterState.category.indexOf(el.value) >= 0} /></li>
+            return <li className={s.check_padding} key={el.id}><Checkbox label={el.value} onClick={(e) => handleCheckboxClick(el.value)} checked={filterState.category.indexOf(el.value) >= 0} onChange={e => {}} /></li>
         })}
       </ul>
       <ul className={s.d_flex + ' ' + s.column}>
         {categories.length > 1 && categories.map((el, i) => {
           if (i >= middle)
-            return <li className={s.check_padding} key={el.id}><Checkbox label={el.value} onClick={(e) => handleCheckboxClick(el.value)} checked={filterState.category.indexOf(el.value) >= 0} /></li>
+            return <li className={s.check_padding} key={el.id}><Checkbox label={el.value} onClick={(e) => handleCheckboxClick(el.value)} checked={filterState.category.indexOf(el.value) >= 0} onChange={e => {}}/></li>
         })}
       </ul>
     </div>
