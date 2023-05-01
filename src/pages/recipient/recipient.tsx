@@ -93,8 +93,7 @@ export const RecipientPage = () => {
             <aside className={recipient.aside}>
                 {UserCard (user, avatarParams)}
                 <nav className={recipient.nav}>
-                    <SideNavLink path="/recipient/active" type="active" visible={true} />
-                    <SideNavLink path="recipient/completed" type="completed" visible={true} />
+                  
                 </nav>
             </aside>
             <div className={recipient.requests}>
