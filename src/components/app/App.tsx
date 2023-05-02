@@ -3,6 +3,7 @@ import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import TestPage from "../../pages/testPage";
 import AnotherTestPage from "../../pages/anotherTestPage";
 import PersonalPage from "../../pages/PersonalPage/PersonalPage";
+import SignupPage from "../../pages/SignupPage/SignupPage";
 import { AppHeader } from "../app-header/app-header";
 import Modal from "../modal/modal";
 import ModalOne from "../modalExamples/modalOne";
@@ -19,6 +20,7 @@ function App() {
       <AppHeader />
       <Routes location={background || location}>
         <Route path="/" element={<TestPage />} />
+        <Route path="/signup" element={<SignupPage />}/>
         <Route path="/anotherTestPage" element={<AnotherTestPage />} />
         <Route path="/personal" element={<PersonalPage />} />
         {/*добавить нужные роуты*/}
