@@ -9,7 +9,6 @@ import ModalOne from "../modalExamples/modalOne";
 import ModalTwo from "../modalExamples/modalTwo";
 import ModalThree from "../modalExamples/modalThree";
 import { AppFooter } from "../app-footer/app-footer";
-import UserConfirmationCard from "../user-confirmation-card/user-confirmation-card";
 
 function App() {
   const location = useLocation();
@@ -18,7 +17,6 @@ function App() {
   return (
     <div className="App">
       <AppHeader />
-      <UserConfirmationCard />
       <Routes location={background || location}>
         <Route path="/" element={<TestPage />} />
         <Route path="/anotherTestPage" element={<AnotherTestPage />} />

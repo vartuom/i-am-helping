@@ -1,14 +1,24 @@
-@use '../../constants/scss-variables.scss';
+@import "../../constants/scss-variables.scss";
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 276px;
-  //border: 1px solid #bc008d;
   box-sizing: border-box;
   position: relative;
-  font-family: 'GolosNormal';
+  font-family: $fontFamily;
+  list-style: none;
+}
+
+.cardMob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 175px;
+  box-sizing: border-box;
+  position: relative;
+  font-family: $fontFamily;
   list-style: none;
 }
 
@@ -20,10 +30,26 @@
   z-index: 1;
 }
 
+.label {
+  top: 57px;
+  position: absolute;
+  z-index: 2;
+}
+
 .info {
   margin-top: 31px;
   padding: 41px 30px 20px;
-  border: 1px solid #0071BC;
+  border: 1px solid $colorBtnFirst;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.infoMob {
+  margin-top: 31px;
+  padding: 65px 14px 20px;
+  border: 1px solid $colorBtnFirst;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -45,6 +71,14 @@
   padding: 0;
 }
 
+.aboutNameMob {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.4px;
+  margin: 0 0 2px 0;
+  padding: 0;
+}
+
 .aboutId {
   font-weight: 400;
   font-size: 12px;
@@ -56,10 +90,18 @@
 
 .aboutDescription {
   display: grid;
-  grid-template-columns: 41px 144px;
+  grid-template-columns: 30px 113px;
   gap: 12px;
   align-items: self-start;
   margin: 0 0 2px 0;
+}
+
+.aboutDescriptionMob {
+  display: grid;
+  grid-template-columns: 41px 144px;
+  gap: 10px;
+  align-items: self-start;
+  margin: 0 0 10px 0;
 }
 
 .aboutMe {
@@ -80,11 +122,36 @@
   padding: 0;
 }
 
-.temp {
-  width: 166px;
+.dobriki {
+  //width: 196px;
+  //height: 25px;
+  //border: 1px solid #0071BC;
+  //box-sizing: border-box;
+  margin-left: -30px;
+}
+
+.progress {
+  display: flex;
   height: 22px;
-  border: 1px solid #0071BC;
-  box-sizing: border-box;
+  margin-top: -27px;
+  margin-left: 30px;
+}
+
+.progressMob {
+  display: flex;
+  height: 22px;
+  //margin-top: -27px;
+  margin-left: 30px;
+}
+
+.progressNumber {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  margin: auto 0;
+  margin-left: 5px;
+  margin-right: 10px;
+  color: $colorMain;
 }
 
 .buttons {
@@ -95,36 +162,10 @@
   gap: 5px;
 }
 
-.progress {
+.buttonsMob {
   display: flex;
-  flex-direction: row;
-  position: relative;
-  height: 22px;
-  margin-top: 20px;
-  margin-left: 83px;
-}
-
-.progressNumber {
-  font-family: 'GolosNormal';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  margin: auto 0;
-  margin-left: 5px;
-  margin-right: 10px;
-  color: #2E3192;
-}
-
-.buttonBox {
-  box-sizing: border-box;
-  display: grid;
-  grid-template-rows: repeat(3, 113px);
-  gap: 10px;
-  padding-top: 30px;
-  justify-self: center;
-  justify-content: center;
-  width: 295px;
-  height: 426px;
-  border: 3px solid #2E3192;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 13px;
+  gap: 5px;
 }
