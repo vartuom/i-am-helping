@@ -1,0 +1,64 @@
+.setWindow {
+    width: 285px;
+    height: 285px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar {
+    width: 82px;
+    position: relative;
+    left: -50px;
+}
+
+.info {
+    margin-left: 43px;
+    height: 46px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 37px;
+}
+
+.buttonWidth {
+    width: 105px;
+}
+
+.buttonExit {
+    width: 105px;
+    border: none;
+}
+
+.buttonExit:hover {
+    background: none;
+    color: #2E3192;
+}
+
+.avaChange {
+    width: 90px;
+    height: 22px;
+    background-color: #FBFDFF;
+    border: 1px solid #2E3192;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: rgba(46, 49, 146, 1);
+    font-family: 'GolosNormal';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    position: relative;
+    left: -23px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.avatarBlock {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
