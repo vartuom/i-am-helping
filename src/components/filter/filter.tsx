@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {ChangeEvent, useState} from "react";
 import Calendar from "../calendar/Calendar";
 import { Button } from "../ui/buttons/Button";
 import Checkbox from "../ui/checkbox/checkbox";
@@ -21,14 +21,15 @@ const Filter = () => {
 
   }
 
-  const handleCheckboxClick = (el: string) => {
+  const handleCheckboxClick = (evt:  ChangeEvent<HTMLInputElement>) => {
+    evt.stopPropagation();
     const array = filterState.category;
-    if (array.indexOf(el) < 0) {
-      array.push(el);
+    if (array.indexOf(evt.target.name) < 0) {
+      array.push(evt.target.name);
       setFilter({ ...filterState, category: array });
     }
     else {
-      setFilter({ ...filterState, category: array.splice(array.indexOf(el), 1) });
+      setFilter({ ...filterState, category: array.filter(value => value !== evt.target.name) });
     }
   }
 
@@ -48,13 +49,13 @@ const Filter = () => {
           <ul className={s.d_flex + ' ' + s.column}>
             {!!categories.length && categories.map((el, i) => {
               if (i < middle)
-                return <li className={s.check_padding} key={el.id}><Checkbox label={el.value} onClick={(e) => handleCheckboxClick(el.value)} checked={filterState.category.indexOf(el.value) >= 0} onChange={e => { }} /></li>
+                return <li className={s.check_padding} key={el.id}><Checkbox name={el.value} label={el.value} handleChange={handleCheckboxClick} isChecked={filterState.category.indexOf(el.value) >= 0} /></li>
             })}
           </ul>
           <ul className={s.d_flex + ' ' + s.column}>
             {categories.length > 1 && categories.map((el, i) => {
               if (i >= middle)
-                return <li className={s.check_padding} key={el.id}><Checkbox label={el.value} onClick={(e) => handleCheckboxClick(el.value)} checked={filterState.category.indexOf(el.value) >= 0} onChange={e => { }} /></li>
+                return <li className={s.check_padding} key={el.id}><Checkbox name={el.value} label={el.value} handleChange={handleCheckboxClick} isChecked={filterState.category.indexOf(el.value) >= 0} /></li>
             })}
           </ul>
         </div>
