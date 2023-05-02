@@ -1,11 +1,12 @@
 import styles from './user-confirmation-card.module.scss';
 import { FC } from 'react';
-//import Avatar from '../../images/avatar-admin-small.png';
 import { Button } from '../ui/buttons/Button';
 import { BallsIcon } from '../ui/icons/icons';
 import { FinishedApplicationIcon } from '../ui/icons/icons';
 import { KeyIcon } from '../ui/icons/icons';
 import { Avatar } from '../avatar/Avatar';
+import { ColorfulLabel, ColorfulLabelMob } from '../ui/figures/colorful-label';
+import useMediaQuery from '../../hooks/useMediaQuery';
 
 export const user: TUser = {
   id: 11111114,
@@ -33,65 +34,59 @@ interface TUser {
 
 
 const UserConfirmationCard: FC<TUser> = (user: TUser) => {
+
+  const desktop = useMediaQuery('(min-width: 768px)');
+
   return (
-    <li className={styles.card}> 
+    <>
+    { desktop ?
+     (<li className={styles.card}> 
       <div className={styles.avatar}>
         <Avatar size={62} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} />
       </div>
-
       <div className={styles.info}>
-
-        {/* <h3 className={styles.about}>
-          <p className={styles.aboutName}>{user.name}</p>
-          <p className={styles.aboutId}>ID {user.id}</p>
+        <div className={styles.about}>
+          <h3 className={styles.aboutName}>{user.name}</h3>
+          <p className={styles.aboutId}>{user.id}</p>
           <div className={styles.aboutDescription}>
             <p className={styles.aboutMe}>Тел.:</p>
             <p className={styles.aboutContact}>{user.phone}</p>
           </div>
-        </h3> */}
 
-        <div className={styles.about}>
-          <h3 className={styles.aboutName}>Петров Петр Петрович</h3>
-          <p className={styles.aboutId}>ID 11111114</p>
-          <div className={styles.aboutDescription}>
-            <p className={styles.aboutMe}>Тел.:</p>
-            <p className={styles.aboutContact}>+7(000) 000-00-04</p>
-          </div>
-          <div className={styles.temp}></div> 
+          {user.status === 'volunteer' ? 
+            ( <div className={styles.dobriki}>
+                <ColorfulLabel fill ="#ACCA3E" />
+                <div className={styles.progress}>
+                  <BallsIcon type={'white'} />
+                  <p className={styles.progressNumber}>{user.balls}</p>
+                  <KeyIcon />
+                  <p className={styles.progressNumber}>{user.keys}</p>
+                  <FinishedApplicationIcon />
+                  <p className={styles.progressNumber}>{user.finishedApplications}</p>
+                </div>
+              </div> ) : (<></>)}
+          {user.status === 'admin' ? 
+            (<div className={styles.dobriki}>
+              <ColorfulLabel fill ="#F9BC90" /> 
+              <div className={styles.progress}>
+                <BallsIcon type={'white'} />
+                <p className={styles.progressNumber}>{user.balls}</p>
+                <FinishedApplicationIcon />
+                <p className={styles.progressNumber}>{user.finishedApplications}</p>
+              </div>
+            </div>) : (<></>)}
+
+          {user.status === 'recipient' ? 
+          (<div className={styles.dobriki}>
+            <ColorfulLabel fill ="#818C99" />
+            <div className={styles.progress}>
+              <BallsIcon type={'white'} />
+              <p className={styles.progressNumber}>{user.balls}</p>
+              <FinishedApplicationIcon />
+              <p className={styles.progressNumber}>{user.finishedApplications}</p>
+            </div>
+          </div>) : (<></>)}
         </div>  
-
-            
-
-        {/* 
-        {user.status === 'recipient' ? 
-        (<>
-        <div className={styles.progress}>
-          <div className={styles.ellipse}>
-            <p className={styles.progressNumber}>1 из 5</p>
-            <img src={Ellipse}/>
-          </div>
-        </div>
-        </>) : (<></>)}
-        {user.status === 'volunteer' ? 
-        (<>
-          <div className={styles.progress}>
-            <BallsIcon type={'white'} />
-            <p className={styles.progressNumber}>{user.balls}</p>
-            <KeyIcon />
-            <p className={styles.progressNumber}>{user.keys}</p>
-            <FinishedApplicationIcon />
-            <p className={styles.progressNumber}>{user.finishedApplications}</p>
-        </div>
-        </>) : (<></>)}
-        {user.status === 'admin' ? 
-        (<>
-        <div className={styles.progress}>
-        </div>
-        </>) : (<></>)}
-        <div className={styles.buttons}>
-          <Button animated='wheel' type='button' />
-        </div>
-        */}
 
         <div className={styles.buttons}>
           <Button
@@ -116,10 +111,73 @@ const UserConfirmationCard: FC<TUser> = (user: TUser) => {
             variant="text"
           />
         </div>
-
-        
       </div>
-    </li>
+    </li>)
+    :(<li className={styles.cardMob}> 
+      <div className={styles.avatar}>
+        <Avatar size={62} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} />
+      </div>
+
+      {user.status === 'volunteer' ? 
+        (<div className={styles.label}>
+          <ColorfulLabelMob fill ="#ACCA3E" /> 
+        </div>) : (<></>)}
+      {user.status === 'admin' ? 
+        (<div className={styles.label}>
+          <ColorfulLabelMob fill ="#F9BC90" /> 
+        </div>) : (<></>)}
+      {user.status === 'recipient' ? 
+        (<div className={styles.label}>
+          <ColorfulLabelMob fill ="#818C99" /> 
+        </div>) : (<></>)}
+
+      <div className={styles.infoMob}>
+        <div className={styles.about}>
+          <h3 className={styles.aboutNameMob}>{user.name}</h3>
+          <p className={styles.aboutId}>{user.id}</p>
+          <div className={styles.aboutDescriptionMob}>
+            <p className={styles.aboutMe}>Тел.:</p>
+            <p className={styles.aboutContact}>{user.phone}</p>
+          </div>
+          <div className={styles.dobriki}>
+            <div className={styles.progressMob}>
+              <BallsIcon type={'white'} />
+              <p className={styles.progressNumber}>{user.balls}</p>
+              <FinishedApplicationIcon />
+              <p className={styles.progressNumber}>{user.keys}</p>
+              <FinishedApplicationIcon />
+              <p className={styles.progressNumber}>{user.finishedApplications}</p>
+            </div>
+          </div>
+        </div>  
+
+        <div className={styles.buttonsMob}>
+          <Button
+            label="Подтвердить"
+            onClick={() => {}}
+            theme="dark"
+            type="submit"
+            variant="text"
+          />
+          <Button
+            label="Заблокировать"
+            onClick={() => {}}
+            theme="light"
+            type="button"
+            variant="text"
+          />
+          <Button
+            label="Дать ключи"
+            onClick={() => {}}
+            theme="light"
+            type="button"
+            variant="text"
+          />
+        </div>
+      </div>
+      
+    </li>)}
+    </>
   );
 };  
 

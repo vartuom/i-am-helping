@@ -25,10 +25,9 @@ type Story = StoryObj<typeof userConfirmationCard>;
 export const Primary: Story = {
     args:
     {
-        id: 112233,
-        name: 'Иванов Иван Иванович',
-        phone: '+7(000)000-00-00',
-        about: 'Я люблю музыку, книги и кошек Я люблю музыку, книги и кошек Я люблю музыку, книги и кошек',
+        id: 11111114,
+        name: 'Петров Петр Петрович',
+        phone: '+7(000)000-00-04',
         image: `${Avatar}`,
         balls: 2500,
         keys: 1,
