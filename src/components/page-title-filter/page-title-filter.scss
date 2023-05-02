@@ -13,9 +13,9 @@
     min-width: 200px;
     height: 55px;
     align-self: center;
+    margin: 0 auto;
+    max-width: calc(100vw - 30px);
   }
-
-
 
   .reqType {
     display: flex;
@@ -87,8 +87,6 @@
         width: 30px;
         height: 30px;
       }
-
-
     }
   }
 }

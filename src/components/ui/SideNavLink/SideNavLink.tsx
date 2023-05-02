@@ -31,3 +31,4 @@ export default function SideNavLink({ path, type, visible, onClick, active }: IS
     </>
   )
 } 
+

@@ -1,4 +1,5 @@
 @import '../../constants/scss-variables.scss';
+@import '../../constants/scss-mixins.scss';
 
 .makeApplication {
   position: relative;
@@ -22,6 +23,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include from('sm') {
+    padding: 80px 0;
+  }
 }
 
 .topWrapper {
@@ -30,6 +34,9 @@
   align-items: center;
   row-gap: 10px;
   margin-bottom: 75px;
+  @include from('sm') {
+    margin-bottom: 35px;
+  }
 }
 
 .bottomWrapper {
