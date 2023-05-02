@@ -31,6 +31,7 @@ import { BallsIcon } from "./balls-icon/balls-icon";
 import { KeyIcon } from "./key-icon/key-icon";
 import { FinishedApplicationIcon } from "./finished-application-icon/finished-application-icon";
 import { AddIcon } from "./add-icon/add-icon";
+import { DiagramIcon } from "./diagram-icon/diagram-icon";
 
 export {
     PersonIcon,
@@ -65,5 +66,6 @@ export {
     BallsIcon,
     KeyIcon,
     FinishedApplicationIcon,
-    AddIcon
+    AddIcon,
+    DiagramIcon
 }

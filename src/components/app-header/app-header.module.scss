@@ -21,7 +21,7 @@
         border-top: 0;
         border-right: 0;
         border-left: 0;
-        width: 100%;
+
         gap: 0;
     }
 }
@@ -40,10 +40,10 @@
     @include from('sm') {
         background-color: $colorBgcPopup;
         display: grid;
-        grid-template-areas: 
-        ". message"
-        ". list";
-        grid-template-rows: repeat(2,minmax(min-content,max-content));
+        grid-template-areas:
+            ". message"
+            ". list";
+        grid-template-rows: repeat(2, minmax(min-content, max-content));
         gap: 37px;
         position: absolute;
         top: 61px;
@@ -105,11 +105,11 @@
 
     @include from('sm') {
         display: grid;
-        grid-template-areas: 
-        ". blog"
-        ". personal"
-        ". privacy"
-        ". contacts";
+        grid-template-areas:
+            ". blog"
+            ". personal"
+            ". privacy"
+            ". contacts";
         gap: 30px;
         padding-right: 32px;
     }
@@ -133,7 +133,7 @@
 }
 
 .message__area {
-    grid-area: message; 
+    grid-area: message;
     justify-self: end;
     align-self: flex-start;
     display: flex;
@@ -147,7 +147,7 @@
     background-position: bottom left;
     background-size: contain;
     background-repeat: no-repeat;
-    
+
     @include from('sm') {
         align-self: end;
         max-height: 46px;

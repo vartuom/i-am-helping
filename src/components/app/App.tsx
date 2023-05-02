@@ -9,10 +9,14 @@ import ModalOne from "../modalExamples/modalOne";
 import ModalTwo from "../modalExamples/modalTwo";
 import ModalThree from "../modalExamples/modalThree";
 import { AppFooter } from "../app-footer/app-footer";
+import VolunteerPage from "../../pages/VolunteerPage/VolunteerPage";
+import { RecipientPage } from "../../pages/recipient/recipient";
+import ProfilePage from "../../pages/ProfilePage/ProfilePage";
 import FirstStep from "../taskForm/firstStep";
 import SecondStep from "../taskForm/secondStep";
 import ThirdStep from "../taskForm/thirdStep";
 import ConfirmStep from "../taskForm/confirmStep";
+
 
 function App() {
   const location = useLocation();
@@ -25,6 +29,9 @@ function App() {
         <Route path="/" element={<TestPage />} />
         <Route path="/anotherTestPage" element={<AnotherTestPage />} />
         <Route path="/personal" element={<PersonalPage />} />
+        <Route path="/volunteer" element={<VolunteerPage />} />
+        <Route path="/recipient" element={<RecipientPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
         {/*добавить нужные роуты*/}
       </Routes>
       {background && (
