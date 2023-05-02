@@ -18,6 +18,7 @@ import SecondStep from "../taskForm/secondStep";
 import ThirdStep from "../taskForm/thirdStep";
 import ConfirmStep from "../taskForm/confirmStep";
 
+
 function App() {
   const location = useLocation();
   const background = location.state?.background;

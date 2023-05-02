@@ -8,10 +8,7 @@
   flex-direction: row;
   width: 100%;
   gap: 20px;
-
-  @include from('sm') {
-    justify-content: center;
-  }
+  justify-content: center;
 
   .volonteerLeftPanel {
     display: flex;
