@@ -3,19 +3,15 @@ import useAutosizeTextArea from "../../../hooks/useAutosizeTextArea";
 import s from "./textArea.module.scss";
 
 interface TextAreaProps {
-  typeArea: string;
+  value: string;
+  onChange: (value: any) => void;
 }
 
-const TextArea: FC<TextAreaProps> = () => {
-  const [value, setValue] = useState("");
+const TextArea: FC<TextAreaProps> = (props) => {
+  const { value, onChange } = props;
+
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   useAutosizeTextArea(textAreaRef.current, value);
-
-  const handleChange = (evt: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const val = evt.target?.value;
-
-    setValue(val);
-  };
 
   const [width, setWidth] = useState<number>(window.innerWidth);
 
@@ -45,10 +41,10 @@ const TextArea: FC<TextAreaProps> = () => {
         className={s.text}
         maxLength={!isMobile ? options.countDesktop : options.countMobile}
         placeholder={options.placeholder}
-        onChange={handleChange}
+        onChange={onChange}
         ref={textAreaRef}
         rows={10}
-        value={value}
+        value={value || ""}
       />
       <span className={s.count}>{`${
         (!isMobile ? options.countDesktop : options.countMobile) - value.length

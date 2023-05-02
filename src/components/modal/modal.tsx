@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 
 import ModalOverlay from "../modalOverlay/modalOverlay";
 import s from "./modal.module.scss";
+import {Button} from "../ui/buttons/Button";
+import {CrossIcon} from "../ui/icons/cross-icon/cross-icon";
 
 const modalRoot = document.getElementById("modals") as HTMLElement;
 
@@ -30,12 +32,11 @@ const Modal = (props: IPropsModal) => {
     return ReactDOM.createPortal(
         <div className={s.root}>
             <div className={s.container}>
-                <button
-                    type="button"
-                    className={s.closeButton}
-                    aria-label="Закрыть"
-                    onClick={onClose}
-                />
+                <div className={s.closeButton}>
+                    <Button figure={"close"} type={"button"} onClick={onClose}>
+                        <CrossIcon type={"white"}/>
+                    </Button>
+                </div>
                 {children}
             </div>
             <ModalOverlay handleCloseAction={onClose} />

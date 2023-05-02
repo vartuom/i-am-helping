@@ -13,6 +13,10 @@ import VolunteerPage from "../../pages/VolunteerPage/VolunteerPage";
 import { RecipientPage } from "../../pages/RecipientPage/RecipientPage";
 import ProfilePage from "../../pages/ProfilePage/ProfilePage";
 
+import FirstStep from "../taskForm/firstStep";
+import SecondStep from "../taskForm/secondStep";
+import ThirdStep from "../taskForm/thirdStep";
+import ConfirmStep from "../taskForm/confirmStep";
 
 function App() {
   const location = useLocation();
@@ -33,29 +37,37 @@ function App() {
       {background && (
         <Routes>
           <Route
-            path="/modalOne"
+            path="/firstStep"
             element={
               <Modal onClose={() => navigate(-1)} isModalOpened>
-                <ModalOne />
+                <FirstStep />
               </Modal>
             }
           />
           <Route
-            path="/modalTwo"
+            path="/secondStep"
             element={
               <Modal onClose={() => navigate("/")} isModalOpened>
-                <ModalTwo />
+                <SecondStep />
               </Modal>
             }
           />
           <Route
-            path="/modalThree"
+            path="/thirdStep"
             element={
               <Modal onClose={() => navigate("/")} isModalOpened>
-                <ModalThree />
+                <ThirdStep />
               </Modal>
             }
           />
+            <Route
+                path="/confirmStep"
+                element={
+                    <Modal onClose={() => navigate("/")} isModalOpened>
+                        <ConfirmStep />
+                    </Modal>
+                }
+            />
         </Routes>
       )}
       <AppFooter />
