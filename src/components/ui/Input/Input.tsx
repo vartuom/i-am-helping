@@ -1,12 +1,26 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import s from "./Input.module.scss";
 
 interface InputProps {
   typeInput: string;
+  value?: string;
+  valueName?: string;
+  valuePhone?: string;
+  onChange?: (value: any) => void;
+  onChangeName?: (value: any) => void;
+  onChangePhone?: (value: any) => void;
 }
 
 const Input: FC<InputProps> = (props) => {
-  const { typeInput } = props;
+  const {
+    typeInput,
+    value,
+    valueName,
+    valuePhone,
+    onChange,
+    onChangeName,
+    onChangePhone,
+  } = props;
   let options = {
     labelText: "",
     placeholder: "",
@@ -77,25 +91,6 @@ const Input: FC<InputProps> = (props) => {
     }
   }
 
-  const [value, setValue] = useState("");
-  const onChange = (e: { target: { value: React.SetStateAction<string> } }) => {
-    setValue(e.target.value);
-  };
-
-  const [userName, setUserName] = useState("Иванов Иван Иванович");
-  const onChangeUserName = (e: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
-    setUserName(e.target.value);
-  };
-
-  const [userPhone, setUserPhone] = useState("+7(000) 000-00-00");
-  const onChangeUserPhone = (e: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
-    setUserPhone(e.target.value);
-  };
-
   setTypeInput(typeInput);
   return (
     <>
@@ -108,7 +103,7 @@ const Input: FC<InputProps> = (props) => {
               type="text"
               className={s.input}
               placeholder={options.placeholder}
-              value={value}
+              value={value || ""}
               onChange={onChange}
             />
             {options.adress ? (
@@ -128,7 +123,7 @@ const Input: FC<InputProps> = (props) => {
             type="text"
             className={s.popupInput}
             placeholder={options.placeholder}
-            value={value}
+            value={value || ""}
             onChange={onChange}
           />
         </div>
@@ -140,8 +135,8 @@ const Input: FC<InputProps> = (props) => {
             type="text"
             className={s.userInfoNameInput}
             placeholder={options.placeholder}
-            value={userName}
-            onChange={onChangeUserName}
+            value={valueName || ""}
+            onChange={onChangeName}
           />
         </div>
       )}
@@ -152,8 +147,8 @@ const Input: FC<InputProps> = (props) => {
             type="text"
             className={s.userInfoNameInput}
             placeholder={options.placeholder}
-            value={userPhone}
-            onChange={onChangeUserPhone}
+            value={valuePhone || ""}
+            onChange={onChangePhone}
           />
         </div>
       )}
