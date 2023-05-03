@@ -5,6 +5,8 @@
   display: grid;
   column-gap: 20px;
   grid-template-columns: 169px minmax(100px, 450px) 249px 41px;
+  max-width: 889px;
+  margin: 0 auto;
   grid-template-areas:
     "category ....... person button"
     "wrapperTimeAddress contentHeader person button"
@@ -374,45 +376,11 @@
     }
   }
 
-  .button {
+  .button-request {
     grid-area: button;
+    gap: 10.5px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-
-    .buttonClose {
-      cursor: pointer;
-      display: flex;
-      width: 32px;
-      height: 32.5px;
-      background-color: $colorSupport;
-      clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 6.25% 100%);
-      align-self: self-end;
-
-
-      &:hover {
-        background-color: $colorMain;
-      }
-    }
-
-
-    .buttonApprove {
-      cursor: pointer;
-      display: flex;
-      width: 32px;
-      height: 32.5px;
-      background: $colorApprove;
-      clip-path: polygon(6.25% 0%, 100% 15%, 100% 100%, 0% 100%);
-      align-self: center;
-      margin-top: 55px;
-
-      @include from('sm') {
-        display: none;
-      }
-    }
-  }
-
-  .ICO {
-    margin: auto;
   }
 }
