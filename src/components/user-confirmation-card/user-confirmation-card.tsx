@@ -55,9 +55,7 @@ const UserConfirmationCard: FC<TUser> = (user: TUser) => {
           </div>
 
           <div className={styles.dobriki}>
-
-            {user.confirmation === 'green' ? <ColorfulLabel fill ="#ACCA3E" /> : user.confirmation === 'orange' ? <ColorfulLabel fill ="#F9BC90" /> : <ColorfulLabel fill ="#818C99" /> }
-
+            <ColorfulLabel fill = {user.confirmation === 'green' ? "#ACCA3E" : user.confirmation === 'orange' ? "#F9BC90" : "#818C99"} />
             <div className={styles.progress}>
               <BallsIcon type={'white'} />
               <p className={styles.progressNumber}>{user.balls}</p>
@@ -100,7 +98,7 @@ const UserConfirmationCard: FC<TUser> = (user: TUser) => {
       </div>
 
       <div className={styles.label}>
-        {user.confirmation === 'green' ? <ColorfulLabelMob fill ="#ACCA3E" /> : user.confirmation === 'orange' ? <ColorfulLabelMob fill ="#F9BC90" /> : <ColorfulLabelMob fill ="#818C99" /> }
+        <ColorfulLabelMob fill ={user.confirmation === 'green' ? "#ACCA3E" : user.confirmation === 'orange' ? "#F9BC90" : "#818C99"} />
       </div>
 
       <div className={styles.infoMob}>
