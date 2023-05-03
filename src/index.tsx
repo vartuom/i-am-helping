@@ -16,7 +16,8 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <YMaps query={{ lang: 'ru_RU'}}>
+      {/* незабудьте подставить свой ключ, а то не будет работать геокод и прочее*/}
+        <YMaps query={{ lang: 'ru_RU', apikey: '705663f0-8519-4120-8914-fbdb6b6bbc4d' }}>
           <App />
         </YMaps>
       </BrowserRouter>
