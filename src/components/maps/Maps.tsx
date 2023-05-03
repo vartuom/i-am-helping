@@ -8,7 +8,7 @@ export const Maps = () => {
 
     const [mapState, setMapState] = useState<ymaps.IMapState>({center: [55.755864, 37.617698], zoom: 12})
     
-    const options: ymaps.IMapOptions = {suppressMapOpenBlock: true}
+    const options: ymaps.IMapOptions = {suppressMapOpenBlock: true, yandexMapDisablePoiInteractivity: true}
 
     const aplication = [[55.737397, 37.582600], [55.774456, 37.597090], [55.774456, 37.610409], [55.759439, 37.597090], [55.759439, 37.610409]]
 

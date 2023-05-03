@@ -11,4 +11,25 @@
         border-radius: 100%;
         background-color: $colorMain;
     }
+
+
+    &__inputBox{
+        position: relative;
+    }
+
+    &__ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        z-index: 2501;
+        background-color: white;
+    }
+
+    &__li{
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
 }
