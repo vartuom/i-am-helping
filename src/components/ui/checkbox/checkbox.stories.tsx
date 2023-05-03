@@ -13,6 +13,7 @@ export const Primary: Story = {
     args: {
         name: "checkboxName",
         label: "Подпись к чекбоксу",
-        isChecked: false
+        isChecked: true,
+        
     },
 };
