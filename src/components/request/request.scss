@@ -1,7 +1,7 @@
 @import '../../constants/scss-variables.scss';
 @import '../../constants/scss-mixins.scss';
 
-.main {
+.reqMain {
   display: grid;
   column-gap: 20px;
   grid-template-columns: 169px minmax(100px, 450px) 249px 41px;
@@ -40,11 +40,13 @@
     padding-left: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
+    text-align: left;
   }
 
   .wrapperTimeAddress {
     grid-area: wrapperTimeAddress;
     display: flex;
+    justify-content: center;
     gap: 10px;
     flex-direction: column;
     margin-top: 10px;
@@ -53,6 +55,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       gap: 0px;
+      justify-content: flex-start;
     }
 
     .date {
@@ -145,6 +148,8 @@
         font-size: $fontSizeMedium;
         line-height: 19px;
         color: $colorMain;
+        max-width: 131px;
+        text-align: left;
 
         @include from('sm') {
           font-family: $fontFamilyBold;
@@ -162,6 +167,7 @@
     line-height: 29px;
     color: $colorSupport;
     margin-top: 10px;
+    text-align: left;
 
     @include from('sm') {
       margin-top: 20px;
@@ -180,6 +186,7 @@
       font-weight: $fontWeight;
       font-size: $fontSizeMedium;
       line-height: 19px;
+      text-align: left;
 
       @include from('sm') {
         line-height: 29px;
@@ -261,6 +268,7 @@
     grid-area: person;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 5px;
 
     @include from('sm') {
@@ -370,8 +378,7 @@
     grid-area: button;
     display: flex;
     flex-direction: column;
-
-
+    justify-content: flex-start;
 
     .buttonClose {
       cursor: pointer;

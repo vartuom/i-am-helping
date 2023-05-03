@@ -5,6 +5,8 @@ import App from './components/app/App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 import { YMaps } from '@pbe/react-yandex-maps';
+import {store} from "./store/store";
+import {Provider} from "react-redux";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,11 +14,13 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-      <BrowserRouter>  
+    <Provider store={store}>
+      <BrowserRouter>
         <YMaps query={{ lang: 'ru_RU'}}>
           <App />
         </YMaps>
       </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

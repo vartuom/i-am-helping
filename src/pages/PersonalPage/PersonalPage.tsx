@@ -12,7 +12,7 @@ const PersonalPage = () => {
         <div className='card'>
           Карточка
         </div>
-        <SideNavigation />
+       
       </section>
       <section className='applicationsInfo'>
         <div className='personalNav'>Personal Navigation</div>

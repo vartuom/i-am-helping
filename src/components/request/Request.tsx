@@ -9,10 +9,11 @@ import { MessageIcon } from '../ui/icons/message-icon/message-icon'
 import { CrossIcon } from '../ui/icons/cross-icon/cross-icon';
 import { ApproveIcon } from '../ui/icons/approve-icon/approve-icon';
 import { TRequest } from './types'
+import { Avatar } from '../avatar/Avatar';
 
 export const Request: FC<TRequest> = (item: TRequest) => {
   return (
-    <div className='main'>
+    <div className='reqMain'>
       <div className='itemBreaker' />
       <div className='category'>
         {item.category}
@@ -37,7 +38,7 @@ export const Request: FC<TRequest> = (item: TRequest) => {
         </div >
         <div className='address'>
           <div className='addressImg'>
-            <LocationIcon />
+            <LocationIcon type={"blue"} />
           </div>
           <div className='addressText'>
             {item.address}
@@ -69,7 +70,7 @@ export const Request: FC<TRequest> = (item: TRequest) => {
       </div >
 
       <div className='person'>
-        <img className='personImg' src={item.person_img!} />
+        <Avatar size={100} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} />
         <div className='personName'>
           {item.person_name}
         </div>
