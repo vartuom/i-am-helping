@@ -30,6 +30,7 @@ interface TUser {
   keys?: number;
   finishedApplications?: number;
   status?: 'admin' | 'volunteer' | 'recipient';
+  confirmation?: 'green' | 'orange' | 'grey';
 }
 
 
@@ -53,39 +54,19 @@ const UserConfirmationCard: FC<TUser> = (user: TUser) => {
             <p className={styles.aboutContact}>{user.phone}</p>
           </div>
 
-          {user.status === 'volunteer' ? 
-            ( <div className={styles.dobriki}>
-                <ColorfulLabel fill ="#ACCA3E" />
-                <div className={styles.progress}>
-                  <BallsIcon type={'white'} />
-                  <p className={styles.progressNumber}>{user.balls}</p>
-                  <KeyIcon />
-                  <p className={styles.progressNumber}>{user.keys}</p>
-                  <FinishedApplicationIcon />
-                  <p className={styles.progressNumber}>{user.finishedApplications}</p>
-                </div>
-              </div> ) : (<></>)}
-          {user.status === 'admin' ? 
-            (<div className={styles.dobriki}>
-              <ColorfulLabel fill ="#F9BC90" /> 
-              <div className={styles.progress}>
-                <BallsIcon type={'white'} />
-                <p className={styles.progressNumber}>{user.balls}</p>
-                <FinishedApplicationIcon />
-                <p className={styles.progressNumber}>{user.finishedApplications}</p>
-              </div>
-            </div>) : (<></>)}
+          <div className={styles.dobriki}>
 
-          {user.status === 'recipient' ? 
-          (<div className={styles.dobriki}>
-            <ColorfulLabel fill ="#818C99" />
+            {user.confirmation === 'green' ? <ColorfulLabel fill ="#ACCA3E" /> : user.confirmation === 'orange' ? <ColorfulLabel fill ="#F9BC90" /> : <ColorfulLabel fill ="#818C99" /> }
+
             <div className={styles.progress}>
               <BallsIcon type={'white'} />
               <p className={styles.progressNumber}>{user.balls}</p>
+              <KeyIcon />
+              <p className={styles.progressNumber}>{user.keys}</p>
               <FinishedApplicationIcon />
               <p className={styles.progressNumber}>{user.finishedApplications}</p>
             </div>
-          </div>) : (<></>)}
+          </div>
         </div>  
 
         <div className={styles.buttons}>
@@ -118,18 +99,9 @@ const UserConfirmationCard: FC<TUser> = (user: TUser) => {
         <Avatar size={62} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} />
       </div>
 
-      {user.status === 'volunteer' ? 
-        (<div className={styles.label}>
-          <ColorfulLabelMob fill ="#ACCA3E" /> 
-        </div>) : (<></>)}
-      {user.status === 'admin' ? 
-        (<div className={styles.label}>
-          <ColorfulLabelMob fill ="#F9BC90" /> 
-        </div>) : (<></>)}
-      {user.status === 'recipient' ? 
-        (<div className={styles.label}>
-          <ColorfulLabelMob fill ="#818C99" /> 
-        </div>) : (<></>)}
+      <div className={styles.label}>
+        {user.confirmation === 'green' ? <ColorfulLabelMob fill ="#ACCA3E" /> : user.confirmation === 'orange' ? <ColorfulLabelMob fill ="#F9BC90" /> : <ColorfulLabelMob fill ="#818C99" /> }
+      </div>
 
       <div className={styles.infoMob}>
         <div className={styles.about}>

@@ -8,10 +8,10 @@ const meta: Meta<typeof userConfirmationCard> = {
     title: 'Карточка подтверждения пользователя',
     component: userConfirmationCard,
     argTypes: {
-        status: {
+        confirmation: {
             type: 'string',
-            defaultValue: 'admin',
-            options: ['admin', 'volunteer', 'recipient'],
+            defaultValue: 'green',
+            options: ['green', 'orange', 'grey'],
             control: {
                 type: 'radio'
             }
@@ -32,6 +32,7 @@ export const Primary: Story = {
         balls: 2500,
         keys: 1,
         finishedApplications: 150,
-        status: 'admin',
+        //status: 'admin',
+        confirmation: 'green'
     },
 };
