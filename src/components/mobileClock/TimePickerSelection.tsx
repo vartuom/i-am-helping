@@ -3,6 +3,7 @@ import s from "./TimePicker.module.scss";
 import HourFormat from "./HourFormat";
 import HourWheel from "./HourWheel";
 import MinuteWheel from "./MinuteWheel";
+import { Button } from "../ui/buttons/Button";
 
 interface ITimePickerSelection {
   pickerDefaultValue?: string | undefined;
@@ -91,7 +92,11 @@ const TimePickerSelection: FC<ITimePickerSelection> = ({
 
   return (
     <div className={`${s.wrap} ${s.wrapTransition}`}>
-      {controllers && (
+      <div className={s.popupHeader}>
+        <p className={s.popupHeaderText}>Время</p>
+        <span className={s.popupHeaderUnderline}></span>
+      </div>
+      {/* {controllers && (
         <div className={s.buttonContainer}>
           <button
             className={`${s.buttons} ${s.buttonSave} ${s.buttonCancel}`}
@@ -106,10 +111,11 @@ const TimePickerSelection: FC<ITimePickerSelection> = ({
             {saveButtonText}
           </button>
         </div>
-      )}
+      )} */}
       <div
         className={s.timeContainer}
-        style={{ height: `${height! * 5 + 40}px` }}
+        //style={{ height: `${height! * 5 + 40}px` }}
+        style={{ height: `${height! * 2 + 40}px` }}
       >
         <div
           className={s.timeOverlay}
@@ -119,9 +125,20 @@ const TimePickerSelection: FC<ITimePickerSelection> = ({
           }}
         />
         <HourWheel {...params} />
-        {seperator && <div className={s.timeColumn}>:</div>}
+        {seperator && <div className={s.timeColumn}></div>}
         <MinuteWheel {...params} />
         {use12Hours && <HourFormat {...params} />}
+      </div>
+
+      <div className={s.buttonQ}>
+        <Button
+          variant="text"
+          label="Применить"
+          onClick={handleSave}
+          size="large"
+          theme="dark"
+          type="button"
+        />
       </div>
     </div>
   );

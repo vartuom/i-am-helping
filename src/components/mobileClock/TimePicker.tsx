@@ -30,8 +30,8 @@ interface ITimePicker {
 
 const TimePicker: FC<ITimePicker> = ({
   value: initialValue = null,
-  cellHeight = 28,
-  placeHolder = "Select Time",
+  cellHeight = 70,
+  placeHolder = ":",
   pickerDefaultValue = "10:00",
   onChange = () => {},
   onFocus = () => {},
@@ -105,6 +105,7 @@ const TimePicker: FC<ITimePicker> = ({
           required={required}
           onFocus={handleFocus}
         />
+        <span className={s.test}></span>
       </div>
       {isOpen && !disabled && (
         <Portal>

@@ -1,3 +1,4 @@
+@import "../../constants/scss-variables.scss";
 .buttons {
   border: none;
   background: transparent;
@@ -8,10 +9,10 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  width: 50px;
+  width: 96px;
 }
 
-.input:focus {
+.timeInput:focus {
   outline: none;
 }
 
@@ -21,6 +22,7 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 11px 15px #0005;
+  position: relative;
 }
 
 //react-ios-time-picker-transition
@@ -30,7 +32,7 @@
 
 @keyframes fade-in {
   0% {
-    transform: translateY(150px);
+    transform: translateY(50px);
     opacity: 0;
   }
 
@@ -44,8 +46,8 @@
   display: flex;
   justify-content: center;
   position: relative;
-  background-color: #1d1d1d;
-  width: 220px;
+  background-color: $colorBgcPopup;
+  width: 300px;
   overflow: hidden;
   /* border-radius: 0 0 15px 17px; */
   padding: 20px 0;
@@ -56,8 +58,9 @@
 
 //react-ios-time-picker-hour
 .timeHour {
+  margin-top: -90px;
   position: relative;
-  width: 50px;
+  width: 70px;
   overflow: hidden;
   z-index: 100;
   margin-right: 5px;
@@ -65,20 +68,21 @@
 
 //react-ios-time-picker-minute
 .timeMinute {
+  margin-top: -90px;
   position: relative;
-  width: 50px;
+  width: 70px;
   overflow: hidden;
   z-index: 100;
   margin-left: 5px;
 }
 
 //react-ios-time-picker-hour-format
-.timeFormat {
-  position: relative;
-  width: 40px;
-  overflow: hidden;
-  z-index: 100;
-}
+// .timeFormat {
+//   position: relative;
+//   width: 40px;
+//   overflow: hidden;
+//   z-index: 100;
+// }
 
 //react-ios-time-picker-fast
 .timeFast {
@@ -92,14 +96,14 @@
 
 //react-ios-time-picker-selected-overlay
 .timeOverlay {
-  position: absolute;
-  border-radius: 6px;
-  background-color: #2c2c2f;
-  pointer-events: none;
-  margin: 0 10px;
-  left: 0;
-  right: 0;
-  z-index: 1;
+  // position: absolute;
+  // border-radius: 6px;
+  // background-color: #2c2c2f;
+  // pointer-events: none;
+  // margin: 0 10px;
+  // left: 0;
+  // right: 0;
+  // z-index: 1;
   /* box-shadow: inset 0px 0px 2px 0px rgba(255, 159, 10, 0.3); */
 }
 
@@ -164,8 +168,8 @@
   display: flex;
   justify-content: end;
   align-items: center;
-  font-size: 14px;
-  color: #666;
+  font-size: 45px;
+  color: $colorDisable;
   padding: 0 10px;
 }
 
@@ -198,8 +202,8 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  font-size: 14px;
-  color: #6a6a6b;
+  font-size: 45px;
+  color: $colorDisable;
   padding: 0 10px;
 }
 
@@ -209,15 +213,15 @@
 .timeHourInner:hover,
 .timeMinuteInner:hover,
 .timeFormatInnerCell:hover {
-  background-color: #ff9d0ac9;
+  background-color: $colorBtnSecond;
   color: white;
 }
 
 //react-ios-time-picker-cell-inner-selected
 .timeHourInnerSelected {
   /* font-weight: 500; */
-  color: #f7f7f7;
-  font-size: 16px;
+  color: $colorRegularFont;
+  font-size: 45px;
 }
 
 //react-ios-time-picker-cell-inner-hour-format-selected
@@ -227,20 +231,35 @@
 }
 
 //react-ios-time-picker-btn-container
-.buttonContainer {
+.popupHeader {
+  background-color: $colorBgcPopup;
   position: relative;
   display: flex;
-  justify-content: space-between;
-  background-color: #292929;
-  border-bottom: 1px solid #333;
+  align-items: center;
+  flex-direction: column;
   z-index: 100;
+  margin: 26px 0 13px;
 }
 
+.popupHeaderText {
+  font-family: $fontFamilyNormal;
+  font-size: $fontSizeLarge;
+  margin: 0;
+  padding: 0;
+  line-height: 29px;
+  padding-bottom: 3px;
+}
+
+.popupHeaderUnderline {
+  height: 2px;
+  width: 70%;
+  background-image: $colorBgcGradient;
+}
 //react-ios-time-picker-btn
 .buttonSave {
   padding: 10px 15px;
   font-size: 13px;
-  color: #fe9f06;
+  color: $colorBtnSecond;
   transition: all 150ms linear;
   font-weight: 500;
   z-index: 1;
@@ -277,9 +296,37 @@
 
 .timeInput {
   cursor: text;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 1px solid #0005;
+  padding: 5px 0;
+  border: 1px solid $colorSupport;
+  text-align: center;
+  letter-spacing: 4px;
+  font-family: $fontFamilyNormal;
+  font-size: 14px;
+}
+
+.test {
+  position: relative;
+}
+.test::after {
+  content: "__";
+  color: $colorDisable;
+  position: absolute;
+  z-index: 99;
+  top: -3px;
+  letter-spacing: 5px;
+  right: 51px;
+  font-size: 20px;
+}
+
+.test::before {
+  content: "__";
+  color: $colorDisable;
+  position: absolute;
+  z-index: 99;
+  top: -3px;
+  letter-spacing: 6px;
+  right: 18px;
+  font-size: 20px;
 }
 
 //react-ios-time-picker-colon
@@ -292,8 +339,8 @@
   position: relative;
   z-index: 100;
   font-weight: 600;
+  padding: 0 6px;
 }
-
 //react-ios-time-picker-cell-inner-hidden
 .timeHourInnerHidden {
   opacity: 0;
@@ -304,4 +351,11 @@
 //react-ios-time-picker-hour-format-transition
 .timeFormatTransition {
   transition: transform 100ms ease-out;
+}
+
+.buttonQ {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px 0 20px;
 }

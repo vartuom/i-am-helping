@@ -1,9 +1,3 @@
-interface test {
-  number: string;
-  translatedValue: any;
-  selected: boolean;
-}
-
 export const initialNumbersValue: any = (
   heightValue = 54,
   numbersLength = 24,

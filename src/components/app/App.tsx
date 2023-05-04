@@ -13,6 +13,7 @@ import FirstStep from "../taskForm/firstStep";
 import SecondStep from "../taskForm/secondStep";
 import ThirdStep from "../taskForm/thirdStep";
 import ConfirmStep from "../taskForm/confirmStep";
+import MobileClock from "../mobileClock/mobileClock";
 
 function App() {
   const location = useLocation();
@@ -53,16 +54,17 @@ function App() {
               </Modal>
             }
           />
-            <Route
-                path="/confirmStep"
-                element={
-                    <Modal onClose={() => navigate("/")} isModalOpened>
-                        <ConfirmStep />
-                    </Modal>
-                }
-            />
+          <Route
+            path="/confirmStep"
+            element={
+              <Modal onClose={() => navigate("/")} isModalOpened>
+                <ConfirmStep />
+              </Modal>
+            }
+          />
         </Routes>
       )}
+      <MobileClock />
       <AppFooter />
     </div>
   );

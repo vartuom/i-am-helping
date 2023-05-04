@@ -14,6 +14,7 @@ const HourWheel: FC<any> = ({ height, value, setValue, use12Hours }) => {
   const [hours, setHours] = useState<any>(
     initialNumbersValue(height, hourLength, parseInt(value.slice(0, 2)))
   );
+  console.log(height);
   const mainListRef = useRef<any>(null);
   const [cursorPosition, setCursorPosition] = useState<number | null>(null);
   const [firstCursorPosition, setFirstCursorPosition] = useState(null);
