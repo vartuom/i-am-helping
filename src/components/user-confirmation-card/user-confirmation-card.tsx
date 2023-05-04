@@ -17,7 +17,8 @@ export const user: TUser = {
   balls: 2500,
   keys: 1,
   finishedApplications: 150,
-  status: 'admin'
+  status: 'volunteer',
+  confirmation: 'green',
 }
 
 interface TUser {
@@ -40,113 +41,113 @@ const UserConfirmationCard: FC<TUser> = (user: TUser) => {
 
   return (
     <>
-    { desktop ?
-     (<li className={styles.card}> 
-      <div className={styles.avatar}>
-        <Avatar size={62} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} />
-      </div>
-      <div className={styles.info}>
-        <div className={styles.about}>
-          <h3 className={styles.aboutName}>{user.name}</h3>
-          <p className={styles.aboutId}>{user.id}</p>
-          <div className={styles.aboutDescription}>
-            <p className={styles.aboutMe}>Тел.:</p>
-            <p className={styles.aboutContact}>{user.phone}</p>
-          </div>
-
-          <div className={styles.dobriki}>
-            <ColorfulLabel fill = {user.confirmation === 'green' ? "#ACCA3E" : user.confirmation === 'orange' ? "#F9BC90" : "#818C99"} />
-            <div className={styles.progress}>
-              <BallsIcon type={'white'} />
-              <p className={styles.progressNumber}>{user.balls}</p>
-              <KeyIcon />
-              <p className={styles.progressNumber}>{user.keys}</p>
-              <FinishedApplicationIcon />
-              <p className={styles.progressNumber}>{user.finishedApplications}</p>
-            </div>
-          </div>
-        </div>  
-
-        <div className={styles.buttons}>
-          <Button
-            label="Подтвердить"
-            onClick={() => {}}
-            theme="dark"
-            type="submit"
-            variant="text"
-          />
-          <Button
-            label="Заблокировать"
-            onClick={() => {}}
-            theme="light"
-            type="button"
-            variant="text"
-          />
-          <Button
-            label="Дать ключи"
-            onClick={() => {}}
-            theme="light"
-            type="button"
-            variant="text"
-          />
+      { desktop ?
+      (<li className={styles.card}> 
+        <div className={styles.avatar}>
+          <Avatar size={62} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} />
         </div>
-      </div>
-    </li>)
-    :(<li className={styles.cardMob}> 
-      <div className={styles.avatar}>
-        <Avatar size={62} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} />
-      </div>
-
-      <div className={styles.label}>
-        <ColorfulLabelMob fill ={user.confirmation === 'green' ? "#ACCA3E" : user.confirmation === 'orange' ? "#F9BC90" : "#818C99"} />
-      </div>
-
-      <div className={styles.infoMob}>
-        <div className={styles.about}>
-          <h3 className={styles.aboutNameMob}>{user.name}</h3>
-          <p className={styles.aboutId}>{user.id}</p>
-          <div className={styles.aboutDescriptionMob}>
-            <p className={styles.aboutMe}>Тел.:</p>
-            <p className={styles.aboutContact}>{user.phone}</p>
-          </div>
-          <div className={styles.dobriki}>
-            <div className={styles.progressMob}>
-              <BallsIcon type={'white'} />
-              <p className={styles.progressNumber}>{user.balls}</p>
-              <FinishedApplicationIcon />
-              <p className={styles.progressNumber}>{user.keys}</p>
-              <FinishedApplicationIcon />
-              <p className={styles.progressNumber}>{user.finishedApplications}</p>
+        <div className={styles.info}>
+          <div className={styles.about}>
+            <h3 className={styles.aboutName}>{user.name}</h3>
+            <p className={styles.aboutId}>{user.id}</p>
+            <div className={styles.aboutDescription}>
+              <p className={styles.aboutMe}>Тел.:</p>
+              <p className={styles.aboutContact}>{user.phone}</p>
             </div>
-          </div>
-        </div>  
 
-        <div className={styles.buttonsMob}>
-          <Button
-            label="Подтвердить"
-            onClick={() => {}}
-            theme="dark"
-            type="submit"
-            variant="text"
-          />
-          <Button
-            label="Заблокировать"
-            onClick={() => {}}
-            theme="light"
-            type="button"
-            variant="text"
-          />
-          <Button
-            label="Дать ключи"
-            onClick={() => {}}
-            theme="light"
-            type="button"
-            variant="text"
-          />
+            <div className={styles.dobriki}>
+              <ColorfulLabel fill = {user.confirmation === 'green' ? "#ACCA3E" : user.confirmation === 'orange' ? "#F9BC90" : "#818C99"} />
+              <div className={styles.progress}>
+                <BallsIcon type={'white'} />
+                <p className={styles.progressNumber}>{user.balls}</p>
+                <KeyIcon />
+                <p className={styles.progressNumber}>{user.keys}</p>
+                <FinishedApplicationIcon />
+                <p className={styles.progressNumber}>{user.finishedApplications}</p>
+              </div>
+            </div>
+          </div>  
+
+          <div className={styles.buttons}>
+            <Button
+              label="Подтвердить"
+              onClick={() => {}}
+              theme="dark"
+              type="submit"
+              variant="text"
+            />
+            <Button
+              label="Заблокировать"
+              onClick={() => {}}
+              theme="light"
+              type="button"
+              variant="text"
+            />
+            <Button
+              label="Дать ключи"
+              onClick={() => {}}
+              theme="light"
+              type="button"
+              variant="text"
+            />
+          </div>
         </div>
-      </div>
-      
-    </li>)}
+      </li>)
+      :(<li className={styles.cardMob}> 
+        <div className={styles.avatar}>
+          <Avatar size={62} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} />
+        </div>
+
+        <div className={styles.label}>
+          <ColorfulLabelMob fill ={user.confirmation === 'green' ? "#ACCA3E" : user.confirmation === 'orange' ? "#F9BC90" : "#818C99"} />
+        </div>
+
+        <div className={styles.infoMob}>
+          <div className={styles.about}>
+            <h3 className={styles.aboutNameMob}>{user.name}</h3>
+            <p className={styles.aboutId}>{user.id}</p>
+            <div className={styles.aboutDescriptionMob}>
+              <p className={styles.aboutMe}>Тел.:</p>
+              <p className={styles.aboutContact}>{user.phone}</p>
+            </div>
+            <div className={styles.dobriki}>
+              <div className={styles.progressMob}>
+                <BallsIcon type={'white'} />
+                <p className={styles.progressNumber}>{user.balls}</p>
+                <FinishedApplicationIcon />
+                <p className={styles.progressNumber}>{user.keys}</p>
+                <FinishedApplicationIcon />
+                <p className={styles.progressNumber}>{user.finishedApplications}</p>
+              </div>
+            </div>
+          </div>  
+
+          <div className={styles.buttonsMob}>
+            <Button
+              label="Подтвердить"
+              onClick={() => {}}
+              theme="dark"
+              type="submit"
+              variant="text"
+            />
+            <Button
+              label="Заблокировать"
+              onClick={() => {}}
+              theme="light"
+              type="button"
+              variant="text"
+            />
+            <Button
+              label="Дать ключи"
+              onClick={() => {}}
+              theme="light"
+              type="button"
+              variant="text"
+            />
+          </div>
+        </div>
+        
+      </li>)}
     </>
   );
 };  
