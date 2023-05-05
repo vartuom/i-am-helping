@@ -5,18 +5,20 @@ export interface IAvatarProps {
   size: number,
   url: string,
   isUserCard?: boolean,
+  extraClass?: string
 }
 
-export const Avatar = ({size, url, isUserCard}: IAvatarProps) => {
-  const extraClass = isUserCard ? 'avatar_userCard' : '';
+export const Avatar = ({ size, url, isUserCard, extraClass = "" }: IAvatarProps) => {
+  const userCard = isUserCard ? 'avatar_userCard' : '';
   const className = clsx(
     'avatar',
     {
-      [`${extraClass}`]: extraClass
-    }
+      [`${userCard}`]: userCard
+    },
+    extraClass
   )
 
   return <>
-    <img className={className} src={url} alt='Аватар пользователя' width={size+'px'} height={size+'px'}></img>
+    <img className={className} src={url} alt='Аватар пользователя' width={size + 'px'} height={size + 'px'}></img>
   </>
 }

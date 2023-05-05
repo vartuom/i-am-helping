@@ -18,6 +18,9 @@ import FirstStep from "../taskForm/firstStep";
 import SecondStep from "../taskForm/secondStep";
 import ThirdStep from "../taskForm/thirdStep";
 import ConfirmStep from "../taskForm/confirmStep";
+import { RecipientPageActive } from "../../pages/RecipientPage/RecipientPageActive";
+import { RecipientPageCompleted } from "../../pages/RecipientPage/RecipientPageCompleted";
+
 
 function App() {
   const location = useLocation();
@@ -33,6 +36,8 @@ function App() {
         <Route path="/volunteer" element={<VolunteerPage />} />
         <Route path="/recipient" element={<RecipientPage />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/completed" element={<RecipientPageCompleted />} />
+        <Route path="/active" element={<RecipientPageActive />} />
         <Route path="/profile" element={<ProfilePage />} />
         {/*добавить нужные роуты*/}
       </Routes>
