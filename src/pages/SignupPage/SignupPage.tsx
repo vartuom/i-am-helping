@@ -3,6 +3,7 @@ import stules from './SignupPage.module.scss'
 import RadioGroup from '../../components/ui/radioGroup/radioGroup';
 import Input from '../../components/ui/Input/Input'
 import { Link } from 'react-router-dom';
+import { Button } from '../../components/ui/buttons/Button';
 
 const SignupPage = () => {
     return (
@@ -14,6 +15,7 @@ const SignupPage = () => {
             <Input typeInput={'registrNumber'} />
             <Input typeInput={'email'} />
             <Input typeInput={'password'} />
+            <Button theme={'dark'} type={'submit'} variant={'text'} extraClass={stules.button}>Зарегистрироваться</Button>
             <p>
             Уже зарегистрированы?
             <Link to={{ pathname: `/signin` }}>

@@ -1,8 +1,7 @@
-import React from 'react';
 import stules from './SigninPage.module.scss'
-import RadioGroup from '../../components/ui/radioGroup/radioGroup';
 import Input from '../../components/ui/Input/Input'
 import { Link } from 'react-router-dom';
+import { Button } from '../../components/ui/buttons/Button';
 
 const SigninPage = () => {
     return (
@@ -10,6 +9,7 @@ const SigninPage = () => {
             <h1>Авторизация</h1>
             <Input typeInput={'email'} />
             <Input typeInput={'password'} />
+            <Button theme={'dark'} type={'submit'} variant={'text'} extraClass={stules.button}>Войти</Button>
             <p>
             Еще не зарегистрированы?
             <Link to={{ pathname: `/signup` }}>
