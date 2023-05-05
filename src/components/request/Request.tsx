@@ -5,11 +5,11 @@ import { ClockIcon } from '../ui/icons/clock-icon/clock-icon'
 import { LocationIcon } from '../ui/icons/location-icon/location-icon'
 import { BallsIcon } from '../ui/icons/balls-icon/balls-icon'
 import { PhoneIcon } from '../ui/icons/phone-icon/phone-icon'
-import { MessageIcon } from '../ui/icons/message-icon/message-icon'
 import { CrossIcon } from '../ui/icons/cross-icon/cross-icon';
-import { ApproveIcon } from '../ui/icons/approve-icon/approve-icon';
 import { TRequest } from './types'
 import { Avatar } from '../avatar/Avatar';
+import { Button } from '../ui/buttons/Button';
+import { EditIcon, EmptyMessageIcon } from '../ui/icons/icons';
 
 export const Request: FC<TRequest> = (item: TRequest) => {
   return (
@@ -78,28 +78,40 @@ export const Request: FC<TRequest> = (item: TRequest) => {
           {item.phone}
         </div>
         <div className='personContact'>
-          <div className='personCall'
-            onClick={(event: React.MouseEvent<HTMLDivElement>) => { item.onCallClicked!(item.id) }}>
-            <PhoneIcon className='ICO' type='white' />
-          </div>
-          <div className='personChat' onClick={(event: React.MouseEvent<HTMLDivElement>) => { item.onChatClicked!(item.id) }}>
-
-            <MessageIcon className='ICO' type='white' />
-          </div>
+          <Button
+            variant="icon"
+            size="small"
+            theme="dark"
+            type="button"
+            hasBorder={true}
+            icon={<PhoneIcon type="white" />}
+            onClick={() => { item.onCallClicked!(item.id) }}
+          />
+          <Button
+            variant="icon"
+            size="small"
+            theme="dark"
+            type="button"
+            hasBorder={true}
+            icon={<EmptyMessageIcon type="white" />}
+            onClick={() => { item.onCallClicked!(item.id) }}
+          />
         </div>
       </div>
 
-      <div className='button'>
-
-        <div className='buttonClose'
-          onClick={(event: React.MouseEvent<HTMLDivElement>) => { item.onDeleteClicked!(item.id) }}>
-          <CrossIcon className='ICO' type='white' />
-        </div>
-        {item.is_approvable &&
-          <div className='buttonApprove'
-            onClick={(event: React.MouseEvent<HTMLDivElement>) => { item.onApproveClicked!(item.id) }}>
-            <ApproveIcon className='ICO' type='white' />
-          </div>}
+      <div className='button-request'>
+        <Button
+          figure="close"
+          type="button"
+          icon={<CrossIcon type='white' />}
+        />
+        {item.isActive &&
+          <Button
+            figure="edit"
+            type="button"
+            icon={<EditIcon />}
+          />
+        }
       </div>
     </div >
 
