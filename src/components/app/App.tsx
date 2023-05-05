@@ -67,14 +67,14 @@ function App() {
               </Modal>
             }
           />
-            <Route
-                path="/confirmStep"
-                element={
-                    <Modal onClose={() => navigate("/")} isModalOpened>
-                        <ConfirmStep />
-                    </Modal>
-                }
-            />
+          <Route
+            path="/confirmStep"
+            element={
+              <Modal onClose={() => navigate("/")} isModalOpened>
+                <ConfirmStep />
+              </Modal>
+            }
+          />
         </Routes>
       )}
       <AppFooter />
