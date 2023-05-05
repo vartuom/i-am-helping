@@ -25,8 +25,6 @@ export const Primary: Story = {
             person_img: "https://bigpicture.ru/wp-content/uploads/2019/04/grandbeauty00.jpg",
             person_name: "Петров Петр Петрович",
             phone: "+7(000) 000-00-00",
-            is_approvable: true
-
         },
         {
             id: 2,
@@ -40,7 +38,6 @@ export const Primary: Story = {
             person_img: "https://bigpicture.ru/wp-content/uploads/2019/04/grandbeauty00.jpg",
             person_name: "Петров Петр Петрович",
             phone: "+7(000) 000-00-00",
-            is_approvable: true
 
         },
         {
@@ -55,7 +52,6 @@ export const Primary: Story = {
             person_img: "https://bigpicture.ru/wp-content/uploads/2019/04/grandbeauty00.jpg",
             person_name: "Петров Петр Петрович",
             phone: "+7(000) 000-00-00",
-            is_approvable: true
 
         },
         ]

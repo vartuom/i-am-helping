@@ -1,24 +1,24 @@
+import { useState } from 'react'
 import { Avatar } from '../../components/avatar/Avatar'
-import NewApplication from '../../components/new-application/NewApplication'
-import SideNavigation from '../../components/side-navigation/SideNavigation'
 import './PersonalPage.scss'
+import { TRequest } from '../../components/request/types'
 
 const PersonalPage = () => {
-  
+  const [requests, setRequests] = useState<TRequest[]>([
+    
+  ])
+
   return (
     <main className="main">
       <section className='personalInfo'>Личные данные
-        <Avatar url='https://fraguru.com/mdimg/avatariru/m.298472.jpg' size={160}/>
+        <Avatar url='https://fraguru.com/mdimg/avatariru/m.298472.jpg' size={160} />
         <div className='card'>
           Карточка
         </div>
-        <SideNavigation />
+
       </section>
       <section className='applicationsInfo'>
         <div className='personalNav'>Personal Navigation</div>
-        <div className='newApplication'>
-          <NewApplication />
-        </div>
       </section>
     </main>
   )
