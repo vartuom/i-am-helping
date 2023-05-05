@@ -128,6 +128,10 @@
   //border: 1px solid #0071BC;
   //box-sizing: border-box;
   margin-left: -30px;
+  height: 25px;
+  //display: flex;
+  //justify-content: center;
+  align-items: center;
 }
 
 .progress {
@@ -135,12 +139,13 @@
   height: 22px;
   margin-top: -27px;
   margin-left: 30px;
+  align-items: center;
+  //vertical-align: bottom;
 }
 
 .progressMob {
   display: flex;
   height: 22px;
-  //margin-top: -27px;
   margin-left: 30px;
 }
 
@@ -149,9 +154,10 @@
   font-size: 12px;
   line-height: 14px;
   margin: auto 0;
-  margin-left: 5px;
-  margin-right: 10px;
+  margin-left: 3px;
+  margin-right: 8px;
   color: $colorMain;
+  padding: 0;
 }
 
 .buttons {
@@ -168,4 +174,8 @@
   align-items: flex-start;
   margin-top: 13px;
   gap: 5px;
+}
+
+.empty {
+  width: 25px;
 }

@@ -12,6 +12,7 @@ import { AppFooter } from "../app-footer/app-footer";
 import VolunteerPage from "../../pages/VolunteerPage/VolunteerPage";
 import { RecipientPage } from "../../pages/RecipientPage/RecipientPage";
 import ProfilePage from "../../pages/ProfilePage/ProfilePage";
+import { AdminPage } from "../../pages/AdminPage/AdminPage";
 
 import FirstStep from "../taskForm/firstStep";
 import SecondStep from "../taskForm/secondStep";
@@ -34,6 +35,7 @@ function App() {
         <Route path="/personal" element={<PersonalPage />} />
         <Route path="/volunteer" element={<VolunteerPage />} />
         <Route path="/recipient" element={<RecipientPage />} />
+        <Route path="/admin" element={<AdminPage />} />
         <Route path="/completed" element={<RecipientPageCompleted />} />
         <Route path="/active" element={<RecipientPageActive />} />
         <Route path="/profile" element={<ProfilePage />} />

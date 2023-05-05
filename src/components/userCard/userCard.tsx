@@ -15,6 +15,7 @@ interface TUser {
   keys: number;
   finishedApplications: number;
   status: 'admin' | 'volunteer' | 'recipient';
+  confirmation?: 'green' | 'orange' | 'grey';
 }
 
 export const avatarParams: IAvatarProps = {
