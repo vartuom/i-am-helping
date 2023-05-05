@@ -1,0 +1,28 @@
+@import "../../../constants/scss-variables.scss";
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-top: 40px;
+}
+
+.date {
+  padding-left: 45px;
+  margin-top: -7px;
+  & > span > p {
+    margin: 0;
+  }
+}
+.dateText {
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.check {
+  margin: 10px 0 20px;
+  width: 308px;
+  padding: 12px 0 12px 14px;
+  border-radius: 10px;
+  border: 1px solid $colorSupport;
+}

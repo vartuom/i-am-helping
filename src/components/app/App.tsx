@@ -24,7 +24,6 @@ import { RecipientPageActive } from "../../pages/RecipientPage/RecipientPageActi
 import { RecipientPageCompleted } from "../../pages/RecipientPage/RecipientPageCompleted";
 import { MainAdminPage } from "../../pages/MainAdminPage/MainAdminPage";
 
-
 function App() {
   const location = useLocation();
   const background = location.state?.background;
@@ -34,8 +33,8 @@ function App() {
       <AppHeader />
       <Routes location={background || location}>
         <Route path="/" element={<TestPage />} />
-        <Route path="/signup" element={<SignupPage />}/>
-        <Route path="/signin" element={<SigninPage />}/>
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/signin" element={<SigninPage />} />
         <Route path="/anotherTestPage" element={<AnotherTestPage />} />
         <Route path="/personal" element={<PersonalPage />} />
         <Route path="/volunteer" element={<VolunteerPage />} />
@@ -47,7 +46,7 @@ function App() {
         <Route path="/active" element={<RecipientPageActive />} />
         <Route path="/profile" element={<ProfilePage />} />
         {/*добавить нужные роуты*/}
-      </Routes> 
+      </Routes>
       {background && (
         <Routes>
           <Route
