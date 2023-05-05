@@ -10,7 +10,8 @@ export type TRequest = {
     person_img: string | null;
     person_name: string | null;
     phone: string | null;
-    is_approvable: boolean;
+    isEdited?: string;
+    isActive?: boolean;
     onChatClicked?: ((id: number) => void);
     onCallClicked?: ((id: number) => void);
     onBallClicked?: ((id: number) => void);

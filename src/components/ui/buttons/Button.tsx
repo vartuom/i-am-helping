@@ -56,10 +56,7 @@ export const Button = ({
   )
 
   return (
-    <button
-      className={className}
-      {...props}
-    >
+    <button className={className}>
       {icon}
       {children}
       {label}
