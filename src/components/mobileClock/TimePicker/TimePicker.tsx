@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { Portal } from "react-portal";
-import TimePickerSelection from "./TimePickerSelection";
+import TimePickerSelection from "../TimePickerSelection/TimePickerSelection";
 import s from "./TimePicker.module.scss";
 
 interface ITimePicker {
@@ -92,7 +92,7 @@ const TimePicker: FC<ITimePicker> = ({
 
   return (
     <>
-      <div className={s.wrap} onClick={handleClick}>
+      <div className={s.wrapInput} onClick={handleClick}>
         <input
           id={id}
           name={name}
@@ -105,7 +105,7 @@ const TimePicker: FC<ITimePicker> = ({
           required={required}
           onFocus={handleFocus}
         />
-        <span className={s.test}></span>
+        <span className={s.inputPlaceholder}></span>
       </div>
       {isOpen && !disabled && (
         <Portal>

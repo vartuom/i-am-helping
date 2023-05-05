@@ -1,19 +1,40 @@
-import React, { useEffect, useState, useRef, FC } from "react";
-import { initialNumbersValue, returnSelectedValue } from "../../helpers";
-import s from "./TimePicker.module.scss";
+import React, { useEffect, useState, useRef, FC, RefObject } from "react";
+import s from "./HourWheel.module.scss";
+import { initialNumbersValue, returnSelectedValue } from "../../../helpers";
+interface IHourWheel {
+  height?: number;
+  value?: string | null | undefined;
+  setValue?: ((value: string | any) => void) | undefined;
+  use12Hours?: boolean | null;
+}
 
-const MinuteWheel: FC<any> = ({ height, value, setValue }) => {
-  const [hours, setHours] = useState(
-    initialNumbersValue(height, 60, parseInt(value.slice(3, 6)))
+interface IItem {
+  number: string | null | undefined;
+  translatedValue: string | null | undefined | number;
+  selected: boolean;
+  slice: (value: number, value2: number) => void;
+}
+const HourWheel: FC<IHourWheel> = ({ height, value, setValue, use12Hours }) => {
+  const hourLength = use12Hours ? 13 : 24;
+  const [hours, setHours] = useState<any>(
+    initialNumbersValue(height, hourLength, parseInt(value!.slice(0, 2)))
   );
-  const mainListRef = useRef<any>(null);
+  const mainListRef = useRef(null) as RefObject<HTMLDivElement> | null;
   const [cursorPosition, setCursorPosition] = useState<number | null>(null);
-  const [firstCursorPosition, setFirstCursorPosition] = useState(null);
-  const [currentTranslatedValue, setCurrentTranslatedValue] = useState(
+  const [firstCursorPosition, setFirstCursorPosition] = useState<number | null>(
+    null
+  );
+  const [currentTranslatedValue, setCurrentTranslatedValue] = useState<
+    number | null
+  >(
     parseInt(
-      initialNumbersValue(height, 60, parseInt(value.slice(3, 6))).filter(
-        (item: any) =>
-          item.number === value.slice(3, 6) && item.selected === true
+      initialNumbersValue(
+        height,
+        hourLength,
+        parseInt(value!.slice(0, 2))
+      ).filter(
+        (item: IItem) =>
+          item.number === value!.slice(0, 2) && item.selected === true
       )[0].translatedValue
     )
   );
@@ -31,7 +52,9 @@ const MinuteWheel: FC<any> = ({ height, value, setValue }) => {
   // selected number
   const [selectedNumber, setSelectedNumber] = useState(null);
 
-  const handleMouseDown = (e: any) => {
+  const handleMouseDown = (e: {
+    clientY: React.SetStateAction<number | null>;
+  }) => {
     setShowFinalTranslate(false);
     setFirstCursorPosition(e.clientY);
     setStartCapture(true);
@@ -47,7 +70,7 @@ const MinuteWheel: FC<any> = ({ height, value, setValue }) => {
 
   const handleMouseUp = () => {
     setStartCapture(false);
-    setCurrentTranslatedValue((prev) => prev + cursorPosition!);
+    setCurrentTranslatedValue((prev) => prev! + cursorPosition!);
     setShowFinalTranslate(true);
     setDragEndTime(performance.now());
     if (performance.now() - dragStartTime! <= 100) {
@@ -55,7 +78,6 @@ const MinuteWheel: FC<any> = ({ height, value, setValue }) => {
     } else {
       setDragType("slow");
     }
-
     if (cursorPosition! < 0) {
       setDragDirection("down");
     } else {
@@ -65,7 +87,7 @@ const MinuteWheel: FC<any> = ({ height, value, setValue }) => {
 
   const handleMouseLeave = () => {
     setStartCapture(false);
-    setCurrentTranslatedValue((prev) => prev + cursorPosition!);
+    setCurrentTranslatedValue((prev) => prev! + cursorPosition!);
     setShowFinalTranslate(true);
     setDragEndTime(performance.now());
     if (performance.now() - dragStartTime! <= 100) {
@@ -100,8 +122,8 @@ const MinuteWheel: FC<any> = ({ height, value, setValue }) => {
   // preview translation
   useEffect(() => {
     if (startCapture) {
-      mainListRef.current.style.transform = `translateY(${
-        currentTranslatedValue + cursorPosition!
+      mainListRef!.current!.style.transform = `translateY(${
+        currentTranslatedValue! + cursorPosition!
       }px)`;
     }
   }, [cursorPosition]);
@@ -114,26 +136,38 @@ const MinuteWheel: FC<any> = ({ height, value, setValue }) => {
         let currentValue: number | undefined;
         if (dragDirection === "down") {
           currentValue =
-            currentTranslatedValue -
+            currentTranslatedValue! -
             (120 / (dragEndTime! - dragStartTime!)) * 100;
         } else if (dragDirection === "up") {
           currentValue =
-            currentTranslatedValue +
+            currentTranslatedValue! +
             (120 / (dragEndTime! - dragStartTime!)) * 100;
         }
-        let finalValue = Math.round(currentValue! / height) * height;
-        if (finalValue < height * -177) finalValue = height * -177;
-        if (finalValue > height * 2) finalValue = height * 2;
+        let finalValue: number | undefined =
+          Math.round(currentValue! / height!) * height!;
+        if (use12Hours) {
+          if (finalValue < height! * -34) finalValue = height! * -34;
+          if (finalValue > height!) finalValue = height;
+        } else {
+          if (finalValue < height! * -69) finalValue = height! * -69;
+          if (finalValue > height! * 2) finalValue = height! * 2;
+        }
 
-        mainListRef.current.style.transform = `translateY(${finalValue}px)`;
-        setCurrentTranslatedValue(finalValue);
+        mainListRef!.current!.style.transform = `translateY(${finalValue}px)`;
+        setCurrentTranslatedValue(finalValue!);
       }
       if (dragEndTime! - dragStartTime! > 100 && cursorPosition !== 0) {
-        let finalValue = Math.round(currentTranslatedValue / height) * height;
-        if (finalValue < height * -177) finalValue = height * -177;
-        if (finalValue > height * 2) finalValue = height * 2;
-        mainListRef.current.style.transform = `translateY(${finalValue}px)`;
-        setCurrentTranslatedValue(finalValue);
+        let finalValue: number | undefined =
+          Math.round(currentTranslatedValue! / height!) * height!;
+        if (use12Hours) {
+          if (finalValue < height! * -34) finalValue = height! * -34;
+          if (finalValue > height!) finalValue = height;
+        } else {
+          if (finalValue < height! * -69) finalValue = height! * -69;
+          if (finalValue > height! * 2) finalValue = height! * 2;
+        }
+        mainListRef!.current!.style.transform = `translateY(${finalValue}px)`;
+        setCurrentTranslatedValue(finalValue!);
       }
       setCursorPosition(0);
     }
@@ -141,37 +175,29 @@ const MinuteWheel: FC<any> = ({ height, value, setValue }) => {
 
   // return to default position after drag end (handleTransitionEnd)
   const handleTransitionEnd = () => {
-    returnSelectedValue(height, 60).map(
-      (item: {
-        translatedValue: string;
-        arrayNumber: React.SetStateAction<null>;
-        number: any;
-      }) => {
-        if (parseInt(item.translatedValue) === currentTranslatedValue) {
-          setSelectedNumber(item.arrayNumber);
-          setValue(
-            (prev: string | any[]) => `${prev.slice(0, 2)}:${item.number}`
-          );
-          setHours(() => {
-            const newValue = initialNumbersValue(height, 60).map(
-              (hour: { number: any; translatedValue: number }) => {
-                if (
-                  hour.number == item.number &&
-                  hour.translatedValue == currentTranslatedValue
-                ) {
-                  return {
-                    ...hour,
-                    selected: true,
-                  };
-                }
-                return hour;
+    returnSelectedValue(height, hourLength).map((item: any) => {
+      if (parseInt(item.translatedValue) === currentTranslatedValue) {
+        setSelectedNumber(item.arrayNumber);
+        setValue!((prev: IItem) => `${item.number}:${prev.slice(3, 6)}`);
+        setHours(() => {
+          const newValue = initialNumbersValue(height, hourLength).map(
+            (hour: IItem) => {
+              if (
+                hour.number == item.number &&
+                hour.translatedValue == currentTranslatedValue!
+              ) {
+                return {
+                  ...hour,
+                  selected: true,
+                };
               }
-            );
-            return newValue;
-          });
-        }
+              return hour;
+            }
+          );
+          return newValue;
+        });
       }
-    );
+    });
   };
 
   // handle click to select number
@@ -184,26 +210,36 @@ const MinuteWheel: FC<any> = ({ height, value, setValue }) => {
   const isFastCondition = showFinalTranslate && dragType === "fast";
   const isSlowCondition = showFinalTranslate && dragType === "slow";
 
-  /* ***************************   handle wheel scroll ************************* */
+  /** ***************************   handle wheel scroll ************************* */
 
   const handleWheelScroll = (e: { deltaY: number }) => {
-    if (e.deltaY > 0) {
-      if (currentTranslatedValue < height * 2) {
-        setCurrentTranslatedValue((prev) => prev + height);
+    if (use12Hours) {
+      if (e.deltaY > 0) {
+        if (currentTranslatedValue! < height!) {
+          setCurrentTranslatedValue((prev) => prev! + height!);
+        }
+      } else if (currentTranslatedValue! > height! * -34) {
+        setCurrentTranslatedValue((prev) => prev! - height!);
       }
-    } else if (currentTranslatedValue > height * -177) {
-      setCurrentTranslatedValue((prev) => prev - height);
+    } else if (e.deltaY > 0) {
+      if (currentTranslatedValue! < height! * 2) {
+        setCurrentTranslatedValue((prev) => prev! + height!);
+      }
+    } else if (currentTranslatedValue! > height! * -69) {
+      setCurrentTranslatedValue((prev) => prev! - height!);
     }
   };
 
   return (
     <div
-      className={s.timeMinute}
+      className={`${s.timeHour} ${
+        use12Hours && "react-ios-time-picker-hour-12hour-format"
+      }`}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ height: height * 5 }}
+      style={{ height: height! * 5 }}
       onWheel={handleWheelScroll}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
@@ -221,32 +257,22 @@ const MinuteWheel: FC<any> = ({ height, value, setValue }) => {
         {hours.map(
           (
             hourObj: {
-              selected: any;
+              selected: number;
+              hidden: boolean;
+              number: number;
               translatedValue: any;
-              number:
-                | string
-                | number
-                | boolean
-                | React.ReactElement<
-                    any,
-                    string | React.JSXElementConstructor<any>
-                  >
-                | React.ReactFragment
-                | React.ReactPortal
-                | null
-                | undefined;
             },
-            index: React.Key | null | undefined
+            index: number
           ) => (
             <div
               key={index}
-              className={s.timeMinuteCell}
+              className={s.timeHourCell}
               style={{ height: `${height}px` }}
             >
               <div
-                className={`${s.timeMinuteInner} ${
+                className={`${s.timeHourInner} ${
                   hourObj.selected ? s.timeHourInnerSelected : ""
-                }`}
+                }${hourObj?.hidden ? s.timeHourInnerHidden : ""}`}
                 onClick={handleClickToSelect}
                 data-translated-value={hourObj.translatedValue}
               >
@@ -260,4 +286,4 @@ const MinuteWheel: FC<any> = ({ height, value, setValue }) => {
   );
 };
 
-export default MinuteWheel;
+export default HourWheel;

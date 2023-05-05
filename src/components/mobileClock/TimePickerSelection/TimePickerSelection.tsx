@@ -1,9 +1,8 @@
 import React, { FC, useEffect, useState } from "react";
-import s from "./TimePicker.module.scss";
-import HourFormat from "./HourFormat";
-import HourWheel from "./HourWheel";
-import MinuteWheel from "./MinuteWheel";
-import { Button } from "../ui/buttons/Button";
+import s from "./TimePickerSelection.module.scss";
+import HourWheel from "../HourWheel/HourWheel";
+import MinuteWheel from "../MinuteWheel/MinuteWheel";
+import { Button } from "../../ui/buttons/Button";
 
 interface ITimePickerSelection {
   pickerDefaultValue?: string | undefined;
@@ -96,25 +95,8 @@ const TimePickerSelection: FC<ITimePickerSelection> = ({
         <p className={s.popupHeaderText}>Время</p>
         <span className={s.popupHeaderUnderline}></span>
       </div>
-      {/* {controllers && (
-        <div className={s.buttonContainer}>
-          <button
-            className={`${s.buttons} ${s.buttonSave} ${s.buttonCancel}`}
-            onClick={handleCancel}
-          >
-            {cancelButtonText}
-          </button>
-          <button
-            className={`${s.buttons} ${s.buttonSave} ${s.buttonCancel}`}
-            onClick={handleSave}
-          >
-            {saveButtonText}
-          </button>
-        </div>
-      )} */}
       <div
         className={s.timeContainer}
-        //style={{ height: `${height! * 5 + 40}px` }}
         style={{ height: `${height! * 2 + 40}px` }}
       >
         <div
@@ -127,7 +109,6 @@ const TimePickerSelection: FC<ITimePickerSelection> = ({
         <HourWheel {...params} />
         {seperator && <div className={s.timeColumn}></div>}
         <MinuteWheel {...params} />
-        {use12Hours && <HourFormat {...params} />}
       </div>
 
       <div className={s.buttonQ}>

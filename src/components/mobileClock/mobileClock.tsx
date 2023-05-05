@@ -1,8 +1,8 @@
-import React, { FC, useState } from "react";
+import React from "react";
 import s from "./MobileClock.module.scss";
-import TimePicker from "./TimePicker";
+import TimePicker from "./TimePicker/TimePicker";
 
-const MobileClock: FC<any> = () => {
+const MobileClock = () => {
   return (
     <>
       <TimePicker></TimePicker>

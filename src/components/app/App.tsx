@@ -64,7 +64,6 @@ function App() {
           />
         </Routes>
       )}
-      <MobileClock />
       <AppFooter />
     </div>
   );
