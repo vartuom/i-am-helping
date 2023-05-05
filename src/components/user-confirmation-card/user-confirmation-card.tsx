@@ -38,6 +38,7 @@ interface TUser {
 const UserConfirmationCard: FC<TUser> = (user: TUser) => {
 
   const desktop = useMediaQuery('(min-width: 768px)');
+  const keysCount = user.keys ?? 0;
 
   return (
     <>
@@ -49,7 +50,7 @@ const UserConfirmationCard: FC<TUser> = (user: TUser) => {
         <div className={styles.info}>
           <div className={styles.about}>
             <h3 className={styles.aboutName}>{user.name}</h3>
-            <p className={styles.aboutId}>{user.id}</p>
+            <p className={styles.aboutId}>ID {user.id}</p>
             <div className={styles.aboutDescription}>
               <p className={styles.aboutMe}>Тел.:</p>
               <p className={styles.aboutContact}>{user.phone}</p>
@@ -60,8 +61,13 @@ const UserConfirmationCard: FC<TUser> = (user: TUser) => {
               <div className={styles.progress}>
                 <BallsIcon type={'white'} />
                 <p className={styles.progressNumber}>{user.balls}</p>
-                <KeyIcon />
-                <p className={styles.progressNumber}>{user.keys}</p>
+                {keysCount > 0 ? (
+                  <>
+                    <KeyIcon />
+                    <p className={styles.progressNumber}>{user.keys}</p>
+                  </>
+                ): <p className={styles.empty}></p>}
+              
                 <FinishedApplicationIcon />
                 <p className={styles.progressNumber}>{user.finishedApplications}</p>
               </div>
@@ -75,6 +81,7 @@ const UserConfirmationCard: FC<TUser> = (user: TUser) => {
               theme="dark"
               type="submit"
               variant="text"
+              extraClass={styles.colorTransition}
             />
             <Button
               label="Заблокировать"
@@ -105,7 +112,7 @@ const UserConfirmationCard: FC<TUser> = (user: TUser) => {
         <div className={styles.infoMob}>
           <div className={styles.about}>
             <h3 className={styles.aboutNameMob}>{user.name}</h3>
-            <p className={styles.aboutId}>{user.id}</p>
+            <p className={styles.aboutId}>ID {user.id}</p>
             <div className={styles.aboutDescriptionMob}>
               <p className={styles.aboutMe}>Тел.:</p>
               <p className={styles.aboutContact}>{user.phone}</p>

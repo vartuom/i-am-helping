@@ -1,6 +1,5 @@
 export type TUser = {
     id: number;
-    IDnumber?: number;
     name: string;
     phone: string | null;
     about: string;

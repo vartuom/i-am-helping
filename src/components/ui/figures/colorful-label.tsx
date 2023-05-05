@@ -1,6 +1,6 @@
 export const ColorfulLabel = ({ fill = "#ACCA3E"}) => {
   return (
-    <svg width="215" height="25" viewBox="0 0 216 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="215" height="25" viewBox="0 0 215 25" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 0L215.091 7L197.273 25H0V0Z" fill={fill}/>
     </svg>
   )
