@@ -5,6 +5,8 @@
   display: grid;
   column-gap: 20px;
   grid-template-columns: 169px minmax(100px, 450px) 249px 41px;
+  max-width: 889px;
+  margin: 0 auto;
   grid-template-areas:
     "category ....... person button"
     "wrapperTimeAddress contentHeader person button"
@@ -14,17 +16,18 @@
 
   @include from('sm') {
     column-gap: 0px;
-    grid-template-columns: 320px 60px;
+    grid-template-columns: repeat(2,minmax(min-content,max-content));
     grid-template-areas:
       "category button"
       "person button"
       "contentHeader button"
       "contentText button"
-      "....... contentBalls"
+      ". contentBalls"
       "itemBreaker itemBreaker"
       "wrapperTimeAddress wrapperTimeAddress";
     border: 1px solid $colorBorder;
-    min-width: 380px;
+    max-width: 365px;
+    box-sizing: border-box;
   }
 
   .category {
@@ -276,30 +279,20 @@
       grid-template-areas:
         "personImg personName"
         "personImg personPhone"
-        "personContact personContact";
+        ". personContact";
+      grid-template-rows: repeat(2,minmax(min-content,max-content));
+      grid-template-columns: repeat(3,minmax(min-content,max-content));
+      column-gap: 5px;
       margin-left: 8px;
       margin-top: 15px;
-      ;
     }
 
     .personImg {
       grid-area: personImg;
-      border-radius: 50%;
-
-      height: auto;
-      width: auto;
-      max-width: 100px;
-      max-height: 100px;
-      align-self: center;
-
 
       @include from('sm') {
-        height: auto;
-        width: auto;
-        max-width: 60px;
-        max-height: 60px;
-
-        background-size: 60px 60px;
+        width: 60px;
+        height: 60px;
       }
     }
 
@@ -309,14 +302,15 @@
       font-weight: $fontWeight;
       font-size: $fontSizeMedium;
       line-height: 19px;
-
-      @include from('sm') {
-        line-height: 24px;
-      }
-
       color: $colorRegularFont;
       align-self: center;
       margin-top: 2px;
+
+      @include from('sm') {
+        font-size: 20px;
+        line-height: 24px;
+        align-self: flex-start;
+      }
     }
 
     .personPhone {
@@ -328,6 +322,10 @@
       color: $colorMain;
       align-self: center;
       margin-top: 4px;
+
+      @include from('sm') {
+        justify-self: flex-start;
+      }
     }
 
     .personContact {
@@ -339,7 +337,8 @@
       gap: 8px;
 
       @include from('sm') {
-        justify-self: center;
+        justify-self:flex-start;
+        margin-top: 20px;
       }
 
       .personCall {
@@ -374,45 +373,15 @@
     }
   }
 
-  .button {
+  .button-request {
     grid-area: button;
+    gap: 10.5px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 
-    .buttonClose {
-      cursor: pointer;
-      display: flex;
-      width: 32px;
-      height: 32.5px;
-      background-color: $colorSupport;
-      clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 6.25% 100%);
-      align-self: self-end;
-
-
-      &:hover {
-        background-color: $colorMain;
-      }
+    @include from('sm') {
+      justify-self: flex-end;
     }
-
-
-    .buttonApprove {
-      cursor: pointer;
-      display: flex;
-      width: 32px;
-      height: 32.5px;
-      background: $colorApprove;
-      clip-path: polygon(6.25% 0%, 100% 15%, 100% 100%, 0% 100%);
-      align-self: center;
-      margin-top: 55px;
-
-      @include from('sm') {
-        display: none;
-      }
-    }
-  }
-
-  .ICO {
-    margin: auto;
   }
 }

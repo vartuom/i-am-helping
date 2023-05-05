@@ -10,7 +10,6 @@ import { IAvatarProps } from '../../components/avatar/Avatar'
 
 const VolunteerPage = () => {
 
-
   const avatarParams: IAvatarProps = {
     size: 175,
     url: 'https://fraguru.com/mdimg/avatariru/m.298472.jpg',
@@ -29,7 +28,6 @@ const VolunteerPage = () => {
     person_img: "https://bigpicture.ru/wp-content/uploads/2019/04/grandbeauty00.jpg",
     person_name: "Петров Петр Петрович",
     phone: "+7(000) 000-00-00",
-    is_approvable: true
 
   },
   {
@@ -44,7 +42,6 @@ const VolunteerPage = () => {
     person_img: "https://bigpicture.ru/wp-content/uploads/2019/04/grandbeauty00.jpg",
     person_name: "Петров Петр Петрович",
     phone: "+7(000) 000-00-00",
-    is_approvable: true
 
   },
   {
@@ -59,7 +56,6 @@ const VolunteerPage = () => {
     person_img: "https://bigpicture.ru/wp-content/uploads/2019/04/grandbeauty00.jpg",
     person_name: "Петров Петр Петрович",
     phone: "+7(000) 000-00-00",
-    is_approvable: true
 
   },
   ]);
@@ -73,8 +69,7 @@ const VolunteerPage = () => {
     <section className='volonteerMainPanel'>
       <div className='volonteerLeftPanel'>
         {UserCard(user, avatarParams)}
-        {SideNavigation({ items: navArray, onClick: onClick })}
-
+        {SideNavigation({ items: navArray, onClick: onClick, activeLink: active })}
       </div>
 
       <section className='volonteerRightPanel'>

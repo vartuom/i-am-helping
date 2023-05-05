@@ -3,6 +3,7 @@
 
 .nav_link {
   display: flex;
+  gap: 10px;
   box-sizing: border-box;
   padding: 30px;
   align-items: center;
@@ -27,11 +28,12 @@
   &_text {
     font-family: $fontFamily;
     font-weight: $fontWeight;
-    font-size: $fontSizeLarge;
+    font-size: $fontSizeMedium;
     font-style: $fontFamilyNormal;
     line-height: 19px;
     color: #fff;
     text-align: left;
+    margin: 0;
 
     @include from('sm') {
       font-size: $fontSizeSmall;

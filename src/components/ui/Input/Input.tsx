@@ -48,19 +48,35 @@ const Input: FC<InputProps> = (props) => {
         options.userInfoName = false;
         options.userInfoPhone = false;
         break;
+      case "registrName":
+        options.labelText = "Имя";
+        options.placeholder = "Введите имя";
+        options.adress = false;
+        options.adminName = true;
+        options.userInfoName = false;
+        options.userInfoPhone = false;
+        break;
+      case "registrNumber":
+        options.labelText = "Телефон";
+        options.placeholder = "1234 5678 9000";
+        options.adress = false;
+        options.adminName = true;
+        options.userInfoName = false;
+        options.userInfoPhone = false;
+        break;
       case "email":
         options.labelText = "Почта";
         options.placeholder = "example@example.ru";
         options.adress = false;
-        options.adminName = false;
+        options.adminName = true;
         options.userInfoName = false;
         options.userInfoPhone = false;
         break;
       case "password":
         options.labelText = "Пароль";
-        options.placeholder = "Введите";
+        options.placeholder = "Введите пароль";
         options.adress = false;
-        options.adminName = false;
+        options.adminName = true;
         options.userInfoName = false;
         options.userInfoPhone = false;
         break;

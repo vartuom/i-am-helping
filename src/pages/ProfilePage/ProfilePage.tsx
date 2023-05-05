@@ -19,6 +19,8 @@ const ProfilePage = () => {
   const [navArray] = useState<EPageTitleFilterKind[]>(
     [EPageTitleFilterKind.Map, EPageTitleFilterKind.Active, EPageTitleFilterKind.Completed]);
 
+  const [active, setActive] = useState<EPageTitleFilterKind>(EPageTitleFilterKind.Active);
+
   const navigate = useNavigate()
   const onClick = (viewType: EPageTitleFilterKind) => {
     navigate('/volunteer');
@@ -28,7 +30,7 @@ const ProfilePage = () => {
     <section className='mainPanel'>
       <div className='leftPanel'>
         {UserCard(user, avatarParams)}
-        {SideNavigation({ items: navArray, onClick: onClick })}
+        {SideNavigation({ items: navArray, onClick: onClick, activeLink: active})}
 
       </div>
     </section>
