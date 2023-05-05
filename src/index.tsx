@@ -17,7 +17,7 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
       {/* незабудьте подставить свой ключ, а то не будет работать геокод и прочее*/}
-        <YMaps query={{ lang: 'ru_RU', apikey: '705663f0-8519-4120-8914-fbdb6b6bbc4d' }}>
+        <YMaps query={{ lang: 'ru_RU', apikey: '657d88b6-d97f-4bc5-b587-49293a80fd18' }}>
           <App />
         </YMaps>
       </BrowserRouter>
