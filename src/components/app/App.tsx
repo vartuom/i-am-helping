@@ -13,7 +13,7 @@ import VolunteerPage from "../../pages/VolunteerPage/VolunteerPage";
 import { RecipientPage } from "../../pages/RecipientPage/RecipientPage";
 import ProfilePage from "../../pages/ProfilePage/ProfilePage";
 import { AdminPage } from "../../pages/AdminPage/AdminPage";
-
+import { AdminPageConfirmation } from "../../pages/AdminPage/AdminPageConfirmation";
 import FirstStep from "../taskForm/firstStep";
 import SecondStep from "../taskForm/secondStep";
 import ThirdStep from "../taskForm/thirdStep";
@@ -36,6 +36,7 @@ function App() {
         <Route path="/volunteer" element={<VolunteerPage />} />
         <Route path="/recipient" element={<RecipientPage />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/approve" element={<AdminPageConfirmation />} />
         <Route path="/completed" element={<RecipientPageCompleted />} />
         <Route path="/active" element={<RecipientPageActive />} />
         <Route path="/profile" element={<ProfilePage />} />

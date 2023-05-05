@@ -34,10 +34,16 @@ interface TUser {
   confirmation?: 'green' | 'orange' | 'grey';
 }
 
+interface IUserConfirmationTypeProps {
+  user: TUser,
+  displayType: 'desktop' | 'mobile',
+}
 
-const UserConfirmationCard: FC<TUser> = (user: TUser) => {
 
-  const desktop = useMediaQuery('(min-width: 768px)');
+const UserConfirmationCard: FC<IUserConfirmationTypeProps> = ({user, displayType}) => {
+
+  //const desktop = useMediaQuery('(min-width: 768px)');
+  const desktop = displayType === 'desktop';
   const keysCount = user.keys ?? 0;
 
   return (
