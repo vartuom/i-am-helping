@@ -33,7 +33,11 @@ export default function SideNavigation({ onClick, items, activeLink }: TSideNavi
         <SideNavLink path='/completed' type={EPageTitleFilterKind.Completed} visible onClick={onClickLocal} active={active === EPageTitleFilterKind.Completed} />
       </NavLink>
       }
-      {items.includes(EPageTitleFilterKind.Acceptation) && <SideNavLink path='/approve' type={EPageTitleFilterKind.Acceptation} visible onClick={onClickLocal} active={active === EPageTitleFilterKind.Acceptation} />}
+      {items.includes(EPageTitleFilterKind.Acceptation) && 
+      <NavLink to={'/approve'} className='nav_nounderline'>
+        <SideNavLink path='/approve' type={EPageTitleFilterKind.Acceptation} visible onClick={onClickLocal} active={active === EPageTitleFilterKind.Acceptation} />
+      </NavLink>
+      }
       {items.includes(EPageTitleFilterKind.Statistics) && <SideNavLink path='/statistics' type={EPageTitleFilterKind.Statistics} visible onClick={onClickLocal} active={active === EPageTitleFilterKind.Statistics} />}
       {items.includes(EPageTitleFilterKind.CreateEdit) && <SideNavLink path='/create' type={EPageTitleFilterKind.CreateEdit} visible onClick={onClickLocal} active={active === EPageTitleFilterKind.CreateEdit} />}
     </nav>

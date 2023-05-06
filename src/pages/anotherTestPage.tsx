@@ -1,26 +1,13 @@
-import React, { ReactElement, ReactNode, useRef, useState } from 'react';
-import Filter from '../components/filter/filter';
-import './anotherTestPage.scss';
-import { Button } from '../components/ui/buttons/Button';
-import DropdownMenu from '../components/dropdown/Dropdown';
-import { PageTitleFilter } from '../components/page-title-filter/PageTitleFilter';
-import { EPageTitleFilterKind } from '../components/page-title-filter/types';
+import React from 'react';
+import { MapForSeacrh } from '../components/maps/MapForSearch';
+import { Maps } from '../components/maps/Maps';
 
 const AnotherTestPage = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const menuRef = useRef<HTMLButtonElement>(null);
 
     return (
-        <>
-            Ок, все работает!
-            <div className='position_relative'>
-                <PageTitleFilter item={EPageTitleFilterKind.Map} onFilterClicked={() => setIsOpen(!isOpen)} />
-                <DropdownMenu onClose={() => setIsOpen(false)} isOpen={isOpen}>
-                    {isOpen && <Filter />}
-                </DropdownMenu>
-            </div>
-
-        </>
+        <div style={{width: "100%", height: "100%"}}>
+            <MapForSeacrh />
+        </div>
     );
 };
 
