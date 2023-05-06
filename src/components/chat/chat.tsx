@@ -11,19 +11,6 @@ type Message = {
     text: string;
     file?: File | null;
 };
-// const handleSendMessage = (evt: React.SyntheticEvent) => {
-//     evt.preventDefault();
-//     if (value ) {
-//         const newMessage = {
-//             text: value,
-//             file: fileInputValue
-//         };
-//
-//         setMessages([item.messages]);
-//         setValue('');
-//         setFileInputValue('');
-//     }
-// };
 
 export const Chat: FC<TChatProps> = (item: TChatProps, props) => {
     const { name, avatar, phone } = props;
@@ -53,9 +40,7 @@ export const Chat: FC<TChatProps> = (item: TChatProps, props) => {
                 text: value,
                 file: null,
             };
-            // if (fileInputValue) {
-            //     newMessage.file = event.currentTarget.querySelector('#chat-file-input')?.files?.[0] || null;
-            // }
+
             setMessages((prevMessages) => [...prevMessages, newMessage]);
             setValue('');
             setFileInputValue('');
@@ -109,7 +94,7 @@ export const Chat: FC<TChatProps> = (item: TChatProps, props) => {
                         </div>
                     ))}
                 </div>
-                <form className={chat.form} onSubmit={handleSendMessage}>
+                <form className={chat.form} onSubmit={handleSendMessage} >
                     <div className={chat.input}>
                         <input
                             className={chat.text}
