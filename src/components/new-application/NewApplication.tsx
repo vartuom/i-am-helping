@@ -2,8 +2,8 @@ import './NewApplication.scss'
 import ShakingHands from '../ui/ShakingHands/ShakingHands'
 import { Button } from '../ui/buttons/Button'
 import { AddIcon } from '../ui/icons/icons'
-import { TRequest } from '../request/types'
 import { FC } from 'react'
+import { TRequest } from '../../types'
 
 const NewApplication: FC<Array<TRequest>> = (applications: TRequest[]) => {
 

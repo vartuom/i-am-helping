@@ -42,12 +42,42 @@ export interface IThirdStep {
   isProcessed: boolean;
 }
 
-export interface IUser {
-  id: string;
+
+export type TUser = {
+  id: number;
   name: string;
-  phone: string;
+  phone: string | null;
+  avatar: string
   about: string;
+  balls: number;
   keys: number;
-  role: string;
-  avatar: string;
+  finishedApplications: number;
+  status: 'admin' | 'volunteer' | 'recipient';
+  confirmation?: 'green' | 'orange' | 'grey',
+}
+
+export type TRequest = {
+  id: number;
+  category: string;
+  date: string;
+  time: string;
+  address: string;
+  title: string;
+  content: string;
+  bulls: number;
+  user: TUser;
+  isEdited?: string;
+  isActive?: boolean;
+  onChatClicked?: ((id: number) => void);
+  onCallClicked?: ((id: number) => void);
+  onBallClicked?: ((id: number) => void);
+  onDeleteClicked?: ((id: number) => void);
+  onApproveClicked?: ((id: number) => void);
+}
+
+export type TAdmin = {
+  id: number;
+  name: string;
+  phone: string | null;
+  permissions: string[]
 }

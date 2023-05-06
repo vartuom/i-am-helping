@@ -179,3 +179,39 @@
 .empty {
   width: 25px;
 }
+
+.colorTransition {
+  position: relative;
+}
+
+.colorTransition::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: $colorMain;
+  transition: width 0.3s;
+  z-index: 0;
+}
+
+.colorTransition:hover::before {
+  width: 100%;
+}
+
+.colorTransition:hover {
+  background-color: $colorMain;
+}
+
+.gradient {
+	background: linear-gradient(to right, $colorMain 0%, $colorMain 50.67%, $colorBgcPopup 50.7%, $colorBgc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient:hover {
+	background: $colorBgc;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
