@@ -23,7 +23,7 @@ export const AdminPage = () => {
     return (
         <main className={styles.main}>
             <aside className={styles.aside}>
-                {UserCard(user, 175)}
+                {UserCard(user)}
                 {SideNavigation({ items: navArray, onClick: onClick, activeLink: active })}
             </aside>
             <section className={styles.cards}>

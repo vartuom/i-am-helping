@@ -25,7 +25,7 @@ export const RecipientPageActive = () => {
   return (
     <main className={recipient.main}>
       <aside className={`${recipient.aside} ${recipient.aside_activePage}`}>
-        {UserCard(user, 175)}
+        {UserCard(user)}
         {SideNavigation({ items: navArray, onClick: onClick, activeLink: active })}
       </aside>
       <section className={`${recipient.requests} ${recipient.requests_activePage}`}>

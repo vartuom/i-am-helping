@@ -21,7 +21,7 @@ const ProfilePage = () => {
   return (
     <section className='mainPanel'>
       <div className='leftPanel'>
-        {UserCard(user, 175)}
+        {UserCard(user)}
         {SideNavigation({ items: navArray, onClick: onClick, activeLink: active})}
       </div>
     </section>

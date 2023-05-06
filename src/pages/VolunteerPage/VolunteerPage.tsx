@@ -23,7 +23,7 @@ const VolunteerPage = () => {
   return (
     <section className='volonteerMainPanel'>
       <div className='volonteerLeftPanel'>
-        {UserCard(user, 175)}
+        {UserCard(user)}
         {SideNavigation({ items: navArray, onClick: onClick, activeLink: active })}
       </div>
 

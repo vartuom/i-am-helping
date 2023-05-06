@@ -25,7 +25,7 @@ export const RecipientPage = () => {
     return (
         <main className={recipient.main}>
             <aside className={recipient.aside}>
-                {UserCard(user, 175)}
+                {UserCard(user)}
                 {SideNavigation({ items: navArray, onClick: onClick, activeLink: active })}
             </aside>
             <section className={recipient.requests}>
