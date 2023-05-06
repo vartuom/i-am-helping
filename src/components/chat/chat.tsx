@@ -1,42 +1,65 @@
-import React, {FC, useEffect, useRef, useState} from 'react';
+import React, {FC, useState} from 'react';
 import chat from "./chat.module.scss";
 import {TChatProps} from "./types";
 import {CrossIcon} from "../ui/icons/cross-icon/cross-icon";
-import useAutosizeTextArea from "../../hooks/useAutosizeTextArea";
 import {SendIcon} from "../ui/icons/send-icon/send-icon";
-import {AddIcon} from "../ui/icons/add-icon/add-icon";
 import {ClipIcon} from "../ui/icons/clip-icon/clip-icon";
+import {Button} from "../ui/buttons/Button";
+import FormsHeader from "../ui/formsHeader/formsHeader";
 
-export const Chat: FC<TChatProps> = (item: TChatProps) => {
+type Message = {
+    text: string;
+    file?: File | null;
+};
+// const handleSendMessage = (evt: React.SyntheticEvent) => {
+//     evt.preventDefault();
+//     if (value ) {
+//         const newMessage = {
+//             text: value,
+//             file: fileInputValue
+//         };
+//
+//         setMessages([item.messages]);
+//         setValue('');
+//         setFileInputValue('');
+//     }
+// };
+
+export const Chat: FC<TChatProps> = (item: TChatProps, props) => {
+    const { name, avatar, phone } = props;
 
     // Сделать состояния:
-    const [messages, setMessages] = useState([]);
-    const [fileInputValue, setFileInputValue] = useState('');
+    const [value, setValue] = useState<string>('');
+    const [messages, setMessages] = useState<Message[]>([]);
+    const [fileInputValue, setFileInputValue] = useState<string>('');
     const [isChatOpen, setIsChatOpen] = useState(true);
-    const [value, setValue] = useState("");
-
-
-    const handleSendMessage = (evt: React.MouseEvent<HTMLDivElement>) => {
-        evt.preventDefault();
-        if (value ) {
-            const newMessage = {
-                text: value,
-                file: fileInputValue
-            };
-            setMessages([...messages, newMessage]);
-            setValue('');
-            setFileInputValue('');
-        }
-    };
 
     //Ввод в инпут чата
-    const handleChange = (evt: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleInputChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
         setValue(evt.target.value);
     };
 
     //Функция для изменения прикрепляемого файла
-    const handleFileInputChange = (evt: React.MouseEvent<HTMLDivElement>) => {
-        setFileInputValue(evt.target.value);
+    const handleFileInputChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+        if (evt.target.files) {
+            setFileInputValue(evt.target.files[0].name);
+        }
+    };
+
+    const handleSendMessage = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        if (value.trim() !== '') {
+            const newMessage: Message = {
+                text: value,
+                file: null,
+            };
+            // if (fileInputValue) {
+            //     newMessage.file = event.currentTarget.querySelector('#chat-file-input')?.files?.[0] || null;
+            // }
+            setMessages((prevMessages) => [...prevMessages, newMessage]);
+            setValue('');
+            setFileInputValue('');
+        }
     };
 
     // Закрытие чата
@@ -51,70 +74,68 @@ export const Chat: FC<TChatProps> = (item: TChatProps) => {
     return (
         <div className={chat.main}>
             <div className={chat.container}>
-                <div className={chat.info}>
-                    <img className={chat.img}/>
+                <div className={chat.info} onClick={handleChatClose}>
+                    {/*<FormsHeader name={name} avatar={avatar} phone={phone} />*/}
+                    <img className={chat.img} />
                     <div className={chat.profile}>
                         <h3 className={chat.initials}>{`${item.person_name}`}</h3>
-                            <div className={chat.data}>
-                                <p className={chat.number}>Тел:</p>
-                                <p className={chat.phone}>{item.phone}</p>
-                            </div>
-                    </div>
-                <div className={chat.button}>
-                    <div className={chat.buttonClose} onClick={handleChatClose}>
-                        <CrossIcon className={chat.ico} type='white' />
-                    </div>
-                </div>
-                </div>
-            <div className={chat.chat}>
-
-                {messages.map((message, index) => (
-                <div  key={index} className={chat.messagesContainer}>
-
-                    <div className={chat.message}>
-                    <img className={chat.imgI}/>
-
-                            <div className={chat.containerTexts}>
-                                {message.text &&
-                                <p className={chat.texts}>{message.text}</p>}
-                            </div>
-
-                    </div>
-                    {message.file && (
-                        <div className="chat-file">
-                            <a href={message.file}>{message.file}</a>
+                        <div className={chat.data}>
+                            <p className={chat.number}>Тел:</p>
+                            <p className={chat.phone}>{item.phone}</p>
                         </div>
-                    )}
+                    </div>
+                    <div className={chat.button}>
+                        <Button
+                            figure="close"
+                            type="button"
+                            icon={<CrossIcon type="white" />}
+                        />
+                    </div>
                 </div>
-                ))}
-            </div>
-                <form className={chat.form} onClick={handleSendMessage}>
-                <div className={chat.textarea}>
-                        <textarea
+                <div className={chat.chat}>
+                    {messages.map((message, index) => (
+                        <div key={index} className={chat.messagesContainer}>
+                            <div key={index} className={chat.message}>
+                                <img className={chat.imgI} />
+                                <div key={index} className={chat.containerTexts}>
+                                    <p className={chat.texts}>{message.text}</p>
+                                    {message.file && (
+                                        <div className={chat.file}>
+                                            <a href={URL.createObjectURL(message.file)}>{message.file.name}</a>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <form className={chat.form} onSubmit={handleSendMessage}>
+                    <div className={chat.input}>
+                        <input
                             className={chat.text}
-                            placeholder="Напишите сообщение"
-                            onChange={handleChange}
+                            type="text"
                             value={value}
+                            placeholder="Напишите сообщение..."
+                            onChange={handleInputChange}
                         />
-                    <label htmlFor="file-input" className={chat.containerClipIcon}>
-                        {/*<ClipIcon className={chat.clipIcon} type='blue'/>*/}
-                        <ClipIcon
-                            className={chat.clipIcon}
-                            id="file-input"
-                            type="file"
-                            accept="image/*, .pdf, .doc, .docx, .xls, .xlsx, .ppt, .pptx"
+                        <Button
+                            variant="icon"
+                            theme="dark"
+                            type="button"
+                            icon={<ClipIcon type="blue" />}
+                            extraClass={chat.clipIcon}
                         />
-                    </label>
-
-
-
-                    <div className={chat.buttonSend}>
-                        <div className={chat.send}>
-                            <SendIcon className={chat.sendIcon} type='white'/>
-                        </div>
                     </div>
 
-                 </div>
+                    <Button
+                        variant="icon"
+                        theme="dark"
+                        type="button"
+                        icon={
+                            <SendIcon type='white'/>}
+                        extraClass={chat.sendIcon}
+                    />
+
                 </form>
             </div>
         </div>

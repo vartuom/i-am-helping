@@ -17,7 +17,7 @@
 
     .info {
       display: grid;
-      grid-template-columns: 102px 468px 17px;
+      grid-template-columns: 102px 450px 17px;
       margin: 0;
       padding: 0;
       width: 100%;
@@ -92,22 +92,6 @@
       display: flex;
       flex-direction: column;
 
-      .buttonClose {
-        cursor: pointer;
-        display: flex;
-        width: 32px;
-        height: 32.5px;
-        background-color: $colorSupport;
-        background-repeat: no-repeat;
-        background-position: center;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 6.25% 100%);
-        background-image: url(../../images/close.svg);
-        align-self: self-end;
-
-        &:hover {
-          background-color: $colorMain;
-        }
-      }
       .ico {
         margin: auto;
       }
@@ -120,11 +104,15 @@
   display: flex;
   flex-direction: column;
   justify-content: normal;
-  width: 450px;
-  height: 100px;
+  width: 550px;
+  height: 150px;
   padding-left: 102px;
   overflow: overlay;
   scrollbar-gutter: stable;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 
   .imgI {
     background-image: url(../../images/Волонтер.svg);
@@ -146,7 +134,6 @@
 .containerTexts {
       display: flex;
       flex-direction: row;
-      //background: #2E3192;
       position: absolute;
       width: 223px;
       height: 42px;
@@ -165,33 +152,32 @@
       margin-left: 20px;
     }
 
-    .form{
+    .form {
       display: flex;
-      flex-direction: row;
+      justify-content: space-between;
+      width: 417px;
+      height: 37px;
+      padding-bottom: 30px;
+      min-width: 385px;
 
-
-      .textarea {
+      .input {
         display: flex;
-        flex-direction: row;
-        //align-items: fl;
-        font-family: $fontFamilyNormal;
-        position: relative;
-        max-width: 464px;
-        min-height: auto;
+        justify-content: space-between;
+        width: 417px;
+        height: 37px;
         padding-left: 102px;
         padding-bottom: 30px;
+        min-width: 385px;
+        position: relative;
 
       }
 
       .text {
         background-color: #F5F5F5;
-        //box-sizing: border-box;
         height: 37px;
         width: 417px;
         font-family: $fontFamilyNormal;
         border: 1px solid $colorDisable;
-        //padding: 20px 11px 59px 10px;
-        //resize: none;
 
         &:focus {
           outline: 1px solid $colorBtnSecond;
@@ -203,54 +189,31 @@
           color: $colorDisable;
         }
       }
-      .send {
+
+      .sendIcon {
+        background: #2E3192;
+        display: flex;
+        flex-direction: column;
         cursor: pointer;
         position: absolute;
         width: 37px;
         height: 37px;
-        left: 548px;
-        background: #2E3192;
+        left: 510px;
+        border-radius: 0;
       }
 
-      .buttonSend {
-        display: flex;
-        flex-direction: column;
-
-        .send {
-          cursor: pointer;
-          position: absolute;
-          width: 37px;
-          height: 37px;
-          left: 548px;
-          background: #2E3192;
-
-        }
-        .sendIcon {
-          margin-left: 10px;
-          margin-top: 10px;
-        }
-
+      .clipIcon {
+        width: 12px;
+        height: 15px;
+        background: #F5F5F5;
+        position: absolute;
+        top: 11px;
+        right: 11px;
       }
 
-    }
-    .containerClipIcon{
-      background: #2E3192;
-      margin-top: 11px;
-      margin-right: 20px;
-      margin-bottom: 11px;
-
-
-    }
-    .clipIcon {
-      width: 15px;
-      height: 15px;
-    }
-
-
-
+      }
 
   }
-
 
 }
 
