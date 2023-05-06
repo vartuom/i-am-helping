@@ -28,7 +28,6 @@ const ConfirmStep = () => {
           avatar="https://kartinkin.net/uploads/posts/2022-12/1670006799_1-kartinkin-net-p-belii-fon-dlya-avi-vkontakte-1.jpg"
           name="Иванов Иван Иванович"
           phone="+7(000) 000-00-00"
-          mobile="Дело"
         />
       </div>
       <div className={m.wrap}>

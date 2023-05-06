@@ -66,7 +66,7 @@ const ThirdStep = () => {
       </div>
       <div className={m.wrap}>
         <span className={m.select}>
-          <p className={m.nameSelect}>Выберите тип задачи </p>
+          <span className={m.nameSelect}>Выберите тип задачи </span>
           <Select
             options={options}
             onChange={onChangeSelect}
