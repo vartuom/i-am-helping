@@ -1,3 +1,8 @@
+@import "../../../constants/scss-mixins.scss";
+
 .wrap {
-  padding: 50px 0 76px 73px;
+  padding: 50px 0 79px 73px;
+  @include from("sm") {
+    padding: 34px 0 161px;
+  }
 }

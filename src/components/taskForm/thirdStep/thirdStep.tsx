@@ -14,9 +14,9 @@ const ThirdStep = () => {
   const [text, setText] = useState<string>("");
 
   const onChangeSelect = (e: {
-    target: { value: React.SetStateAction<IOption | null> };
+    value: React.SetStateAction<IOption | null>;
   }) => {
-    setSelect(e.target.value);
+    setSelect(e.value);
   };
 
   const onChangeText = (e: {
@@ -61,10 +61,18 @@ const ThirdStep = () => {
           avatar="https://kartinkin.net/uploads/posts/2022-12/1670006799_1-kartinkin-net-p-belii-fon-dlya-avi-vkontakte-1.jpg"
           name="Иванов Иван Иванович"
           phone="+7(000) 000-00-00"
+          mobile="Дело"
         />
       </div>
       <div className={m.wrap}>
-        <Select options={options} onChange={onChangeSelect} />
+        <span className={m.select}>
+          <p className={m.nameSelect}>Выберите тип задачи </p>
+          <Select
+            options={options}
+            onChange={onChangeSelect}
+            defaultValue="Выберите тип задачи"
+          />
+        </span>
         <TextArea value={text} onChange={onChangeText} />
       </div>
       <div className={s.form__controls}>
