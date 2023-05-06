@@ -14,7 +14,7 @@ export const First: Story = {
     data: [
       {
         date: new Date("12.07.2022"),
-        views: 2342,
+        views: 234,
         visits: 3122,
         bids: 232,
       },

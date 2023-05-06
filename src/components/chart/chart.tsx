@@ -1,49 +1,7 @@
 import { FC, useMemo } from "react";
 import styles from "./chart.module.scss";
 import { Button } from "../ui/buttons/Button";
-
-interface IPropsChartColumn {
-  date: Date;
-  views: number;
-  visits: number;
-  bids: number;
-  height: string;
-}
-
-const ChartColumn: FC<IPropsChartColumn> = ({
-  date,
-  views,
-  visits,
-  bids,
-  height,
-}) => {
-  return (
-    <div className={styles.columnWrapper}>
-      <div style={{ height }} className={styles.column}></div>
-      <span className={styles.dateString}>
-        {date.getMonth() + "/" + date.getDate()}
-      </span>
-
-      <div className={styles.card}>
-        <span className={styles.cardBigText}>
-          {date.getDate() + "." + date.getMonth() + "." + date.getFullYear()}
-        </span>
-        <div className={styles.cardSmallText}>
-          <span>Показов</span>
-          <span>{views}</span>
-        </div>
-        <div className={styles.cardSmallText}>
-          <span>Посетителей</span>
-          <span>{visits}</span>
-        </div>
-        <div className={styles.cardSmallText}>
-          <span>Заявок</span>
-          <span>{bids}</span>
-        </div>
-      </div>
-    </div>
-  );
-};
+import { ChartColumn } from "./chart-column";
 
 interface IChartProps {
   data: Array<{ date: Date; views: number; visits: number; bids: number }>;
@@ -57,34 +15,38 @@ export const Chart: FC<IChartProps> = ({ data }) => {
 
   const axisData = useMemo(() => {
     let result: Array<number | string> = [1000, 750, 500, 250, 0];
+    if (biggestViews < 1000) {
+      return result;
+    }
     result = [];
     const step = Math.ceil(biggestViews / 1000) / 4;
     result.push(step * 4 + "K");
     result.push(step * 3 + "K");
     result.push(step * 2 + "K");
     result.push(step + "K");
-    result.push("0K");
+    result.push("0");
     return result;
   }, [biggestViews]);
 
   return (
     <div className={styles.chart}>
-      <div className={styles.axisContainer}>
-        {axisData.map((step) => {
-          return <span>{String(step)}</span>;
+      <div className={styles.chart__axisContainer}>
+        {axisData.map((step, index) => {
+          return <span key={index}>{String(step)}</span>;
         })}
       </div>
-      <div className={styles.columnsContainer}>
+      <div className={styles.chart__columnsContainer}>
         {data.map((item) => (
           <ChartColumn
             {...item}
+            key={item.date.getDate()}
             height={
               (item.views / (Math.ceil(biggestViews / 1000) * 1000)) * 100 + "%"
             }
           />
         ))}
       </div>
-      <div className={styles.excelButtonContainer}>
+      <div className={styles.chart__excelButtonContainer}>
         <Button animated="excel" onClick={() => {}} type="button" />
       </div>
     </div>
