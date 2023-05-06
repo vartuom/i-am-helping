@@ -1,28 +1,52 @@
 @import "../../../constants/scss-variables.scss";
+@import "../../../constants/scss-mixins.scss";
 
 .wrap {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   padding-top: 40px;
+  @include from("sm") {
+    padding-top: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .date {
-  padding-left: 45px;
+  width: 308px;
+  padding-left: 60px;
   margin-top: -7px;
   & > span > p {
     margin: 0;
+  }
+  @include from("sm") {
+    flex-direction: column;
+    width: 250px;
+    padding-left: 0;
   }
 }
 .dateText {
   margin: 0;
   padding-bottom: 5px;
+  @include from("sm") {
+    display: none;
+  }
 }
 
 .check {
   margin: 10px 0 20px;
-  width: 308px;
   padding: 12px 0 12px 14px;
   border-radius: 10px;
-  border: 1px solid $colorSupport;
+  border: 1px solid $headerBorder;
+  @include from("sm") {
+    margin: 10px auto 20px;
+    width: 157px;
+  }
+}
+
+.mobileWrap {
+  @include from("sm") {
+    margin: 29px 0 24px;
+  }
 }

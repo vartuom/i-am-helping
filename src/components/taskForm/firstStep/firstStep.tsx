@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import s from "../taskForm.module.scss";
 import m from "./firstStep.module.scss";
 import { Button } from "../../ui/buttons/Button";
@@ -6,6 +6,7 @@ import FormsHeader from "../../ui/formsHeader/formsHeader";
 import Clock from "../../Clock/Clock";
 import Calendar from "../../calendar/Calendar";
 import Checkbox from "../../ui/checkbox/checkbox";
+import MobileClock from "../../mobileClock/mobileClock";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const FirstStep = () => {
@@ -18,6 +19,7 @@ const FirstStep = () => {
   const [minut, setMinut] = useState<number | undefined>(secondTime);
   const [startDate, setStartDate] = useState<Date>(date);
   const [check, setCheck] = useState<boolean>(false);
+  const [width, setWidth] = useState<number>(window.innerWidth);
   const onChangeHour = (e: {
     target: { value: React.SetStateAction<number | undefined> };
   }) => {
@@ -38,6 +40,18 @@ const FirstStep = () => {
     });
   };
 
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 415;
+
   return (
     <form className={s.form} onSubmit={handleSubmit}>
       <div>
@@ -45,16 +59,25 @@ const FirstStep = () => {
           avatar="https://kartinkin.net/uploads/posts/2022-12/1670006799_1-kartinkin-net-p-belii-fon-dlya-avi-vkontakte-1.jpg"
           name="Иванов Иван Иванович"
           phone="+7(000) 000-00-00"
+          mobile="Время"
         />
         <div className={m.wrap}>
-          <Clock
-            hour={hour}
-            minut={minut}
-            onChangeHour={onChangeHour}
-            onChangeMinut={onChangeMinut}
-          />
+          {!isMobile && (
+            <Clock
+              hour={hour}
+              minut={minut}
+              onChangeHour={onChangeHour}
+              onChangeMinut={onChangeMinut}
+            />
+          )}
+          {isMobile && <MobileClock />}
           <div className={m.date}>
             <p className={m.dateText}>Дата</p>
+            {isMobile && (
+              <div className={m.mobileWrap}>
+                <FormsHeader mobile="Дата" />
+              </div>
+            )}
             <Calendar selectedDate={date} onChange={setStartDate} />
             <div className={m.check}>
               <Checkbox
