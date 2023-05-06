@@ -1,11 +1,12 @@
 import React from 'react';
-import Calendar from '../components/calendar/Calendar';
+import { MapForSeacrh } from '../components/maps/MapForSearch';
+import { Maps } from '../components/maps/Maps';
 
 const AnotherTestPage = () => {
+
     return (
-        <div>
-            Ок, все работает!
-            <Calendar />
+        <div style={{width: "100%", height: "100%"}}>
+            <MapForSeacrh />
         </div>
     );
 };

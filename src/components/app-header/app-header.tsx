@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react"
 import header from "./app-header.module.scss"
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 import { Logo } from "../ui/Logo/Logo"
 import { BlogIcon, BurgerMenuIcon, EmptyMessageIcon, LocationIcon, PersonIcon, PrivacyIcon } from "../ui/icons/icons"
 import { Button } from "../ui/buttons/Button"
@@ -12,6 +12,9 @@ export const AppHeader: FC = () => {
     const handleChange = () => {
         setIsMenuOpen(!isMenuOpen);
     }
+
+    const location = useLocation();
+    const isOnAdminPage = location.pathname.includes('/admin');
 
     return (
         <header className={header.header}>
@@ -50,7 +53,8 @@ export const AppHeader: FC = () => {
                         </NavLink>
                     </li>
                 </ul>
-                <div className={header.message__area} onClick={handleChange}>
+                {isOnAdminPage? '' :
+                (<div className={header.message__area} onClick={handleChange}>
                     <Button
                         variant="icon"
                         size="small"
@@ -61,7 +65,7 @@ export const AppHeader: FC = () => {
                         extraClass={header.message__button}
                     />
                     <p className={header.message__caption}>Написать администратору</p>
-                </div>
+                </div>)}
             </nav>
         </header>
     )

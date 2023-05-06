@@ -1,23 +1,28 @@
-import React, {ReactNode} from 'react';
+import React, {ChangeEvent, ReactNode} from 'react';
 import s from "./checkbox.module.scss"
 
-interface Props extends React.PropsWithRef<JSX.IntrinsicElements["input"]> {
+interface ICheckboxProps {
+    name: string;
     label: string | ReactNode;
-    [key: string]: any;
+    isDisabled?: boolean;
+    isChecked: boolean;
+    handleChange: (evt: ChangeEvent<HTMLInputElement>) => void;
 }
-const Checkbox = React.forwardRef<HTMLInputElement, Props>(({label, ...props}, ref) => {
+const Checkbox = ({name, label, isDisabled, isChecked, handleChange}:ICheckboxProps) => {
     return (
         <label className={s.checkbox}>
-            <input
-                {...props}
+            <input onChange={handleChange}
+                id={name}
+                name={name}
                 type={"checkbox"}
-                ref={ref}
+                disabled={isDisabled}
+                checked={isChecked}
                 className={s.checkbox__nativeBox}
             />
             <div className={s.checkbox__customBox}/>
             <div className={s.checkbox__label}>{label}</div>
         </label>
     );
-});
+};
 
 export default Checkbox;

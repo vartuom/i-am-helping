@@ -9,6 +9,18 @@ import ModalOne from "../modalExamples/modalOne";
 import ModalTwo from "../modalExamples/modalTwo";
 import ModalThree from "../modalExamples/modalThree";
 import { AppFooter } from "../app-footer/app-footer";
+import VolunteerPage from "../../pages/VolunteerPage/VolunteerPage";
+import { RecipientPage } from "../../pages/RecipientPage/RecipientPage";
+import ProfilePage from "../../pages/ProfilePage/ProfilePage";
+import { AdminPage } from "../../pages/AdminPage/AdminPage";
+
+import FirstStep from "../taskForm/firstStep";
+import SecondStep from "../taskForm/secondStep";
+import ThirdStep from "../taskForm/thirdStep";
+import ConfirmStep from "../taskForm/confirmStep";
+import { RecipientPageActive } from "../../pages/RecipientPage/RecipientPageActive";
+import { RecipientPageCompleted } from "../../pages/RecipientPage/RecipientPageCompleted";
+
 
 function App() {
   const location = useLocation();
@@ -21,31 +33,45 @@ function App() {
         <Route path="/" element={<TestPage />} />
         <Route path="/anotherTestPage" element={<AnotherTestPage />} />
         <Route path="/personal" element={<PersonalPage />} />
+        <Route path="/volunteer" element={<VolunteerPage />} />
+        <Route path="/recipient" element={<RecipientPage />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/completed" element={<RecipientPageCompleted />} />
+        <Route path="/active" element={<RecipientPageActive />} />
+        <Route path="/profile" element={<ProfilePage />} />
         {/*добавить нужные роуты*/}
       </Routes>
       {background && (
         <Routes>
           <Route
-            path="/modalOne"
+            path="/firstStep"
             element={
               <Modal onClose={() => navigate(-1)} isModalOpened>
-                <ModalOne />
+                <FirstStep />
               </Modal>
             }
           />
           <Route
-            path="/modalTwo"
+            path="/secondStep"
             element={
               <Modal onClose={() => navigate("/")} isModalOpened>
-                <ModalTwo />
+                <SecondStep />
               </Modal>
             }
           />
           <Route
-            path="/modalThree"
+            path="/thirdStep"
             element={
               <Modal onClose={() => navigate("/")} isModalOpened>
-                <ModalThree />
+                <ThirdStep />
+              </Modal>
+            }
+          />
+          <Route
+            path="/confirmStep"
+            element={
+              <Modal onClose={() => navigate("/")} isModalOpened>
+                <ConfirmStep />
               </Modal>
             }
           />

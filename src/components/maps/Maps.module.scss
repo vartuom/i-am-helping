@@ -1,0 +1,35 @@
+@import '../../constants/scss-variables.scss';
+.maps{
+    // для нормальной работы надо задать высоту и ширину 100%,  а размеры регулировать внешним контейнером
+    width: 940px;
+    height: 728px;
+    background: $colorBgcPopup;
+    border-radius: 10px;
+
+
+    &__placemark{
+        border-radius: 100%;
+        background-color: $colorMain;
+    }
+
+
+    &__inputBox{
+        position: relative;
+    }
+
+    &__ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        z-index: 2501;
+        background-color: white;
+    }
+
+    &__li{
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
