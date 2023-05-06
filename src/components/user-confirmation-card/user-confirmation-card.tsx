@@ -81,14 +81,17 @@ const UserConfirmationCard: FC<IUserConfirmationTypeProps> = ({user, displayType
           </div>  
 
           <div className={styles.buttons}>
+            
             <Button
-              label="Подтвердить"
               onClick={() => {}}
-              theme="dark"
+              theme="light"
               type="submit"
               variant="text"
               extraClass={styles.colorTransition}
-            />
+              ><span className={styles.gradient} 
+                style={{ position: 'relative', zIndex: 1 }}
+              >Подтвердить</span>
+            </Button>
             <Button
               label="Заблокировать"
               onClick={() => {}}
