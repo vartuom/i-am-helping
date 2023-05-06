@@ -2,8 +2,9 @@
 @import '../../constants/scss-mixins.scss';
 
 .list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
   z-index: 0;
   height: 750px;
   position: relative;
@@ -14,21 +15,6 @@
 
   overflow: scroll;
 }
-
-.itemBreaker {
-
-  height: 1px;
-  width: 100%;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #2E3192 49.28%, rgba(255, 255, 255, 0) 100%);
-  margin-top: 25px;
-  margin-bottom: 25px;
-
-  @include from('sm') {
-    background: none;
-    margin: 10px
-  }
-}
-
 
 .blur {
   position: fixed;

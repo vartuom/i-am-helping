@@ -9,45 +9,20 @@
     max-width: 1440px;
     padding: 0 92px;
     box-sizing: border-box;
-    @include from('sm') {
-        margin-top: 20px;
-        justify-content: center;
-        padding: 0;
-    }
-
 }
-
 
 .aside {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    @include from('sm') {
-        row-gap: 15px;
-    }
-    &_activePage {
-        @include from('sm') {
-            display: none;
-        }  
-    }
 }
 
-.requests {
+.cards {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 25px;
     padding-right: 10px;
-    @include from('sm') {
-        display: none;
-    }
-    &_activePage {
-        @include from('sm') {
-            display: block;
-            padding: 0;
-            justify-content: center;
-        }  
-    }
 }
 
 .profile {

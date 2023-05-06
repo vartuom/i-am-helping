@@ -70,7 +70,7 @@ export const Request: FC<TRequest> = (item: TRequest) => {
       </div >
 
       <div className='person'>
-        <Avatar size={100} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} />
+        <Avatar size={100} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} extraClass='personImg'/>
         <div className='personName'>
           {item.person_name}
         </div>
