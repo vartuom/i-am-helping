@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/components-avatar-Avatar-stories.f2c98123.chunk.css","mappings":"AAAA","sources":["webpack://i-am-helping/./src/components/avatar/Avatar.scss"],"sourcesContent":[".avatar {\r\n  border-radius: 50%;\r\n  object-fit: cover;\r\n}\r\n\r\n.avatar_userCard {\r\n  position: relative;\r\n  top: -90px;\r\n}"],"names":[],"sourceRoot":""}
