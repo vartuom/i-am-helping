@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import { Portal } from "react-portal";
 import TimePickerSelection from "../TimePickerSelection/TimePickerSelection";
 import s from "./TimePicker.module.scss";
-
+ 
 interface ITimePicker {
   value?: string | null;
   cellHeight?: number;
