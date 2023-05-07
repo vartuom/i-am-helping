@@ -7,19 +7,22 @@
 ![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
 ![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)
 
+## Storybook на Github Pages
+https://vartuom.github.io/i-am-helping
+
 ## Участники проекта:
-1) Софья Климова  
-2) Мария Волкова  
-3) Артем Васильев  https://github.com/vartuom/
-4) Павел Еременко  
-5) Юлия Лушинская  
-6) Вадим Литау  
-7) Олег Бережинский  
-8) Александр Герасимов  
-9) Игорь Топал  
-10) Евгения Малиновская  
-11) Александр Субботин  
-12) Елена Никифорова  
+1) Софья Климова  https://github.com/klmvsn
+2) Мария Волкова  https://github.com/Volkova-fe
+3) Артем Васильев  https://github.com/vartuom
+4) Павел Еременко  https://github.com/EremenkoP
+5) Юлия Лушинская  https://github.com/alloya
+6) Вадим Литау  https://github.com/VadimLitau
+7) Олег Бережинский  https://github.com/berezhinskiyo
+8) Александр Герасимов  https://github.com/Alexandr-Gerasimov
+9) Игорь Топал  https://github.com/t0pall
+10) Евгения Малиновская  https://github.com/evgeniyamalinovskaya
+11) Александр Субботин  https://github.com/AlexanderSub
+12) Елена Никифорова  https://github.com/Lakatosska
 13) Севастьян Дворцов  
 
 
