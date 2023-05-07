@@ -1,0 +1,87 @@
+@import "../../constants/scss-variables.scss";
+@import "../../constants/scss-mixins.scss";
+
+.chart {
+  display: flex;
+  font-family: "GolosNormal";
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  color: $colorMain;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $colorBtnFirst;
+  width: 640px;
+  height: 237px;
+  position: relative;
+
+  @include from("sm") {
+    width: 364px;
+  }
+}
+
+.chart__axisContainer {
+  display: flex;
+  gap: 27.3px;
+  height: 207px;
+  flex-direction: column;
+  margin: 0 5px 0 0;
+
+  @include from("sm") {
+    font-size: 8px;
+    text-align: end;
+    margin: 0 2px 0 0;
+  }
+
+}
+
+
+.chart__columnsContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 0 2px;
+  gap: 5px;
+  width: 550px;
+  height: 170px;
+  border: 1px solid $orange;
+  margin: 0 20px 20px 0;
+
+  background: repeating-linear-gradient(
+      transparent,
+      transparent 42.5px,
+      $orange 43.5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 68.75px,
+      $orange 69.75px
+    );
+
+  @include from("sm") {
+    width: 320px;
+    margin-right: 0;
+    gap: 3px;
+
+    background: repeating-linear-gradient(
+      transparent,
+      transparent 42.5px,
+      $orange 43.5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 41.96px,
+      $orange 42.96px
+    );
+
+  }
+}
+
+.chart__excelButtonContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

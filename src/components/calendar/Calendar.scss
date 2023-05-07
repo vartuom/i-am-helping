@@ -1,0 +1,90 @@
+@use "../../constants/scss-variables";
+@import "../../constants/scss-mixins.scss";
+.react-datepicker {
+  font: inherit;
+  font-size: 11px;
+  border-radius: 10px;
+  border-color: #e0e0e0;
+}
+
+.react-datepicker__header {
+  background-color: transparent;
+  border-bottom: none;
+  padding-bottom: 0;
+  padding-top: 15px;
+}
+
+.react-datepicker__current-month {
+  color: scss-variables.$colorMain;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.react-datepicker__navigation {
+  border-radius: 100%;
+  border: 1px solid scss-variables.$colorSupport;
+  width: 16px;
+  height: 16px;
+  top: 18px;
+  &.react-datepicker__navigation--next {
+    right: 12px;
+  }
+  &.react-datepicker__navigation--previous {
+    left: 12px;
+  }
+}
+
+.react-datepicker__day-name {
+  margin: 0.19rem;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-width: 1px 1px 0 0;
+  border-color: scss-variables.$colorSupport;
+  width: 5px;
+  height: 5px;
+  top: 9px;
+}
+
+.react-datepicker__navigation-icon--next::before {
+  left: -2px;
+}
+
+.react-datepicker__navigation-icon--previous::before {
+  right: -2px;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day {
+  padding: 0 5px;
+  @include from("sm") {
+    padding: 0;
+  }
+}
+
+.react-datepicker__day-name {
+  color: #9f9b9b;
+  text-transform: uppercase;
+  &:nth-last-child(-n + 2) {
+    color: #fd6868;
+  }
+}
+
+.react-datepicker__day--today {
+  background-color: scss-variables.$colorSupport;
+  border-radius: 0.3rem;
+}
+
+.react-datepicker__day--selected {
+  background-color: scss-variables.$colorMain;
+  color: white;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: scss-variables.$colorSupport;
+}
+
+.react-datepicker__day--outside-month {
+  color: #9f9b9b;
+}

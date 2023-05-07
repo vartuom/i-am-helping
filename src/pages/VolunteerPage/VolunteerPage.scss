@@ -1,0 +1,36 @@
+@import '../../constants/scss-variables.scss';
+@import '../../constants/scss-mixins.scss';
+
+
+
+.volonteerMainPanel {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+  justify-content: center;
+
+  .volonteerLeftPanel {
+    display: flex;
+    flex-direction: column;
+    width: 295px;
+    gap: 30px;
+
+    @include from('sm') {
+      display: none;
+    }
+
+  }
+
+  .volonteerRightPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+
+  }
+}
+
+.relative {
+  position: relative;
+}
