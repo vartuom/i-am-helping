@@ -16,14 +16,13 @@ import { RecipientPage } from "../../pages/RecipientPage/RecipientPage";
 import ProfilePage from "../../pages/ProfilePage/ProfilePage";
 import { AdminPage } from "../../pages/AdminPage/AdminPage";
 import { AdminPageConfirmation } from "../../pages/AdminPage/AdminPageConfirmation";
-import FirstStep from "../taskForm/firstStep";
-import SecondStep from "../taskForm/secondStep";
-import ThirdStep from "../taskForm/thirdStep";
-import ConfirmStep from "../taskForm/confirmStep";
+import FirstStep from "../taskForm/firstStep/firstStep";
+import SecondStep from "../taskForm/secondStep/secondStep";
+import ThirdStep from "../taskForm/thirdStep/thirdStep";
+import ConfirmStep from "../taskForm/confirmStep/confirmStep";
 import { RecipientPageActive } from "../../pages/RecipientPage/RecipientPageActive";
 import { RecipientPageCompleted } from "../../pages/RecipientPage/RecipientPageCompleted";
 import { MainAdminPage } from "../../pages/MainAdminPage/MainAdminPage";
-
 
 function App() {
   const location = useLocation();
@@ -34,8 +33,8 @@ function App() {
       <AppHeader />
       <Routes location={background || location}>
         <Route path="/" element={<TestPage />} />
-        <Route path="/signup" element={<SignupPage />}/>
-        <Route path="/signin" element={<SigninPage />}/>
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/signin" element={<SigninPage />} />
         <Route path="/anotherTestPage" element={<AnotherTestPage />} />
         <Route path="/personal" element={<PersonalPage />} />
         <Route path="/volunteer" element={<VolunteerPage />} />
@@ -47,7 +46,7 @@ function App() {
         <Route path="/active" element={<RecipientPageActive />} />
         <Route path="/profile" element={<ProfilePage />} />
         {/*добавить нужные роуты*/}
-      </Routes> 
+      </Routes>
       {background && (
         <Routes>
           <Route

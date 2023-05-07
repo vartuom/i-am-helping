@@ -1,27 +1,47 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import s from "./formsHeader.module.scss";
-import image from "../../../images/avatar-temp.png";
 
 interface IFormsHeader {
-  avatar: string;
-  name: string;
-  phone: string;
+  avatar?: string;
+  name?: string;
+  phone?: string;
+  mobile?: string;
 }
 
 const FormsHeader: FC<IFormsHeader> = (props) => {
-  const { name, avatar, phone } = props;
+  const { name, avatar, phone, mobile } = props;
+  const [width, setWidth] = useState<number>(window.innerWidth);
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 415;
   return (
     <>
-      <div className={s.wrap}>
-        <img className={s.avatar} src={avatar} alt="Ваш Аватар" />
-        <div className={s.infoWrap}>
-          <p className={s.name}>{name}</p>
-          <p className={s.phone}>
-            <span className={s.phone_indent}>Тел.:</span>
-            {phone}
-          </p>
+      {!isMobile && (
+        <div className={s.wrap}>
+          <img className={s.avatar} src={avatar} alt="Ваш Аватар" />
+          <div className={s.infoWrap}>
+            <p className={s.name}>{name}</p>
+            <p className={s.phone}>
+              <span className={s.phone_indent}>Тел.:</span>
+              {phone}
+            </p>
+          </div>
         </div>
-      </div>
+      )}
+      {isMobile && (
+        <div className={s.mobileWrap}>
+          <p className={s.mobileText}>{mobile}</p>
+          <span className={s.mobileUnderline}></span>
+        </div>
+      )}
     </>
   );
 };
