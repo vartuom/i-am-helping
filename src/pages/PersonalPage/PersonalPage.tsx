@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import { Avatar } from '../../components/avatar/Avatar'
 import './PersonalPage.scss'
-import { TRequest } from '../../components/request/types'
+import { TRequest } from '../../types'
 
 const PersonalPage = () => {
-  const [requests, setRequests] = useState<TRequest[]>([
-    
-  ])
+  const [requests, setRequests] = useState<TRequest[]>([])
 
   return (
     <main className="main">

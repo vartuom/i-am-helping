@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import UserConfirmationCard from '../user-confirmation-card/user-confirmation-card';
-import { TUser } from '../userCard/types';
 import styles from './user-confirmation-card-list.module.scss'
 import useMediaQuery from '../../hooks/useMediaQuery';
+import { TUser } from '../../types';
 
 export const UserConfirmationCardList: FC<Array<TUser>> = (items) => {
 
@@ -12,7 +12,8 @@ export const UserConfirmationCardList: FC<Array<TUser>> = (items) => {
     <div className={styles.list}>
       {items && Object.values(items).map((item, index) =>
         (<div key={index}><UserConfirmationCard user={item} displayType={displayType} /></div>))}
-      <div className={styles.blur} />
+      {/* Чтобы включить блюр внизу странцы, раскомментируй строку ниже */}
+      {/* <div className={styles.blur} /> */}
     </div>
 
   )

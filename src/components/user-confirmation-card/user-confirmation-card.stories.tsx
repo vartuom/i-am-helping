@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import './user-confirmation-card.module.scss';
 import userConfirmationCard from './user-confirmation-card';
-import Avatar from '../../images/avatar-admin-small.png';
-
+import { user } from '../../data/user';
 
 const meta: Meta<typeof userConfirmationCard> = {
 
@@ -35,36 +34,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Desktop: Story = {
     args:
-      { user: 
-        {
-          id: 11111114,
-          name: 'Петров Петр Петрович',
-          phone: '+7(000)000-00-04',
-          image: `${Avatar}`,
-          balls: 2500,
-          keys: 1,
-          finishedApplications: 150,
-          //status: 'admin',
-          confirmation: 'green'
-        },
+      { user: user,
         displayType: 'desktop'
       },
 };
 
 export const Mobile: Story = {
   args:
-    { user: 
-      {
-        id: 11111114,
-        name: 'Петров Петр Петрович',
-        phone: '+7(000)000-00-04',
-        image: `${Avatar}`,
-        balls: 0,
-        keys: 0,
-        finishedApplications: 0,
-        //status: 'admin',
-        confirmation: 'orange'
-      },
+    { user: user,
       displayType: 'mobile'
     },
 };

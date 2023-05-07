@@ -1,9 +1,10 @@
-@use '../../constants/scss-variables';
+@use "../../constants/scss-variables";
+@import "../../constants/scss-mixins.scss";
 .react-datepicker {
   font: inherit;
   font-size: 11px;
   border-radius: 10px;
-  border-color: #E0E0E0;
+  border-color: #e0e0e0;
 }
 
 .react-datepicker__header {
@@ -54,11 +55,19 @@
   right: -2px;
 }
 
+.react-datepicker__day-name,
+.react-datepicker__day {
+  padding: 0 5px;
+  @include from("sm") {
+    padding: 0;
+  }
+}
+
 .react-datepicker__day-name {
-  color: #9F9B9B;
+  color: #9f9b9b;
   text-transform: uppercase;
-  &:nth-last-child(-n+2) {
-    color: #FD6868;
+  &:nth-last-child(-n + 2) {
+    color: #fd6868;
   }
 }
 
@@ -77,5 +86,5 @@
 }
 
 .react-datepicker__day--outside-month {
-  color: #9F9B9B;
+  color: #9f9b9b;
 }
