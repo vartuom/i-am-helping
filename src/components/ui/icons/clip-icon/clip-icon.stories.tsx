@@ -5,4 +5,4 @@ export default {
     title: 'Icons/Clip Icon',
 };
 
-export const Default = () => <ClipIcon/>
+export const Default = () => <ClipIcon type={"blue"}/>
