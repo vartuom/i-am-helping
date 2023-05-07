@@ -5,6 +5,7 @@ import MinuteWheel from "../MinuteWheel/MinuteWheel";
 import { Button } from "../../ui/buttons/Button";
 
 interface ITimePickerSelection {
+  inputValue: any;
   pickerDefaultValue?: string | undefined;
   initialValue?: string | null;
   onChange?: any;

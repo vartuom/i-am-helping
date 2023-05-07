@@ -6,10 +6,10 @@ import { LocationIcon } from '../ui/icons/location-icon/location-icon'
 import { BallsIcon } from '../ui/icons/balls-icon/balls-icon'
 import { PhoneIcon } from '../ui/icons/phone-icon/phone-icon'
 import { CrossIcon } from '../ui/icons/cross-icon/cross-icon';
-import { TRequest } from './types'
 import { Avatar } from '../avatar/Avatar';
 import { Button } from '../ui/buttons/Button';
 import { EditIcon, EmptyMessageIcon } from '../ui/icons/icons';
+import { TRequest } from '../../types';
 
 
 export const Request: FC<TRequest> = (item: TRequest) => {
@@ -77,12 +77,12 @@ export const Request: FC<TRequest> = (item: TRequest) => {
       </div >
 
       <div className='person'>
-        <Avatar size={100} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} extraClass='personImg' />
+        <Avatar size={100} url={item.user?.avatar} extraClass='personImg'/>
         <div className='personName'>
-          {item.person_name}
+          {item.user?.name}
         </div>
         <div className='personPhone'>
-          {item.phone}
+          {item.user?.phone}
         </div>
         <div className='personContact'>
           <Button

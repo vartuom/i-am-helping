@@ -5,4 +5,4 @@ export default {
     title: 'Icons/Send Icon',
 };
 
-export const Default = () => <SendIcon/>
+export const Default = () => <SendIcon type={"white"}/>

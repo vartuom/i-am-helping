@@ -32,7 +32,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "eslintConfig": {
     "extends": [
@@ -79,6 +80,7 @@
     "@storybook/preset-create-react-app": "^7.0.7",
     "@storybook/react": "7.0.7",
     "@storybook/react-webpack5": "^7.0.7",
+    "@storybook/storybook-deployer": "^2.8.16",
     "@storybook/testing-library": "^0.0.14-next.2",
     "@types/react-portal": "^4.0.4",
     "babel-plugin-named-exports-order": "^0.0.2",

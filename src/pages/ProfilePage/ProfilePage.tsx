@@ -1,21 +1,14 @@
 import { useState } from 'react'
-import { PageTitleFilter } from '../../components/page-title-filter/PageTitleFilter'
 import { EPageTitleFilterKind } from '../../components/page-title-filter/types'
-import RequestList from '../../components/request-list/RequestList'
-import { TRequest } from '../../components/request/types'
 import SideNavigation from '../../components/side-navigation/SideNavigation'
 import './ProfilePage.scss'
-import UserCard, { user } from '../../components/userCard/userCard'
-import { IAvatarProps } from '../../components/avatar/Avatar'
+import UserCard from '../../components/userCard/userCard'
 import { useNavigate } from 'react-router-dom'
+import { user } from '../../data/user'
+import { IAvatarProps } from '../../components/avatar/Avatar'
 
 const ProfilePage = () => {
 
-
-  const avatarParams: IAvatarProps = {
-    size: 175,
-    url: 'https://fraguru.com/mdimg/avatariru/m.298472.jpg',
-  }
   const [navArray] = useState<EPageTitleFilterKind[]>(
     [EPageTitleFilterKind.Map, EPageTitleFilterKind.Active, EPageTitleFilterKind.Completed]);
 
@@ -25,6 +18,10 @@ const ProfilePage = () => {
   const onClick = (viewType: EPageTitleFilterKind) => {
     navigate('/volunteer');
 
+  }
+  const avatarParams: IAvatarProps = {
+    size: 175,
+    url: 'https://fraguru.com/mdimg/avatariru/m.298472.jpg',
   }
   return (
     <section className='mainPanel'>

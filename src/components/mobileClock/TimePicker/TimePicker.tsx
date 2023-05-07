@@ -2,8 +2,10 @@ import React, { FC, useEffect, useState } from "react";
 import { Portal } from "react-portal";
 import TimePickerSelection from "../TimePickerSelection/TimePickerSelection";
 import s from "./TimePicker.module.scss";
-
+ 
 interface ITimePicker {
+  setInputValue: any;
+  inputValue: any;
   value?: string | null;
   cellHeight?: number;
   placeHolder?: string;
@@ -51,10 +53,13 @@ const TimePicker: FC<ITimePicker> = ({
   onOpen = () => {},
   popupClassName = null,
   inputClassName = null,
+  inputValue,
+  setInputValue,
 }) => {
   const [isOpen, setIsOpen] = useState(initialIsOpenValue);
   const [height, setHeight] = useState(cellHeight);
-  const [inputValue, setInputValue] = useState(initialValue);
+  // const [inputValue, setInputValue] = useState(initialValue);
+  // console.log(inputValue);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -74,6 +79,7 @@ const TimePicker: FC<ITimePicker> = ({
   }
 
   const params = {
+    inputValue,
     onChange,
     height,
     onSave,

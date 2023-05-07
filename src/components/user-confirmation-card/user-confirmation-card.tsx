@@ -6,33 +6,7 @@ import { FinishedApplicationIcon } from '../ui/icons/icons';
 import { KeyIcon } from '../ui/icons/icons';
 import { Avatar } from '../avatar/Avatar';
 import { ColorfulLabel, ColorfulLabelMob } from '../ui/figures/colorful-label';
-import useMediaQuery from '../../hooks/useMediaQuery';
-
-export const user: TUser = {
-  id: 11111114,
-  name: 'Петров Петр Петрович',
-  phone: '+7(000)000-00-04',
-  about: 'Я люблю музыку, книги и кошек Я люблю музыку, книги и кошек Я люблю музыку, книги и кошек',
-  image: `${Avatar}`,
-  balls: 2500,
-  keys: 1,
-  finishedApplications: 150,
-  status: 'volunteer',
-  confirmation: 'green',
-}
-
-interface TUser {
-  id?: number;
-  name?: string;
-  phone?: string | null;
-  about?: string;
-  image?: string;
-  balls?: number;
-  keys?: number;
-  finishedApplications?: number;
-  status?: 'admin' | 'volunteer' | 'recipient';
-  confirmation?: 'green' | 'orange' | 'grey';
-}
+import { TUser } from '../../types';
 
 interface IUserConfirmationTypeProps {
   user: TUser,
@@ -42,7 +16,6 @@ interface IUserConfirmationTypeProps {
 
 const UserConfirmationCard: FC<IUserConfirmationTypeProps> = ({user, displayType}) => {
 
-  //const desktop = useMediaQuery('(min-width: 768px)');
   const desktop = displayType === 'desktop';
   const keysCount = user.keys ?? 0;
 
@@ -51,7 +24,7 @@ const UserConfirmationCard: FC<IUserConfirmationTypeProps> = ({user, displayType
       { desktop ?
       (<li className={styles.card}> 
         <div className={styles.avatar}>
-          <Avatar size={62} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} />
+          <Avatar size={62} url={user.avatar} />
         </div>
         <div className={styles.info}>
           <div className={styles.about}>
@@ -111,7 +84,7 @@ const UserConfirmationCard: FC<IUserConfirmationTypeProps> = ({user, displayType
       </li>)
       :(<li className={styles.cardMob}> 
         <div className={styles.avatar}>
-          <Avatar size={62} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} />
+          <Avatar size={62} url={user.avatar} />
         </div>
 
         <div className={styles.label}>
