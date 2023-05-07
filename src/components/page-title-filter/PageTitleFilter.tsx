@@ -11,8 +11,9 @@ import { TIconProps } from "../../components/ui/icons/utils"
 
 
 import { FilterIcon } from '../ui/icons/filter-icon/filter-icon'
-import Filter from '../filter/filter';
+
 import Modal from '../modal/modal';
+import FilterMap from '../filters/filter-map/filterMap';
 
 export const getTitleImg = (kind: EPageTitleFilterKind, type: TIconProps = { type: 'blue' }) => {
   switch (kind) {
@@ -49,7 +50,7 @@ export const PageTitleFilter: FC<TPageTitleFilter> = (item: TPageTitleFilter) =>
   }
   return (
     <div className='box'>
-      {filterOpened && <Modal children={<Filter onSubmit={OnClose} />} onClose={OnClose} isModalOpened={true} ></Modal>}
+      {filterOpened && <Modal children={<FilterMap onSubmit={OnClose} />} onClose={OnClose} isModalOpened={true} ></Modal>}
 
       <div className='reqType'>
 
