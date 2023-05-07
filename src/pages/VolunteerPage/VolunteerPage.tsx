@@ -8,18 +8,22 @@ import UserCard from '../../components/userCard/userCard'
 import { user } from '../../data/user'
 import { request } from '../../data/request'
 import { TRequest } from '../../types'
+import DropdownMenu from '../../components/dropdown/Dropdown'
+import FilterMap from '../../components/filters/filter-map/filterMap'
 
 const VolunteerPage = () => {
 
   const [navArray, setNavArray] = useState<EPageTitleFilterKind[]>(
     [EPageTitleFilterKind.Map, EPageTitleFilterKind.Active, EPageTitleFilterKind.Completed]);
-  const [requests, setRequests] = useState<TRequest[]>(Array.from({ length: 9 }, (_, i) => ({...request, id: request.id+i})));
+  const [requests, setRequests] = useState<TRequest[]>(Array.from({ length: 9 }, (_, i) => ({ ...request, id: request.id + i })));
 
   const [active, setActive] = useState<EPageTitleFilterKind>(EPageTitleFilterKind.Active);
   const onClick = (viewType: EPageTitleFilterKind) => {
     setActive(viewType);
-
   }
+
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <section className='volonteerMainPanel'>
       <div className='volonteerLeftPanel'>
@@ -28,7 +32,12 @@ const VolunteerPage = () => {
       </div>
 
       <section className='volonteerRightPanel'>
-        <PageTitleFilter item={active}></PageTitleFilter>
+        <div className='relative'>
+          <PageTitleFilter item={active} onFilterClicked={() => setIsOpen(!isOpen)}></PageTitleFilter>
+          <DropdownMenu onClose={() => setIsOpen(false)} isOpen={isOpen}>
+            {isOpen && <FilterMap />}
+          </DropdownMenu>
+        </div>
         {RequestList(requests)}
       </section>
     </section>

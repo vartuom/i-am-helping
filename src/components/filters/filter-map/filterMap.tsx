@@ -1,7 +1,7 @@
 import {ChangeEvent, useState} from "react";
-import Calendar from "../calendar/Calendar";
-import { Button } from "../ui/buttons/Button";
-import Checkbox from "../ui/checkbox/checkbox";
+import Calendar from "../../calendar/Calendar";
+import { Button } from "../../ui/buttons/Button";
+import Checkbox from "../../ui/checkbox/checkbox";
 import s from "./filter.module.scss";
 import "./filter.scss";
 
@@ -10,7 +10,7 @@ const radiuses = [{ id: '1km', value: '1 км' }, { id: '3km', value: '3 км' }
 const COLUMN_NUMBER = 2;
 
 
-const Filter = () => {
+const FilterMap = () => {
   const middle = Math.ceil(categories.length / COLUMN_NUMBER);
   const [filterState, setFilter] = useState({ category: [categories[0].value], radius: radiuses[0].value, time: null, date: new Date() });
   const [fullScreenCalendar, setFullScreenCalendar] = useState(false);
@@ -78,4 +78,4 @@ const Filter = () => {
   </div>
 }
 
-export default Filter;
+export default FilterMap;
