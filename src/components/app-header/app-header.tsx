@@ -13,8 +13,7 @@ export const AppHeader: FC = () => {
         setIsMenuOpen(!isMenuOpen);
     }
 
-    const location = useLocation();
-    const isOnAdminPage = location.pathname.includes('/admin');
+    const { location } = window;
 
     return (
         <header className={header.header}>
@@ -53,19 +52,25 @@ export const AppHeader: FC = () => {
                         </NavLink>
                     </li>
                 </ul>
-                {isOnAdminPage? '' :
-                (<div className={header.message__area} onClick={handleChange}>
-                    <Button
-                        variant="icon"
-                        size="small"
-                        theme="dark"
-                        type="button"
-                        hasBorder={true}
-                        icon={<EmptyMessageIcon type="white" />}
-                        extraClass={header.message__button}
-                    />
-                    <p className={header.message__caption}>Написать администратору</p>
-                </div>)}
+                { 
+                  !location.pathname.includes('/admin') && 
+                  !location.pathname.includes('/approve') && 
+                  !location.pathname.includes('/statistics') &&
+                  !location.pathname.includes('/create') && (
+                    (<div className={header.message__area} onClick={handleChange}>
+                        <Button
+                            variant="icon"
+                            size="small"
+                            theme="dark"
+                            type="button"
+                            hasBorder={true}
+                            icon={<EmptyMessageIcon type="white" />}
+                            extraClass={header.message__button}
+                        />
+                        <p className={header.message__caption}>Написать администратору</p>
+                    </div>)
+                  )
+                }
             </nav>
         </header>
     )

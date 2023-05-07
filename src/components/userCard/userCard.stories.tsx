@@ -32,5 +32,6 @@ export const Primary: Story = {
         keys: 1,
         finishedApplications: 150,
         status: 'admin',
+        avatar: 'https://fraguru.com/mdimg/avatariru/m.298472.jpg'
     },
 }; 

@@ -9,12 +9,25 @@
     max-width: 1440px;
     padding: 0 92px;
     box-sizing: border-box;
+    @include from('sm') {
+      margin-top: 20px;
+      justify-content: center;
+      padding: 0;
+  }
 }
 
 .aside {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    @include from('sm') {
+      row-gap: 15px;
+    }
+    &_confirmationPage {
+        @include from('sm') {
+            display: none;
+        }  
+    }
 }
 
 .cards {
@@ -23,11 +36,21 @@
     flex-direction: column;
     gap: 25px;
     padding-right: 10px;
+    @include from('sm') {
+      display: none;
+    }
+    &_confirmationPage {
+      @include from('sm') {
+          display: block;
+          padding: 0;
+          justify-content: center;
+      }  
+  }
 }
 
 .profile {
     height: 362px;
     width: 295px;
-    border: 1px solid red;
+    border: 1px solid $colorBgc;
     box-sizing: border-box;
 }
