@@ -12,7 +12,8 @@ export const UserConfirmationCardList: FC<Array<TUser>> = (items) => {
     <div className={styles.list}>
       {items && Object.values(items).map((item, index) =>
         (<div key={index}><UserConfirmationCard user={item} displayType={displayType} /></div>))}
-      <div className={styles.blur} />
+      {/* Чтобы включить блюр внизу странцы, раскомментируй строку ниже */}
+      {/* <div className={styles.blur} /> */}
     </div>
 
   )

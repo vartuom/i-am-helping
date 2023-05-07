@@ -9,7 +9,8 @@ export const RequestList: FC<Array<TRequest>> = (items) => {
     <div className='list'>
       {items && Object.values(items).map((item, index) =>
         (<div key={index}><Request  {...item} />{index < Object.values(items).length - 1 && <div className='itemBreaker' />}</div>))}
-      <div className='blur' />
+      {/* Чтобы включить блюр внизу странцы, раскомментируй строку ниже */}
+      {/* <div className='blur' /> */}
     </div>
 
   )
