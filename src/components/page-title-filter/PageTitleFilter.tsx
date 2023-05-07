@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import './page-title-filter.scss';
 import { EPageTitleFilterKind, TPageTitleFilter } from './types'
 import { ActiveApplicationIcon } from '../ui/icons/active-application-icon/active-application-icon'
@@ -11,6 +11,8 @@ import { TIconProps } from "../../components/ui/icons/utils"
 
 
 import { FilterIcon } from '../ui/icons/filter-icon/filter-icon'
+import Filter from '../filter/filter';
+import Modal from '../modal/modal';
 
 export const getTitleImg = (kind: EPageTitleFilterKind, type: TIconProps = { type: 'blue' }) => {
   switch (kind) {
@@ -39,8 +41,15 @@ export const getTitleImg = (kind: EPageTitleFilterKind, type: TIconProps = { typ
 }
 
 export const PageTitleFilter: FC<TPageTitleFilter> = (item: TPageTitleFilter) => {
+  const [filterOpened, setFilterOpened] = useState<boolean>(false);
+  const OnClose = () => {
+
+    setFilterOpened(false);
+    console.log("filterOpened");
+  }
   return (
     <div className='box'>
+      {filterOpened && <Modal children={<Filter onSubmit={OnClose} />} onClose={OnClose} isModalOpened={true} ></Modal>}
 
       <div className='reqType'>
 
@@ -50,7 +59,7 @@ export const PageTitleFilter: FC<TPageTitleFilter> = (item: TPageTitleFilter) =>
           {item.item.valueOf()}
         </div>
       </div>
-      <div className='reqFilter' onClick={item.onFilterClicked}>
+      <div className='reqFilter' onClick={() => { setFilterOpened(true) }}>
         <div className='reqFilterText'>
           Фильтр
         </div>

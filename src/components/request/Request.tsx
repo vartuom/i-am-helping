@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import './request.scss';
 import { CalendarIcon } from '../ui/icons/calendar-icon/calendar-icon'
 import { ClockIcon } from '../ui/icons/clock-icon/clock-icon'
@@ -11,9 +11,16 @@ import { Avatar } from '../avatar/Avatar';
 import { Button } from '../ui/buttons/Button';
 import { EditIcon, EmptyMessageIcon } from '../ui/icons/icons';
 
+
 export const Request: FC<TRequest> = (item: TRequest) => {
+
+
+
+  
   return (
     <div className='reqMain'>
+
+    
       <div className='itemBreaker' />
       <div className='category'>
         {item.category}
@@ -70,7 +77,7 @@ export const Request: FC<TRequest> = (item: TRequest) => {
       </div >
 
       <div className='person'>
-        <Avatar size={100} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} extraClass='personImg'/>
+        <Avatar size={100} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} extraClass='personImg' />
         <div className='personName'>
           {item.person_name}
         </div>
@@ -94,7 +101,9 @@ export const Request: FC<TRequest> = (item: TRequest) => {
             type="button"
             hasBorder={true}
             icon={<EmptyMessageIcon type="white" />}
-            onClick={() => { item.onCallClicked!(item.id) }}
+            onClick={() => {
+              item.onCallClicked!(item.id);
+            }}
           />
         </div>
       </div>

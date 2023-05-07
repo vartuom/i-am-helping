@@ -33,7 +33,7 @@ const Modal = (props: IPropsModal) => {
         <div className={s.root}>
             <div className={s.container}>
                 <div className={s.closeButton}>
-                    <Button figure={"close"} type={"button"} onClick={onClose}>
+                    <Button figure={"close"} type={"button"}  onClick={onClose}>
                         <CrossIcon type={"white"}/>
                     </Button>
                 </div>

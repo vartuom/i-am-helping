@@ -1,3 +1,5 @@
+@import '../../constants/scss-mixins.scss';
+
 .root {
   position: fixed;
   width: 100%;
@@ -18,10 +20,13 @@
   z-index: 10;
   box-sizing: border-box;
   padding: 30px;
+
+  @include from('sm') {
+    width: 350px;
+  }
 }
 
-.modalHeader {
-}
+.modalHeader {}
 
 .closeButton {
   position: absolute;
