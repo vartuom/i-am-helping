@@ -3,12 +3,11 @@ import { PageTitleFilter } from "../../components/page-title-filter/PageTitleFil
 import { EPageTitleFilterKind } from "../../components/page-title-filter/types"
 import RequestList from "../../components/request-list/RequestList"
 import recipient from './RecipientPage.module.scss'
-import { TRequest } from "../../components/request/types"
 import UserCard from "../../components/userCard/userCard"
-import { TUser } from "../../components/userCard/types"
-import { IAvatarProps } from "../../components/avatar/Avatar"
 import SideNavigation from "../../components/side-navigation/SideNavigation"
 import NewApplication from "../../components/new-application/NewApplication"
+import { user } from "../../data/user"
+import { TRequest } from "../../types"
 
 export const RecipientPage = () => {
     const [navArray, setNavArray] = useState<EPageTitleFilterKind[]>(
@@ -20,29 +19,13 @@ export const RecipientPage = () => {
         setActive(viewType);
     }
 
-    const user: TUser = {
-        id: 112233,
-        name: 'Иванов Иван Иванович',
-        phone: '+7(000)000-00-00',
-        about: 'Я люблю музыку, книги и кошек Я люблю музыку, книги и кошек Я люблю музыку, книги и кошек',
-        balls: 2500,
-        keys: 1,
-        finishedApplications: 150,
-        status: 'recipient',
-    }
-
     const [requests, setRequests] = useState<TRequest[]>([
     ]);
-
-    const avatarParams: IAvatarProps = {
-        size: 175,
-        url: 'https://fraguru.com/mdimg/avatariru/m.298472.jpg',
-    }
 
     return (
         <main className={recipient.main}>
             <aside className={recipient.aside}>
-                {UserCard(user, avatarParams)}
+                {UserCard(user)}
                 {SideNavigation({ items: navArray, onClick: onClick, activeLink: active })}
             </aside>
             <section className={recipient.requests}>

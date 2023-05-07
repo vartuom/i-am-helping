@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { RequestList } from './RequestList';
+import { user } from '../../data/user';
 
 const meta: Meta<typeof RequestList> = {
 
@@ -22,9 +23,7 @@ export const Primary: Story = {
             title: "Заголовок",
             content: "Описание заявки с возможностью развернуть и прочитать Описание заявки с возможностью развернуть и прочитать Описание заявки с  прочитать Описание заявки с ",
             bulls: 3,
-            person_img: "https://bigpicture.ru/wp-content/uploads/2019/04/grandbeauty00.jpg",
-            person_name: "Петров Петр Петрович",
-            phone: "+7(000) 000-00-00",
+            user: user
         },
         {
             id: 2,
@@ -35,10 +34,7 @@ export const Primary: Story = {
             title: "Заголовок",
             content: "Описание заявки с возможностью развернуть и прочитать Описание заявки с возможностью развернуть и прочитать Описание заявки с  прочитать Описание заявки с ",
             bulls: 3,
-            person_img: "https://bigpicture.ru/wp-content/uploads/2019/04/grandbeauty00.jpg",
-            person_name: "Петров Петр Петрович",
-            phone: "+7(000) 000-00-00",
-
+            user: user
         },
         {
             id: 3,
@@ -49,10 +45,7 @@ export const Primary: Story = {
             title: "Заголовок",
             content: "Описание заявки с возможностью развернуть и прочитать Описание заявки с возможностью развернуть и прочитать Описание заявки с  прочитать Описание заявки с ",
             bulls: 3,
-            person_img: "https://bigpicture.ru/wp-content/uploads/2019/04/grandbeauty00.jpg",
-            person_name: "Петров Петр Петрович",
-            phone: "+7(000) 000-00-00",
-
+            user: user
         },
         ]
 };

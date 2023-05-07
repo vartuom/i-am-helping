@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import './request-list.scss';
-import { TRequest } from '../request/types'
 import { Request } from '../request/Request'
+import { TRequest } from '../../types';
 
 export const RequestList: FC<Array<TRequest>> = (items) => {
 
