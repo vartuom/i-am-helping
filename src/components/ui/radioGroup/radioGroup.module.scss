@@ -1,0 +1,41 @@
+@use '../../../constants/scss-variables';
+
+
+.radioGroup {
+  display: flex;
+  gap: 12px;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  &__nativeBox {
+    position: absolute;
+    width: 1px; /* если у элемента не будет размеров, некоторые браузеры посчитают, что его вообще нет */
+    height: 1px;
+    overflow: hidden; /* без этого свойства тоже сработает, но так наверняка. */
+    clip-path: inset(0 0 0 0);
+    &:checked + .radio__customBox {
+      border: 1px solid scss-variables.$colorMain;
+      background: scss-variables.$colorMain;
+      color: scss-variables.$colorBgcPopup;
+    }
+    &:disabled ~ .radio__customBox {
+      opacity: 0.5;
+    }
+  }
+  &__customBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 65px;
+    min-height: 24px;
+    border: 1px solid scss-variables.$colorMain;
+    color: scss-variables.$colorMain;
+    background: scss-variables.$colorBgcPopup;
+    font: scss-variables.$fontFamily;
+    font-size: small;
+    margin: 0;
+  }
+}
