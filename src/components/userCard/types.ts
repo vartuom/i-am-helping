@@ -3,9 +3,9 @@ export type TUser = {
     name: string;
     phone: string | null;
     about: string;
-    image: string;
     balls: number;
     keys: number;
     finishedApplications: number;
     status: 'admin' | 'volunteer' | 'recipient';
+    confirmation?: 'green' | 'orange' | 'grey',
 }

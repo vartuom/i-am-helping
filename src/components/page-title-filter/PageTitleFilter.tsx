@@ -7,32 +7,33 @@ import { CompletedApplicationIcon } from '../ui/icons/completed-application-icon
 import { AcceptBlockIcon } from '../ui/icons/accept-block-icon/accept-block-icon'
 import { StatisticsIcon } from '../ui/icons/statistics-icon/statistics-icon'
 import { CreateEditIcon } from '../ui/icons/create-edit-icon/create-edit-icon'
+import { TIconProps } from "../../components/ui/icons/utils"
 
 
 import { FilterIcon } from '../ui/icons/filter-icon/filter-icon'
 
-const getTitleImg = (kind: EPageTitleFilterKind) => {
+export const getTitleImg = (kind: EPageTitleFilterKind, type: TIconProps = { type: 'blue' }) => {
   switch (kind) {
     case EPageTitleFilterKind.Active: {
-      return (<ActiveApplicationIcon type='blue' className='reqTypeIcon' />)
+      return (<ActiveApplicationIcon type={type.type} className='reqTypeIcon' />)
     }
     case EPageTitleFilterKind.Map: {
-      return (<ApplicationMapIcon type='blue' className='reqTypeIcon' />);
+      return (<ApplicationMapIcon type={type.type} className='reqTypeIcon' />);
     }
     case EPageTitleFilterKind.Completed: {
-      return (<CompletedApplicationIcon type='blue' className='reqTypeIcon' />);
+      return (<CompletedApplicationIcon type={type.type} className='reqTypeIcon' />);
     }
     case EPageTitleFilterKind.Acceptation: {
-      return (<AcceptBlockIcon type='blue' className='reqTypeIcon' />);
+      return (<AcceptBlockIcon type={type.type} className='reqTypeIcon' />);
     }
     case EPageTitleFilterKind.Statistics: {
-      return (<StatisticsIcon type='blue' className='reqTypeIcon' />);
+      return (<StatisticsIcon type={type.type} className='reqTypeIcon' />);
     }
     case EPageTitleFilterKind.CreateEdit: {
-      return (<CreateEditIcon type='blue' className='reqTypeIcon' />);
+      return (<CreateEditIcon type={type.type} className='reqTypeIcon' />);
     }
     default: {
-      return (<ActiveApplicationIcon type='blue' className='reqTypeIcon' />);
+      return (<ActiveApplicationIcon type={type.type} className='reqTypeIcon' />);
     }
   }
 }
