@@ -4,7 +4,7 @@ import styles from './user-confirmation-card-list.module.scss'
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { TUser } from '../../types';
 
-export const UserConfirmationCardList: FC<Array<TUser>> = (items) => {
+const UserConfirmationCardList: FC<Array<TUser>> = (items) => {
 
   const displayType = useMediaQuery('(min-width: 415px)') ? 'desktop' : 'mobile';
 

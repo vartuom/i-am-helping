@@ -57,7 +57,7 @@ export const Button = ({
   )
 
   return (
-    <button className={className} onClick={onClick}>
+    <button className={className} {...props}>
       {icon}
       {children}
       {label}
