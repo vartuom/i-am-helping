@@ -1,12 +1,25 @@
 @use "../../constants/scss-variables";
 @import "../../constants/scss-mixins.scss";
+
 .react-datepicker {
   font: inherit;
   font-size: 11px;
   border-radius: 10px;
   border-color: #e0e0e0;
+  @include from("sm") {
+    border-radius: 0px;
+  }
+}
+.react-datepicker__day,
+.react-datepicker__day-name {
+  @include from("sm") {
+    margin-right: 4px !important ;
+  }
 }
 
+.react-datepicker__day-name {
+  margin: 0.19rem;
+}
 .react-datepicker__header {
   background-color: transparent;
   border-bottom: none;
@@ -35,10 +48,6 @@
   }
 }
 
-.react-datepicker__day-name {
-  margin: 0.19rem;
-}
-
 .react-datepicker__navigation-icon::before {
   border-width: 1px 1px 0 0;
   border-color: scss-variables.$colorSupport;
@@ -53,14 +62,6 @@
 
 .react-datepicker__navigation-icon--previous::before {
   right: -2px;
-}
-
-.react-datepicker__day-name,
-.react-datepicker__day {
-  padding: 0 5px;
-  @include from("sm") {
-    padding: 0;
-  }
 }
 
 .react-datepicker__day-name {
@@ -87,4 +88,16 @@
 
 .react-datepicker__day--outside-month {
   color: #9f9b9b;
+}
+
+.react-datepicker__month-container {
+  display: block !important;
+  float: none !important;
+  padding-left: 10px;
+  height: 264px;
+
+  @include from("sm") {
+    border-radius: 0px;
+    padding-left: 0;
+  }
 }
