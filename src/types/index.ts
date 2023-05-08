@@ -48,10 +48,10 @@ export type TUser = {
   name: string;
   phone: string | null;
   avatar: string
-  about: string;
-  balls: number;
-  keys: number;
-  finishedApplications: number;
+  about?: string;
+  balls?: number;
+  keys?: number;
+  finishedApplications?: number;
   status: 'admin' | 'volunteer' | 'recipient';
   confirmation?: 'green' | 'orange' | 'grey',
 }
