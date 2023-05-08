@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
+import { Avatar } from "../../avatar/Avatar";
 import s from "./formsHeader.module.scss";
 
 interface IFormsHeader {
@@ -26,7 +27,7 @@ const FormsHeader: FC<IFormsHeader> = (props) => {
     <>
       {!isMobile && (
         <div className={s.wrap}>
-          <img className={s.avatar} src={avatar} alt="Ваш Аватар" />
+          <Avatar size={52} url={avatar!} />
           <div className={s.infoWrap}>
             <p className={s.name}>{name}</p>
             <p className={s.phone}>
