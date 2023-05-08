@@ -8,9 +8,7 @@
   font-family: $fontFamilyNormal;
   position: relative;
   max-width: 464px;
-  @include from("sm") {
-    max-width: 271px;
-  }
+  width: 100%;
 }
 
 .name {

@@ -1,8 +1,12 @@
+@import "../../constants/scss-mixins.scss";
 .form {
   width: 100%;
   &__controls {
     width: 100%;
     display: flex;
     justify-content: end;
+    @include from("sm") {
+      justify-content: center;
+    }
   }
 }
