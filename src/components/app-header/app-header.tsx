@@ -28,7 +28,7 @@ export const AppHeader: FC = () => {
             <nav className={`${header.menu} ${isMenuOpen ? header.menu_opened : ""}`}>
                 <ul className={header.list}>
                     <li className={header.personal} onClick={handleChange}>
-                        <NavLink end to="/personal" className={({ isActive }) => isActive ? header.link__active : header.link} >
+                        <NavLink end to="/volunteer" className={({ isActive }) => isActive ? header.link__active : header.link} >
                             <PersonIcon />
                             <p className={header.list__caption}>Личный кабинет</p>
                         </NavLink>

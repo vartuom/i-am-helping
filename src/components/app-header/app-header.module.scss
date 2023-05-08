@@ -185,9 +185,11 @@
 
 .burgerMenu {
     display: none;
+    visibility: hidden;
 
     @include from('sm') {
         display: block;
+        visibility: visible;
         background-color: transparent;
     }
 }

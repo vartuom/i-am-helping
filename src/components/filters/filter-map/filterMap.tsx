@@ -1,4 +1,5 @@
-import {ChangeEvent, useState} from "react";
+
+import { ChangeEvent, FC, useState } from "react";
 import Calendar from "../../calendar/Calendar";
 import { Button } from "../../ui/buttons/Button";
 import Checkbox from "../../ui/checkbox/checkbox";
@@ -10,7 +11,8 @@ const radiuses = [{ id: '1km', value: '1 км' }, { id: '3km', value: '3 км' }
 const COLUMN_NUMBER = 2;
 
 
-const FilterMap = () => {
+const FilterMap: FC<{ onSubmit: (() => void) }> = (item) => {
+
   const middle = Math.ceil(categories.length / COLUMN_NUMBER);
   const [filterState, setFilter] = useState({ category: [categories[0].value], radius: radiuses[0].value, time: null, date: new Date() });
   const [fullScreenCalendar, setFullScreenCalendar] = useState(false);
@@ -18,10 +20,11 @@ const FilterMap = () => {
   const dateOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
   const isMobile = window.innerWidth <= 768;
   const submit = () => {
+    item.onSubmit();
 
   }
 
-  const handleCheckboxClick = (evt:  ChangeEvent<HTMLInputElement>) => {
+  const handleCheckboxClick = (evt: ChangeEvent<HTMLInputElement>) => {
     evt.stopPropagation();
     const array = filterState.category;
     if (array.indexOf(evt.target.name) < 0) {
@@ -35,7 +38,7 @@ const FilterMap = () => {
 
   const FullScreenCalendar = () => {
     return <div className="fullscreen">
-      <div className={s.h1+ ' '+s.border}>Дата</div>
+      <div className={s.h1 + ' ' + s.border}>Дата</div>
       <Calendar selectedDate={filterState.date} onChange={(e) => setFilter({ ...filterState, date: e })} />
       <Button label="Применить" variant="text" theme="dark" type="submit" extraClass={s.margin_auto + ' ' + s.margin_top_10} onClick={() => setFullScreenCalendar(false)} />
     </div>

@@ -5,24 +5,30 @@ import './ProfilePage.scss'
 import UserCard from '../../components/userCard/userCard'
 import { useNavigate } from 'react-router-dom'
 import { user } from '../../data/user'
+import { IAvatarProps } from '../../components/avatar/Avatar'
 
 const ProfilePage = () => {
 
   const [navArray] = useState<EPageTitleFilterKind[]>(
     [EPageTitleFilterKind.Map, EPageTitleFilterKind.Active, EPageTitleFilterKind.Completed]);
 
-  const [active, setActive] = useState<EPageTitleFilterKind>(EPageTitleFilterKind.Active);
+  const [active,] = useState<EPageTitleFilterKind>(EPageTitleFilterKind.Active);
 
   const navigate = useNavigate()
   const onClick = (viewType: EPageTitleFilterKind) => {
     navigate('/volunteer');
 
   }
+  const avatarParams: IAvatarProps = {
+    size: 175,
+    url: 'https://fraguru.com/mdimg/avatariru/m.298472.jpg',
+  }
   return (
     <section className='mainPanel'>
       <div className='leftPanel'>
-        {UserCard(user)}
-        {SideNavigation({ items: navArray, onClick: onClick, activeLink: active})}
+        {UserCard(user, avatarParams)}
+        {SideNavigation({ items: navArray, onClick: onClick, activeLink: active, map: '/mapVolunteer', completed: '/completedVolunteer', active: '/activeVolunteer' })}
+
       </div>
     </section>
   )

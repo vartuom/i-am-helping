@@ -29,20 +29,20 @@ const Modal = (props: IPropsModal) => {
     return undefined;
   }, [isModalOpened, onClose]);
 
-  return ReactDOM.createPortal(
-    <div className={s.root}>
-      <div className={s.container}>
-        <div className={s.closeButton} onClick={onClose}>
-          <Button figure={"close"} type={"button"}>
-            <CrossIcon type={"white"} />
-          </Button>
-        </div>
-        {children}
-      </div>
-      <ModalOverlay handleCloseAction={onClose} />
-    </div>,
-    modalRoot
-  );
+    return ReactDOM.createPortal(
+        <div className={s.root}>
+            <div className={s.container}>
+                <div className={s.closeButton}>
+                    <Button figure={"close"} type={"button"}  onClick={onClose}>
+                        <CrossIcon type={"white"}/>
+                    </Button>
+                </div>
+                {children}
+            </div>
+            <ModalOverlay handleCloseAction={onClose} />
+        </div>,
+        modalRoot
+    );
 };
 
 export default Modal;
