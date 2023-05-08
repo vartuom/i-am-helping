@@ -2,10 +2,10 @@ import React, { FC, useEffect, useState } from "react";
 import { Portal } from "react-portal";
 import TimePickerSelection from "../TimePickerSelection/TimePickerSelection";
 import s from "./TimePicker.module.scss";
- 
+
 interface ITimePicker {
-  setInputValue: any;
-  inputValue: any;
+  setInputValue: (value: any) => void;
+  inputValue: string | undefined;
   value?: string | null;
   cellHeight?: number;
   placeHolder?: string;

@@ -20,6 +20,7 @@ const FirstStep = () => {
   const [startDate, setStartDate] = useState<Date>(date);
   const [check, setCheck] = useState<boolean>(false);
   const [width, setWidth] = useState<number>(window.innerWidth);
+  const [inputValue, setInputValue] = useState<string | undefined>("");
   const onChangeHour = (e: {
     target: { value: React.SetStateAction<number | undefined> };
   }) => {
@@ -33,7 +34,9 @@ const FirstStep = () => {
   const onChangeCheck = () => {
     setCheck(!check);
   };
-
+  const onChangeInput = (e: string | undefined) => {
+    setInputValue(e);
+  };
   const handleSubmit = () => {
     navigate("/secondStep", {
       state: { background: location.state.background },
@@ -70,7 +73,12 @@ const FirstStep = () => {
               onChangeMinut={onChangeMinut}
             />
           )}
-          {isMobile && <MobileClock />}
+          {isMobile && (
+            <MobileClock
+              inputValue={inputValue}
+              setInputValue={onChangeInput}
+            />
+          )}
           <div className={m.date}>
             <p className={m.dateText}>Дата</p>
             {isMobile && (

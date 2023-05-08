@@ -7,13 +7,16 @@
   padding: 20px 0 41px 72px;
   width: 464px;
   @include from("sm") {
-    width: 240px;
     padding: 0 0 150px 0;
+    width: 290px;
   }
 }
 
 .select {
   padding: 20px 0 20px 0;
+  @include from("sm") {
+    width: 290px;
+  }
 }
 
 .nameSelect {

@@ -2,7 +2,12 @@ import React, { FC } from "react";
 import s from "./MobileClock.module.scss";
 import TimePicker from "./TimePicker/TimePicker";
 
-const MobileClock: FC<any> = ({ inputValue, setInputValue }) => {
+interface IMobileClock {
+  inputValue: string | undefined;
+  setInputValue: (value: string | undefined) => void;
+}
+
+const MobileClock: FC<IMobileClock> = ({ inputValue, setInputValue }) => {
   return (
     <>
       <TimePicker

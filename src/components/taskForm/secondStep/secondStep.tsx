@@ -40,8 +40,6 @@ const SecondStep = () => {
           mobile="Место встречи"
         />
         <div className={m.wrap}>
-          {/* <Input typeInput="adress" value={adress} onChange={onChangeAdress} /> */}
-
           <div className={m.map}>
             <MapForSeacrh value={value} setValue={onChangeAdress} />
           </div>

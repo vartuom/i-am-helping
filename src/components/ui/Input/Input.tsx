@@ -129,17 +129,23 @@ const Input: FC<InputProps> = (props) => {
       {!options.adminName &&
         !options.userInfoName &&
         !options.userInfoPhone && (
-          <div className={s.wrap}>
-            <label className={s.label}>{options.labelText}</label>
+          <div
+            className={!options.adress ? s.wrap : `${s.wrap} ${s.wrap_mobile}`}
+          >
+            <label className={`${s.label} ${s.label_mobile}`}>
+              {options.labelText}
+            </label>
             <input
               type="text"
-              className={s.input}
+              className={
+                !options.adress ? s.input : `${s.input} ${s.input_mobile}`
+              }
               placeholder={options.placeholder}
               value={value || ""}
               onChange={onChange}
             />
             {options.adress ? (
-              <span className={s.input_supText}>
+              <span className={`${s.input_supText} ${s.input_supTextMobile}`}>
                 * Будте осторожны, если указываете домашний <span>адресс</span>,{" "}
                 <span>не</span> пишите его полностью.
               </span>
