@@ -30,7 +30,6 @@ export const Button = ({
   type = "button",
   children,
   extraClass = '',
-  onClick,
   ...props
 }: IButtonProps) => {
   const className = clsx(
