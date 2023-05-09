@@ -54,7 +54,7 @@ export const AppHeader: FC = () => {
                 </ul>
                 { 
                   !location.pathname.includes('/admin') && 
-                  !location.pathname.includes('/mainadmin') && 
+                  !location.pathname.includes('/mainadmin')  && 
                   !location.pathname.includes('/approve') && 
                   !location.pathname.includes('/statistics') &&
                   !location.pathname.includes('/create') && (
