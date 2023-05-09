@@ -1,0 +1,36 @@
+@import '../../constants/scss-variables.scss';
+@import '../../constants/scss-mixins.scss';
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 423px);
+  gap: 20px;
+  height: 100vh;
+  //position: relative;
+  justify-content: center;
+  width: 100%;
+
+  @include from('sm') {
+    height: 570px;
+    grid-template-columns: 1fr;
+    padding: 0 25px;
+    gap: 20px 14px;
+  }
+
+  overflow: scroll;
+}
+
+.blur {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 151px;
+
+  @include from('sm') {
+    height: 81px;
+  }
+
+  width: 100%;
+  background: linear-gradient(0deg, #FFFFFF 25%, rgba(255, 255, 255, 0) 100%);
+  z-index: 1;
+}

@@ -25,6 +25,7 @@ import { RecipientPageCompleted } from "../../pages/RecipientPage/RecipientPageC
 import { EPageTitleFilterKind } from "../page-title-filter/types";
 import { MainAdminPage } from "../../pages/MainAdminPage/MainAdminPage";
 import { AdminPageCreateEdit } from "../../pages/AdminPage/AdminPageCreateEdit";
+import { AdminPageStatistics } from "../../pages/AdminPage/AdminPageStatistics";
 
 function App() {
   const location = useLocation();
@@ -48,6 +49,7 @@ function App() {
         <Route path="/recipient" element={<RecipientPage />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/approve" element={<AdminPageConfirmation />} />
+        <Route path="/statistics" element={<AdminPageStatistics />} />
         <Route path="/create" element={<AdminPageCreateEdit />} />
         <Route path="/mainadmin" element={<MainAdminPage />} />
         <Route path="/completed" element={<RecipientPageCompleted />} />

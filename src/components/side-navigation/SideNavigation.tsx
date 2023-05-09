@@ -42,8 +42,14 @@ export default function SideNavigation({ onClick, items, activeLink, map, active
           <SideNavLink path='/approve' type={EPageTitleFilterKind.Acceptation} visible onClick={onClickLocal} active={activeKind === EPageTitleFilterKind.Acceptation} />
         </NavLink>
       }
-      {items.includes(EPageTitleFilterKind.Statistics) && <SideNavLink path='/statistics' type={EPageTitleFilterKind.Statistics} visible onClick={onClickLocal} active={active === EPageTitleFilterKind.Statistics} />}
-      {items.includes(EPageTitleFilterKind.CreateEdit) && 
+      {
+      items.includes(EPageTitleFilterKind.Statistics) && 
+      <NavLink to={'/statistics'} className='nav_nounderline'>
+        <SideNavLink path='/statistics' type={EPageTitleFilterKind.Statistics} visible onClick={onClickLocal} active={active === EPageTitleFilterKind.Statistics} />
+      </NavLink>
+      }
+      {
+      items.includes(EPageTitleFilterKind.CreateEdit) && 
       <NavLink to={'/create'} className='nav_nounderline'>
         <SideNavLink path='/create' type={EPageTitleFilterKind.CreateEdit} visible onClick={onClickLocal} active={active === EPageTitleFilterKind.CreateEdit} />
       </NavLink>
