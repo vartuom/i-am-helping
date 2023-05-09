@@ -54,3 +54,12 @@
     border: 1px solid $colorBgc;
     box-sizing: border-box;
 }
+
+.chart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
