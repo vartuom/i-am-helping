@@ -8,18 +8,18 @@ interface ITimePickerSelection {
   inputValue: string | undefined;
   pickerDefaultValue?: string | undefined;
   initialValue?: string | null;
-  onChange?: any;
+  onChange?: (value: string | undefined) => void;
   height?: number | undefined;
-  onSave?: any;
-  onCancel?: any;
+  onSave?: (value: string | undefined) => void;
+  onCancel?: () => void;
   cancelButtonText?: string | undefined;
   saveButtonText?: string | undefined;
   controllers?: boolean;
-  setInputValue?: any;
-  setIsOpen?: any;
+  setInputValue?: (value: string | undefined) => void;
+  setIsOpen?: (value: boolean | undefined) => void;
   seperator?: boolean;
   use12Hours?: boolean;
-  onAmPmChange?: any;
+  onAmPmChange?: (value: string | undefined) => void;
 }
 
 const TimePickerSelection: FC<ITimePickerSelection> = ({
@@ -54,14 +54,15 @@ const TimePickerSelection: FC<ITimePickerSelection> = ({
       const finalSelectedValue = use12Hours
         ? `${value} ${hourFormat.hourFormat}`
         : value;
-      setInputValue(finalSelectedValue);
-      onChange(finalSelectedValue);
+
+      setInputValue!(finalSelectedValue!);
+      onChange!(finalSelectedValue!);
     }
   }, [value]);
 
   useEffect(() => {
     if (hourFormat.mount) {
-      onAmPmChange(hourFormat.hourFormat);
+      onAmPmChange!(hourFormat.hourFormat);
     }
   }, [hourFormat]);
 
@@ -80,14 +81,10 @@ const TimePickerSelection: FC<ITimePickerSelection> = ({
     const finalSelectedValue = use12Hours
       ? `${value} ${hourFormat.hourFormat}`
       : value;
-    setInputValue(finalSelectedValue);
-    onChange(finalSelectedValue);
-    onSave(finalSelectedValue);
-    setIsOpen(false);
-  };
-  const handleCancel = () => {
-    onCancel();
-    setIsOpen(false);
+    setInputValue!(finalSelectedValue!);
+    onChange!(finalSelectedValue!);
+    onSave!(finalSelectedValue!);
+    setIsOpen!(false);
   };
 
   return (
