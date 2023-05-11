@@ -1,9 +1,9 @@
-export const initialNumbersValue: any = (
+export const initialNumbersValue = (
   heightValue = 54,
   numbersLength = 24,
   value = null
 ) => {
-  const initialValue24hourFormat: any = [
+  const initialValue24hourFormat = [
     {
       number: "00",
       translatedValue: (heightValue * 2).toString(),
@@ -75,8 +75,14 @@ export const initialNumbersValue: any = (
   return arrayOfSelectedValue;
 };
 
+interface ISelectedItem {
+  number: string,
+  translatedValue: string,
+  arrayNumber?: number,
+  selected?: boolean,
+}
 export const returnSelectedValue = (heightValue = 54, numbersLength = 24) => {
-  const arrayOfSelectedValue: any = [
+  const arrayOfSelectedValue: ISelectedItem[] = [
     {
       number: "00",
       translatedValue: (heightValue * 2).toString(),
