@@ -5,7 +5,7 @@ import { Button } from "../../ui/buttons/Button";
 import FormsHeader from "../../ui/formsHeader/formsHeader1";
 import Clock from "../../Clock/Clock";
 import Calendar from "../../calendar/Calendar";
-import Checkbox from "../../ui/checkbox/checkbox1";
+import Checkbox from "../../ui/checkbox/Checkbox";
 import MobileClock from "../../mobileClock/mobileClock";
 import { useLocation, useNavigate } from "react-router-dom";
 

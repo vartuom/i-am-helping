@@ -3,7 +3,7 @@ import { PageTitleFilter } from "../../components/page-title-filter/PageTitleFil
 import { EPageTitleFilterKind } from "../../components/page-title-filter/types"
 import RequestList from "../../components/request-list/RequestList"
 import recipient from './RecipientPage.module.scss'
-import UserCard from "../../components/userCard/userCard1"
+import UserCard from "../../components/user-card/UserCard"
 import SideNavigation from "../../components/side-navigation/SideNavigation"
 import NewApplication from "../../components/new-application/NewApplication"
 import { user } from "../../data/user"
