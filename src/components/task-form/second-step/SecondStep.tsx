@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import s from "../TaskForm.module.scss";
 import m from "./SecondStep.module.scss";
-import FormsHeader from "../../ui/formsHeader/formsHeader1";
+import FormsHeader from "../../ui/forms-header/FormsHeader";
 import { Button } from "../../ui/buttons/Button";
 import { MapForSeacrh } from "../../maps/MapForSearch";
 

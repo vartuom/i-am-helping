@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import UserConfirmationCard from '../user-confirmation-card/user-confirmation-card';
-import styles from './user-confirmation-card-list.module.scss'
+import UserConfirmationCard from '../user-confirmation-card/UserConfirmationCard';
+import styles from './UserConfirmationCardList.module.scss'
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { TUser } from '../../types';
 

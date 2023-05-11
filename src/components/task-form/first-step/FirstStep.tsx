@@ -2,7 +2,7 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import s from "../TaskForm.module.scss";
 import m from "./FirstStep.module.scss";
 import { Button } from "../../ui/buttons/Button";
-import FormsHeader from "../../ui/formsHeader/formsHeader1";
+import FormsHeader from "../../ui/forms-header/FormsHeader";
 import Clock from "../../Clock/Clock";
 import Calendar from "../../calendar/Calendar";
 import Checkbox from "../../ui/checkbox/Checkbox";

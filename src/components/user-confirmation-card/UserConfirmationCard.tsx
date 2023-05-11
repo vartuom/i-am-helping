@@ -1,4 +1,4 @@
-import styles from './user-confirmation-card.module.scss';
+import styles from './UserConfirmationCard.module.scss';
 import { FC } from 'react';
 import { Button } from '../ui/buttons/Button';
 import { BallsIcon } from '../ui/icons/icons';

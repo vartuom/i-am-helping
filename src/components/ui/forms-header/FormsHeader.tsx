@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { Avatar } from "../../avatar/Avatar";
-import s from "./formsHeader.module.scss";
+import s from "./FormsHeader.module.scss";
 
 interface IFormsHeader {
   avatar?: string;

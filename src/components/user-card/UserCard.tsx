@@ -1,4 +1,4 @@
-import styles from './userCard.module.scss';
+import styles from './UserCard.module.scss';
 import { FC } from 'react';
 import { Button } from '../ui/buttons/Button';
 import { BallsIcon, DiagramIcon } from '../ui/icons/icons';

@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./modalOverlay.module.scss";
+import s from "./ModalOverlay.module.scss";
 
 function ModalOverlay({
                           handleCloseAction,

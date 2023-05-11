@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import './page-title-filter.scss';
+import './PageTitleFilter.scss';
 import { EPageTitleFilterKind, TPageTitleFilter } from './types'
 import { ActiveApplicationIcon } from '../ui/icons/active-application-icon/active-application-icon'
 import { ApplicationMapIcon } from '../ui/icons/application-map-icon/application-map-icon'

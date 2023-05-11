@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import './userCard.module.scss';
+import './UserCard.module.scss';
 import userCard from './UserCard';
 
 const meta: Meta<typeof userCard> = {

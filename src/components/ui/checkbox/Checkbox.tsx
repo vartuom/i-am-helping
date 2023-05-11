@@ -1,5 +1,5 @@
 import React, {ChangeEvent, ReactNode} from 'react';
-import s from "./checkbox.module.scss"
+import s from "./Checkbox.module.scss"
 
 interface ICheckboxProps {
     name: string;
