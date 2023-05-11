@@ -35,8 +35,8 @@ const MinuteWheel: FC<IMinuteWheel> = ({ height, value, setValue }) => {
   >(
     parseInt(
       initialNumbersValue(height, 60, parseInt(value!.slice(3, 6))).filter(
-        (item: IItem) =>
-          item.number === value!.slice(3, 6) && item.selected === true
+        (item) => {
+          return item.number === value!.slice(3, 6) && item.selected === true        }
       )[0].translatedValue
     )
   );
@@ -169,16 +169,16 @@ const MinuteWheel: FC<IMinuteWheel> = ({ height, value, setValue }) => {
 
   // return to default position after drag end (handleTransitionEnd)
   const handleTransitionEnd = () => {
-    returnSelectedValue(height, 60).map((item: ISelectedItem) => {
+    returnSelectedValue(height, 60).map((item) => {
       if (parseInt(item.translatedValue) === currentTranslatedValue) {
-        setSelectedNumber(item.arrayNumber);
+        setSelectedNumber(item.arrayNumber as React.SetStateAction<null>);
         setValue!((prev: IItem) => `${prev.slice(0, 2)}:${item.number}`);
         setHours(() => {
           const newValue = initialNumbersValue(height, 60).map(
-            (hour: { number: string; translatedValue: number }) => {
+            (hour) => {
               if (
                 hour.number == item.number &&
-                hour.translatedValue == currentTranslatedValue
+                hour.translatedValue == currentTranslatedValue.toString()
               ) {
                 return {
                   ...hour,
@@ -240,11 +240,7 @@ const MinuteWheel: FC<IMinuteWheel> = ({ height, value, setValue }) => {
       >
         {hours.map(
           (
-            hourObj: {
-              selected: number;
-              translatedValue: string;
-              number: number;
-            },
+            hourObj,
             index: React.Key | null | undefined
           ) => (
             <div

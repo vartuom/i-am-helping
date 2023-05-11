@@ -1,16 +1,18 @@
 import React, { useEffect, useState, useRef, FC, RefObject } from "react";
 import s from "./HourWheel.module.scss";
 import { initialNumbersValue, returnSelectedValue } from "../../../helpers";
-interface IItem {
+export interface IItem {
   number: string | null | undefined;
   translatedValue: string | null | undefined | number;
   selected: boolean;
   slice: (value: number, value2: number) => void;
 }
-interface ISelectedItem {
+export interface ISelectedItem {
   translatedValue: string;
   number: string | null | undefined;
-  arrayNumber: React.SetStateAction<null>;
+  arrayNumber?: React.SetStateAction<null> | number | undefined;
+  selected?: boolean;
+  hidden?: boolean;
 }
 interface IHourWheel {
   height?: number;
@@ -22,26 +24,27 @@ interface IHourWheel {
 const HourWheel: FC<IHourWheel> = ({ height, value, setValue, use12Hours }) => {
   const hourLength = use12Hours ? 13 : 24;
   const [hours, setHours] = useState(
-    initialNumbersValue(height, hourLength, parseInt(value!.slice(0, 2)))
+      initialNumbersValue(height, hourLength, parseInt(value!.slice(0, 2)))
   );
   const mainListRef = useRef(null) as RefObject<HTMLDivElement> | null;
   const [cursorPosition, setCursorPosition] = useState<number | null>(null);
   const [firstCursorPosition, setFirstCursorPosition] = useState<number | null>(
-    null
+      null
   );
   const [currentTranslatedValue, setCurrentTranslatedValue] = useState<
-    number | null
+      number | null
   >(
-    parseInt(
-      initialNumbersValue(
-        height,
-        hourLength,
-        parseInt(value!.slice(0, 2))
-      ).filter(
-        (item: IItem) =>
-          item.number === value!.slice(0, 2) && item.selected === true
-      )[0].translatedValue
-    )
+      parseInt(
+          initialNumbersValue(
+              height,
+              hourLength,
+              parseInt(value!.slice(0, 2))
+          ).filter(
+              (item) => {
+                return item.number === value!.slice(0, 2) && item.selected === true
+              }
+          )[0].translatedValue
+      )
   );
   const [startCapture, setStartCapture] = useState(false);
   const [showFinalTranslate, setShowFinalTranslate] = useState(false);
@@ -128,7 +131,7 @@ const HourWheel: FC<IHourWheel> = ({ height, value, setValue, use12Hours }) => {
   useEffect(() => {
     if (startCapture) {
       mainListRef!.current!.style.transform = `translateY(${
-        currentTranslatedValue! + cursorPosition!
+          currentTranslatedValue! + cursorPosition!
       }px)`;
     }
   }, [cursorPosition]);
@@ -141,15 +144,15 @@ const HourWheel: FC<IHourWheel> = ({ height, value, setValue, use12Hours }) => {
         let currentValue: number | undefined;
         if (dragDirection === "down") {
           currentValue =
-            currentTranslatedValue! -
-            (120 / (dragEndTime! - dragStartTime!)) * 100;
+              currentTranslatedValue! -
+              (120 / (dragEndTime! - dragStartTime!)) * 100;
         } else if (dragDirection === "up") {
           currentValue =
-            currentTranslatedValue! +
-            (120 / (dragEndTime! - dragStartTime!)) * 100;
+              currentTranslatedValue! +
+              (120 / (dragEndTime! - dragStartTime!)) * 100;
         }
         let finalValue: number | undefined =
-          Math.round(currentValue! / height!) * height!;
+            Math.round(currentValue! / height!) * height!;
         if (use12Hours) {
           if (finalValue < height! * -34) finalValue = height! * -34;
           if (finalValue > height!) finalValue = height;
@@ -163,7 +166,7 @@ const HourWheel: FC<IHourWheel> = ({ height, value, setValue, use12Hours }) => {
       }
       if (dragEndTime! - dragStartTime! > 100 && cursorPosition !== 0) {
         let finalValue: number | undefined =
-          Math.round(currentTranslatedValue! / height!) * height!;
+            Math.round(currentTranslatedValue! / height!) * height!;
         if (use12Hours) {
           if (finalValue < height! * -34) finalValue = height! * -34;
           if (finalValue > height!) finalValue = height;
@@ -182,22 +185,22 @@ const HourWheel: FC<IHourWheel> = ({ height, value, setValue, use12Hours }) => {
   const handleTransitionEnd = () => {
     returnSelectedValue(height, hourLength).map((item: ISelectedItem) => {
       if (parseInt(item.translatedValue) === currentTranslatedValue) {
-        setSelectedNumber(item.arrayNumber);
+        setSelectedNumber(item.arrayNumber as React.SetStateAction<null>);
         setValue!((prev: IItem) => `${item.number}:${prev.slice(3, 6)}`);
         setHours(() => {
           const newValue = initialNumbersValue(height, hourLength).map(
-            (hour: IItem) => {
-              if (
-                hour.number == item.number &&
-                hour.translatedValue == currentTranslatedValue!
-              ) {
-                return {
-                  ...hour,
-                  selected: true,
-                };
+              (hour: ISelectedItem) => {
+                if (
+                    hour.number == item.number &&
+                    hour.translatedValue == currentTranslatedValue.toString()!
+                ) {
+                  return {
+                    ...hour,
+                    selected: true,
+                  };
+                }
+                return hour;
               }
-              return hour;
-            }
           );
           return newValue;
         });
@@ -236,58 +239,53 @@ const HourWheel: FC<IHourWheel> = ({ height, value, setValue, use12Hours }) => {
   };
 
   return (
-    <div
-      className={`${s.timeHour} ${
-        use12Hours && "react-ios-time-picker-hour-12hour-format"
-      }`}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{ height: height! * 5 }}
-      onWheel={handleWheelScroll}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleMouseUp}
-    >
-      {/* <PickerEffects height={height} /> */}
       <div
-        ref={mainListRef}
-        className={`${isFastCondition === true && s.timeFast} ${
-          isSlowCondition === true && s.timeSlow
-        }`}
-        onTransitionEnd={handleTransitionEnd}
-        style={{ transform: `translateY(${currentTranslatedValue}px)` }}
+          className={`${s.timeHour} ${
+              use12Hours && "react-ios-time-picker-hour-12hour-format"
+          }`}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          style={{ height: height! * 5 }}
+          onWheel={handleWheelScroll}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleMouseUp}
       >
-        {hours.map(
-          (
-            hourObj: {
-              selected: number;
-              hidden: boolean;
-              number: number;
-              translatedValue: string;
-            },
-            index: number
-          ) => (
-            <div
-              key={index}
-              className={s.timeHourCell}
-              style={{ height: `${height}px` }}
-            >
-              <div
-                className={`${s.timeHourInner} ${
-                  hourObj.selected ? s.timeHourInnerSelected : ""
-                }${hourObj?.hidden ? s.timeHourInnerHidden : ""}`}
-                onClick={handleClickToSelect}
-                data-translated-value={hourObj.translatedValue}
-              >
-                {hourObj.number}
-              </div>
-            </div>
-          )
-        )}
+        {/* <PickerEffects height={height} /> */}
+        <div
+            ref={mainListRef}
+            className={`${isFastCondition === true && s.timeFast} ${
+                isSlowCondition === true && s.timeSlow
+            }`}
+            onTransitionEnd={handleTransitionEnd}
+            style={{ transform: `translateY(${currentTranslatedValue}px)` }}
+        >
+          {hours.map(
+              (
+                  hourObj: ISelectedItem,
+                  index: number
+              ) => (
+                  <div
+                      key={index}
+                      className={s.timeHourCell}
+                      style={{ height: `${height}px` }}
+                  >
+                    <div
+                        className={`${s.timeHourInner} ${
+                            hourObj.selected ? s.timeHourInnerSelected : ""
+                        }${hourObj?.hidden ? s.timeHourInnerHidden : ""}`}
+                        onClick={handleClickToSelect}
+                        data-translated-value={hourObj.translatedValue}
+                    >
+                      {hourObj.number}
+                    </div>
+                  </div>
+              )
+          )}
+        </div>
       </div>
-    </div>
   );
 };
 
