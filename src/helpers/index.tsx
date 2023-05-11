@@ -1,8 +1,10 @@
+import {IItem, ISelectedItem} from "../components/mobileClock/HourWheel/HourWheel";
+
 export const initialNumbersValue = (
   heightValue = 54,
   numbersLength = 24,
-  value = null
-) => {
+  value: number | null = null
+): ISelectedItem[] => {
   const initialValue24hourFormat = [
     {
       number: "00",
@@ -75,12 +77,7 @@ export const initialNumbersValue = (
   return arrayOfSelectedValue;
 };
 
-interface ISelectedItem {
-  number: string,
-  translatedValue: string,
-  arrayNumber?: number,
-  selected?: boolean,
-}
+
 export const returnSelectedValue = (heightValue = 54, numbersLength = 24) => {
   const arrayOfSelectedValue: ISelectedItem[] = [
     {

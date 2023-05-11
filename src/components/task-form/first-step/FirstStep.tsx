@@ -69,8 +69,8 @@ const FirstStep = () => {
             <Clock
               hour={hour}
               minut={minut}
-              onChangeHour={onChangeHour}
-              onChangeMinut={onChangeMinut}
+              onChangeHour={onChangeHour as () => void}
+              onChangeMinut={onChangeMinut as () => void}
             />
           )}
           {isMobile && (
