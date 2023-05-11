@@ -3,7 +3,7 @@ import s from "../TaskForm.module.scss";
 import m from "./FirstStep.module.scss";
 import { Button } from "../../ui/buttons/Button";
 import FormsHeader from "../../ui/forms-header/FormsHeader";
-import Clock from "../../Clock/Clock";
+import Clock from "../../clock/Clock";
 import Calendar from "../../calendar/Calendar";
 import Checkbox from "../../ui/checkbox/Checkbox";
 import MobileClock from "../../mobileClock/mobileClock";
