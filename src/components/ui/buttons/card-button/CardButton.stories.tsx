@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { CardButton } from './card-button';
+import { CardButton } from './CardButton';
 import { AcceptBlockIcon, ActiveApplicationIcon, ApplicationMapIcon, CompletedApplicationIcon, CreateEditIcon, StatisticsIcon } from '../../icons/icons';
 
 const meta = {

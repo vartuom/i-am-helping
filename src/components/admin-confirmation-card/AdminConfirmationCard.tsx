@@ -4,7 +4,7 @@ import { Avatar } from '../avatar/Avatar';
 import { TUser } from '../../types';
 import styles from './AdminConfirmationCard.module.scss';
 import { SelectIconDown, SelectIconUp } from "../ui/icons/select-icon/select-icon";
-import Checkbox from "../ui/checkbox/checkbox";
+import Checkbox from "../ui/checkbox/checkbox1";
 
 interface IAdminConfirmationTypeProps {
   user: TUser,

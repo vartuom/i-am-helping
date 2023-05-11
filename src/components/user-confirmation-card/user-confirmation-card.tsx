@@ -5,7 +5,7 @@ import { BallsIcon } from '../ui/icons/icons';
 import { FinishedApplicationIcon } from '../ui/icons/icons';
 import { KeyIcon } from '../ui/icons/icons';
 import { Avatar } from '../avatar/Avatar';
-import { ColorfulLabel, ColorfulLabelMob } from '../ui/figures/colorful-label';
+import { ColorfulLabel, ColorfulLabelMob } from '../ui/figures/ColorfulLabel';
 import { TUser } from '../../types';
 
 interface IUserConfirmationTypeProps {

@@ -8,12 +8,12 @@ import './VolunteerPage.scss'
 import { IAvatarProps } from '../../components/avatar/Avatar'
 import { Maps } from '../../components/maps/Maps'
 
-import UserCard from '../../components/userCard/userCard'
+import UserCard from '../../components/userCard/userCard1'
 import { user } from '../../data/user'
 import { request } from '../../data/request'
 import { TRequest } from '../../types'
 import DropdownMenu from '../../components/dropdown/Dropdown'
-import FilterMap from '../../components/filters/filter-map/FilterMap'
+import FilterMap from '../../components/filters/filter-map/FilterMap1'
 
 
 

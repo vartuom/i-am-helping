@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ExportCard } from "./exportCard";
+import { ExportCard } from "./exportCard1";
 import { Button } from "../buttons/Button";
 
 const meta: Meta<typeof ExportCard> = {

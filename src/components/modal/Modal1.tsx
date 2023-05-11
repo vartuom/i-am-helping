@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect } from "react";
 import ReactDOM from "react-dom";
 
-import ModalOverlay from "../modalOverlay/modalOverlay";
+import ModalOverlay from "../modalOverlay/modalOverlay1";
 import s from "./Modal.module.scss";
 import { Button } from "../ui/buttons/Button";
 import { CrossIcon } from "../ui/icons/cross-icon/cross-icon";

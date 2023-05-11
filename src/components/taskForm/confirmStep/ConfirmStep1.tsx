@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import s from "../TaskForm.module.scss";
 import m from "./ConfirmStep.module.scss";
-import FormsHeader from "../../ui/formsHeader/formsHeader";
+import FormsHeader from "../../ui/formsHeader/formsHeader1";
 import TaskResult from "../../ui/taskResult/taskResult";
 import { Button } from "../../ui/buttons/Button";
 

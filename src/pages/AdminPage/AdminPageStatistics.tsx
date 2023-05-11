@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { EPageTitleFilterKind } from "../../components/page-title-filter/types"
 import styles from './AdminPage.module.scss'
-import UserCard from "../../components/userCard/userCard"
+import UserCard from "../../components/userCard/userCard1"
 import SideNavigation from "../../components/side-navigation/SideNavigation"
 import { user } from "../../data/user"
 import { Chart } from "../../components/chart/Chart"

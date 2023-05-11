@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import './userCard.module.scss';
-import userCard from './userCard';
+import userCard from './userCard1';
 
 const meta: Meta<typeof userCard> = {
 

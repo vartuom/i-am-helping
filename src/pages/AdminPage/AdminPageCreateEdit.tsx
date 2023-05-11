@@ -2,7 +2,7 @@ import { useState } from "react"
 import { PageTitleFilter } from "../../components/page-title-filter/PageTitleFilter"
 import { EPageTitleFilterKind } from "../../components/page-title-filter/types"
 import styles from './AdminPage.module.scss'
-import UserCard from "../../components/userCard/userCard"
+import UserCard from "../../components/userCard/userCard1"
 import SideNavigation from "../../components/side-navigation/SideNavigation"
 import AdminConfirmationCardList from "../../components/admin-confirmation-card-list/AdminConfirmationCardList"
 import { user } from "../../data/user"

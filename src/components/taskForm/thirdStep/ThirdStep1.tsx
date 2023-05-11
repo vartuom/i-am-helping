@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import s from "../TaskForm.module.scss";
 import m from "./ThirdStep.module.scss";
-import FormsHeader from "../../ui/formsHeader/formsHeader";
+import FormsHeader from "../../ui/formsHeader/formsHeader1";
 import Select, { IOption } from "../../ui/Select/Select";
 import TextArea from "../../ui/textArea/textArea";
 import { Button } from "../../ui/buttons/Button";

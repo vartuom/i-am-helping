@@ -5,7 +5,7 @@ import {CrossIcon} from "../ui/icons/cross-icon/cross-icon";
 import {SendIcon} from "../ui/icons/send-icon/send-icon";
 import {ClipIcon} from "../ui/icons/clip-icon/clip-icon";
 import {Button} from "../ui/buttons/Button";
-import FormsHeader from "../ui/formsHeader/formsHeader";
+import FormsHeader from "../ui/formsHeader/formsHeader1";
 
 type Message = {
     text: string;
