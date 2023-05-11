@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import s from "../taskForm.module.scss";
-import m from "./firstStep.module.scss";
+import s from "../TaskForm.module.scss";
+import m from "./FirstStep.module.scss";
 import { Button } from "../../ui/buttons/Button";
 import FormsHeader from "../../ui/formsHeader/formsHeader";
 import Clock from "../../Clock/Clock";

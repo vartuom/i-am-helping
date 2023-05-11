@@ -13,7 +13,7 @@ import { user } from '../../data/user'
 import { request } from '../../data/request'
 import { TRequest } from '../../types'
 import DropdownMenu from '../../components/dropdown/Dropdown'
-import FilterMap from '../../components/filters/filter-map/filterMap'
+import FilterMap from '../../components/filters/filter-map/FilterMap'
 
 
 

@@ -3,8 +3,8 @@ import { ChangeEvent, FC, useState } from "react";
 import Calendar from "../../calendar/Calendar";
 import { Button } from "../../ui/buttons/Button";
 import Checkbox from "../../ui/checkbox/checkbox";
-import s from "./filter.module.scss";
-import "./filter.scss";
+import s from "./Filter.module.scss";
+import "./Filter.scss";
 
 const categories = [{ id: 1, value: 'Категория 1' }, { id: 2, value: 'Категория 2' }, { id: 3, value: 'Категория 3' }, { id: 4, value: 'Категория 4' }, { id: 5, value: 'Категория 5', }, { id: 6, value: 'Категория 6' }];
 const radiuses = [{ id: '1km', value: '1 км' }, { id: '3km', value: '3 км' }, { id: '5km', value: '5 км' }];

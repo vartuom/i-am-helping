@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import s from "../taskForm.module.scss";
-import m from "./thirdStep.module.scss";
+import s from "../TaskForm.module.scss";
+import m from "./ThirdStep.module.scss";
 import FormsHeader from "../../ui/formsHeader/formsHeader";
 import Select, { IOption } from "../../ui/Select/Select";
 import TextArea from "../../ui/textArea/textArea";
