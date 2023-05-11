@@ -1,5 +1,5 @@
 import { FC } from "react";
-import styles from "./chart-column.module.scss";
+import styles from "./ChartColumn.module.scss";
 
 interface IPropsChartColumn {
   date: Date;

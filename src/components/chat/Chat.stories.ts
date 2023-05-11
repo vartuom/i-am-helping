@@ -1,5 +1,5 @@
 import type { StoryObj, Meta} from '@storybook/react';
-import Chat from "./chat";
+import Chat from "./Chat";
 
 const meta = {
     title: "Chat",

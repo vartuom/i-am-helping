@@ -1,5 +1,5 @@
 import React, {FC, useState} from 'react';
-import chat from "./chat.module.scss";
+import chat from "./Chat.module.scss";
 import {TChatProps} from "./types";
 import {CrossIcon} from "../ui/icons/cross-icon/cross-icon";
 import {SendIcon} from "../ui/icons/send-icon/send-icon";

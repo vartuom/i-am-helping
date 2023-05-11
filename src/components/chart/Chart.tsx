@@ -1,5 +1,5 @@
 import { FC, useMemo } from "react";
-import styles from "./chart.module.scss";
+import styles from "./Chart.module.scss";
 import { Button } from "../ui/buttons/Button";
 import { ChartColumn } from "./ChartColumn";
 
