@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Chart } from "./chart";
+import { Chart } from "./chart1";
 
 const meta: Meta<typeof Chart> = {
   title: "Диаграмма",

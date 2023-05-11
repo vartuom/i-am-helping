@@ -1,7 +1,7 @@
 import { FC, useMemo } from "react";
 import styles from "./chart.module.scss";
 import { Button } from "../ui/buttons/Button";
-import { ChartColumn } from "./chart-column";
+import { ChartColumn } from "./ChartColumn";
 
 interface IChartProps {
   data: Array<{ date: Date; views: number; visits: number; bids: number }>;

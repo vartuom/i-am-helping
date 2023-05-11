@@ -5,7 +5,7 @@ import AnotherTestPage from "../../pages/anotherTestPage";
 import PersonalPage from "../../pages/PersonalPage/PersonalPage";
 import SignupPage from "../../pages/SignupPage/SignupPage";
 import SigninPage from "../../pages/SigninPage/SigninPage";
-import { AppHeader } from "../app-header/app-header";
+import { AppHeader } from "../app-header/AppHeader";
 import Modal from "../modal/Modal";
 import ModalOne from "../modalExamples/ModalOne";
 import ModalTwo from "../modalExamples/ModalTwo";
