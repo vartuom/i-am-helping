@@ -7,6 +7,8 @@
 ![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
 ![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)
 
+# [Бриф проекта](https://www.notion.so/3-8-be2845a627fd43028a7d61436342767b)
+
 ## Storybook на Github Pages
 https://vartuom.github.io/i-am-helping
 

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styles from './ChartList.module.scss'
-import { Chart } from '../chart/chart';
+import { Chart } from '../chart/Chart';
 
 interface IChartProps {
   data: Array<{ date: Date; views: number; visits: number; bids: number }>;

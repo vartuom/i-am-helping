@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import './request.scss';
+import './Request.scss';
 import { CalendarIcon } from '../ui/icons/calendar-icon/calendar-icon'
 import { ClockIcon } from '../ui/icons/clock-icon/clock-icon'
 import { LocationIcon } from '../ui/icons/location-icon/location-icon'

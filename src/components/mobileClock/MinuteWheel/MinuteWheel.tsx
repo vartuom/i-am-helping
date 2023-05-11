@@ -12,6 +12,13 @@ interface IItem {
   number: string | null;
   translatedValue: string | null;
   selected: boolean;
+  slice: (value: number, value2: number) => void;
+}
+
+interface ISelectedItem {
+  translatedValue: string;
+  arrayNumber: React.SetStateAction<null>;
+  number: string | null | undefined;
 }
 const MinuteWheel: FC<IMinuteWheel> = ({ height, value, setValue }) => {
   const [hours, setHours] = useState(
@@ -58,7 +65,7 @@ const MinuteWheel: FC<IMinuteWheel> = ({ height, value, setValue }) => {
     setDragStartTime(performance.now());
   };
 
-  const handleTouchStart = (e: any) => {
+  const handleTouchStart = (e: React.TouchEvent) => {
     setShowFinalTranslate(false);
     setFirstCursorPosition(e.targetTouches[0].clientY);
     setStartCapture(true);
@@ -109,7 +116,7 @@ const MinuteWheel: FC<IMinuteWheel> = ({ height, value, setValue }) => {
     }
   };
 
-  const handleTouchMove = (e: any) => {
+  const handleTouchMove = (e: React.TouchEvent) => {
     if (startCapture) {
       setCursorPosition(e.targetTouches[0].clientY - firstCursorPosition!);
     } else {
@@ -162,37 +169,29 @@ const MinuteWheel: FC<IMinuteWheel> = ({ height, value, setValue }) => {
 
   // return to default position after drag end (handleTransitionEnd)
   const handleTransitionEnd = () => {
-    returnSelectedValue(height, 60).map(
-      (item: {
-        translatedValue: string;
-        arrayNumber: React.SetStateAction<null>;
-        number: any;
-      }) => {
-        if (parseInt(item.translatedValue) === currentTranslatedValue) {
-          setSelectedNumber(item.arrayNumber);
-          setValue!(
-            (prev: string | any[]) => `${prev.slice(0, 2)}:${item.number}`
-          );
-          setHours(() => {
-            const newValue = initialNumbersValue(height, 60).map(
-              (hour: { number: string; translatedValue: number }) => {
-                if (
-                  hour.number == item.number &&
-                  hour.translatedValue == currentTranslatedValue
-                ) {
-                  return {
-                    ...hour,
-                    selected: true,
-                  };
-                }
-                return hour;
+    returnSelectedValue(height, 60).map((item: ISelectedItem) => {
+      if (parseInt(item.translatedValue) === currentTranslatedValue) {
+        setSelectedNumber(item.arrayNumber);
+        setValue!((prev: IItem) => `${prev.slice(0, 2)}:${item.number}`);
+        setHours(() => {
+          const newValue = initialNumbersValue(height, 60).map(
+            (hour: { number: string; translatedValue: number }) => {
+              if (
+                hour.number == item.number &&
+                hour.translatedValue == currentTranslatedValue
+              ) {
+                return {
+                  ...hour,
+                  selected: true,
+                };
               }
-            );
-            return newValue;
-          });
-        }
+              return hour;
+            }
+          );
+          return newValue;
+        });
       }
-    );
+    });
   };
 
   // handle click to select number
@@ -242,20 +241,9 @@ const MinuteWheel: FC<IMinuteWheel> = ({ height, value, setValue }) => {
         {hours.map(
           (
             hourObj: {
-              selected: any;
-              translatedValue: any;
-              number:
-                | string
-                | number
-                | boolean
-                | React.ReactElement<
-                    any,
-                    string | React.JSXElementConstructor<any>
-                  >
-                | React.ReactFragment
-                | React.ReactPortal
-                | null
-                | undefined;
+              selected: number;
+              translatedValue: string;
+              number: number;
             },
             index: React.Key | null | undefined
           ) => (

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import './request-list.scss';
+import './Request-list.scss';
 import { Request } from '../request/Request'
 import { TRequest } from '../../types';
 

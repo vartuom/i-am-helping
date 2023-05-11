@@ -6,9 +6,9 @@ interface InputProps {
   value?: string;
   valueName?: string;
   valuePhone?: string;
-  onChange?: (value: any) => void;
-  onChangeName?: (value: any) => void;
-  onChangePhone?: (value: any) => void;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  onChangeName?: React.ChangeEventHandler<HTMLInputElement>;
+  onChangePhone?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 const Input: FC<InputProps> = (props) => {

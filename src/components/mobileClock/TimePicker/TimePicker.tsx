@@ -4,16 +4,16 @@ import TimePickerSelection from "../TimePickerSelection/TimePickerSelection";
 import s from "./TimePicker.module.scss";
 
 interface ITimePicker {
-  setInputValue: (value: any) => void;
+  setInputValue: (value: string | undefined) => void;
   inputValue: string | undefined;
   value?: string | null;
   cellHeight?: number;
   placeHolder?: string;
   pickerDefaultValue?: string;
-  onChange?: (value: any) => void;
+  onChange?: (value: string | undefined) => void;
   onFocus?: () => void;
-  onSave?: (value: any) => void;
-  onCancel?: (value: any) => void;
+  onSave?: (value: string | undefined) => void;
+  onCancel?: () => void;
   disabled?: boolean;
   isOpen?: boolean;
   required?: boolean;
@@ -23,7 +23,7 @@ interface ITimePicker {
   seperator?: boolean;
   id?: string | undefined;
   use12Hours?: boolean;
-  onAmPmChange?: (value: any) => void;
+  onAmPmChange?: (value: string | undefined) => void;
   name?: string | undefined;
   onOpen?: () => void;
   popupClassName?: null;
@@ -56,7 +56,7 @@ const TimePicker: FC<ITimePicker> = ({
   inputValue,
   setInputValue,
 }) => {
-  const [isOpen, setIsOpen] = useState(initialIsOpenValue);
+  const [isOpen, setIsOpen] = useState<boolean | undefined>(initialIsOpenValue);
   const [height, setHeight] = useState(cellHeight);
   // const [inputValue, setInputValue] = useState(initialValue);
   // console.log(inputValue);

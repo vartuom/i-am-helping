@@ -1,6 +1,17 @@
 import React, { useEffect, useState, useRef, FC, RefObject } from "react";
 import s from "./HourWheel.module.scss";
 import { initialNumbersValue, returnSelectedValue } from "../../../helpers";
+interface IItem {
+  number: string | null | undefined;
+  translatedValue: string | null | undefined | number;
+  selected: boolean;
+  slice: (value: number, value2: number) => void;
+}
+interface ISelectedItem {
+  translatedValue: string;
+  number: string | null | undefined;
+  arrayNumber: React.SetStateAction<null>;
+}
 interface IHourWheel {
   height?: number;
   value?: string | null | undefined;
@@ -8,15 +19,9 @@ interface IHourWheel {
   use12Hours?: boolean | null;
 }
 
-interface IItem {
-  number: string | null | undefined;
-  translatedValue: string | null | undefined | number;
-  selected: boolean;
-  slice: (value: number, value2: number) => void;
-}
 const HourWheel: FC<IHourWheel> = ({ height, value, setValue, use12Hours }) => {
   const hourLength = use12Hours ? 13 : 24;
-  const [hours, setHours] = useState<any>(
+  const [hours, setHours] = useState(
     initialNumbersValue(height, hourLength, parseInt(value!.slice(0, 2)))
   );
   const mainListRef = useRef(null) as RefObject<HTMLDivElement> | null;
@@ -61,7 +66,7 @@ const HourWheel: FC<IHourWheel> = ({ height, value, setValue, use12Hours }) => {
     setDragStartTime(performance.now());
   };
 
-  const handleTouchStart = (e: any) => {
+  const handleTouchStart = (e: React.TouchEvent) => {
     setShowFinalTranslate(false);
     setFirstCursorPosition(e.targetTouches[0].clientY);
     setStartCapture(true);
@@ -111,7 +116,7 @@ const HourWheel: FC<IHourWheel> = ({ height, value, setValue, use12Hours }) => {
     }
   };
 
-  const handleTouchMove = (e: any) => {
+  const handleTouchMove = (e: React.TouchEvent) => {
     if (startCapture) {
       setCursorPosition(e.targetTouches[0].clientY - firstCursorPosition!);
     } else {
@@ -175,7 +180,7 @@ const HourWheel: FC<IHourWheel> = ({ height, value, setValue, use12Hours }) => {
 
   // return to default position after drag end (handleTransitionEnd)
   const handleTransitionEnd = () => {
-    returnSelectedValue(height, hourLength).map((item: any) => {
+    returnSelectedValue(height, hourLength).map((item: ISelectedItem) => {
       if (parseInt(item.translatedValue) === currentTranslatedValue) {
         setSelectedNumber(item.arrayNumber);
         setValue!((prev: IItem) => `${item.number}:${prev.slice(3, 6)}`);
@@ -260,7 +265,7 @@ const HourWheel: FC<IHourWheel> = ({ height, value, setValue, use12Hours }) => {
               selected: number;
               hidden: boolean;
               number: number;
-              translatedValue: any;
+              translatedValue: string;
             },
             index: number
           ) => (

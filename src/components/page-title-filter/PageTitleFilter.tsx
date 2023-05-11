@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import './page-title-filter.scss';
+import './PageTitleFilter.scss';
 import { EPageTitleFilterKind, TPageTitleFilter } from './types'
 import { ActiveApplicationIcon } from '../ui/icons/active-application-icon/active-application-icon'
 import { ApplicationMapIcon } from '../ui/icons/application-map-icon/application-map-icon'
@@ -12,8 +12,8 @@ import { TIconProps } from "../../components/ui/icons/utils"
 
 import { FilterIcon } from '../ui/icons/filter-icon/filter-icon'
 
-import Modal from '../modal/modal';
-import FilterMap from '../filters/filter-map/filterMap';
+import Modal from '../modal/Modal';
+import FilterMap from '../filters/filter-map/FilterMap';
 
 export const getTitleImg = (kind: EPageTitleFilterKind, type: TIconProps = { type: 'blue' }) => {
   switch (kind) {
