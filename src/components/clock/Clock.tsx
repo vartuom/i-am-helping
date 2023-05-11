@@ -4,8 +4,8 @@ import s from "./Clock.module.scss";
 interface IClock {
   hour: number | undefined;
   minut: number | undefined;
-  onChangeHour: (value: any) => void;
-  onChangeMinut: (value: any) => void;
+  onChangeHour: () => void;
+  onChangeMinut: () => void;
 }
 
 const Clock: FC<IClock> = (props) => {
