@@ -6,9 +6,9 @@ import borderIcon from "../../images/locationWithCircle.svg";
 import Input from "../ui/Input/Input";
 import ymaps, { ISuggestResult, MapEvent } from "yandex-maps";
 
-export const MapForSeacrh: any = (props: {
-  value: any;
-  setValue: (value: any) => void;
+export const MapForSeacrh = (props: {
+  value: string;
+  setValue: (value: string) => void;
 }) => {
   const { value, setValue } = props;
   const [clickCoord, setClickCoord] = useState<[number, number]>();
@@ -26,12 +26,9 @@ export const MapForSeacrh: any = (props: {
 
   const YMaps = useYMaps(["geocode", "geolocation", "suggest"]);
 
-  let geocode: any;
   let location: number[];
 
-  if (YMaps) {
-    geocode = YMaps.geocode;
-  }
+  const geocode = YMaps?.geocode;
 
   // все реализованно через функции для уменьшения запросов к апишке, ибо они очень быстро кончаются.
 
@@ -69,7 +66,7 @@ export const MapForSeacrh: any = (props: {
   // определение координат по клику. РАБОТАЕТ!!!
   const clickForMap = (event: MapEvent) => {
     setClickCoord(event.get("coords"));
-    geocode(event.get("coords")).then((res: ymaps.IGeocodeResult) => {
+    geocode && geocode(event.get("coords")).then((res: ymaps.IGeocodeResult) => {
       const adressDate = res.geoObjects.get(0).properties.get("text", {});
       setValue(String(adressDate));
     });

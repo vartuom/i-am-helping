@@ -1,15 +1,11 @@
 import "./App.scss";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import TestPage from "../../pages/testPage";
-import AnotherTestPage from "../../pages/anotherTestPage";
 import PersonalPage from "../../pages/PersonalPage/PersonalPage";
 import SignupPage from "../../pages/SignupPage/SignupPage";
 import SigninPage from "../../pages/SigninPage/SigninPage";
 import { AppHeader } from "../app-header/AppHeader";
 import Modal from "../modal/Modal";
-import ModalOne from "../modal-examples/ModalOne";
-import ModalTwo from "../modal-examples/ModalTwo";
-import ModalThree from "../modal-examples/ModalThree";
 import { AppFooter } from "../app-footer/AppFooter";
 import VolunteerPage from "../../pages/VolunteerPage/VolunteerPage";
 import { RecipientPage } from "../../pages/RecipientPage/RecipientPage";
@@ -40,7 +36,6 @@ function App() {
         <Route path="/" element={<TestPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/signin" element={<SigninPage />} />
-        <Route path="/anotherTestPage" element={<AnotherTestPage />} />
         <Route path="/personal" element={<PersonalPage />} />
         <Route path="/activeVolunteer" element={<VolunteerPage current={EPageTitleFilterKind.Active} />} />
         <Route path="/volunteer" element={<VolunteerPage current={EPageTitleFilterKind.Active} />} />
