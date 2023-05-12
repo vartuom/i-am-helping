@@ -63,3 +63,39 @@
   gap: 20px;
   align-items: center;
 }
+
+.chart_block {
+  width: 423px;
+  height: 287px;
+  border: 1px solid $colorBtnFirst;
+  box-sizing: border-box;
+  position: relative;
+  @include from('sm') {
+    width: 175px;
+    height: 200px;
+  }
+}
+
+.button_position {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.chart_list {
+  display: grid;
+  grid-template-columns: repeat(2, 423px);
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  min-height: 600px;
+
+  @include from('sm') {
+    height: 570px;
+    grid-template-columns: repeat(2, 175px);
+    padding: 0 25px;
+    gap: 20px 14px;
+  }
+
+  overflow: scroll;
+}
