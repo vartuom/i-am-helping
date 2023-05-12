@@ -1,4 +1,4 @@
-import './card-button.scss'
+import './CardButton.scss'
 
 import React, { SyntheticEvent } from 'react';
 

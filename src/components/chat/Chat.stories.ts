@@ -2,7 +2,7 @@ import type { StoryObj, Meta} from '@storybook/react';
 import Chat from "./Chat";
 
 const meta = {
-    title: "Chat",
+    title: "Components/Chat",
     component: Chat
 } as Meta;
 

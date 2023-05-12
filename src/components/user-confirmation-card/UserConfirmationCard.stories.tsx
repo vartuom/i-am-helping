@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import './user-confirmation-card.module.scss';
+import './UserConfirmationCard.module.scss';
 import userConfirmationCard from './UserConfirmationCard';
 import { user } from '../../data/user';
 
 const meta: Meta<typeof userConfirmationCard> = {
 
-    title: 'Карточка подтверждения пользователя',
+    title: 'Cards/UserConfirmationCard',
     component: userConfirmationCard,
     argTypes: {
       user: {

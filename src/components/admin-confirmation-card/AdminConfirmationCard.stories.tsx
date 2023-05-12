@@ -5,7 +5,7 @@ import { user } from '../../data/user';
 
 const meta: Meta<typeof AdminConfirmationCard> = {
 
-    title: 'Карточка подтверждения админа',
+    title: 'Cards/AdminConfirmationCard',
     component: AdminConfirmationCard,
     argTypes: {
       user,

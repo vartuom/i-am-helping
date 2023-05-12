@@ -3,7 +3,7 @@ import SideNavLink from './SideNavLink';
 import { EPageTitleFilterKind } from '../../page-title-filter/types';
 
 const meta = {
-    title: "SideNavLink",
+    title: "Components/SideNavLink",
     component: SideNavLink
 } satisfies Meta<typeof SideNavLink>;
 

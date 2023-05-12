@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import styles from "./exportCard.module.scss";
+import styles from "./ExportCard.module.scss";
 
 interface IExportCardProps {
   button: ReactNode;

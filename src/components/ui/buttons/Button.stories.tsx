@@ -3,7 +3,7 @@ import { Button } from './Button';
 import { EmptyMessageIcon, LocationOnMapIcon, PhoneIcon, AddIcon, CrossIcon, EditIcon, ArrowIconBig, BurgerMenuIcon } from '../icons/icons';
 
 const meta = {
-  title: 'Button',
+  title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
 } satisfies Meta<typeof Button>;
