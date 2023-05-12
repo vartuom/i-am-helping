@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import s from "./radioGroup1.module.scss";
+import s from "./RadioGroup.module.scss";
 
 interface IRadioGroup {
   name: string;

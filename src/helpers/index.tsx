@@ -38,7 +38,7 @@ export const initialNumbersValue = (
     numbersLength === 13 ? initialValue12hourFormat : initialValue24hourFormat;
   let count = 0;
   for (let index = 0; index < 3; index++) {
-    for (let j: string | number = 0; j < numbersLength; j++) {
+    for (let j: any = 0; j < numbersLength; j++) {
       if ((index === 0 && j < 2) || (numbersLength === 13 && j === 0)) {
         continue;
       }
