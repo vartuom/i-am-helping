@@ -209,9 +209,11 @@ const HourWheel: FC<IHourWheel> = ({ height, value, setValue, use12Hours }) => {
   };
 
   // handle click to select number
-  const handleClickToSelect = (e: any) => {
+  const handleClickToSelect = (e: React.MouseEventHandler & {
+    target: HTMLDivElement
+  }) => {
     if (cursorPosition === 0) {
-      setCurrentTranslatedValue(parseInt(e.target.dataset.translatedValue));
+      setCurrentTranslatedValue(parseInt(e.target.dataset.translatedValue!));
     }
   };
 
@@ -276,7 +278,7 @@ const HourWheel: FC<IHourWheel> = ({ height, value, setValue, use12Hours }) => {
                         className={`${s.timeHourInner} ${
                             hourObj.selected ? s.timeHourInnerSelected : ""
                         }${hourObj?.hidden ? s.timeHourInnerHidden : ""}`}
-                        onClick={handleClickToSelect}
+                        onClick={(e) => handleClickToSelect}
                         data-translated-value={hourObj.translatedValue}
                     >
                       {hourObj.number}

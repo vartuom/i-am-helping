@@ -195,9 +195,11 @@ const MinuteWheel: FC<IMinuteWheel> = ({ height, value, setValue }) => {
   };
 
   // handle click to select number
-  const handleClickToSelect = (e: any) => {
+  const handleClickToSelect = (e: React.MouseEventHandler & {
+    target: HTMLDivElement
+  }) => {
     if (cursorPosition === 0) {
-      setCurrentTranslatedValue(parseInt(e.target.dataset.translatedValue));
+      setCurrentTranslatedValue(parseInt(e.target.dataset.translatedValue!));
     }
   };
 
@@ -252,7 +254,7 @@ const MinuteWheel: FC<IMinuteWheel> = ({ height, value, setValue }) => {
                 className={`${s.timeMinuteInner} ${
                   hourObj.selected ? s.timeHourInnerSelected : ""
                 }`}
-                onClick={handleClickToSelect}
+                onClick={(e) => handleClickToSelect}
                 data-translated-value={hourObj.translatedValue}
               >
                 {hourObj.number}
