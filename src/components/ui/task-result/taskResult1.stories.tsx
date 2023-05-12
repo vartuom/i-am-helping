@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import TaskResult from "./taskResult";
+import TaskResult from "./taskResult1";
 
 const meta = {
   title: "Components/TaskResult",

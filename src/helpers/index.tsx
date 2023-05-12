@@ -1,4 +1,7 @@
-import {IItem, ISelectedItem} from "../components/mobileClock/HourWheel/HourWheel";
+import {
+  IItem,
+  ISelectedItem,
+} from "../components/mobileClock/HourWheel/HourWheel";
 
 export const initialNumbersValue = (
   heightValue = 54,
@@ -35,7 +38,7 @@ export const initialNumbersValue = (
     numbersLength === 13 ? initialValue12hourFormat : initialValue24hourFormat;
   let count = 0;
   for (let index = 0; index < 3; index++) {
-    for (let j: any = 0; j < numbersLength; j++) {
+    for (let j: string | number = 0; j < numbersLength; j++) {
       if ((index === 0 && j < 2) || (numbersLength === 13 && j === 0)) {
         continue;
       }
@@ -76,7 +79,6 @@ export const initialNumbersValue = (
 
   return arrayOfSelectedValue;
 };
-
 
 export const returnSelectedValue = (heightValue = 54, numbersLength = 24) => {
   const arrayOfSelectedValue: ISelectedItem[] = [

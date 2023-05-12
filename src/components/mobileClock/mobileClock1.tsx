@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import s from "./MobileClock.module.scss";
+import s from "./MobileClock1.module.scss";
 import TimePicker from "./TimePicker/TimePicker";
 
 interface IMobileClock {
