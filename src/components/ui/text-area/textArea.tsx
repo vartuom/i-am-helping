@@ -4,7 +4,7 @@ import s from "./textArea.module.scss";
 
 interface TextAreaProps {
   value: string;
-  onChange: (value: any) => void;
+  onChange: React.ChangeEventHandler<HTMLTextAreaElement>;
 }
 
 const TextArea: FC<TextAreaProps> = (props) => {

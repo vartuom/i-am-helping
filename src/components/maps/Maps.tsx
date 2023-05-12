@@ -19,14 +19,6 @@ export const Maps = () => {
 
     const boxItem: IDataItem[] = [{ content: 'Mocква', request_name: 'Moscow' }, { content: 'Санкт-Петербург', request_name: 'Saint-Petersburg' }]
 
-    //const YMaps = useYMaps(['geocode'])
-
-    let geocode: any;
-
-    //if (YMaps) {
-    //    geocode = YMaps.geocode
-    //}
-
 
     const switchCity = (name: string) => {
       /*  geocode(name).then((res: ymaps.IGeocodeResult) => {
