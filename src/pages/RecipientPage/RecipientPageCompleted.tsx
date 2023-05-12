@@ -25,13 +25,13 @@ export const RecipientPageCompleted = () => {
   return (
     <main className={recipient.main}>
       <aside className={`${recipient.aside} ${recipient.aside_activePage}`}>
-        {UserCard(user)}
-        {SideNavigation({ items: navArray, onClick: onClick, activeLink: active })}
+          <UserCard {...user} />
+          <SideNavigation items={navArray} onClick={onClick} activeLink={active} />
       </aside>
       <section className={`${recipient.requests} ${recipient.requests_activePage}`}>
         <PageTitleFilter item={active} />
-        {active === EPageTitleFilterKind.Active && NewApplication(requests)}
-        {requests.length > 0 && RequestList(requests)}
+        {active === EPageTitleFilterKind.Active && <NewApplication {...requests} />}
+        {requests.length > 0 && <RequestList {...requests} />}
       </section>
     </main>
   )

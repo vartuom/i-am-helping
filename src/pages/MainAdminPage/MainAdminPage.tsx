@@ -23,13 +23,12 @@ export const MainAdminPage = () => {
     return (
         <main className={styles.main}>
             <aside className={styles.aside}>
-                {UserCard(user)}
-                {SideNavigation({ items: navArray, onClick: onClick, activeLink: active })}
+                <UserCard {...user} />
+                <SideNavigation items={navArray} onClick={onClick} activeLink={active} />
             </aside>
             <section className={styles.cards}>
                 <PageTitleFilter item={active}/>
-                {AdminConfirmationCardList(adminConfirmationCards)}
-                
+                <AdminConfirmationCardList {...adminConfirmationCards} />
             </section>
         </main>
     )

@@ -5,12 +5,10 @@ import RequestList from '../../components/request-list/RequestList'
 import SideNavigation from '../../components/side-navigation/SideNavigation'
 import './VolunteerPage.scss'
 
-import { IAvatarProps } from '../../components/avatar/Avatar'
 import { Maps } from '../../components/maps/Maps'
 
 import UserCard from '../../components/user-card/UserCard'
 import { user } from '../../data/user'
-import { request } from '../../data/request'
 import { TRequest } from '../../types'
 import DropdownMenu from '../../components/dropdown/Dropdown'
 import FilterMap from '../../components/filters/filter-map/FilterMap'
@@ -19,11 +17,6 @@ import FilterMap from '../../components/filters/filter-map/FilterMap'
 
 const VolunteerPage: FC<{ current?: EPageTitleFilterKind }> = (item) => {
 
-
-  const avatarParams: IAvatarProps = {
-    size: 175,
-    url: 'https://fraguru.com/mdimg/avatariru/m.298472.jpg',
-  }
   const [navArray,] = useState<EPageTitleFilterKind[]>(
     [EPageTitleFilterKind.Map, EPageTitleFilterKind.Active, EPageTitleFilterKind.Completed]);
 
@@ -99,8 +92,15 @@ const VolunteerPage: FC<{ current?: EPageTitleFilterKind }> = (item) => {
     <section className='volonteerMainPanel'>
 
       <div className='volonteerLeftPanel'>
-        {UserCard(user, avatarParams)}
-        {SideNavigation({ items: navArray, onClick: onClick, activeLink: active, map: '/mapVolunteer', completed: '/completedVolunteer', active: '/activeVolunteer' })}
+        <UserCard {...user} />
+        <SideNavigation
+            items={navArray}
+            onClick={onClick}
+            activeLink={active}
+            map='/mapVolunteer'
+            completed='/completedVolunteer'
+            active='/activeVolunteer'
+        />
       </div >
 
 

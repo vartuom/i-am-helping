@@ -5,7 +5,6 @@ import './ProfilePage.scss'
 import UserCard from '../../components/user-card/UserCard'
 import { useNavigate } from 'react-router-dom'
 import { user } from '../../data/user'
-import { IAvatarProps } from '../../components/avatar/Avatar'
 
 const ProfilePage = () => {
 
@@ -19,16 +18,18 @@ const ProfilePage = () => {
     navigate('/volunteer');
 
   }
-  const avatarParams: IAvatarProps = {
-    size: 175,
-    url: 'https://fraguru.com/mdimg/avatariru/m.298472.jpg',
-  }
   return (
     <section className='mainPanel'>
       <div className='leftPanel'>
-        {UserCard(user, avatarParams)}
-        {SideNavigation({ items: navArray, onClick: onClick, activeLink: active, map: '/mapVolunteer', completed: '/completedVolunteer', active: '/activeVolunteer' })}
-
+        <UserCard {...user} />
+        <SideNavigation
+            items={navArray}
+            onClick={onClick}
+            activeLink={active}
+            map='/mapVolunteer'
+            completed='/completedVolunteer'
+            active='/activeVolunteer'
+        />
       </div>
     </section>
   )

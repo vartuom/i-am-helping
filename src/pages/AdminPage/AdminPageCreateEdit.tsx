@@ -23,12 +23,12 @@ export const AdminPageCreateEdit = () => {
     return (
         <main className={styles.main}>
             <aside className={`${styles.aside} ${styles.aside_confirmationPage}`}>
-                {UserCard(user)}
-                {SideNavigation({ items: navArray, onClick: onClick, activeLink: active })}
+                <UserCard {...user} />
+                <SideNavigation items={navArray} onClick={onClick} activeLink={active} />
             </aside>
             <section className={`${styles.cards} ${styles.cards_confirmationPage}`}>
                 <PageTitleFilter item={active}/>
-                {AdminConfirmationCardList(adminConfirmationCards)}
+                <AdminConfirmationCardList {...adminConfirmationCards} />
                 
             </section>
         </main>

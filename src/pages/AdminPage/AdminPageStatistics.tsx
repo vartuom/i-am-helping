@@ -98,13 +98,13 @@ for (let i = 0; i < 9; i++) {
     return (
         <main className={styles.main}>
             <aside className={`${styles.aside} ${styles.aside_confirmationPage}`}>
-                {UserCard(user)}
-                {SideNavigation({ items: navArray, onClick: onClick, activeLink: active })}
+              <UserCard {...user} />
+              <SideNavigation items={navArray} onClick={onClick} activeLink={active} />
             </aside>
             <section className={styles.chart}>
               <PageTitleFilter item={active}/>
-              <Chart data={data} /> 
-              {ChartList(charts)}
+              <Chart data={data} />
+              <ChartList {...charts}/>
             </section>
         </main>
     )
