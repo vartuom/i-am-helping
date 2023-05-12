@@ -3,6 +3,7 @@ import { AppFooter } from './AppFooter';
 
 
 const meta: Meta<typeof AppFooter> = {
+  title: 'Components/Footer',
   component: AppFooter,
 };
 

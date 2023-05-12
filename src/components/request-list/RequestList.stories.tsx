@@ -5,7 +5,7 @@ import { user } from '../../data/user';
 
 const meta: Meta<typeof RequestList> = {
 
-    title: 'Список запросов',
+    title: 'Components/RequestList',
     component: RequestList,
 };
 

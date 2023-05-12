@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import RadioGroup from "./RadioGroup";
 
 const meta = {
-  title: "Radio",
+  title: "Components/Radio",
   component: RadioGroup,
 } as Meta<typeof RadioGroup>;
 

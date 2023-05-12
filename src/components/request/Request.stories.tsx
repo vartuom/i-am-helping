@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import './request.scss';
+import './Request.scss';
 import { Request } from './Request';
 import { user } from '../../data/user';
 
 const meta: Meta<typeof Request> = {
 
-    title: 'Запрос',
+    title: 'Components/Request',
     component: Request,
 };
 

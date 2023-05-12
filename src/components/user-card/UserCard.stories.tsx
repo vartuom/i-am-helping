@@ -4,7 +4,7 @@ import userCard from './UserCard';
 
 const meta: Meta<typeof userCard> = {
 
-    title: 'Карточка пользователя',
+    title: 'Cards/UserCard',
     component: userCard,
     argTypes: {
         status: {

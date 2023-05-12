@@ -3,7 +3,7 @@ import { ExportCard } from "./ExportCard";
 import { Button } from "../buttons/Button";
 
 const meta: Meta<typeof ExportCard> = {
-  title: "Карточка для экспорта",
+  title: "Cards/ExportCard",
   component: ExportCard,
 };
 export default meta;

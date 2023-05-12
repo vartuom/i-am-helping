@@ -3,7 +3,7 @@ import { CardButton } from './CardButton';
 import { AcceptBlockIcon, ActiveApplicationIcon, ApplicationMapIcon, CompletedApplicationIcon, CreateEditIcon, StatisticsIcon } from '../../icons/icons';
 
 const meta = {
-    title: 'Card button',
+    title: 'Components/CardButton',
     component: CardButton,
     tags: ['autodocs'],
 } satisfies Meta<typeof CardButton>;

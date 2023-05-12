@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Chart } from "./Chart";
 
 const meta: Meta<typeof Chart> = {
-  title: "Диаграмма",
+  title: "Components/Chart",
   component: Chart,
 };
 export default meta;

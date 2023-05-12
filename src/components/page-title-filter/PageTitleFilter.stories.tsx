@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import './page-title-filter.scss';
+import './PageTitleFilter.scss';
 import { PageTitleFilter } from './PageTitleFilter';
 import { EPageTitleFilterKind } from './types'
 
 const meta: Meta<typeof PageTitleFilter> = {
 
-    title: 'Компонент под шапкой',
+    title: 'Components/PageTitleFilter',
     component: PageTitleFilter,
 };
 
