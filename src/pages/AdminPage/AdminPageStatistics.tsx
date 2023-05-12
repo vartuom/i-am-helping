@@ -5,12 +5,8 @@ import UserCard from "../../components/user-card/UserCard"
 import SideNavigation from "../../components/side-navigation/SideNavigation"
 import { user } from "../../data/user"
 import { Chart } from "../../components/chart/Chart"
-import ChartList from "../../components/chart-list/ChartList"
 import { PageTitleFilter } from "../../components/page-title-filter/PageTitleFilter"
-
-interface IChartProps {
-  data: Array<{ date: Date; views: number; visits: number; bids: number }>;
-}
+import { Button } from "../../components/ui/buttons/Button"
 
 export const AdminPageStatistics = () => {
     const [navArray, setNavArray] = useState<EPageTitleFilterKind[]>(
@@ -21,8 +17,6 @@ export const AdminPageStatistics = () => {
     const onClick = (viewType: EPageTitleFilterKind) => {
         setActive(viewType);
     }
-
-    
 
     const data: {
       date: Date;
@@ -81,19 +75,25 @@ export const AdminPageStatistics = () => {
       },
     ]
 
-    const data0: {
-      date: Date;
-      views: number;
-      visits: number;
-      bids: number;
-      } [] = 
-    []
+const ChartBlock = () => {
+  return (
+    <div className={styles.chart_block}>
+      <Button type="button" animated="excel" extraClass={styles.button_position}/>
+    </div>
+  );
+};
 
-const charts: IChartProps[] = [];
-
-for (let i = 0; i < 9; i++) {
-  charts.push({ data: data0.map(item => ({ ...item }))})
-}
+const ChartList = () => {
+  const list = Array.from({ length: 6 }, (_, index) => index + 1);
+  
+  return (
+    <div className={styles.chart_list}>
+      {list.map((item) => (
+        <ChartBlock key={item} />
+      ))}
+    </div>
+  );
+};
 
     return (
         <main className={styles.main}>
@@ -104,7 +104,7 @@ for (let i = 0; i < 9; i++) {
             <section className={styles.chart}>
               <PageTitleFilter item={active}/>
               <Chart data={data} />
-              <ChartList {...charts}/>
+              <ChartList />
             </section>
         </main>
     )
