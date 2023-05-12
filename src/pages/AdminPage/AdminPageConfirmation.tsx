@@ -23,13 +23,13 @@ export const AdminPageConfirmation = () => {
     return (
         <main className={styles.main}>
             <aside className={`${styles.aside} ${styles.aside_confirmationPage}`}>
-                {UserCard(user)}
-                {SideNavigation({ items: navArray, onClick: onClick, activeLink: active })}
+                <UserCard {...user} />
+                <SideNavigation items={navArray} onClick={onClick} activeLink={active} />
             </aside>
             <section className={`${styles.cards} ${styles.cards_confirmationPage}`}>
                 <PageTitleFilter item={active}/>
-                {UserConfirmationCardList(confirmationCards)}
-                
+                <UserConfirmationCardList {...confirmationCards}/>
+
             </section>
         </main>
     )
