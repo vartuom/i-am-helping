@@ -6,7 +6,7 @@ import FormsHeader from "../../ui/forms-header/FormsHeader";
 import Clock from "../../clock/Clock";
 import Calendar from "../../calendar/Calendar";
 import Checkbox from "../../ui/checkbox/Checkbox";
-import MobileClock from "../../mobileClock/mobileClock";
+import MobileClock from "../../mobileClock/MobileClock";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const FirstStep = () => {

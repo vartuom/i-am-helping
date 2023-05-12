@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import useAutosizeTextArea from "../../../hooks/useAutosizeTextArea";
-import s from "./textArea.module.scss";
+import s from "./TextArea.module.scss";
 
 interface TextAreaProps {
   value: string;

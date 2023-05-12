@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import s from "./taskResult.module.scss";
+import s from "./TaskResult.module.scss";
 import { LocationIcon } from "../icons/location-icon/location-icon";
 
 interface ITaskResult {
