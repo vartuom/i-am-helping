@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { EPageTitleFilterKind } from '../../components/page-title-filter/types'
-import SideNavigation from '../../components/side-navigation/SideNavigation'
+import { EPageTitleFilterKind } from '../../components/PageTitleFilter/types'
+import SideNavigation from '../../components/SideNavigation/SideNavigation'
 import './ProfilePage.scss'
-import UserCard from '../../components/user-card/UserCard'
+import UserCard from '../../components/UserCard/UserCard'
 import { useNavigate } from 'react-router-dom'
 import { user } from '../../data/user'
 

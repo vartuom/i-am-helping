@@ -1,17 +1,17 @@
 import { FC, useState } from 'react'
-import { PageTitleFilter } from '../../components/page-title-filter/PageTitleFilter'
-import { EPageTitleFilterKind } from '../../components/page-title-filter/types'
-import RequestList from '../../components/request-list/RequestList'
-import SideNavigation from '../../components/side-navigation/SideNavigation'
+import { PageTitleFilter } from '../../components/PageTitleFilter/PageTitleFilter'
+import { EPageTitleFilterKind } from '../../components/PageTitleFilter/types'
+import RequestList from '../../components/RequestList/RequestList'
+import SideNavigation from '../../components/SideNavigation/SideNavigation'
 import './VolunteerPage.scss'
 
-import { Maps } from '../../components/maps/Maps'
+import { Maps } from '../../components/maps1/Maps'
 
-import UserCard from '../../components/user-card/UserCard'
+import UserCard from '../../components/UserCard/UserCard'
 import { user } from '../../data/user'
 import { TRequest } from '../../types'
-import DropdownMenu from '../../components/dropdown/Dropdown'
-import FilterMap from '../../components/filters/filter-map/FilterMap'
+import DropdownMenu from '../../components/dropdown1/Dropdown'
+import FilterMap from '../../components/filters1/FilterMap/FilterMap'
 
 
 

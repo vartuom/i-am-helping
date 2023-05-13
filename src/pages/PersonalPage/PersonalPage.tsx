@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Avatar } from '../../components/avatar/Avatar'
+import { Avatar } from '../../components/avatar1/Avatar'
 import './PersonalPage.scss'
 import { TRequest } from '../../types'
 
