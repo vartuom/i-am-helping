@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { Button } from "../UI/Buttons/Button";
+import { Button } from "../UI/buttons/Button";
 
 const ModalOne = () => {
     const navigate = useNavigate();

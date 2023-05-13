@@ -2,7 +2,7 @@ import styles from './UserConfirmationCard.module.scss';
 import { FC } from 'react';
 import { BallsIcon, FinishedApplicationIcon, KeyIcon } from '../UI/Icons/Icons';
 import { Avatar } from '../Avatar/Avatar';
-import { ColorfulLabel, ColorfulLabelMob } from '../UI/Figures/ColorfulLabel';
+import { ColorfulLabel, ColorfulLabelMob } from '../UI/figures/ColorfulLabel';
 import { TUser } from '../../types';
 import { Button } from '@pbe/react-yandex-maps';
 

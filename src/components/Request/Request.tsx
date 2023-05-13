@@ -7,7 +7,7 @@ import { BallsIcon } from '../UI/Icons/BallsIcon/BallsIcon'
 import { PhoneIcon } from '../UI/Icons/PhoneIcon/PhoneIcon'
 import { CrossIcon } from '../UI/Icons/CrossIcon/CrossIcon';
 import { Avatar } from '../Avatar/Avatar';
-import { Button } from '../UI/Buttons/Button';
+import { Button } from '../UI/buttons/Button';
 import { EditIcon, EmptyMessageIcon } from '../UI/Icons/Icons';
 import { TRequest } from '../../types';
 

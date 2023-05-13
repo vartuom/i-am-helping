@@ -1,8 +1,8 @@
 
 import { ChangeEvent, FC, useState } from "react";
 import Calendar from "../../Calendar/Calendar";
-import { Button } from "../../UI/Buttons/Button";
-import Checkbox from "../../UI/Checkbox/Checkbox";
+import { Button } from "../../UI/buttons/Button";
+import Checkbox from "../../UI/checkbox/Checkbox";
 import s from "./Filter.module.scss";
 import "./Filter.scss";
 

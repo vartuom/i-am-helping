@@ -2,7 +2,7 @@ import styles from "./SignupPage.module.scss";
 import RadioGroup from "../../components/UI/RadioGroup/RadioGroup";
 import Input from "../../components/UI/Input/Input";
 import { Link } from "react-router-dom";
-import { Button } from "../../components/UI/Buttons/Button";
+import { Button } from "../../components/UI/buttons/Button";
 
 const SignupPage = () => {
   return (

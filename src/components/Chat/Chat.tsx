@@ -4,7 +4,7 @@ import { TChatProps } from "./types";
 import { CrossIcon } from "../UI/Icons/CrossIcon/CrossIcon";
 import { SendIcon } from "../UI/Icons/SendIcon/SendIcon";
 import { ClipIcon } from "../UI/Icons/ClipIcon/ClipIcon";
-import { Button } from "../UI/Buttons/Button";
+import { Button } from "../UI/buttons/Button";
 
 type Message = {
     text: string;

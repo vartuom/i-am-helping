@@ -1,6 +1,6 @@
 import styles from './userSettings.module.scss'
 import Input from '../UI/Input/Input';
-import { Button } from '../UI/Buttons/Button';
+import { Button } from '../UI/buttons/Button';
 import { user } from '../../data/user';
 import { Avatar } from '../Avatar/Avatar';
 
