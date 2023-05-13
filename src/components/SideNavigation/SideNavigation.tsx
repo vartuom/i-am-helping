@@ -1,9 +1,9 @@
-import SideNavLink from '../ui/SideNavLink/SideNavLink';
 import './SideNavigation.scss'
 import { EPageTitleFilterKind } from '../PageTitleFilter/types';
 import { TSideNavigation } from './types';
 import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import SideNavLink from '../UI/SideNavLink/SideNavLink';
 
 
 

@@ -1,0 +1,18 @@
+@import './scssVariables.scss';
+
+// @mixin mobile {
+//     @media (max-width: #{$mobileWidth + 1px}){
+//       max-width: $mobileWidth;
+//     }
+// }
+
+@mixin from($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+  @if ($size == 0) {
+      @content;
+  } @else {
+      @media screen and (max-width: ($size + 1px)) {
+        @content;
+      }
+  }
+}

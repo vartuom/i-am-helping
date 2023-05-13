@@ -3,8 +3,8 @@ import { Button, Map, Placemark, useYMaps } from "@pbe/react-yandex-maps";
 import style from "./Maps.module.scss";
 import icon from "../../images/location.svg";
 import borderIcon from "../../images/locationWithCircle.svg";
-import Input from "../ui/Input/Input";
 import ymaps, { ISuggestResult, MapEvent } from "yandex-maps";
+import Input from "../UI/Input/Input";
 
 export const MapForSeacrh = (props: {
   value: string;

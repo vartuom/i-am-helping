@@ -1,9 +1,9 @@
 import React from "react";
 import stules from "./SignupPage.module.scss";
-import RadioGroup from "../../components/ui/radio-group/RadioGroup";
-import Input from "../../components/ui/Input/Input";
+import Input from "../../components/UI/Input/Input";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/UI/Buttons/Button";
+import RadioGroup from "../../components/UI/RadioGroup/RadioGroup";
 
 const SignupPage = () => {
   return (
