@@ -4,7 +4,7 @@ import { TUser } from '../../types';
 import styles from './AdminConfirmationCard.module.scss';
 import Checkbox from "../UI/Checkbox/Checkbox";
 import { SelectIconDown, SelectIconUp } from "../UI/Icons/SelectIconDown/SelectIconDown";
-import { Button } from "../ui/Buttons/Button";
+import { Button } from "../UI/Buttons/Button";
 
 
 interface IAdminConfirmationTypeProps {

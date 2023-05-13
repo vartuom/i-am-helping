@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import s from "../TaskForm.module.scss";
 import m from "./SecondStep.module.scss";
 import FormsHeader from "../../ui/forms-header/FormsHeader";
-import { Button } from "../../ui/buttons/Button";
+import { Button } from "../../UI/Buttons/Button";
 import { MapForSeacrh } from "../../Maps/MapForSearch";
 
 const SecondStep = () => {

@@ -1,7 +1,7 @@
 import stules from './SigninPage.module.scss'
 import Input from '../../components/ui/Input/Input'
 import { Link } from 'react-router-dom';
-import { Button } from '../../components/ui/buttons/Button';
+import { Button } from '../../components/UI/Buttons/Button';
 
 const SigninPage = () => {
     return (

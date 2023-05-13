@@ -4,7 +4,7 @@ import s from "../TaskForm.module.scss";
 import m from "./ConfirmStep.module.scss";
 import FormsHeader from "../../ui/forms-header/FormsHeader";
 import TaskResult from "../../ui/task-result/TaskResult";
-import { Button } from "../../ui/buttons/Button";
+import { Button } from "../../UI/Buttons/Button";
 
 const ConfirmStep = () => {
   const navigate = useNavigate();

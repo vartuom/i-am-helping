@@ -6,7 +6,7 @@ import SideNavigation from "../../components/SideNavigation/SideNavigation"
 import { user } from "../../data/user"
 import { Chart } from "../../components/Chart/Chart"
 import { PageTitleFilter } from "../../components/PageTitleFilter/PageTitleFilter"
-import { Button } from "../../components/ui/buttons/Button"
+import { Button } from "../../components/UI/Buttons/Button"
 
 export const AdminPageStatistics = () => {
     const [navArray, setNavArray] = useState<EPageTitleFilterKind[]>(

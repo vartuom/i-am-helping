@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import s from "./TimePickerSelection.module.scss";
 import HourWheel from "../HourWheel/HourWheel";
 import MinuteWheel from "../MinuteWheel/MinuteWheel";
-import { Button } from "../../ui/buttons/Button";
+import { Button } from "../../UI/Buttons/Button";
 
 interface ITimePickerSelection {
   inputValue: string | undefined;

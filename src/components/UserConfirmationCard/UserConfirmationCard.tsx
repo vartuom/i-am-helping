@@ -1,9 +1,9 @@
 import styles from './UserConfirmationCard.module.scss';
 import { FC } from 'react';
-import { Button } from '../ui/buttons/Button';
-import { BallsIcon } from '../ui/icons/icons';
-import { FinishedApplicationIcon } from '../ui/icons/icons';
-import { KeyIcon } from '../ui/icons/icons';
+import { Button } from '../UI/Buttons/Button';
+import { BallsIcon } from '../UI/Icons/icons1';
+import { FinishedApplicationIcon } from '../UI/Icons/icons1';
+import { KeyIcon } from '../UI/Icons/icons1';
 import { Avatar } from '../Avatar/Avatar';
 import { ColorfulLabel, ColorfulLabelMob } from '../ui/figures/ColorfulLabel';
 import { TUser } from '../../types';
