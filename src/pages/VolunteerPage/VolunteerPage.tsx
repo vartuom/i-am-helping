@@ -11,7 +11,7 @@ import UserCard from '../../components/UserCard/UserCard'
 import { user } from '../../data/user'
 import { TRequest } from '../../types'
 import DropdownMenu from '../../components/Dropdown/Dropdown'
-import FilterMap from '../../components/Filters/FilterMap/FilterMap'
+import FilterMap from '../../components/filters1/FilterMap/FilterMap'
 
 
 

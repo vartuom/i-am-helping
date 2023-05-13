@@ -1,5 +1,4 @@
-@import '../../../constants/scssVariables.scss';
-@import '../../../constants/scssMixins.scss';
+@use '../../../constants/scss-variables';
 
 
 .radioGroup {
@@ -18,9 +17,9 @@
     overflow: hidden; /* без этого свойства тоже сработает, но так наверняка. */
     clip-path: inset(0 0 0 0);
     &:checked + .radio__customBox {
-      border: 1px solid $colorMain;
-      background: $colorMain;
-      color: $colorBgcPopup;
+      border: 1px solid scss-variables.$colorMain;
+      background: scss-variables.$colorMain;
+      color: scss-variables.$colorBgcPopup;
     }
     &:disabled ~ .radio__customBox {
       opacity: 0.5;
@@ -32,10 +31,10 @@
     justify-content: center;
     min-width: 65px;
     min-height: 24px;
-    border: 1px solid $colorMain;
-    color: $colorMain;
-    background: $colorBgcPopup;
-    font: $fontFamily;
+    border: 1px solid scss-variables.$colorMain;
+    color: scss-variables.$colorMain;
+    background: scss-variables.$colorBgcPopup;
+    font: scss-variables.$fontFamily;
     font-size: small;
     margin: 0;
   }

@@ -1,5 +1,5 @@
 import stules from './SigninPage.module.scss'
-import Input from '../../components/UI/Input/Input'
+import Input from '../../components/ui/Input/Input'
 import { Link } from 'react-router-dom';
 import { Button } from '../../components/UI/Buttons/Button';
 

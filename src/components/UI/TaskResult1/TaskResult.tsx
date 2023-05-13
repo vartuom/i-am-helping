@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { LocationIcon } from "../Icons/icons";
 import s from "./TaskResult.module.scss";
+import { LocationIcon } from "../icons/LocationIcon/LocationIcon";
 
 interface ITaskResult {
   date: string;

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 import { Button } from "../UI/Buttons/Button"
 import { Avatar } from "../Avatar/Avatar"
 import { Logo } from "../UI/Logo/Logo"
-import { BlogIcon, BurgerMenuIcon, EmptyMessageIcon, LocationIcon, PersonIcon, PrivacyIcon } from "../UI/Icons/icons"
+import { PersonIcon } from "../UI/Icons/icons1"
 
 export const AppHeader: FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

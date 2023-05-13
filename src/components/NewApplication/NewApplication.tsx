@@ -1,9 +1,9 @@
 import './NewApplication.scss'
+import ShakingHands from '../ui/ShakingHands/ShakingHands'
 import { Button } from '../UI/Buttons/Button'
-import { AddIcon } from '../UI/Icons/icons'
+import { AddIcon } from '../UI/Icons/icons1'
 import { FC } from 'react'
 import { TRequest } from '../../types'
-import ShakingHands from '../UI/ShakingHands/ShakingHands'
 
 const NewApplication: FC<Array<TRequest>> = (applications: TRequest[]) => {
 

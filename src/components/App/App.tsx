@@ -5,6 +5,7 @@ import PersonalPage from "../../pages/PersonalPage/PersonalPage";
 import SignupPage from "../../pages/SignupPage/SignupPage";
 import SigninPage from "../../pages/SigninPage/SigninPage";
 import { AppHeader } from "../AppHeader/AppHeader";
+import Modal from "../modal1/Modal";
 import { AppFooter } from "../AppFooter/AppFooter";
 import VolunteerPage from "../../pages/VolunteerPage/VolunteerPage";
 import { RecipientPage } from "../../pages/RecipientPage/RecipientPage";
@@ -22,7 +23,6 @@ import FirstStep from "../TaskForm/FirstStep/FirstStep";
 import SecondStep from "../TaskForm/SecondStep/SecondStep";
 import ThirdStep from "../TaskForm/ThirdStep/ThirdStep";
 import ConfirmStep from "../TaskForm/ConfirmStep/ConfirmStep";
-import Modal from "../Modal/Modal";
 
 function App() {
   const location = useLocation();

@@ -1,5 +1,5 @@
 import styles from './userSettings.module.scss'
-import Input from '../UI/Input/Input';
+import Input from '../ui/Input/Input';
 import { Button } from '../UI/Buttons/Button';
 import { user } from '../../data/user';
 import { Avatar } from '../Avatar/Avatar';
