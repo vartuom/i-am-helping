@@ -1,0 +1,87 @@
+@import "../../../constants/ScssVariables.scss";
+@import "../../../constants/ScssMixins.scss";
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 434px;
+  @include from("sm") {
+    width: 239px;
+    align-items: flex-end;
+  }
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 150px;
+  @include from("sm") {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.infoWrap {
+  padding-left: 20px;
+  @include from("sm") {
+    padding-left: 5px;
+  }
+}
+
+.name {
+  margin: 0;
+  font-family: $fontFamilyNormal;
+  font-size: $fontSizeLarge;
+  line-height: 29px;
+  color: $colorRegularFont;
+  padding-bottom: 5px;
+  @include from("sm") {
+    padding-bottom: 0;
+    font-size: $fontSizeMedium;
+  }
+}
+
+.phone {
+  margin: 0;
+  font-family: $fontFamilyNormal;
+  font-size: $fontSizeMedium;
+  line-height: 19px;
+  @include from("sm") {
+    font-size: $fontSizeMedium;
+  }
+  &_indent {
+    font-family: $fontFamilyBold;
+    padding-right: 42px;
+    @include from("sm") {
+      display: none;
+      font-size: $fontSizeMedium;
+    }
+  }
+}
+
+.mobileWrap {
+  background-color: $colorBgcPopup;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 100;
+  padding: 0;
+}
+
+.mobileText {
+  font-family: $fontFamilyNormal;
+  font-size: $fontSizeLarge;
+  margin: 0;
+  padding: 0;
+  line-height: 29px;
+  padding-bottom: 3px;
+}
+
+.mobileUnderline {
+  height: 1px;
+  width: 80%;
+  background-image: $colorBgcGradient;
+}

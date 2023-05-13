@@ -1,5 +1,5 @@
-@use "../../constants/scss-variables";
-@import "../../constants/scss-mixins.scss";
+@import "../../constants/ScssVariables";
+@import "../../constants/ScssMixins.scss";
 
 .react-datepicker {
   font: inherit;
@@ -28,7 +28,7 @@
 }
 
 .react-datepicker__current-month {
-  color: scss-variables.$colorMain;
+  color: $colorMain;
   text-transform: capitalize;
   font-size: 16px;
   font-weight: 600;
@@ -36,7 +36,7 @@
 
 .react-datepicker__navigation {
   border-radius: 100%;
-  border: 1px solid scss-variables.$colorSupport;
+  border: 1px solid $colorSupport;
   width: 16px;
   height: 16px;
   top: 18px;
@@ -50,7 +50,7 @@
 
 .react-datepicker__navigation-icon::before {
   border-width: 1px 1px 0 0;
-  border-color: scss-variables.$colorSupport;
+  border-color: $colorSupport;
   width: 5px;
   height: 5px;
   top: 9px;
@@ -73,17 +73,17 @@
 }
 
 .react-datepicker__day--today {
-  background-color: scss-variables.$colorSupport;
+  background-color: $colorSupport;
   border-radius: 0.3rem;
 }
 
 .react-datepicker__day--selected {
-  background-color: scss-variables.$colorMain;
+  background-color: $colorMain;
   color: white;
 }
 
 .react-datepicker__day--keyboard-selected {
-  background-color: scss-variables.$colorSupport;
+  background-color: $colorSupport;
 }
 
 .react-datepicker__day--outside-month {
