@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CardButton } from './CardButton';
-import { AcceptBlockIcon, ActiveApplicationIcon, ApplicationMapIcon, CompletedApplicationIcon, CreateEditIcon, StatisticsIcon } from '../../Icons/Icons1';
+import { AcceptBlockIcon, ActiveApplicationIcon, ApplicationMapIcon, CompletedApplicationIcon, CreateEditIcon, StatisticsIcon } from '../../Icons/Icons';
 
 const meta = {
     title: 'Components/CardButton',

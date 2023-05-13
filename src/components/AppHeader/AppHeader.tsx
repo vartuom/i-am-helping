@@ -2,7 +2,7 @@ import { FC, useState } from "react"
 import header from "./AppHeader.module.scss"
 import { NavLink } from "react-router-dom"
 import { Logo } from "../UI/Logo/Logo"
-import { BlogIcon, BurgerMenuIcon, EmptyMessageIcon, LocationIcon, PersonIcon, PrivacyIcon } from "../UI/Icons/Icons1"
+import { BlogIcon, BurgerMenuIcon, EmptyMessageIcon, LocationIcon, PersonIcon, PrivacyIcon } from "../UI/Icons/Icons"
 import { Button } from "../UI/Buttons/Button"
 import { Avatar } from "../Avatar/Avatar"
 

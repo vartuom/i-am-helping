@@ -1,7 +1,7 @@
 import './NewApplication.scss'
 import ShakingHands from '../UI/ShakingHands/ShakingHands'
 import { Button } from '../UI/Buttons/Button'
-import { AddIcon } from '../UI/Icons/Icons1'
+import { AddIcon } from '../UI/Icons/Icons'
 import { FC } from 'react'
 import { TRequest } from '../../types'
 

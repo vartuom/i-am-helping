@@ -8,7 +8,7 @@ import { PhoneIcon } from '../UI/Icons/PhoneIcon/PhoneIcon'
 import { CrossIcon } from '../UI/Icons/CrossIcon/CrossIcon';
 import { Avatar } from '../Avatar/Avatar';
 import { Button } from '../UI/Buttons/Button';
-import { EditIcon, EmptyMessageIcon } from '../UI/Icons/Icons1';
+import { EditIcon, EmptyMessageIcon } from '../UI/Icons/Icons';
 import { TRequest } from '../../types';
 
 
