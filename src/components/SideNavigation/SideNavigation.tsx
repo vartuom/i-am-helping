@@ -1,4 +1,4 @@
-import SideNavLink from '../ui/SideNavLink/SideNavLink';
+import SideNavLink from '../UI/SideNavLink/SideNavLink';
 import './SideNavigation.scss'
 import { EPageTitleFilterKind } from '../PageTitleFilter/types';
 import { TSideNavigation } from './types';

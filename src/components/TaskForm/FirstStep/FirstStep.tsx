@@ -1,13 +1,13 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import s from "../TaskForm.module.scss";
 import m from "./FirstStep.module.scss";
+import { Button } from "../../UI/buttons/Button";
+import FormsHeader from "../../UI/FormsHeader/FormsHeader";
 import Clock from "../../Clock/Clock";
 import Calendar from "../../Calendar/Calendar";
+import Checkbox from "../../UI/checkbox/Checkbox";
+import MobileClock from "../../MobileClock/MobileClock";
 import { useLocation, useNavigate } from "react-router-dom";
-import MobileClock from "../../mobileClock1/MobileClock";
-import FormsHeader from "../../ui1/FormsHeader/FormsHeader";
-import Checkbox from "../../ui1/Checkbox1/Checkbox";
-import { Button } from "../../ui1/buttons1/Button";
 
 const FirstStep = () => {
   const navigate = useNavigate();

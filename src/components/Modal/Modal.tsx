@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 
 import ModalOverlay from "../ModalOverlay/ModalOverlay";
 import s from "./Modal.module.scss";
-import { Button } from "../UI/Buttons/Button";
-import { CrossIcon } from "../ui/icons/cross-icon/cross-icon";
+import { Button } from "../UI/buttons/Button";
+import { CrossIcon } from "../UI/icons/cross-icon/cross-icon";
 
 const modalRoot = document.getElementById("modals") as HTMLElement;
 

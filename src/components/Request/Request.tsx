@@ -1,14 +1,14 @@
 import React, { FC, useState } from 'react';
 import './Request.scss';
-import { CalendarIcon } from '../ui/icons/calendar-icon/calendar-icon'
-import { ClockIcon } from '../ui/icons/clock-icon/clock-icon'
-import { LocationIcon } from '../ui/icons/location-icon/location-icon'
-import { BallsIcon } from '../ui/icons/balls-icon/balls-icon'
-import { PhoneIcon } from '../ui/icons/phone-icon/phone-icon'
-import { CrossIcon } from '../ui/icons/cross-icon/cross-icon';
+import { CalendarIcon } from '../UI/icons/calendar-icon/calendar-icon'
+import { ClockIcon } from '../UI/icons/clock-icon/clock-icon'
+import { LocationIcon } from '../UI/icons/location-icon/location-icon'
+import { BallsIcon } from '../UI/icons/balls-icon/balls-icon'
+import { PhoneIcon } from '../UI/icons/phone-icon/phone-icon'
+import { CrossIcon } from '../UI/icons/cross-icon/cross-icon';
 import { Avatar } from '../Avatar/Avatar';
-import { Button } from '../UI/Buttons/Button';
-import { EditIcon, EmptyMessageIcon } from '../UI/Icons/icons1';
+import { Button } from '../UI/buttons/Button';
+import { EditIcon, EmptyMessageIcon } from '../UI/icons/icons';
 import { TRequest } from '../../types';
 
 

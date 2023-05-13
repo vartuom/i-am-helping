@@ -5,24 +5,23 @@ import PersonalPage from "../../pages/PersonalPage/PersonalPage";
 import SignupPage from "../../pages/SignupPage/SignupPage";
 import SigninPage from "../../pages/SigninPage/SigninPage";
 import { AppHeader } from "../AppHeader/AppHeader";
-import Modal from "../modal1/Modal";
+import Modal from "../Modal/Modal";
 import { AppFooter } from "../AppFooter/AppFooter";
 import VolunteerPage from "../../pages/VolunteerPage/VolunteerPage";
 import { RecipientPage } from "../../pages/RecipientPage/RecipientPage";
 import ProfilePage from "../../pages/ProfilePage/ProfilePage";
 import { AdminPage } from "../../pages/AdminPage/AdminPage";
 import { AdminPageConfirmation } from "../../pages/AdminPage/AdminPageConfirmation";
-
+import FirstStep from "../TaskForm/FirstStep/FirstStep";
+import SecondStep from "../TaskForm/SecondStep/SecondStep";
+import ThirdStep from "../TaskForm/ThirdStep/ThirdStep";
+import ConfirmStep from "../TaskForm/ConfirmStep/ConfirmStep";
 import { RecipientPageActive } from "../../pages/RecipientPage/RecipientPageActive";
 import { RecipientPageCompleted } from "../../pages/RecipientPage/RecipientPageCompleted";
 import { EPageTitleFilterKind } from "../PageTitleFilter/types";
 import { MainAdminPage } from "../../pages/MainAdminPage/MainAdminPage";
 import { AdminPageCreateEdit } from "../../pages/AdminPage/AdminPageCreateEdit";
 import { AdminPageStatistics } from "../../pages/AdminPage/AdminPageStatistics";
-import FirstStep from "../TaskForm/FirstStep/FirstStep";
-import SecondStep from "../TaskForm/SecondStep/SecondStep";
-import ThirdStep from "../TaskForm/ThirdStep/ThirdStep";
-import ConfirmStep from "../TaskForm/ConfirmStep/ConfirmStep";
 
 function App() {
   const location = useLocation();

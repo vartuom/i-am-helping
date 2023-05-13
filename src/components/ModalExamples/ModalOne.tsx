@@ -1,6 +1,6 @@
 import React from 'react';
 import {useLocation, useNavigate} from "react-router-dom";
-import {Button} from "../UI/Buttons/Button";
+import {Button} from "../UI/buttons/Button";
 import {da, te} from "date-fns/locale";
 
 const ModalOne = () => {
