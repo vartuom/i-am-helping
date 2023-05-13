@@ -1,4 +1,6 @@
-@import "../../constants/scss-variables.scss";
+@import '../../constants/scssVariables.scss';
+@import '../../constants/scssMixins.scss';
+
 .maps {
   // для нормальной работы надо задать высоту и ширину 100%,  а размеры регулировать внешним контейнером
   width: 100%;

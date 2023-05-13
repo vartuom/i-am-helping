@@ -1,12 +1,12 @@
 import styles from './UserConfirmationCard.module.scss';
 import { FC } from 'react';
 import { Button } from '../UI/Buttons/Button';
-import { BallsIcon } from '../UI/Icons/icons1';
-import { FinishedApplicationIcon } from '../UI/Icons/icons1';
-import { KeyIcon } from '../UI/Icons/icons1';
+import { BallsIcon } from '../UI/Icons/icons';
+import { FinishedApplicationIcon } from '../UI/Icons/icons';
+import { KeyIcon } from '../UI/Icons/icons';
 import { Avatar } from '../Avatar/Avatar';
-import { ColorfulLabel, ColorfulLabelMob } from '../ui/figures/ColorfulLabel';
 import { TUser } from '../../types';
+import { ColorfulLabel, ColorfulLabelMob } from '../UI/Figures/ColorfulLabel';
 
 interface IUserConfirmationTypeProps {
   user: TUser,

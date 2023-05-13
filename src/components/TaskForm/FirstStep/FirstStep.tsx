@@ -4,10 +4,11 @@ import m from "./FirstStep.module.scss";
 import Clock from "../../Clock/Clock";
 import Calendar from "../../Calendar/Calendar";
 import { useLocation, useNavigate } from "react-router-dom";
-import MobileClock from "../../mobileClock1/MobileClock";
-import FormsHeader from "../../ui1/FormsHeader/FormsHeader";
-import Checkbox from "../../ui1/Checkbox1/Checkbox";
-import { Button } from "../../ui1/buttons1/Button";
+import MobileClock from "../../MobileClock/MobileClock";
+import Checkbox from "../../UI/Checkbox/Checkbox";
+import FormsHeader from "../../UI/FormsHeader/FormsHeader";
+import { Button } from "../../UI/Buttons/Button";
+
 
 const FirstStep = () => {
   const navigate = useNavigate();

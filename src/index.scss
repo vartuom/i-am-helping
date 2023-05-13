@@ -1,5 +1,5 @@
-@import './constants/scss-mixins.scss';
-@import './constants/scss-variables.scss';
+@import './constants/scssMixins.scss';
+@import './constants/scssVariables.scss';
 
 body {
   @include from('xl') {

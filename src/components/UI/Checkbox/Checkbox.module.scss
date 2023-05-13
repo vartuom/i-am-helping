@@ -1,5 +1,5 @@
-@use '../../../constants/scss-variables';
-@import '../../../constants/scss-mixins.scss';
+@import '../../../constants/scssVariables.scss';
+@import '../../../constants/scssMixins.scss';
 
 .checkbox {
   display: flex;
@@ -12,8 +12,8 @@
     overflow: hidden; /* без этого свойства тоже сработает, но так наверняка. */
     clip-path: inset(0 0 0 0);
     &:checked + .checkbox__customBox {
-    border: 3px solid scss-variables.$colorMain;
-    background: scss-variables.$colorMain url("../../../images/icons/check-mark-white.svg") center/contain no-repeat;
+    border: 3px solid $colorMain;
+    background: $colorMain url("../../../images/icons/check-mark-white.svg") center/contain no-repeat;
     }
     &:disabled ~ .checkbox__customBox {
       opacity: 0.5;
@@ -25,15 +25,15 @@
   &__customBox {
     width: 20px;
     height: 20px;
-    border: 3px solid scss-variables.$colorCheckboxDisabled;
+    border: 3px solid $colorCheckboxDisabled;
     border-radius: 6px;
-    background: scss-variables.$colorBgc;
+    background: $colorBgc;
     box-sizing: border-box;
   }
   &__label {
-    font-family: scss-variables.$fontFamily;
-    font-size: scss-variables.$fontSizeMedium;
-    color: scss-variables.$colorRegularFont;
+    font-family: $fontFamily;
+    font-size: $fontSizeMedium;
+    color: $colorRegularFont;
     @include from('sm') {
       font-size: $fontSizeSmall
     }
