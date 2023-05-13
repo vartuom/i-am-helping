@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
-import { Avatar } from "../../avatar1/Avatar";
+import { Avatar } from "../../Avatar/Avatar";
 import s from "./FormsHeader.module.scss";
 
 interface IFormsHeader {

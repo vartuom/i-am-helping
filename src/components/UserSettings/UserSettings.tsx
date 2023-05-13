@@ -2,7 +2,7 @@ import styles from './userSettings.module.scss'
 import Input from '../ui/Input/Input';
 import { Button } from '../ui/buttons/Button';
 import { user } from '../../data/user';
-import { Avatar } from '../avatar1/Avatar';
+import { Avatar } from '../Avatar/Avatar';
 
 const UserSettings  = () => {
   return (

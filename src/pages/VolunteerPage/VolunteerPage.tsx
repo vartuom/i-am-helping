@@ -5,12 +5,12 @@ import RequestList from '../../components/RequestList/RequestList'
 import SideNavigation from '../../components/SideNavigation/SideNavigation'
 import './VolunteerPage.scss'
 
-import { Maps } from '../../components/maps1/Maps'
+import { Maps } from '../../components/Maps/Maps'
 
 import UserCard from '../../components/UserCard/UserCard'
 import { user } from '../../data/user'
 import { TRequest } from '../../types'
-import DropdownMenu from '../../components/dropdown1/Dropdown'
+import DropdownMenu from '../../components/Dropdown/Dropdown'
 import FilterMap from '../../components/filters1/FilterMap/FilterMap'
 
 

@@ -4,7 +4,7 @@ import { Button } from '../ui/buttons/Button';
 import { BallsIcon, DiagramIcon } from '../ui/icons/icons';
 import { FinishedApplicationIcon } from '../ui/icons/icons';
 import { KeyIcon } from '../ui/icons/icons';
-import { Avatar } from '../avatar1/Avatar';
+import { Avatar } from '../Avatar/Avatar';
 import { TUser } from '../../types';
 
 const UserCard: FC<TUser> = (user: TUser) => {

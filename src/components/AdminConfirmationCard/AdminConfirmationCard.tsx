@@ -1,10 +1,11 @@
 import { FC, useState, ChangeEvent } from "react";
-import { Button } from '../ui/buttons/Button';
-import { Avatar } from '../avatar1/Avatar';
+import { Avatar } from '../Avatar/Avatar';
 import { TUser } from '../../types';
 import styles from './AdminConfirmationCard.module.scss';
-import { SelectIconDown, SelectIconUp } from "../ui/icons/select-icon/select-icon";
-import Checkbox from "../ui/checkbox/Checkbox";
+import Checkbox from "../UI/Checkbox/Checkbox";
+import { SelectIconDown, SelectIconUp } from "../UI/Icons/SelectIconDown/SelectIconDown";
+import { Button } from "../ui/Buttons/Button";
+
 
 interface IAdminConfirmationTypeProps {
   user: TUser,

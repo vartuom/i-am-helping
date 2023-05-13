@@ -6,7 +6,7 @@ import { LocationIcon } from '../ui/icons/location-icon/location-icon'
 import { BallsIcon } from '../ui/icons/balls-icon/balls-icon'
 import { PhoneIcon } from '../ui/icons/phone-icon/phone-icon'
 import { CrossIcon } from '../ui/icons/cross-icon/cross-icon';
-import { Avatar } from '../avatar1/Avatar';
+import { Avatar } from '../Avatar/Avatar';
 import { Button } from '../ui/buttons/Button';
 import { EditIcon, EmptyMessageIcon } from '../ui/icons/icons';
 import { TRequest } from '../../types';

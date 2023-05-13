@@ -4,7 +4,7 @@ import styles from './AdminPage.module.scss'
 import UserCard from "../../components/UserCard/UserCard"
 import SideNavigation from "../../components/SideNavigation/SideNavigation"
 import { user } from "../../data/user"
-import { Chart } from "../../components/chart1/Chart"
+import { Chart } from "../../components/Chart/Chart"
 import { PageTitleFilter } from "../../components/PageTitleFilter/PageTitleFilter"
 import { Button } from "../../components/ui/buttons/Button"
 
