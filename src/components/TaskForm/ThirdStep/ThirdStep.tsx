@@ -5,7 +5,7 @@ import m from "./ThirdStep.module.scss";
 import FormsHeader from "../../UI/FormsHeader/FormsHeader";
 import Select, { IOption } from "../../UI/Select/Select";
 import TextArea from "../../UI/TextArea/TextArea";
-import { Button } from "../../UI/buttons/Button";
+import { Button } from "../../UI/Buttons/Button";
 
 const ThirdStep = () => {
   const navigate = useNavigate();

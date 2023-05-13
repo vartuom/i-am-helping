@@ -2,13 +2,13 @@ import { FC, useState } from "react"
 import header from "./AppHeader.module.scss"
 import { NavLink } from "react-router-dom"
 import { Logo } from "../UI/Logo/Logo"
-import { BlogIcon, BurgerMenuIcon, EmptyMessageIcon, LocationIcon, PersonIcon, PrivacyIcon } from "../UI/icons/icons"
-import { Button } from "../UI/buttons/Button"
+import { BlogIcon, BurgerMenuIcon, EmptyMessageIcon, LocationIcon, PersonIcon, PrivacyIcon } from "../UI/Icons/Icons"
+import { Button } from "../UI/Buttons/Button"
 import { Avatar } from "../Avatar/Avatar"
 
 export const AppHeader: FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    
+
     const handleChange = () => {
         setIsMenuOpen(!isMenuOpen);
     }
@@ -17,14 +17,13 @@ export const AppHeader: FC = () => {
 
     return (
         <header className={header.header}>
-            {/* Заменить на компонент аватара */}
             <NavLink end to="/profile" className={header.avatar}>
-                <Avatar size={43} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"}/>
+                <Avatar size={43} url={"https://fraguru.com/mdimg/avatariru/m.298472.jpg"} />
             </NavLink>
             <NavLink end to="/" className={header.logo}>
                 <Logo />
             </NavLink>
-            <Button type="button" icon={<BurgerMenuIcon />} extraClass={header.burgerMenu} onClick={handleChange}/>
+            <Button type="button" icon={<BurgerMenuIcon />} extraClass={header.burgerMenu} onClick={handleChange} />
             <nav className={`${header.menu} ${isMenuOpen ? header.menu_opened : ""}`}>
                 <ul className={header.list}>
                     <li className={header.personal} onClick={handleChange}>
@@ -52,25 +51,25 @@ export const AppHeader: FC = () => {
                         </NavLink>
                     </li>
                 </ul>
-                { 
-                  !location.pathname.includes('/admin') && 
-                  !location.pathname.includes('/mainadmin')  && 
-                  !location.pathname.includes('/approve') && 
-                  !location.pathname.includes('/statistics') &&
-                  !location.pathname.includes('/create') && (
-                    (<div className={header.message__area} onClick={handleChange}>
-                        <Button
-                            variant="icon"
-                            size="small"
-                            theme="dark"
-                            type="button"
-                            hasBorder={true}
-                            icon={<EmptyMessageIcon type="white" />}
-                            extraClass={header.message__button}
-                        />
-                        <p className={header.message__caption}>Написать администратору</p>
-                    </div>)
-                  )
+                {
+                    !location.pathname.includes('/admin') &&
+                    !location.pathname.includes('/mainadmin') &&
+                    !location.pathname.includes('/approve') &&
+                    !location.pathname.includes('/statistics') &&
+                    !location.pathname.includes('/create') && (
+                        (<div className={header.message__area} onClick={handleChange}>
+                            <Button
+                                variant="icon"
+                                size="small"
+                                theme="dark"
+                                type="button"
+                                hasBorder={true}
+                                icon={<EmptyMessageIcon type="white" />}
+                                extraClass={header.message__button}
+                            />
+                            <p className={header.message__caption}>Написать администратору</p>
+                        </div>)
+                    )
                 }
             </nav>
         </header>
