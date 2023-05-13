@@ -1,0 +1,15 @@
+@import "../../../constants/ScssVariables.scss";
+@import "../../../constants/ScssMixins.scss";
+
+.exportCard {
+  border: 1px solid $colorBtnFirst;
+  position: relative;
+  height: 287px;
+  width: 423px;
+
+  .excelButtonContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
