@@ -1,10 +1,10 @@
 import { useState } from "react"
-import { PageTitleFilter } from "../../components/page-title-filter/PageTitleFilter"
-import { EPageTitleFilterKind } from "../../components/page-title-filter/types"
+import { PageTitleFilter } from "../../components/PageTitleFilter/PageTitleFilter"
+import { EPageTitleFilterKind } from "../../components/PageTitleFilter/types"
 import styles from './AdminPage.module.scss'
-import UserCard from "../../components/user-card/UserCard"
-import SideNavigation from "../../components/side-navigation/SideNavigation"
-import AdminConfirmationCardList from "../../components/admin-confirmation-card-list/AdminConfirmationCardList"
+import UserCard from "../../components/UserCard/UserCard"
+import SideNavigation from "../../components/SideNavigation/SideNavigation"
+import AdminConfirmationCardList from "../../components/AdminConfirmationCardList/AdminConfirmationCardList"
 import { user } from "../../data/user"
 import { TUser } from "../../types"
 

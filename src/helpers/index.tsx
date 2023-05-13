@@ -1,7 +1,7 @@
 import {
   IItem,
   ISelectedItem,
-} from "../components/mobileClock/HourWheel/HourWheel";
+} from "../components/MobileClock/HourWheel/HourWheel";
 
 export const initialNumbersValue = (
   heightValue = 54,

@@ -1,12 +1,12 @@
 import { useState } from "react"
-import { EPageTitleFilterKind } from "../../components/page-title-filter/types"
+import { EPageTitleFilterKind } from "../../components/PageTitleFilter/types"
 import styles from './AdminPage.module.scss'
-import UserCard from "../../components/user-card/UserCard"
-import SideNavigation from "../../components/side-navigation/SideNavigation"
+import UserCard from "../../components/UserCard/UserCard"
+import SideNavigation from "../../components/SideNavigation/SideNavigation"
 import { user } from "../../data/user"
-import { Chart } from "../../components/chart/Chart"
-import { PageTitleFilter } from "../../components/page-title-filter/PageTitleFilter"
-import { Button } from "../../components/ui/buttons/Button"
+import { Chart } from "../../components/Chart/Chart"
+import { PageTitleFilter } from "../../components/PageTitleFilter/PageTitleFilter"
+import { Button } from "../../components/UI/buttons/Button"
 
 export const AdminPageStatistics = () => {
     const [navArray, setNavArray] = useState<EPageTitleFilterKind[]>(
