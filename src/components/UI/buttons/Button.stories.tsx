@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { EmptyMessageIcon, LocationOnMapIcon, PhoneIcon, AddIcon, CrossIcon, EditIcon, ArrowIconBig, BurgerMenuIcon } from '../Icons/Icons';
+import { EmptyMessageIcon, LocationOnMapIcon, PhoneIcon, AddIcon, CrossIcon, EditIcon, ArrowIconBig, BurgerMenuIcon } from '../Icons/Icons1';
 import { Button } from './Button';
 
 const meta = {
