@@ -1,10 +1,10 @@
-import React, { FC, useState } from 'react';
+import React, {FC, useState} from 'react';
 import chat from "./Chat.module.scss";
-import { TChatProps } from "./types";
-import { CrossIcon } from "../UI/Icons/CrossIcon/CrossIcon";
-import { SendIcon } from "../UI/Icons/SendIcon/SendIcon";
-import { ClipIcon } from "../UI/Icons/ClipIcon/ClipIcon";
-import { Button } from "../UI/Buttons/Button";
+import {TChatProps} from "./types";
+import {CrossIcon} from "../UI/icons/cross-icon/cross-icon";
+import {SendIcon} from "../UI/icons/send-icon/send-icon";
+import {ClipIcon} from "../UI/icons/clip-icon/clip-icon";
+import {Button} from "../UI/buttons/Button";
 
 type Message = {
     text: string;
@@ -116,7 +116,7 @@ export const Chat: FC<TChatProps> = (item: TChatProps, props) => {
                         theme="dark"
                         type="button"
                         icon={
-                            <SendIcon type='white' />}
+                            <SendIcon type='white'/>}
                         extraClass={chat.sendIcon}
                     />
 

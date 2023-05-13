@@ -1,9 +1,10 @@
+import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import s from "../TaskForm.module.scss";
 import m from "./ConfirmStep.module.scss";
 import FormsHeader from "../../UI/FormsHeader/FormsHeader";
 import TaskResult from "../../UI/TaskResult/TaskResult";
-import { Button } from "../../UI/Buttons/Button";
+import { Button } from "../../UI/buttons/Button";
 
 const ConfirmStep = () => {
   const navigate = useNavigate();

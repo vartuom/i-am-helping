@@ -1,21 +1,21 @@
 import { FC, useState, ChangeEvent } from "react";
-import { Button } from '../UI/Buttons/Button';
+import { Button } from '../UI/buttons/Button';
 import { Avatar } from '../Avatar/Avatar';
 import { TUser } from '../../types';
 import styles from './AdminConfirmationCard.module.scss';
-import { SelectIconDown, SelectIconUp } from "../UI/Icons/SelectIcon/SelectIcon";
-import Checkbox from "../UI/Checkbox/Checkbox";
+import { SelectIconDown, SelectIconUp } from "../UI/icons/select-icon/select-icon";
+import Checkbox from "../UI/checkbox/Checkbox";
 
 interface IAdminConfirmationTypeProps {
   user: TUser,
-  adminStatus: 'main-admin' | 'admin',
+  adminStatus:'main-admin' | 'admin',
 }
 
-const AdminConfirmationCard: FC<IAdminConfirmationTypeProps> = ({ user, adminStatus }) => {
+const AdminConfirmationCard: FC<IAdminConfirmationTypeProps> = ({user, adminStatus}) => {
 
   const mainAdmin = adminStatus === 'main-admin';
   const categories = [{ id: 1, value: 'Подтверждать аккаунты' }, { id: 2, value: 'Создавать заявки' }, { id: 3, value: 'Раздавать ключи' }];
-
+  
   const [filterState, setFilter] = useState({ category: [categories[0].value] });
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,8 +40,8 @@ const AdminConfirmationCard: FC<IAdminConfirmationTypeProps> = ({ user, adminSta
 
   return (
     <>
-      {mainAdmin ?
-        (<li className={styles.card}>
+      { mainAdmin ?
+        (<li className={styles.card}> 
           <div className={styles.avatar}>
             <Avatar size={62} url={user.avatar} />
           </div>
@@ -55,13 +55,13 @@ const AdminConfirmationCard: FC<IAdminConfirmationTypeProps> = ({ user, adminSta
               </div>
             </div>
             <div className={styles.line}></div>
-            <Button
-              type="button"
+            <Button 
+              type="button" 
               icon={currentIcon}
-              extraClass={styles.selectIcon}
-              onClick={handleButtonClick}
+              extraClass={styles.selectIcon} 
+              onClick={handleButtonClick}  
             />
-            {isOpen &&
+            { isOpen &&
               <ul className={styles.d_flex + ' ' + styles.column}>
                 {categories.length > 1 && categories.map((el, i) => {
                   return <li className={styles.check_padding} key={el.id}><Checkbox name={el.value} label={el.value} handleChange={handleCheckboxClick} isChecked={filterState.category.indexOf(el.value) >= 0} /></li>
@@ -69,8 +69,8 @@ const AdminConfirmationCard: FC<IAdminConfirmationTypeProps> = ({ user, adminSta
               </ul>
             }
           </div>
-        </li>) :
-        (<li className={styles.card}>
+        </li>) : 
+        (<li className={styles.card}> 
           <div className={styles.avatar}>
             <Avatar size={62} url={user.avatar} />
           </div>

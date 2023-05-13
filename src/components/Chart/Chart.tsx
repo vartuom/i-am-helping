@@ -1,6 +1,6 @@
 import { FC, useMemo } from "react";
 import styles from "./Chart.module.scss";
-import { Button } from "../UI/Buttons/Button";
+import { Button } from "../UI/buttons/Button";
 import { ChartColumn } from "./ChartColumn";
 
 interface IChartProps {
@@ -47,7 +47,7 @@ export const Chart: FC<IChartProps> = ({ data }) => {
         ))}
       </div>
       <div className={styles.chart__excelButtonContainer}>
-        <Button animated="excel" onClick={() => { }} type="button" />
+        <Button animated="excel" onClick={() => {}} type="button" />
       </div>
     </div>
   );

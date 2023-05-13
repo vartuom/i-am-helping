@@ -1,9 +1,9 @@
 import styles from './UserCard.module.scss';
 import { FC } from 'react';
-import { Button } from '../UI/Buttons/Button';
-import { BallsIcon, DiagramIcon } from '../UI/Icons/Icons';
-import { FinishedApplicationIcon } from '../UI/Icons/Icons';
-import { KeyIcon } from '../UI/Icons/Icons';
+import { Button } from '../UI/buttons/Button';
+import { BallsIcon, DiagramIcon } from '../UI/icons/icons';
+import { FinishedApplicationIcon } from '../UI/icons/icons';
+import { KeyIcon } from '../UI/icons/icons';
 import { Avatar } from '../Avatar/Avatar';
 import { TUser } from '../../types';
 
@@ -11,7 +11,7 @@ const UserCard: FC<TUser> = (user: TUser) => {
   return (
     <div className={styles.background}>
       <div className={styles.border}>
-        <Avatar size={175} url={user.avatar} isUserCard={true} />
+        <Avatar size={175} url={user.avatar} isUserCard={true}/>
         <div className={styles.about}>
           <p className={styles.aboutName}>{user.name}</p>
           <p className={styles.aboutId}>ID {user.id}</p>

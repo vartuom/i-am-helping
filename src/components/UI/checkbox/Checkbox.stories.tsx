@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import Checkbox from './Checkbox';
+import type {Meta, StoryObj} from '@storybook/react';
+import Checkbox from "./Checkbox";
 
 const meta = {
     title: "Components/Checkbox",
@@ -14,6 +14,6 @@ export const Primary: Story = {
         name: "checkboxName",
         label: "Подпись к чекбоксу",
         isChecked: true,
-
+        
     },
 };

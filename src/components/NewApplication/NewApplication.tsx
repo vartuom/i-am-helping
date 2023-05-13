@@ -1,7 +1,7 @@
 import './NewApplication.scss'
 import ShakingHands from '../UI/ShakingHands/ShakingHands'
-import { Button } from '../UI/Buttons/Button'
-import { AddIcon } from '../UI/Icons/Icons'
+import { Button } from '../UI/buttons/Button'
+import { AddIcon } from '../UI/icons/icons'
 import { FC } from 'react'
 import { TRequest } from '../../types'
 
@@ -12,7 +12,7 @@ const NewApplication: FC<Array<TRequest>> = (applications: TRequest[]) => {
       {
         applications.length > 0 ?
           <div className='makeApplication'>
-            <Button variant="icon" size="large" theme="dark" type="button" icon={<AddIcon />} extraClass='two-sized' />
+            <Button variant="icon" size="large" theme="dark" type="button" icon={<AddIcon />} extraClass='two-sized'/>
             <p className='text text_unActive'>Cоздать заявку</p>
             <div className='bottom' />
           </div> :

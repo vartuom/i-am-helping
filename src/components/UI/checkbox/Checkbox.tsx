@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactNode } from 'react';
+import React, {ChangeEvent, ReactNode} from 'react';
 import s from "./Checkbox.module.scss"
 
 interface ICheckboxProps {
@@ -8,7 +8,7 @@ interface ICheckboxProps {
     isChecked: boolean;
     handleChange: (evt: ChangeEvent<HTMLInputElement>) => void;
 }
-const Checkbox = ({ name, label, isDisabled, isChecked, handleChange }: ICheckboxProps) => {
+const Checkbox = ({name, label, isDisabled, isChecked, handleChange}:ICheckboxProps) => {
     return (
         <label className={s.checkbox}>
             <input onChange={handleChange}
@@ -19,7 +19,7 @@ const Checkbox = ({ name, label, isDisabled, isChecked, handleChange }: ICheckbo
                 checked={isChecked}
                 className={s.checkbox__nativeBox}
             />
-            <div className={s.checkbox__customBox} />
+            <div className={s.checkbox__customBox}/>
             <div className={s.checkbox__label}>{label}</div>
         </label>
     );
