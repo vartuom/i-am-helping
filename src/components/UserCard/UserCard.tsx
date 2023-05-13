@@ -1,9 +1,9 @@
 import styles from './UserCard.module.scss';
 import { FC } from 'react';
-import { Button } from '../UI/buttons/Button';
-import { BallsIcon, DiagramIcon } from '../UI/icons/icons';
-import { FinishedApplicationIcon } from '../UI/icons/icons';
-import { KeyIcon } from '../UI/icons/icons';
+import { Button } from '../UI/Buttons/Button';
+import { BallsIcon, DiagramIcon } from '../UI/Icons/icons1';
+import { FinishedApplicationIcon } from '../UI/Icons/icons1';
+import { KeyIcon } from '../UI/Icons/icons1';
 import { Avatar } from '../Avatar/Avatar';
 import { TUser } from '../../types';
 

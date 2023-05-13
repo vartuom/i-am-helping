@@ -1,10 +1,10 @@
 import { FC, useState } from "react"
 import header from "./AppHeader.module.scss"
 import { NavLink } from "react-router-dom"
-import { Logo } from "../UI/Logo/Logo"
-import { BlogIcon, BurgerMenuIcon, EmptyMessageIcon, LocationIcon, PersonIcon, PrivacyIcon } from "../UI/icons/icons"
-import { Button } from "../UI/buttons/Button"
+import { Button } from "../UI/Buttons/Button"
 import { Avatar } from "../Avatar/Avatar"
+import { Logo } from "../UI/Logo/Logo"
+import { PersonIcon } from "../UI/Icons/icons1"
 
 export const AppHeader: FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

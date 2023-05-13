@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ListBox, ListBoxItem, Map, Placemark, useYMaps } from '@pbe/react-yandex-maps';
+import React from 'react';
+import { ListBox, ListBoxItem, Map, Placemark } from '@pbe/react-yandex-maps';
 import style from './Maps.module.scss'
 import icon from '../../images/locationWithCircle.svg'
 import ymaps from 'yandex-maps';
@@ -21,6 +21,7 @@ export const Maps = () => {
 
 
     const switchCity = (name: string) => {
+        // вообще оно работает и довольно хорошо, хз кто и почему закомитил
       /*  geocode(name).then((res: ymaps.IGeocodeResult) => {
             const firthResult = res.geoObjects.get(0);
             const coord = firthResult.geometry?.getBounds()

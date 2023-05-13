@@ -23,14 +23,14 @@ const meta: Meta<typeof AdminConfirmationCard> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const admin: Story = {
+export const Admin: Story = {
     args:
       { user: user,
         adminStatus: 'main-admin'
       },
 };
 
-export const mainAdmin: Story = {
+export const MainAdmin: Story = {
   args:
     { user: user,
       adminStatus: 'admin'

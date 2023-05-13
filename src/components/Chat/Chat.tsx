@@ -1,10 +1,10 @@
 import React, {FC, useState} from 'react';
 import chat from "./Chat.module.scss";
 import {TChatProps} from "./types";
-import {CrossIcon} from "../UI/icons/cross-icon/cross-icon";
-import {SendIcon} from "../UI/icons/send-icon/send-icon";
-import {ClipIcon} from "../UI/icons/clip-icon/clip-icon";
-import {Button} from "../UI/buttons/Button";
+import {CrossIcon} from "../ui/icons/cross-icon/cross-icon";
+import {SendIcon} from "../ui/icons/send-icon/send-icon";
+import {ClipIcon} from "../ui/icons/clip-icon/clip-icon";
+import {Button} from "../UI/Buttons/Button";
 
 type Message = {
     text: string;

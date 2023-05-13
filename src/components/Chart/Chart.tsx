@@ -1,6 +1,6 @@
 import { FC, useMemo } from "react";
 import styles from "./Chart.module.scss";
-import { Button } from "../UI/buttons/Button";
+import { Button } from "../UI/Buttons/Button";
 import { ChartColumn } from "./ChartColumn";
 
 interface IChartProps {

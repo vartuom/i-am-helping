@@ -1,6 +1,6 @@
 import React from 'react';
 import './Example.scss';
-import Input from '../UI/Input/Input';
+import Input from '../ui/Input/Input';
 
 function Example() {
   return (

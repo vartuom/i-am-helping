@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import s from "../TaskForm.module.scss";
 import m from "./ThirdStep.module.scss";
-import FormsHeader from "../../UI/FormsHeader/FormsHeader";
-import Select, { IOption } from "../../UI/Select/Select";
-import TextArea from "../../UI/TextArea/TextArea";
-import { Button } from "../../UI/buttons/Button";
+import FormsHeader from "../../ui/forms-header/FormsHeader";
+import Select, { IOption } from "../../ui/Select/Select";
+import TextArea from "../../ui/text-area/TextArea";
+import { Button } from "../../UI/Buttons/Button";
 
 const ThirdStep = () => {
   const navigate = useNavigate();

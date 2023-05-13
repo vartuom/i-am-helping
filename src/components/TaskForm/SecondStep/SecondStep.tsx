@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import s from "../TaskForm.module.scss";
 import m from "./SecondStep.module.scss";
-import FormsHeader from "../../UI/FormsHeader/FormsHeader";
-import { Button } from "../../UI/buttons/Button";
+import FormsHeader from "../../ui/forms-header/FormsHeader";
+import { Button } from "../../UI/Buttons/Button";
 import { MapForSeacrh } from "../../Maps/MapForSearch";
 
 const SecondStep = () => {

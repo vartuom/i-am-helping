@@ -1,19 +1,19 @@
 import React, { FC, useState } from 'react';
 import './PageTitleFilter.scss';
 import { EPageTitleFilterKind, TPageTitleFilter } from './types'
-import { ActiveApplicationIcon } from '../UI/icons/active-application-icon/active-application-icon'
-import { ApplicationMapIcon } from '../UI/icons/application-map-icon/application-map-icon'
-import { CompletedApplicationIcon } from '../UI/icons/completed-application-icon/completed-application-icon'
-import { AcceptBlockIcon } from '../UI/icons/accept-block-icon/accept-block-icon'
-import { StatisticsIcon } from '../UI/icons/statistics-icon/statistics-icon'
-import { CreateEditIcon } from '../UI/icons/create-edit-icon/create-edit-icon'
-import { TIconProps } from "../UI/icons/utils"
+import { ActiveApplicationIcon } from '../ui/icons/active-application-icon/active-application-icon'
+import { ApplicationMapIcon } from '../ui/icons/application-map-icon/application-map-icon'
+import { CompletedApplicationIcon } from '../ui/icons/completed-application-icon/completed-application-icon'
+import { AcceptBlockIcon } from '../ui/icons/accept-block-icon/accept-block-icon'
+import { StatisticsIcon } from '../ui/icons/statistics-icon/statistics-icon'
+import { CreateEditIcon } from '../ui/icons/create-edit-icon/create-edit-icon'
+import { TIconProps } from "../ui/icons/utils"
 
 
-import { FilterIcon } from '../UI/icons/filter-icon/filter-icon'
+import { FilterIcon } from '../ui/icons/filter-icon/filter-icon'
 
-import Modal from '../Modal/Modal';
-import FilterMap from '../Filters/FilterMap/FilterMap';
+import Modal from '../modal1/Modal';
+import FilterMap from '../filters/filter-map/FilterMap';
 
 export const getTitleImg = (kind: EPageTitleFilterKind, type: TIconProps = { type: 'blue' }) => {
   switch (kind) {
@@ -43,14 +43,14 @@ export const getTitleImg = (kind: EPageTitleFilterKind, type: TIconProps = { typ
 
 export const PageTitleFilter: FC<TPageTitleFilter> = (item: TPageTitleFilter) => {
   const [filterOpened, setFilterOpened] = useState<boolean>(false);
-  const onClose = () => {
+  const OnClose = () => {
 
     setFilterOpened(false);
     console.log("filterOpened");
   }
   return (
     <div className='box'>
-      {filterOpened && <Modal children={<FilterMap onSubmit={onClose} />} onClose={onClose} isModalOpened={true} ></Modal>}
+      {filterOpened && <Modal children={<FilterMap onSubmit={OnClose} />} onClose={OnClose} isModalOpened={true} ></Modal>}
 
       <div className='reqType'>
 
