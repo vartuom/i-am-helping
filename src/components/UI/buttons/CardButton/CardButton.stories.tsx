@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CardButton } from './CardButton';
-import { AcceptBlockIcon, ActiveApplicationIcon, ApplicationMapIcon, CompletedApplicationIcon, CreateEditIcon, StatisticsIcon } from '../../Icons/Icons';
+import { AcceptBlockIcon, ActiveApplicationIcon, ApplicationMapIcon, CompletedApplicationIcon, CreateEditIcon, StatisticsIcon } from '../../icons/icons';
 
 const meta = {
     title: 'Components/CardButton',
@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 export const ActiveApplicationButton: Story = {
     args: {
-        icon: <ActiveApplicationIcon type="white" />,
+        icon: <ActiveApplicationIcon type="white"/>,
         display: "web",
         children: "Активные заявки",
         isVolunteer: true
@@ -22,7 +22,7 @@ export const ActiveApplicationButton: Story = {
 
 export const ApplicationMapButton: Story = {
     args: {
-        icon: <ApplicationMapIcon type="white" />,
+        icon: <ApplicationMapIcon type="white"/>,
         display: "web",
         children: "Карта заявок",
         isVolunteer: true
@@ -31,7 +31,7 @@ export const ApplicationMapButton: Story = {
 
 export const CompletedApplicationButton: Story = {
     args: {
-        icon: <CompletedApplicationIcon type="white" />,
+        icon: <CompletedApplicationIcon type="white"/>,
         display: "web",
         children: "Завершенные заявки",
         isVolunteer: true
@@ -40,7 +40,7 @@ export const CompletedApplicationButton: Story = {
 
 export const AcceptAndBlockButton: Story = {
     args: {
-        icon: <AcceptBlockIcon type="white" />,
+        icon: <AcceptBlockIcon type="white"/>,
         display: "web",
         children: "Подтверждение / Блокировка"
     }
@@ -48,7 +48,7 @@ export const AcceptAndBlockButton: Story = {
 
 export const StatisticsButton: Story = {
     args: {
-        icon: <StatisticsIcon type="white" />,
+        icon: <StatisticsIcon type="white"/>,
         display: "web",
         children: "Статистика"
     }
@@ -56,7 +56,7 @@ export const StatisticsButton: Story = {
 
 export const CreateAndEditApplicationButton: Story = {
     args: {
-        icon: <CreateEditIcon type="white" />,
+        icon: <CreateEditIcon type="white"/>,
         display: "web",
         children: "Создание / Редактирование заявки"
     }

@@ -6,24 +6,24 @@ import SideNavigation from "../../components/SideNavigation/SideNavigation"
 import { user } from "../../data/user"
 import { Chart } from "../../components/Chart/Chart"
 import { PageTitleFilter } from "../../components/PageTitleFilter/PageTitleFilter"
-import { Button } from "../../components/UI/Buttons/Button"
+import { Button } from "../../components/UI/buttons/Button"
 
 export const AdminPageStatistics = () => {
-  const [navArray, setNavArray] = useState<EPageTitleFilterKind[]>(
-    [EPageTitleFilterKind.Acceptation, EPageTitleFilterKind.Statistics, EPageTitleFilterKind.CreateEdit]);
+    const [navArray, setNavArray] = useState<EPageTitleFilterKind[]>(
+        [EPageTitleFilterKind.Acceptation, EPageTitleFilterKind.Statistics, EPageTitleFilterKind.CreateEdit]);
 
-  const [active, setActive] = useState<EPageTitleFilterKind>(EPageTitleFilterKind.Statistics);
+    const [active, setActive] = useState<EPageTitleFilterKind>(EPageTitleFilterKind.Statistics);
 
-  const onClick = (viewType: EPageTitleFilterKind) => {
-    setActive(viewType);
-  }
+    const onClick = (viewType: EPageTitleFilterKind) => {
+        setActive(viewType);
+    }
 
-  const data: {
-    date: Date;
-    views: number;
-    visits: number;
-    bids: number;
-  }[] =
+    const data: {
+      date: Date;
+      views: number;
+      visits: number;
+      bids: number;
+      } [] = 
     [
       {
         date: new Date("12.07.2022"),
@@ -75,37 +75,37 @@ export const AdminPageStatistics = () => {
       },
     ]
 
-  const ChartBlock = () => {
-    return (
-      <div className={styles.chart_block}>
-        <Button type="button" animated="excel" extraClass={styles.button_position} />
-      </div>
-    );
-  };
-
-  const ChartList = () => {
-    const list = Array.from({ length: 6 }, (_, index) => index + 1);
-
-    return (
-      <div className={styles.chart_list}>
-        {list.map((item) => (
-          <ChartBlock key={item} />
-        ))}
-      </div>
-    );
-  };
-
+const ChartBlock = () => {
   return (
-    <main className={styles.main}>
-      <aside className={`${styles.aside} ${styles.aside_confirmationPage}`}>
-        <UserCard {...user} />
-        <SideNavigation items={navArray} onClick={onClick} activeLink={active} />
-      </aside>
-      <section className={styles.chart}>
-        <PageTitleFilter item={active} />
-        <Chart data={data} />
-        <ChartList />
-      </section>
-    </main>
-  )
+    <div className={styles.chart_block}>
+      <Button type="button" animated="excel" extraClass={styles.button_position}/>
+    </div>
+  );
+};
+
+const ChartList = () => {
+  const list = Array.from({ length: 6 }, (_, index) => index + 1);
+  
+  return (
+    <div className={styles.chart_list}>
+      {list.map((item) => (
+        <ChartBlock key={item} />
+      ))}
+    </div>
+  );
+};
+
+    return (
+        <main className={styles.main}>
+            <aside className={`${styles.aside} ${styles.aside_confirmationPage}`}>
+              <UserCard {...user} />
+              <SideNavigation items={navArray} onClick={onClick} activeLink={active} />
+            </aside>
+            <section className={styles.chart}>
+              <PageTitleFilter item={active}/>
+              <Chart data={data} />
+              <ChartList />
+            </section>
+        </main>
+    )
 }

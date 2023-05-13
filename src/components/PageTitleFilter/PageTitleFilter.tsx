@@ -1,16 +1,19 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import './PageTitleFilter.scss';
 import { EPageTitleFilterKind, TPageTitleFilter } from './types'
-import { ActiveApplicationIcon } from '../UI/Icons/ActiveApplicationIcon/ActiveApplicationIcon'
-import { ApplicationMapIcon } from '../UI/Icons/ApplicationMapIcon/ApplicationMapIcon'
-import { CompletedApplicationIcon } from '../UI/Icons/CompletedApplicationIcon/CompletedApplicationIcon'
-import { AcceptBlockIcon } from '../UI/Icons/AcceptBlockIcon/AcceptBlockIcon'
-import { StatisticsIcon } from '../UI/Icons/StatisticsIcon/StatisticsIcon'
-import { CreateEditIcon } from '../UI/Icons/CreateEditIcon/CreateEditIcon'
-import { FilterIcon } from '../UI/Icons/FilterIcon/FilterIcon'
+import { ActiveApplicationIcon } from '../UI/icons/active-application-icon/active-application-icon'
+import { ApplicationMapIcon } from '../UI/icons/application-map-icon/application-map-icon'
+import { CompletedApplicationIcon } from '../UI/icons/completed-application-icon/completed-application-icon'
+import { AcceptBlockIcon } from '../UI/icons/accept-block-icon/accept-block-icon'
+import { StatisticsIcon } from '../UI/icons/statistics-icon/statistics-icon'
+import { CreateEditIcon } from '../UI/icons/create-edit-icon/create-edit-icon'
+import { TIconProps } from "../UI/icons/utils"
+
+
+import { FilterIcon } from '../UI/icons/filter-icon/filter-icon'
+
 import Modal from '../Modal/Modal';
 import FilterMap from '../Filters/FilterMap/FilterMap';
-import { TIconProps } from '../UI/Icons/utils';
 
 export const getTitleImg = (kind: EPageTitleFilterKind, type: TIconProps = { type: 'blue' }) => {
   switch (kind) {

@@ -1,14 +1,14 @@
 import React, { FC, useState } from 'react';
 import './Request.scss';
-import { CalendarIcon } from '../UI/Icons/CalendarIcon/CalendarIcon'
-import { ClockIcon } from '../UI/Icons/ClockIcon/ClockIcon'
-import { LocationIcon } from '../UI/Icons/LocationIcon/LocationIcon'
-import { BallsIcon } from '../UI/Icons/BallsIcon/BallsIcon'
-import { PhoneIcon } from '../UI/Icons/PhoneIcon/PhoneIcon'
-import { CrossIcon } from '../UI/Icons/CrossIcon/CrossIcon';
+import { CalendarIcon } from '../UI/icons/calendar-icon/calendar-icon'
+import { ClockIcon } from '../UI/icons/clock-icon/clock-icon'
+import { LocationIcon } from '../UI/icons/location-icon/location-icon'
+import { BallsIcon } from '../UI/icons/balls-icon/balls-icon'
+import { PhoneIcon } from '../UI/icons/phone-icon/phone-icon'
+import { CrossIcon } from '../UI/icons/cross-icon/cross-icon';
 import { Avatar } from '../Avatar/Avatar';
-import { Button } from '../UI/Buttons/Button';
-import { EditIcon, EmptyMessageIcon } from '../UI/Icons/Icons';
+import { Button } from '../UI/buttons/Button';
+import { EditIcon, EmptyMessageIcon } from '../UI/icons/icons';
 import { TRequest } from '../../types';
 
 
@@ -16,11 +16,11 @@ export const Request: FC<TRequest> = (item: TRequest) => {
 
 
 
-
+  
   return (
     <div className='reqMain'>
 
-
+    
       <div className='itemBreaker' />
       <div className='category'>
         {item.category}
@@ -77,7 +77,7 @@ export const Request: FC<TRequest> = (item: TRequest) => {
       </div >
 
       <div className='person'>
-        <Avatar size={100} url={item.user?.avatar} extraClass='personImg' />
+        <Avatar size={100} url={item.user?.avatar} extraClass='personImg'/>
         <div className='personName'>
           {item.user?.name}
         </div>

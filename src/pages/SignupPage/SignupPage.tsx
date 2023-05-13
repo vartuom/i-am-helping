@@ -1,12 +1,13 @@
-import styles from "./SignupPage.module.scss";
+import React from "react";
+import stules from "./SignupPage.module.scss";
 import RadioGroup from "../../components/UI/RadioGroup/RadioGroup";
 import Input from "../../components/UI/Input/Input";
 import { Link } from "react-router-dom";
-import { Button } from "../../components/UI/Buttons/Button";
+import { Button } from "../../components/UI/buttons/Button";
 
 const SignupPage = () => {
   return (
-    <div className={styles.registr}>
+    <div className={stules.registr}>
       <h1>Регистрация</h1>
       <p>Выберите Вашу роль</p>
       <RadioGroup
@@ -24,7 +25,7 @@ const SignupPage = () => {
         theme={"dark"}
         type={"submit"}
         variant={"text"}
-        extraClass={styles.button}
+        extraClass={stules.button}
       >
         Зарегистрироваться
       </Button>

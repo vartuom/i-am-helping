@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from "react";
-import { Button } from "../../UI/Buttons/Button";
-import Checkbox from "../../UI/Checkbox/Checkbox";
+import Calendar from "../../Calendar/Calendar";
+import { Button } from "../../UI/buttons/Button";
+import Checkbox from "../../UI/checkbox/Checkbox";
 import s from "./filter.module.scss";
 import "./filter.scss";
 
