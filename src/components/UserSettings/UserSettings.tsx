@@ -1,10 +1,10 @@
 import styles from './userSettings.module.scss'
 import Input from '../UI/Input/Input';
-import { Button } from '../UI/buttons/Button';
+import { Button } from '../UI/Buttons/Button';
 import { user } from '../../data/user';
 import { Avatar } from '../Avatar/Avatar';
 
-const UserSettings  = () => {
+const UserSettings = () => {
   return (
     <div className={styles.setWindow}>
       <div className={styles.avatarBlock}>
@@ -12,8 +12,8 @@ const UserSettings  = () => {
         <button className={styles.avaChange}>Изменить фото</button>
       </div>
       <div className={styles.info}>
-        <Input typeInput={'userInfoName'}/>
-        <Input typeInput={'userInfoPhone'}/>
+        <Input typeInput={'userInfoName'} />
+        <Input typeInput={'userInfoPhone'} />
       </div>
       <div>
         <Button theme={'dark'} type={'submit'} variant={'text'} extraClass={styles.buttonWidth}>Сохранить</Button>
@@ -21,6 +21,6 @@ const UserSettings  = () => {
       </div>
     </div>
   );
-};  
+};
 
 export default UserSettings;

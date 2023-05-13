@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import s from "./TimePickerSelection.module.scss";
 import HourWheel from "../HourWheel/HourWheel";
 import MinuteWheel from "../MinuteWheel/MinuteWheel";
-import { Button } from "../../UI/buttons/Button";
+import { Button } from "../../UI/Buttons/Button";
 
 interface ITimePickerSelection {
   inputValue: string | undefined;
@@ -17,7 +17,7 @@ interface ITimePickerSelection {
   controllers?: boolean;
   setInputValue?: (value: string | undefined) => void;
   setIsOpen?: (value: boolean | undefined) => void;
-  seperator?: boolean;
+  separator?: boolean;
   use12Hours?: boolean;
   onAmPmChange?: (value: string | undefined) => void;
 }
@@ -34,7 +34,7 @@ const TimePickerSelection: FC<ITimePickerSelection> = ({
   controllers,
   setInputValue,
   setIsOpen,
-  seperator,
+  separator: seperator,
   use12Hours,
   onAmPmChange,
 }) => {
