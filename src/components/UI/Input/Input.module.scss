@@ -1,0 +1,159 @@
+@import "../../../constants/ScssVariables.scss";
+@import "../../../constants/ScssMixins.scss";
+
+.wrap {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.label {
+  color: $colorRegularFont;
+  font-family: GolosNormal;
+  font-size: $fontSizeSmall;
+  line-height: 14px;
+  letter-spacing: -0.154px;
+  padding-bottom: 5px;
+}
+
+.label_mobile {
+  @include from("sm") {
+    display: none;
+  }
+}
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 13px;
+  &:focus {
+    outline: 1px solid $colorBtnSecond;
+  }
+  &:invalid {
+    outline: 1px solid #e64646;
+  }
+
+  &::placeholder {
+    color: $colorSupport;
+    font-size: $fontSizeSmall;
+  }
+}
+.input_mobile {
+  @include from("sm") {
+    position: absolute;
+    z-index: 5;
+    bottom: -40px;
+    left: 45px;
+    width: 80%;
+    padding: 7px;
+  }
+}
+
+.input_supText {
+  font-size: $fontSizeSmall;
+  line-height: 14px;
+  padding-top: 5px;
+  width: 290px;
+  text-align: left;
+  & > span:first-child {
+    padding-left: 10px;
+  }
+  & > span:last-child {
+    color: #f37920;
+  }
+}
+
+.input_supTextMobile {
+  @include from("sm") {
+    position: absolute;
+    z-index: 6;
+    left: 0;
+    bottom: -430px;
+  }
+}
+.inputComment {
+  padding-bottom: 26px;
+}
+
+//popup
+
+.popupWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: $colorMain;
+}
+
+.popupLabel {
+  font-family: GolosNormal;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.154px;
+  padding-bottom: 8px;
+}
+
+.popupInput {
+  //жесткую привязку по ширине требует макет
+  width: 351px;
+  border: 1px solid $colorMain;
+  border-radius: 10px;
+  padding: 13px;
+  color: $colorMain;
+  &:focus {
+    outline: 1px solid $colorBtnSecond;
+  }
+  &:invalid {
+    outline: 1px solid #e64646;
+  }
+
+  &::placeholder {
+    color: $colorMain;
+    font-size: $fontSizeSmall;
+  }
+  @include from("sm") {
+    width: 365px;
+    border-radius: 0px;
+  }
+}
+
+//user info
+
+.userInfoNameWrap {
+  display: flex;
+  flex-direction: row;
+  color: $colorMain;
+  align-items: flex-end;
+}
+
+.userInfoNameLabel {
+  font-family: GolosBold;
+  font-size: $fontSizeSmall;
+  line-height: 14px;
+  //в макете в этом месте есть пустое место, поправить при сборке компонента
+  padding-right: 20px;
+}
+
+.userInfoNameInput {
+  //жесткую привязку по ширине требует макет
+  display: flex;
+  align-items: center;
+  color: $colorMain;
+  width: 144px;
+  border: none;
+  border-bottom: 1px solid $colorMain;
+  font-size: $fontSizeSmall;
+  line-height: 14px;
+  &:focus {
+    outline: 1px solid $colorBgc;
+  }
+  &:invalid {
+    outline: 1px solid #e64646;
+  }
+
+  &::placeholder {
+    color: $colorDisable;
+    font-size: $fontSizeSmall;
+  }
+}

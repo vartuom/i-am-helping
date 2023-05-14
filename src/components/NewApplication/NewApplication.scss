@@ -1,0 +1,97 @@
+@import '../../constants/ScssVariables.scss';
+@import '../../constants/ScssMixins.scss';
+
+.makeApplication {
+  position: relative;
+  padding:  0 34px 23px;
+  display: flex;
+  align-items: center;
+  column-gap: 59px;
+
+  @include from('sm') {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    padding: 9.5px 0 29.5px;
+  }
+}
+
+.bottom {
+  position: absolute;
+  background: $colorBgcGradient;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+
+  @include from('sm') {
+    margin-bottom: 20px;
+  }
+}
+
+.noData {
+  padding: 126px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include from('sm') {
+    padding: 80px 0;
+  }
+}
+
+.topWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  margin-bottom: 75px;
+  @include from('sm') {
+    margin-bottom: 35px;
+  }
+}
+
+.bottomWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  position: relative;
+}
+
+.text {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  &_active {
+    color: $colorMain; 
+  }
+  &_unActive {
+    color: $colorSupport;
+  }
+  @include from('sm') {
+    font-size: 16px;
+    line-height: 19.2px;
+  }
+}
+
+.arrow {
+  width: 94px;
+  height: 60px;
+  background-image: url('../../images/makeAppArrow.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: calc(50% - 30px);
+  right: -30px;
+}
+
+.two-sized {
+  @include from('sm') {
+    width: 60px;
+    height: 60px;
+  }
+}

@@ -1,0 +1,101 @@
+@import "../../constants/ScssVariables.scss";
+@import "../../constants/ScssMixins.scss";
+
+.main {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    margin: 30px auto 0;
+    max-width: 1440px;
+    padding: 0 92px;
+    box-sizing: border-box;
+    @include from('sm') {
+      margin-top: 20px;
+      justify-content: center;
+      padding: 0;
+  }
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    @include from('sm') {
+      row-gap: 15px;
+    }
+    &_confirmationPage {
+        @include from('sm') {
+            display: none;
+        }  
+    }
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-right: 10px;
+    @include from('sm') {
+      display: none;
+    }
+    &_confirmationPage {
+      @include from('sm') {
+          display: block;
+          padding: 0;
+          justify-content: center;
+      }  
+  }
+}
+
+.profile {
+    height: 362px;
+    width: 295px;
+    border: 1px solid $colorBgc;
+    box-sizing: border-box;
+}
+
+.chart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.chart_block {
+  width: 423px;
+  height: 287px;
+  border: 1px solid $colorBtnFirst;
+  box-sizing: border-box;
+  position: relative;
+  @include from('sm') {
+    width: 175px;
+    height: 200px;
+  }
+}
+
+.button_position {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.chart_list {
+  display: grid;
+  grid-template-columns: repeat(2, 423px);
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  min-height: 600px;
+
+  @include from('sm') {
+    height: 570px;
+    grid-template-columns: repeat(2, 175px);
+    padding: 0 25px;
+    gap: 20px 14px;
+  }
+
+  overflow: scroll;
+}

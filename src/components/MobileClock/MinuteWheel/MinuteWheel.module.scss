@@ -1,0 +1,57 @@
+@import "../../../constants/ScssVariables.scss";
+.timeMinute {
+  margin-top: -90px;
+  position: relative;
+  width: 70px;
+  overflow: hidden;
+  z-index: 100;
+  margin-left: 5px;
+}
+
+.timeFast {
+  transition: transform 700ms cubic-bezier(0.13, 0.67, 0.01, 0.94);
+}
+
+.timeSlow {
+  transition: transform 600ms cubic-bezier(0.13, 0.67, 0.01, 0.94);
+}
+
+.timeMinuteCell {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  user-select: none;
+  transition: all 100ms linear;
+}
+
+.timeMinuteInner:hover {
+  background-color: $colorBtnSecond;
+  color: white;
+}
+
+.timeHourInnerSelected {
+  color: $colorRegularFont;
+  font-size: 45px;
+}
+
+.timeMinuteInner {
+  width: fit-content;
+  height: 100%;
+  transition: all 100ms linear;
+  cursor: pointer;
+  border-radius: 7px;
+  line-height: 35px;
+  text-align: center;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 45px;
+  color: $colorDisable;
+  padding: 0 10px;
+}
+.timeHourInnerSelected {
+  color: $colorRegularFont;
+  font-size: 45px;
+}

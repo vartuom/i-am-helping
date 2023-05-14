@@ -1,0 +1,24 @@
+@import "../../../constants/ScssMixins.scss";
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 35px 72px;
+  @include from("sm") {
+    padding: 0px 0 35px 0px;
+  }
+}
+
+.map {
+  margin-top: 28px;
+  width: 449px;
+  height: 175px;
+  margin-bottom: 120px;
+  position: relative;
+  @include from("sm") {
+    margin-top: 10px;
+    width: 290px;
+    height: 390px;
+    margin-bottom: 30px;
+  }
+}

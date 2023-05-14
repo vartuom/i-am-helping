@@ -1,0 +1,93 @@
+@import '../../constants/ScssVariables.scss';
+@import '../../constants/ScssMixins.scss';
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid $colorBtnFirst;
+  min-width: 385px;
+  width: 100%;
+  height: 89px;
+
+  @include from('sm') {
+    min-width: 200px;
+    height: 55px;
+    align-self: center;
+    margin: 0 auto;
+    max-width: calc(100vw - 30px);
+    margin-bottom: 20px;
+  }
+
+  .reqType {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    margin-left: 37px;
+
+    @include from('sm') {
+      margin-left: 10px;
+      gap: 5px;
+    }
+
+    .reqTypeIcon {
+      width: 43px;
+      height: 50px;
+
+      @include from('sm') {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    .reqTypeText {
+      font-family: $fontFamily;
+      font-weight: $fontWeight;
+      font-size: $fontSizeLarge;
+      font-style: $fontFamilyNormal;
+      line-height: 29px;
+      color: $colorMain;
+      margin: auto 0px auto;
+
+      @include from('sm') {
+        font-size: $fontSizeMedium;
+        line-height: 19px;
+        margin: auto 0px;
+      }
+    }
+  }
+
+  .reqFilter {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    margin-right: 30px;
+    cursor: pointer;
+
+    @include from('sm') {
+      margin-right: 10px;
+      gap: 5px;
+    }
+
+    .reqFilterText {
+      font-family: $fontFamily;
+      font-weight: $fontWeight;
+      font-size: $fontSizeMedium;
+      font-style: $fontFamilyNormal;
+      line-height: 19px;
+      color: $colorMain;
+
+    }
+
+    .reqFilterIcon {
+      width: 43px;
+      height: 44px;
+
+      @include from('sm') {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

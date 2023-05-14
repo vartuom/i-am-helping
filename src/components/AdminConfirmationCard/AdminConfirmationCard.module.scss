@@ -1,0 +1,158 @@
+@import '../../constants/ScssVariables.scss';
+@import '../../constants/ScssMixins.scss';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 276px;
+  box-sizing: border-box;
+  position: relative;
+  font-family: $fontFamily;
+  list-style: none;
+}
+
+.cardMob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 175px;
+  box-sizing: border-box;
+  position: relative;
+  font-family: $fontFamily;
+  list-style: none;
+}
+
+.avatar {
+  width: 62px;
+  height: 62px;
+  top: 0px;
+  position: absolute;
+  z-index: 1;
+}
+
+.label {
+  top: 57px;
+  position: absolute;
+  z-index: 2;
+}
+
+.info {
+  margin-top: 31px;
+  padding: 41px 10px 20px 30px;
+  border: 1px solid $colorBtnFirst;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.infoMob {
+  margin-top: 31px;
+  padding: 65px 14px 20px;
+  border: 1px solid $colorBtnFirst;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.about {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 0;
+}
+
+.aboutName {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.2px;
+  margin: 0 0 2px 0;
+  padding: 0;
+}
+
+.aboutNameMob {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.4px;
+  margin: 0 0 2px 0;
+  padding: 0;
+}
+
+.aboutId {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.4px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0 0 3px 0;
+  padding: 0;
+}
+
+.aboutDescription {
+  display: grid;
+  grid-template-columns: 30px 113px;
+  gap: 12px;
+  align-items: self-start;
+  margin: 0 0 2px 0;
+}
+
+.aboutDescriptionMob {
+  display: grid;
+  grid-template-columns: 41px 144px;
+  gap: 10px;
+  align-items: self-start;
+  margin: 0 0 10px 0;
+}
+
+.aboutMe {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.aboutContact {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.4px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.selectLine {
+  display: flex;
+}
+
+.line {
+  background-image: url('../../images/dashed-line.svg');
+  height: 1px;
+  margin-top: 8px;
+}
+
+.selectIcon {
+  align-self: flex-end;
+  margin: 0;
+  margin-top: -4px;
+  background-color: transparent;
+}
+
+.d_flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex-direction: column;
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.check_padding {
+  padding-top: 12px;
+  padding-right: 20px;
+}

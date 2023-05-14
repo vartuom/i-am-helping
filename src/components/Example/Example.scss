@@ -1,0 +1,32 @@
+@import '../../constants/ScssVariables.scss';
+@import '../../constants/ScssMixins.scss';
+
+.wrap{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.div1{
+  background: $colorMain;
+  height: 100px;
+  margin-right: 200px;
+  @include from('sm') {
+    max-width: 150px;
+    margin-right: 50px;
+  };
+}
+
+.div2{
+  @include from('sm') {
+    max-width: 150px;
+  };
+  width: 600px;
+  background: $colorBgcGradient;
+  height: 5px;
+}
+
+.svgColor , path{
+  fill: $colorBtnThird;
+}
+

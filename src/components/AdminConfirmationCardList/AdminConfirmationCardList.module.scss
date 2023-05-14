@@ -1,0 +1,35 @@
+@import '../../constants/ScssVariables.scss';
+@import '../../constants/ScssMixins.scss';
+
+.list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  z-index: 0;
+  //height: 750px;
+  position: relative;
+
+  @include from('sm') {
+    //height: 570px;
+    grid-template-columns: 1fr;
+    padding: 0 25px;
+    gap: 20px;
+  }
+
+  overflow: scroll;
+}
+
+.blur {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 151px;
+
+  @include from('sm') {
+    height: 81px;
+  }
+
+  width: 100%;
+  background: linear-gradient(0deg, #FFFFFF 25%, rgba(255, 255, 255, 0) 100%);
+  z-index: 1;
+}
