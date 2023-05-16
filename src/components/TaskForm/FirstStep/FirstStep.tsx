@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import s from "../TaskForm.module.scss";
 import m from "./FirstStep.module.scss";
 import { Button } from "../../UI/buttons/Button";

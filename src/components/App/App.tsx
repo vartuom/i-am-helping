@@ -1,6 +1,6 @@
 import "./App.scss";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import TestPage from "../../pages/testPage";
+import TestPage from "../../pages/MainTestPage/MainTestPage";
 import PersonalPage from "../../pages/PersonalPage/PersonalPage";
 import SignupPage from "../../pages/SignupPage/SignupPage";
 import SigninPage from "../../pages/SigninPage/SigninPage";
@@ -22,6 +22,9 @@ import { EPageTitleFilterKind } from "../PageTitleFilter/types";
 import { MainAdminPage } from "../../pages/MainAdminPage/MainAdminPage";
 import { AdminPageCreateEdit } from "../../pages/AdminPage/AdminPageCreateEdit";
 import { AdminPageStatistics } from "../../pages/AdminPage/AdminPageStatistics";
+import Chat from "../Chat/Chat";
+import { user } from "../../data/user";
+import { chatItem } from "../../data/chat";
 
 function App() {
   const location = useLocation();
@@ -50,12 +53,20 @@ function App() {
         <Route path="/completed" element={<RecipientPageCompleted />} />
         <Route path="/active" element={<RecipientPageActive />} />
         <Route path="/profile" element={<ProfilePage />} />
-        {/*добавить нужные роуты*/}
+        {/* <Route path="/chat" element={<Chat user={ user } item={ chatItem }/>} />  */}
       </Routes>
       {background && (
         <Routes>
           <Route
-            path="/firstStep"
+            path="/chat"
+            element={
+              <Modal onClose={() => navigate(-1)} isModalOpened>
+                <Chat user={ user } item={ chatItem } />
+              </Modal>
+            }
+          />
+          <Route
+            path="/recipient/firstStep"
             element={
               <Modal onClose={() => navigate(-1)} isModalOpened>
                 <FirstStep />
@@ -87,6 +98,7 @@ function App() {
             }
           />
         </Routes>
+        
       )}
       <AppFooter />
     </div>
