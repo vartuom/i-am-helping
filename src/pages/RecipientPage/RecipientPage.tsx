@@ -27,11 +27,13 @@ export const RecipientPage = () => {
             <aside className={recipient.aside}>
                 <UserCard {...user} />
                 <SideNavigation items={navArray} onClick={onClick} activeLink={active} />
+                
             </aside>
             <section className={recipient.requests}>
                 <PageTitleFilter item={active} />
                 {active === EPageTitleFilterKind.Active && <NewApplication {...requests} />}
                 {requests.length > 0 && <RequestList {...requests} />}
+                
             </section>
         </main>
     )

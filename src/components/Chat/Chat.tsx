@@ -5,14 +5,19 @@ import {CrossIcon} from "../UI/icons/cross-icon/cross-icon";
 import {SendIcon} from "../UI/icons/send-icon/send-icon";
 import {ClipIcon} from "../UI/icons/clip-icon/clip-icon";
 import {Button} from "../UI/buttons/Button";
+import { TUser } from '../../types';
 
 type Message = {
     text: string;
     file?: File | null;
 };
 
-export const Chat: FC<TChatProps> = (item: TChatProps, props) => {
-    const { name, avatar, phone } = props;
+interface IChatCompleteProps {
+  user: TUser,
+  item: TChatProps,
+}
+
+export const Chat: FC<IChatCompleteProps> = ({ item, user }) => {
 
     // Сделать состояния:
     const [value, setValue] = useState<string>('');
@@ -62,19 +67,19 @@ export const Chat: FC<TChatProps> = (item: TChatProps, props) => {
                     {/*<FormsHeader name={name} avatar={avatar} phone={phone} />*/}
                     <img className={chat.img} />
                     <div className={chat.profile}>
-                        <h3 className={chat.initials}>{`${item.person_name}`}</h3>
+                        <h3 className={chat.initials}>{user.name}</h3>
                         <div className={chat.data}>
                             <p className={chat.number}>Тел:</p>
-                            <p className={chat.phone}>{item.phone}</p>
+                            <p className={chat.phone}>{user.phone}</p>
                         </div>
                     </div>
-                    <div className={chat.button}>
+                    {/* <div className={chat.button}>
                         <Button
                             figure="close"
                             type="button"
                             icon={<CrossIcon type="white" />}
                         />
-                    </div>
+                    </div> */}
                 </div>
                 <div className={chat.chat}>
                     {messages.map((message, index) => (

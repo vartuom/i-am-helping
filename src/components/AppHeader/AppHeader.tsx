@@ -1,4 +1,5 @@
 import { FC, useState } from "react"
+import { useLocation, useNavigate } from "react-router-dom"
 import header from "./AppHeader.module.scss"
 import { NavLink } from "react-router-dom"
 import { Logo } from "../UI/Logo/Logo"
@@ -14,6 +15,8 @@ export const AppHeader: FC = () => {
     }
 
     const { location } = window;
+    const navigate = useNavigate();
+    const newLocation = useLocation();
 
     return (
         <header className={header.header}>
@@ -60,6 +63,10 @@ export const AppHeader: FC = () => {
                   !location.pathname.includes('/create') && (
                     (<div className={header.message__area} onClick={handleChange}>
                         <Button
+                            onClick={() =>
+                              navigate("/chat", {
+                                state: { background: newLocation },
+                              })}
                             variant="icon"
                             size="small"
                             theme="dark"
